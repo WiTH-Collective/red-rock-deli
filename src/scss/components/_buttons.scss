@@ -1,0 +1,42 @@
+.button-primary {
+  height: 54px;
+  padding: 0 30px;
+  border: 0;
+  outline: 0;
+  vertical-align: middle;
+  background: $orange;
+  font-weight: bold;
+  color: white;
+  font-size: 16px;
+  line-height: 1;
+  border-radius: 4px;
+  cursor: pointer;
+
+  &.button-black {
+    background: $black;
+  }
+
+  span {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    background: url("../../img/ui/chevron-white.svg") no-repeat;
+    background-size: contain;
+    margin-left: 15px;
+    margin-bottom: -2px;
+  }
+
+  // &:hover {
+  // }
+
+  @include lg {
+    height: 60px;
+    padding: 0 40px;
+    font-size: 19px;
+
+    span {
+      width: 16px;
+      height: 16px;
+    }
+  }
+}

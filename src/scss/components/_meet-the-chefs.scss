@@ -1,0 +1,207 @@
+.MeetTheChefs {
+  background: url("../../img/backgrounds/texture-rough-paint.jpg");
+  background-position: top;
+  background-size: cover;
+  padding: 60px 0;
+  margin: 0;
+
+  .button-primary {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 50%);
+  }
+
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .copy {
+    width: 100%;
+    padding: 30px;
+    max-width: 720px;
+    margin: 0 auto;
+    text-align: center;
+    color: white;
+  }
+
+  // ---------------
+  .black-background {
+    background: black;
+    padding: 0 40px;
+    margin-top: 150px;
+    margin-bottom: 150px;
+
+    .content {
+      position: relative;
+      padding-top: 250px;
+      padding-bottom: 500px;
+
+      .chef-holder {
+        width: 100%;
+        top: -80px;
+        position: absolute;
+        display: flex;
+        flex-flow: column;
+      }
+
+      .locations {
+        background: $grey;
+        display: flex;
+        flex-flow: row;
+        height: 540px;
+        position: absolute;
+        bottom: -80px;
+
+        .locations-list,
+        .locations-image {
+          width: 50%;
+        }
+
+        .locations-image {
+          object-fit: cover;
+        }
+
+        .locations-list {
+          position: relative;
+          display: flex;
+          flex-flow: column;
+          justify-content: center;
+          padding: 0 50px;
+
+          .location {
+            position: relative;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+
+            width: 100%;
+            padding: 30px 5px;
+            border-bottom: 1px solid $cream;
+
+            &:first-child {
+              border-top: 1px solid $cream;
+            }
+
+            h3,
+            p,
+            h5 {
+              display: inline-block;
+            }
+
+            h3 {
+              margin-right: 30px;
+              margin-bottom: 10px;
+            }
+
+            h5 {
+            }
+
+            .chevron {
+              width: 50px;
+              height: 50px;
+              background: url("../../img/ui/chevron-black-circle.svg") no-repeat;
+              background-size: contain;
+            }
+          }
+        }
+      }
+    }
+  }
+  @include lg {
+    padding: 120px 60px;
+    margin: 0 60px;
+
+    .black-background {
+      background: black;
+      padding: 0 80px;
+      margin-top: 150px;
+      margin-bottom: 150px;
+
+      .content {
+        position: relative;
+        padding-top: 250px;
+        padding-bottom: 500px;
+
+        .chef-holder {
+          flex-flow: row;
+          justify-content: space-between;
+        }
+      }
+    }
+  }
+  // looking for a ticket
+  .looking-for-a-ticket {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1120px;
+    height: 320px;
+    background: url("../../img/placeholders/2019-06-20-Concrete-Playground-Red-Rock-Duncan-Kitti-Gould-3.jpg") no-repeat;
+    background-size: cover;
+    background-position: center center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    & > div {
+      display: inline-block;
+      background: rgba(0, 0, 0, 0.9);
+      padding: 40px 60px;
+      position: relative;
+    }
+
+    @include lg {
+      h2 {
+        font-size: 30px;
+      }
+    }
+  }
+}
+
+// Chef component
+.Chef {
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  min-height: 240px;
+  display: flex;
+  align-items: flex-end;
+
+  .chefName {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0) 100%);
+    padding: 60px 20px 40px;
+    width: 100%;
+
+    h3 {
+      padding-left: 40px;
+      font-size: 18px;
+    }
+    span {
+      position: absolute;
+      left: 0;
+      top: -7px;
+      width: 30px;
+      height: 30px;
+      background: url("../../img/ui/chevron-black-circle.svg") no-repeat;
+      background-size: contain;
+    }
+  }
+
+  @include lg {
+    width: 32%;
+    min-height: 300px;
+
+    .chefName {
+      h3 {
+        padding-left: 60px;
+
+        span {
+          top: -15px;
+          width: 50px;
+          height: 50px;
+        }
+      }
+    }
+  }
+}

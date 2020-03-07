@@ -1,0 +1,58 @@
+section {
+  position: relative;
+  background-image: none;
+  background-repeat: repeat-x;
+  margin: 60px 0;
+
+  &.meet-the-chefs {
+    background-image: url("../../img/backgrounds/texture-rough-paint.jpg");
+  }
+
+  .absolute-overlay-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+
+  .container {
+    position: relative;
+    max-width: 1440px;
+    margin: 0 auto;
+
+    .content {
+    }
+  }
+
+  .container2 {
+    width: 100%;
+  }
+
+  .scroll-prompt {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+
+    &:after {
+      content: "";
+      position: absolute;
+      top: -40px;
+      left: -1px;
+      width: 2px;
+      height: 80px;
+      background: white;
+    }
+
+    &.scroll-prompt-top {
+      top: 0;
+      bottom: unset;
+    }
+  }
+
+  @include lg {
+    .container2 {
+      position: relative;
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+  }
+}
