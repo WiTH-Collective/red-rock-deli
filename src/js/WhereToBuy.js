@@ -18,9 +18,9 @@ const WhereToBuy = props => {
           </p>
         </div>
         <div className="stores">
-          <Store logoUrl={logo1} alt="IGA" storeURL="https://www.iga.com.au" />
-          <Store logoUrl={logo2} alt="Woolwoths" storeURL="https://www.woolworths.com.au" />
-          <Store logoUrl={logo3} alt="Coles" storeURL="https://www.coles.com.au" />
+          <Store logoUrl={logo1} alt="IGA" storeURL="/" />
+          <Store logoUrl={logo2} alt="Woolwoths" storeURL="/" />
+          <Store logoUrl={logo3} alt="Coles" storeURL="/" />
         </div>
       </div>
     </section>
@@ -30,8 +30,10 @@ const WhereToBuy = props => {
 export default WhereToBuy;
 
 const Store = props => {
+  let url = props.storeUrl;
+  if (!url) url = "/404";
   return (
-    <Link className="store" to={props.storeUrl}>
+    <Link className="store" to={url}>
       <img src={props.logoUrl} alt={props.alt} />
     </Link>
   );

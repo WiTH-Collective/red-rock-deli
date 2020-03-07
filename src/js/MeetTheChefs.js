@@ -16,13 +16,13 @@ const MeetTheChefs = () => {
 
         <div className="black-background">
           <div className="content">
-            <div class="chef-holder">
+            <div className="chef-holder">
               <Chef imageUrl={ChefImage1} chefName="Chef Name 1" key={1} />
               <Chef imageUrl={ChefImage2} chefName="Chef Name 2" key={2} />
               <Chef imageUrl={ChefImage3} chefName="Chef Name 3" key={3} />
             </div>
 
-            <div class="copy">
+            <div className="copy">
               <h2>THE SECRET SUPPERS</h2>
               <p>
                 New flavour combinations, new secret locations - find out more below and enter the ballot for your chance to
@@ -30,8 +30,8 @@ const MeetTheChefs = () => {
               </p>
             </div>
 
-            <div class="locations">
-              <div class="locations-list">
+            <div className="locations">
+              <div className="locations-list">
                 <Location
                   date={"May 21, 2020"}
                   location={"Secret Sydney Location"}
@@ -81,7 +81,7 @@ const MeetTheChefs = () => {
 const Location = props => {
   return (
     <Link className="location" to={props.eventURL}>
-      <div class="location-copy">
+      <div className="location-copy">
         <h3 className="date">{props.date}</h3>
         <p className="location-text">{props.location}</p>
         <br />
@@ -90,7 +90,7 @@ const Location = props => {
           {props.chefName}
         </h5>
       </div>
-      <div class="chevron" />
+      <div className="chevron" />
     </Link>
   );
 };

@@ -15,14 +15,14 @@ const SecretSuppers = () => {
 
           <img className="lockup" src={secretSuppersLockup} alt="Red Rock Deli, Secret Suppers" />
 
-          <div class="copy">
+          <div className="copy">
             <h2>SECRET DINING EXPERIENCES</h2>
             <p>
               A series of dining experiences hosted by some of Australia's most loved chefs with specially crafted menus
               inspired by Red Rock Deli unique flavour combinations.
             </p>
           </div>
-          <ButtonPrimary buttonText="Primary CTA Button" />
+          <ButtonPrimary buttonText="Primary CTA Button" linkTo="/" />
         </div>
       </div>
     </section>

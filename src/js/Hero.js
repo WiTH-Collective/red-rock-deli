@@ -1,4 +1,5 @@
 import React, { useRef, useState, useEffect } from "react";
+import Player from "@vimeo/player";
 import FeedYourCuriosity from "../img/lockups/feed-your-curiosity---white.png";
 
 function Hero() {
@@ -7,8 +8,15 @@ function Hero() {
   return (
     <section className="Hero">
       <div className="background-video full-width">
-        <video ref={videoRef} mute="true" autoPlay playsInline loop id="heroVideo">
-          <source src="/videos/placeholder-video.mp4" type="video/mp4" />
+        <video
+          ref={videoRef}
+          muted
+          loop
+          onCanPlay={() => {
+            videoRef.current.play();
+          }}
+        >
+          <source src="/videos/placeholder-video-sq.mp4" />
         </video>
       </div>
 
