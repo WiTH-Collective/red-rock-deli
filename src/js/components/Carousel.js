@@ -1,41 +1,26 @@
 import React, { useState, useEffect, useLayoutEffect } from "react";
+import ProductsData from "./carousel.json";
 
 const Carousel = props => {
-  //
-  // ..make this a linked JSON file
-  //
-  const products = [
-    {
-      imageUrl: "/product/Glazed-Nuts-Apple-Cinnamon-Crumble-2x.png",
-      title: "Glazed Nuts Apple Cinnamon Crumble",
-      particles: []
-    },
-    {
-      imageUrl: "/product/LimeBlackPepper.png",
-      title: "Lime & Black Pepper",
-      particles: []
-    },
-    {
-      imageUrl: "/product/Mixed-Nuts-Balsamic-Vinegar-&-Chilli_2x.png",
-      title: "Mixed Nuts Balsamic Vinegar & Chilli",
-      particles: []
-    },
-    {
-      imageUrl: "/product/Roasted-Red-Capsicum-dip_2x.png",
-      title: "Roasted Red Capsicum dip",
-      particles: []
-    },
-    {
-      imageUrl: "/product/SeaSalt_2x.png",
-      title: "Sea Salt",
-      particles: []
-    },
-    {
-      imageUrl: "/product/SweetChilliSourCream_2x.png",
-      title: "Sweet Chilli Sour Cream",
-      particles: []
+
+  // on Window Resize;
+  useEffect(() => {
+    const resize = (e) => {
+      console.log(e.target.innerWidth, e.target.innerHeight);
     }
-  ];
+    window.addEventListener('resize', resize);
+
+    return () => {
+      window.removeEventListener('resize', resize);
+    }
+  }, [])
+
+  // parse JSON
+  const products = [];
+  ProductsData.map(p => {
+    products.push(p)
+  })
+
 
   // set initila state
   let _storedCurrent = 0;
@@ -58,7 +43,10 @@ const Carousel = props => {
 
     products.map(product => {
       product.productClass = "";
+      return null;
     });
+    console.log(products);
+
 
     products[current].productClass = "isActive current";
     products[checkRange(current, -2)].productClass = "isActive far-left";
@@ -70,9 +58,11 @@ const Carousel = props => {
   useLayoutEffect(
     () => {
       console.log("CURRENT: ", current);
+      updateCarousel(0)
     },
-    [current, products]
+    []
   );
+
 
   return (
     <div className="Carousel">
