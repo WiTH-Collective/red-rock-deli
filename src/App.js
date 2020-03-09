@@ -4,11 +4,11 @@ import "./scss/App.scss";
 import Nav from "./js/Nav";
 import HomePage from "./js/HomePage";
 import PageNotFound from "./js/PageNotFound";
+import PageTransition from "./js/components/PageTransition";
 
 function App() {
   return (
     <div className="wrapper">
-      <div className="animationOverlay" />
       <BrowserRouter>
         <Nav />
         <Switch>
@@ -16,6 +16,7 @@ function App() {
           <Route path="/" component={PageNotFound} />
         </Switch>
       </BrowserRouter>
+      <PageTransition />
     </div>
   );
 }

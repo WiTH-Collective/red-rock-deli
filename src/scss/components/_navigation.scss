@@ -17,13 +17,13 @@
       img {
         width: $logoWidth * 0.6;
         transform: translateX(50%) translateY(10px);
-        transition: all .2s;
+        transition: all 0.2s;
         transition-timing-function: ease-in-out;
       }
     }
   }
 
-  .hamburger{
+  .hamburger {
     position: absolute;
     width: 40px;
     height: 40px;
@@ -31,7 +31,7 @@
     top: 10px;
 
     &::after,
-    &::before{
+    &::before {
       content: " ";
       width: 24px;
       height: 1px;
@@ -40,16 +40,16 @@
       left: 7px;
       top: 15px;
 
-      transition: transform .2s;
+      transition: transform 0.2s;
       transition-timing-function: ease-out;
       transform-origin: 50% 50%;
     }
-    &::before{
-      top: 25px
+    &::before {
+      top: 25px;
     }
   }
 
-  nav{
+  nav {
     position: absolute;
     right: 0px;
     width: 100vw;
@@ -60,7 +60,7 @@
     justify-content: center;
     overflow: hidden;
     transform: translateY(-100vh);
-    transition: transform .2s;
+    transition: transform 0.2s;
     transition-delay: 0.1s;
     transition-timing-function: ease-in-out;
 
@@ -75,16 +75,16 @@
       li {
         position: relative;
         opacity: 0;
-        transition: all .2s;
+        transition: all 0.2s;
         transition-timing-function: ease-out;
         transform: translateY(-20px);
-      
+
         &:nth-child(2),
-        &:nth-child(4){
+        &:nth-child(4) {
           transform: scaleX(0);
         }
 
-        .divider{
+        .divider {
           width: 40px;
           height: 1px;
           background: white;
@@ -95,16 +95,16 @@
           font-size: 36px;
         }
       }
-    }   
+    }
   }
 
   // Nav is avtive
-  &.isActive{
-    .hamburger{
-      &::after{
+  &.isActive {
+    .hamburger {
+      &::after {
         transform: rotate(-45deg) translateY(7px);
       }
-      &::before{
+      &::before {
         transform: rotate(45deg) translateY(-7px);
       }
     }
@@ -118,31 +118,32 @@
       }
     }
 
-    nav{
+    nav {
       transform: translateY(0);
       transition-delay: 0s;
+      transition: none;
 
-      ul{
-        li{
+      ul {
+        li {
           opacity: 1;
           transform: translateY(0px);
-          
+
           &:nth-child(2),
-          &:nth-child(4){
+          &:nth-child(4) {
             transform: scaleX(1);
           }
 
           transition-delay: 0.2s;
-          &:nth-child(2){
-            transition-delay: 0.225s;
-          }
-          &:nth-child(3){
+          &:nth-child(2) {
             transition-delay: 0.25s;
           }
-          &:nth-child(4){
-            transition-delay: 0.275s;
+          &:nth-child(3) {
+            transition-delay: 0.25s;
           }
-          &:nth-child(5){
+          &:nth-child(4) {
+            transition-delay: 0.3s;
+          }
+          &:nth-child(5) {
             transition-delay: 0.3s;
           }
         }
@@ -157,7 +158,6 @@
     height: $navHeight;
 
     .logo-container {
-
       .logo {
         position: absolute;
         img {
@@ -167,11 +167,11 @@
       }
     }
 
-    .hamburger{
+    .hamburger {
       display: none;
     }
 
-    nav{
+    nav {
       display: flex;
       position: absolute;
       right: 50px;
@@ -191,21 +191,33 @@
           opacity: 1;
           transform: translateY(0px);
 
-          .divider{
+          &:nth-child(2),
+          &:nth-child(4) {
+            transform: scaleX(1);
+          }
+
+          .divider {
             width: 2px;
             height: 12px;
-            margin: 0 15px;
-            background: white;
+            margin: 0 10px;
           }
 
           a {
             font-family: $tradeGothic;
             font-size: 16px;
+            margin: 0;
+            padding: 8px 10px;
+            background: rgba(255, 255, 255, 0);
+            border-radius: 2px;
+            transition: all 0.15s ease-out;
+
+            &:hover {
+              padding: 8px 10px;
+              background: rgba(255, 255, 255, 0.2);
+            }
           }
         }
-      }   
+      }
     }
   }
 }
-
-

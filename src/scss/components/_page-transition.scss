@@ -1,0 +1,11 @@
+canvas.page-transition{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    pointer-events: none;
+    will-change: transform;
+    z-index: 9998;
+}
