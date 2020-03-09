@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import "./scss/App.scss";
 import Nav from "./js/Nav";
@@ -7,8 +7,14 @@ import PageNotFound from "./js/PageNotFound";
 import PageTransition from "./js/components/PageTransition";
 
 function App() {
+  let wrapperClass = "wrapper";
+
+  useEffect(() => {
+    wrapperClass = "wrapper";
+  }, []);
+
   return (
-    <div className="wrapper">
+    <div className={wrapperClass}>
       <BrowserRouter>
         <Nav />
         <Switch>

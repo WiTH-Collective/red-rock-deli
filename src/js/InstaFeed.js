@@ -30,7 +30,7 @@ const InstaFeed = props => {
       </div>
 
       <div className="showMore">
-        <ButtonPrimary isBlack buttonText="Show me more" />
+        <ButtonPrimary isBlack hideChevron buttonText="Show me more" />
       </div>
     </section>
   );

@@ -7,7 +7,7 @@ function Hero() {
   const lockup = useRef(null);
 
   useEffect(() => {
-    TweenMax.from(lockup.current, 1.5, {y: "-100%", ease: SteppedEase.config(40), delay: 0.33})
+    TweenMax.from(lockup.current, 1.5, { y: "-100%", ease: SteppedEase.config(40), delay: 0.33 });
   }, []);
 
   return (

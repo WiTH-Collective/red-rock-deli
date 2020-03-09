@@ -8,7 +8,7 @@ const ButtonPrimary = props => {
     <Link to="/">
       <button className={classes}>
         {props.buttonText}
-        <span />
+        {!props.hideChevron ? <span /> : null}
       </button>
     </Link>
   );

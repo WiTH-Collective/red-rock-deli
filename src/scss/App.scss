@@ -16,13 +16,11 @@
 @import "components/navigation";
 
 @import "layout/grid";
-// @import "layout/footer";
-// @import "layout/forms";
 @import "layout/404";
 
 body {
   margin: 0;
-  background: black;
+  background: $grey;
 }
 
 body,
@@ -30,15 +28,16 @@ body,
   box-sizing: border-box;
 }
 
+.wrapper {
+  background: $black;
+  animation: fadeInPage 0.5s ease-in;
+}
 
-// .App-logo {
-//   animation: App-logo-spin infinite 20s linear;
-// }
-// @keyframes App-logo-spin {
-//   from {
-//     transform: rotate(0deg);
-//   }
-//   to {
-//     transform: rotate(360deg);
-//   }
-// }
+@keyframes fadeInPage {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
