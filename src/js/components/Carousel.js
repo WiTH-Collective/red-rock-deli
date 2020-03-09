@@ -45,7 +45,7 @@ const Carousel = props => {
       product.productClass = "";
       return null;
     });
-    console.log(products);
+    // console.log(products);
 
 
     products[current].productClass = "isActive current";
@@ -57,7 +57,7 @@ const Carousel = props => {
 
   useLayoutEffect(
     () => {
-      console.log("CURRENT: ", current);
+      // console.log("CURRENT: ", current);
       updateCarousel(0)
     },
     []
