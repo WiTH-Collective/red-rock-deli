@@ -1,0 +1,132 @@
+.Carousel {
+  position: relative;
+  width: 100%;
+  height: 60vh;
+  max-height: 620px;
+  margin-bottom: 40px;
+  overflow-x: hidden;
+  overflow-y: visible;
+
+  .items {
+    position: absolute;
+    pointer-events: none;
+    width: 90%;
+    left: 5%;
+    height: 100%;
+    margin: 0 auto;
+    @include flexCenter;
+
+    > div {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      max-width: 1440px;
+      background: rgba(255, 100, 0, 0.5);
+
+      .item {
+        display: none;
+        position: absolute;
+        width: 33%;
+        height: 100%;
+        transform: translateX(-50%);
+        opacity: 0;
+        transition: left 0.3s ease-in-out;
+
+        &.isActive {
+          display: block !important;
+          opacity: 1;
+        }
+
+        &.far-left {
+          left: -25%;
+          opacity: 0;
+        }
+
+        &.near-left {
+          left: 10%;
+        }
+
+        &.current {
+          left: 50%;
+        }
+
+        &.near-right {
+          left: 90%;
+        }
+
+        &.far-right {
+          left: 125%;
+          opacity: 0;
+        }
+
+        .product-image {
+          position: relative;
+          width: 100%;
+          height: 100%;
+          @include flexCenter;
+
+          img {
+            height: 80%;
+            margin: 0 auto;
+          }
+        }
+      }
+    }
+  }
+
+  .controls {
+    position: absolute;
+    pointer-events: none;
+    width: 100%;
+    height: 100%;
+    @include flexCenter;
+
+    div {
+      position: relative;
+      width: 80%;
+      max-width: 700px;
+    }
+
+    button {
+      width: 50px;
+      height: 50px;
+      background: $black;
+      border-radius: 50%;
+      pointer-events: all;
+      position: absolute;
+      box-shadow: 0 3px 12px rgba(0, 0, 0, 0.35);
+      transition: all 0.2s ease-out;
+
+      &:hover {
+        background: $grey;
+      }
+
+      &:active {
+        background: $lightgrey;
+      }
+
+      &.next {
+        right: 0;
+        &:hover {
+          svg {
+            animation: arrowRight 0.3s ease-in-out;
+          }
+        }
+      }
+
+      &.previous {
+        left: 0;
+        &:hover {
+          svg {
+            animation: arrowLeft 0.3s ease-in-out;
+          }
+        }
+      }
+
+      svg {
+        fill: $white;
+        object-fit: cover;
+      }
+    }
+  }
+}
