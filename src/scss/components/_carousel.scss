@@ -3,6 +3,7 @@
   width: 100%;
   height: 50vh;
   max-height: 620px;
+  min-height: 380px;
   margin-bottom: 40px;
   overflow-x: hidden;
   overflow-y: visible;
@@ -28,47 +29,42 @@
         height: 100%;
         transform: translateX(-50%);
         opacity: 0;
-        filter: drop-shadow(0px 6px 4px rgba(0,0,0,0.5));
+        filter: drop-shadow(0px 6px 4px rgba(0, 0, 0, 0.5));
         transition: all 0.3s ease-in-out;
         z-index: 10;
 
         &.isActive {
           display: block !important;
-          opacity: 1;
         }
 
         &.far-left {
           left: -50%;
-          opacity: 0;
         }
 
         &.near-left {
           left: -15%;
-          opacity: 0;
         }
 
         &.current {
+          opacity: 1;
           z-index: 15;
           left: 50%;
-          filter: drop-shadow(0px 20px 10px rgba(0,0,0,0.5));
+          filter: drop-shadow(0px 20px 10px rgba(0, 0, 0, 0.5));
 
           .product-image {
-            img{
+            img {
               height: 65%;
               transform: rotate(7deg);
             }
           }
-
         }
 
         &.near-right {
           left: 115%;
-          opacity: 0;
         }
 
         &.far-right {
           left: 150%;
-          opacity: 0;
         }
 
         .product-image {
@@ -144,7 +140,7 @@
     }
   }
 
-  @include lg{
+  @include lg {
     .items {
       > div {
         .item {
@@ -157,13 +153,14 @@
 
           &.near-left {
             left: 10%;
+            opacity: 1;
           }
 
           &.current {
             left: 50%;
 
             .product-image {
-              img{
+              img {
                 height: 60%;
               }
             }
@@ -171,6 +168,7 @@
 
           &.near-right {
             left: 90%;
+            opacity: 1;
           }
 
           &.far-right {

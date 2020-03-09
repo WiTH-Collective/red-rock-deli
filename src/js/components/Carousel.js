@@ -2,25 +2,41 @@ import React, { useState, useEffect, useLayoutEffect } from "react";
 import ProductsData from "./carousel.json";
 
 const Carousel = props => {
-
   // on Window Resize;
   useEffect(() => {
-    const resize = (e) => {
+    const resize = e => {
       console.log(e.target.innerWidth, e.target.innerHeight);
-    }
-    window.addEventListener('resize', resize);
+    };
+    window.addEventListener("resize", resize);
 
     return () => {
-      window.removeEventListener('resize', resize);
-    }
-  }, [])
+      window.removeEventListener("resize", resize);
+    };
+  }, []);
 
   // parse JSON
-  const products = [];
+  const productsList = [];
   ProductsData.map(p => {
-    products.push(p)
-  })
+    productsList.push(p);
+  });
 
+  // check value is within range of products array
+  const checkRange = (n, i) => {
+    let num = parseInt(n) + i;
+    console.log("n: ", n, i + "=", num, localStorage.getItem("current"), current);
+
+    num < 0 ? (num += productsList.length) : (num %= productsList.length);
+    return num;
+  };
+
+  const setClassNames = () => {
+    productsList[current].productClass = "isActive current";
+    productsList[checkRange(current, -2)].productClass = "isActive far-left";
+    productsList[checkRange(current, -1)].productClass = "isActive near-left";
+    productsList[checkRange(current, 1)].productClass = "isActive near-right";
+    productsList[checkRange(current, 2)].productClass = "isActive far-right";
+    console.log("yeah");
+  };
 
   // set initila state
   let _storedCurrent = 0;
@@ -28,47 +44,28 @@ const Carousel = props => {
     _storedCurrent = localStorage.getItem("current");
   }
   const [current, setCurrent] = useState(_storedCurrent);
+  setClassNames();
 
-  // check value is within range of products array
-  const checkRange = (n, i) => {
-    n = parseInt(n) + i;
-    n < 0 ? (n += products.length) : (n %= products.length);
-    return n;
-  };
-
-  // update curren tcarousel items
+  // update current carousel items
   const updateCarousel = increment => {
-    setCurrent(checkRange(current, increment));
     localStorage.setItem("current", current);
 
-    products.map(product => {
+    // clear classes from all models.
+    productsList.map(product => {
       product.productClass = "";
       return null;
     });
-    // console.log(products);
 
-
-    products[current].productClass = "isActive current";
-    products[checkRange(current, -2)].productClass = "isActive far-left";
-    products[checkRange(current, -1)].productClass = "isActive near-left";
-    products[checkRange(current, 1)].productClass = "isActive near-right";
-    products[checkRange(current, 2)].productClass = "isActive far-right";
+    setClassNames();
   };
 
-  useLayoutEffect(
-    () => {
-      // console.log("CURRENT: ", current);
-      updateCarousel(0)
-    },
-    []
-  );
-
+  // update carousel on change to "current" value;
 
   return (
     <div className="Carousel">
       <div className="items">
         <div>
-          {products.map((product, i) => {
+          {productsList.map((product, i) => {
             return <Item key={i} id={i} {...product} />;
           })}
         </div>
@@ -78,7 +75,7 @@ const Carousel = props => {
           <button
             className="previous"
             onClick={() => {
-              updateCarousel(-1);
+              setCurrent(checkRange(current, -1));
             }}
           >
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
@@ -88,7 +85,7 @@ const Carousel = props => {
           <button
             className="next"
             onClick={() => {
-              updateCarousel(1);
+              setCurrent(checkRange(current, 1));
             }}
           >
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
