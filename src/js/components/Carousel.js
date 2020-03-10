@@ -23,8 +23,6 @@ const Carousel = props => {
   // check value is within range of products array
   const checkRange = (n, i) => {
     let num = parseInt(n) + i;
-    console.log("n: ", n, i + "=", num, localStorage.getItem("current"), current);
-
     num < 0 ? (num += productsList.length) : (num %= productsList.length);
     return num;
   };
@@ -35,20 +33,15 @@ const Carousel = props => {
     productsList[checkRange(current, -1)].productClass = "isActive near-left";
     productsList[checkRange(current, 1)].productClass = "isActive near-right";
     productsList[checkRange(current, 2)].productClass = "isActive far-right";
-    console.log("yeah");
   };
 
   // set initila state
-  let _storedCurrent = 0;
-  if (localStorage.getItem("current")) {
-    _storedCurrent = localStorage.getItem("current");
-  }
-  const [current, setCurrent] = useState(_storedCurrent);
+  const [current, setCurrent] = useState(Math.round(Math.random() * productsList.length));
   setClassNames();
 
   // update current carousel items
   const updateCarousel = increment => {
-    localStorage.setItem("current", current);
+    // localStorage.setItem("current", current);
 
     // clear classes from all models.
     productsList.map(product => {
