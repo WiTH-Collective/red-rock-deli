@@ -94,9 +94,15 @@ const Carousel = props => {
 export default Carousel;
 
 const Item = props => {
+  console.log(props.particles);
+
   return (
     <div className={`item ${props.productClass}`}>
-      <div className="particles particles-background" />
+      <div className="particles particles-background">
+        {props.particles.map((particleURL, i) => {
+          return <img key={100 + i} src={particleURL} alt="particle" />;
+        })}
+      </div>
       <div className="product-image">
         <img src={props.imageUrl} alt={props.title} />
       </div>

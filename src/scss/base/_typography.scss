@@ -1,8 +1,7 @@
 @font-face {
   font-family: "Roboto";
-  src: url("../fonts/subset-RobotoCondensed-Bold.woff2") format("woff2"),
-    url("../fonts/subset-RobotoCondensed-Bold.woff") format("woff"),
-    url("../fonts/subset-RobotoCondensed-Bold.ttf") format("truetype");
+  src: url("../fonts/subset-Roboto-Bold.woff2") format("woff2"), url("../fonts/subset-Roboto-Bold.woff") format("woff"),
+    url("../fonts/subset-Roboto-Bold.ttf") format("truetype");
   font-weight: bold;
   font-style: normal;
 }
@@ -18,9 +17,8 @@
 
 @font-face {
   font-family: "Roboto";
-  src: url("../fonts/subset-RobotoCondensed-Regular.woff2") format("woff2"),
-    url("../fonts/subset-RobotoCondensed-Regular.woff") format("woff"),
-    url("../fonts/subset-RobotoCondensed-Regular.ttf") format("truetype");
+  src: url("../fonts/subset-Roboto-Regular.woff2") format("woff2"), url("../fonts/subset-Roboto-Regular.woff") format("woff"),
+    url("../fonts/subset-Roboto-Regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
