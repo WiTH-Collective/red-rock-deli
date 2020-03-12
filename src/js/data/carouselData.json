@@ -1,0 +1,73 @@
+[
+  {
+    "config": {
+      "smallSpriteCount": 100,
+      "smallSpriteSize": 100,
+      "largeSpriteCount": 10,
+      "largeSpriteSize": 200
+    },
+    "products": [
+      {
+        "imageUrl": "/product/SeaSalt_2x.png",
+        "title": "Sea Salt",
+        "particles": {
+          "particleMapIndex": 1,
+          "smallItemCount": 6,
+          "largeItemCount": 2,
+          "randomSeed": 0
+        }
+      },
+      {
+        "imageUrl": "/product/Mixed-Nuts-Balsamic-Vinegar-&-Chilli_2x.png",
+        "title": "Mixed Nuts Balsamic Vinegar & Chilli",
+        "particles": {
+          "particleMapIndex": 2,
+          "smallItemCount": 4,
+          "largeItemCount": 3,
+          "randomSeed": 0
+        }
+      },
+      {
+        "imageUrl": "/product/LimeBlackPepper.png",
+        "title": "Lime & Black Pepper",
+        "particles": {
+          "particleMapIndex": 3,
+          "smallItemCount": 6,
+          "largeItemCount": 5,
+          "randomSeed": 78
+        }
+      },
+      {
+        "imageUrl": "/product/Glazed-Nuts-Apple-Cinnamon-Crumble-2x.png",
+        "title": "Glazed Nuts Apple Cinnamon Crumble",
+        "particles": {
+          "particleMapIndex": 4,
+          "smallItemCount": 7,
+          "largeItemCount": 3,
+          "randomSeed": 0
+        }
+      },
+      {
+        "imageUrl": "/product/SweetChilliSourCream_2x.png",
+        "title": "Sweet Chilli Sour Cream",
+        "PLACEHOLDER_PARTICLES____": "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!",
+        "particles": {
+          "particleMapIndex": 3,
+          "smallItemCount": 7,
+          "largeItemCount": 6,
+          "randomSeed": 0
+        }
+      },
+      {
+        "imageUrl": "/product/Roasted-Red-Capsicum-dip_2x.png",
+        "title": "Roasted Red Capsicum dip",
+        "particles": {
+          "particleMapIndex": 0,
+          "smallItemCount": 2,
+          "largeItemCount": 4,
+          "randomSeed": 0
+        }
+      }
+    ]
+  }
+]

@@ -13,4 +13,258 @@
   h2 {
     margin-bottom: 40px;
   }
+
+
+  canvas.particle-system{
+    position: absolute;
+    pointer-events: none;
+    width: 100%;
+    height: 100%;
+    background: rgba(255,0,0,0.2);
+  }
+
+  .Carousel {
+    position: relative;
+    width: 100%;
+    height: 50vh;
+    max-height: 620px;
+    min-height: 380px;
+    margin-bottom: 40px;
+    overflow-x: hidden;
+    overflow-y: visible;
+
+    .items {
+      position: absolute;
+      pointer-events: none;
+      width: 100%;
+      height: 100%;
+      margin: 0 auto;
+      @include flexCenter;
+
+      > div {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        max-width: 1440px;
+
+        .item {
+          display: none;
+          position: absolute;
+          width: 33%;
+          height: 100%;
+          transform: translateX(-50%);
+          opacity: 0;
+          filter: drop-shadow(0px 6px 4px rgba(0, 0, 0, 0.5));
+          transition: all 0.3s ease-in-out;
+          z-index: 10;
+
+          &.isActive {
+            display: block !important;
+          }
+
+          &.far-left {
+            left: -50%;
+          }
+
+          &.near-left {
+            left: -15%;
+          }
+
+          &.current {
+            opacity: 1;
+            z-index: 15;
+            left: 50%;
+            filter: drop-shadow(0px 20px 10px rgba(0, 0, 0, 0.5));
+
+            .product-image {
+              img {
+                height: 65%;
+                transform: rotate(7deg);
+              }
+            }
+          }
+
+          &.near-right {
+            left: 115%;
+          }
+
+          &.far-right {
+            left: 150%;
+          }
+
+          .product-image {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            @include flexCenter;
+
+            img {
+              height: 40%;
+              margin: 0 auto;
+              transition: all 0.3s ease-in-out;
+            }
+          }
+        }
+      }
+    }
+
+    .controls {
+      position: absolute;
+      pointer-events: none;
+      width: 100%;
+      height: 100%;
+      z-index: 20;
+      @include flexCenter;
+
+      div {
+        position: relative;
+        width: 90%;
+        max-width: 700px;
+      }
+
+      button {
+        width: 50px;
+        height: 50px;
+        background: $black;
+        border-radius: 50%;
+        pointer-events: all;
+        position: absolute;
+        box-shadow: 0 3px 12px rgba(0, 0, 0, 0.35);
+        transition: all 0.2s ease-out;
+
+        &:hover {
+          background: $grey;
+        }
+
+        &:active {
+          background: $lightgrey;
+        }
+
+        &.next {
+          right: 0;
+          &:hover {
+            svg {
+              animation: arrowRight 0.3s ease-in-out;
+            }
+          }
+        }
+
+        &.previous {
+          left: 0;
+          &:hover {
+            svg {
+              animation: arrowLeft 0.3s ease-in-out;
+            }
+          }
+        }
+
+        svg {
+          fill: $white;
+          object-fit: cover;
+        }
+      }
+    }
+
+    @include lg {
+      .items {
+        > div {
+          .item {
+            width: 33%;
+            height: 100%;
+
+            .particles {
+              width: 100%;
+              height: 100%;
+              position: absolute;
+              left: 0;
+              top: 0;
+
+              img {
+                position: absolute;
+                left: 40%;
+                top: 40%;
+                width: 20%;
+                height: 20%;
+                object-fit: contain;
+                transform: matrix(0.5, 0, 0, 0.5, 0, 0);
+                opacity: 0;
+                transition: all 0.5s ease-out;
+              }
+            }
+
+            &.far-left {
+              left: -25%;
+            }
+            &.near-left {
+              left: 10%;
+              opacity: 1;
+            }
+            &.current {
+              left: 50%;
+
+              .product-image {
+                img {
+                  height: 60%;
+                }
+              }
+
+              .particles {
+                img {
+                  opacity: 1;
+
+                  &:nth-child(1) {
+                    transform: matrix(2, 0, 0, 2, 120, 100);
+                    transition-delay: 0s;
+                  }
+                  &:nth-child(2) {
+                    transform: matrix(1, 0, 0, 1, 170, 0);
+                    transition-delay: 0.1s;
+                  }
+                  &:nth-child(3) {
+                    transform: matrix(1, 0, 0, 1, -170, 0);
+                    transition-delay: 0.2s;
+                  }
+                  &:nth-child(4) {
+                    transform: matrix(1, 0, 0, 1, -160, -100);
+                    transition-delay: 0.1s;
+                  }
+                  &:nth-child(5) {
+                    transform: matrix(1, 0, 0, 1, 160, -100);
+                    transition-delay: 0.2s;
+                  }
+                  &:nth-child(6) {
+                    transform: matrix(1, 0, 0, 1, 200, -150);
+                    transition-delay: 0s;
+                  }
+                  &:nth-child(7) {
+                    transform: matrix(1, 0, 0, 1, -200, 150);
+                    transition-delay: 0.3s;
+                  }
+                }
+              }
+            }
+            &.near-right {
+              left: 90%;
+              opacity: 1;
+            }
+            &.far-right {
+              left: 125%;
+            }
+
+            .product-image {
+              img {
+                height: 40%;
+              }
+            }
+          }
+        }
+      }
+      .controls {
+        div {
+          width: 80%;
+        }
+      }
+    }
+  }
+
 }

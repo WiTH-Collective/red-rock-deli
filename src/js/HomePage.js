@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 import { Helmet } from "react-helmet";
 
-import Hero from "./Hero";
-import SecretSuppers from "./SecretSuppers";
-import MeetTheChefs from "./MeetTheChefs";
-import DiscoverTheRange from "./DiscoverTheRange";
-import WhereToBuy from "./WhereToBuy";
-import InstaFeed from "./InstaFeed";
+import Hero from "./components/Hero";
+import SecretSuppers from "./components/SecretSuppers";
+import MeetTheChefs from "./components/MeetTheChefs";
+import DiscoverTheRange from "./components/DiscoverTheRange";
+import WhereToBuy from "./components/WhereToBuy";
+import InstaFeed from "./components/InstaFeed";
 
 class HomePage extends Component {
   state = {
