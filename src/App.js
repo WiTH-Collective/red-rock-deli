@@ -25,24 +25,12 @@ function App() {
         <Nav />
         <ScrollToTop>
           <Switch>
-
             <Route path="/" exact component={HomePage} />
             <Route path="/faq" exact component={FAQs} />
             <Route path="/privacy-policy" exact component={PrivacyPolicy} />
             <Route path="/terms-of-use" exact component={TermsOfUse} />
             <Route path="/particles" exact component={ParticlePlayground} />
-
-            <Route path='/facebook' component={() => {
-              window.location.href = 'https://www.facebook.com/RedRockDeli/';
-              return null;
-            }} />
-
-            <Route path='/instagram' component={() => {
-              window.location.href = 'https://www.instagram.com/red_rock_deli/';
-              return null;
-            }} />
             <Route path="/" component={PageNotFound} />
-
           </Switch>
         </ScrollToTop>
         <Footer />
