@@ -1,5 +1,5 @@
 import React from "react";
-import secretSuppersBackground from "../../img/backgorund-secret-suppers.jpg";
+import secretSuppersBackground from "../../img/backgrounds/backgorund-secret-suppers.jpg";
 import secretSuppersLockup from "../../img/lockups/secret-suppers-lockup--white.png";
 import ButtonPrimary from "./ButtonPrimary";
 

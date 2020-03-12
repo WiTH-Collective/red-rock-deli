@@ -1,0 +1,55 @@
+.legal {
+
+    h1{
+        color: $black;
+        margin-bottom: 40px;
+        padding-bottom: 10px;
+        border-bottom: 2px solid $black;
+    }
+    section{
+        margin: 0;
+        padding: 80px 60px;
+
+        background-color: #c7ccd0;
+        background-image: url("../../img/backgrounds/instafeed-background.jpg");
+        background-size: 100%;
+        background-position: top;
+
+        .container2{
+            padding: 0 80px;
+
+            ol, ul{
+                list-style: decimal; 
+                margin-left: 10px;
+                font-weight: bold;
+
+                li{
+                    padding-left: 10px;
+                    margin-bottom: 10px;
+                    font-weight: normal;
+                }
+            }
+        }
+    }
+
+    &.faqs{
+        section{
+            .container2{
+                .item{
+                    padding: 20px 100px 20px 0px;
+                    border-bottom: 1px solid $black;
+
+                    h3{
+                        text-transform: none;
+                        margin: 5px 0;
+                        font-size: 30px;
+                    }
+
+                    p{
+
+                    }
+                }
+            }
+        }
+    }
+}

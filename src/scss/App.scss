@@ -14,6 +14,9 @@
 @import "components/insta-feed";
 @import "components/page-transition";
 @import "components/navigation";
+@import "components/footer";
+
+@import "pages/legal_pages";
 
 @import "layout/grid";
 @import "layout/404";
@@ -21,6 +24,7 @@
 body {
   margin: 0;
   background: $grey;
+  scroll-behavior: smooth;
 }
 
 body,
@@ -29,8 +33,13 @@ body,
 }
 
 .wrapper {
+  margin-top: 60px;
   background: $black;
   animation: fadeInPage 0.5s ease-in;
+
+  @include lg{
+    margin-top: 90px;
+  }
 }
 
 @keyframes fadeInPage {

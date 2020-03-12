@@ -1,9 +1,8 @@
 import React from "react";
-// import secretSuppersBackground from "../img/backgorund-secret-suppers.jpg";
-import ChefImage1 from "../../img/meet-the-chefs-placeholder-1.jpg";
-import ChefImage2 from "../../img/meet-the-chefs-placeholder-2.jpg";
-import ChefImage3 from "../../img/meet-the-chefs-placeholder-3.jpg";
-import locationImage from "../../img/secret-locations.jpg";
+import ChefImage1 from "../../img/meet-the-chefs/meet-the-chefs-placeholder-1.jpg";
+import ChefImage2 from "../../img/meet-the-chefs/meet-the-chefs-placeholder-2.jpg";
+import ChefImage3 from "../../img/meet-the-chefs/meet-the-chefs-placeholder-3.jpg";
+import locationImage from "../../img/meet-the-chefs/secret-locations.jpg";
 import ButtonPrimary from "./ButtonPrimary";
 import Chef from "./chef";
 import { Link } from "react-router-dom";

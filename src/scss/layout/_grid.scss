@@ -24,6 +24,7 @@ section {
   }
 
   .container2 {
+    position: relative;
     width: 100%;
   }
 
@@ -50,7 +51,7 @@ section {
 
   @include lg {
     .container2 {
-      position: relative;
+      
       max-width: 1280px;
       margin: 0 auto;
     }

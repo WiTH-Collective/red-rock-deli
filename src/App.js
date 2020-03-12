@@ -6,6 +6,11 @@ import HomePage from "./js/HomePage";
 import PageNotFound from "./js/PageNotFound";
 import PageTransition from "./js/components/PageTransition";
 import ParticlePlayground from "./js/ParticlePlayground";
+import Footer from "./js/components/Footer";
+import FAQs from "./js/FAQs";
+import TermsOfUse from "./js/TermsOfUse";
+import PrivacyPolicy from "./js/PrivacyPolicy";
+import ScrollToTop from "./js/components/ScrollToTop";
 
 function App() {
   let wrapperClass = "wrapper";
@@ -18,11 +23,29 @@ function App() {
     <div className={wrapperClass}>
       <BrowserRouter>
         <Nav />
-        <Switch>
-          <Route path="/" exact component={HomePage} />
-          <Route path="/particles" exact component={ParticlePlayground} />
-          <Route path="/" component={PageNotFound} />
-        </Switch>
+        <ScrollToTop>
+          <Switch>
+
+            <Route path="/" exact component={HomePage} />
+            <Route path="/faq" exact component={FAQs} />
+            <Route path="/privacy-policy" exact component={PrivacyPolicy} />
+            <Route path="/terms-of-use" exact component={TermsOfUse} />
+            <Route path="/particles" exact component={ParticlePlayground} />
+
+            <Route path='/facebook' component={() => {
+              window.location.href = 'https://www.facebook.com/RedRockDeli/';
+              return null;
+            }} />
+
+            <Route path='/instagram' component={() => {
+              window.location.href = 'https://www.instagram.com/red_rock_deli/';
+              return null;
+            }} />
+            <Route path="/" component={PageNotFound} />
+
+          </Switch>
+        </ScrollToTop>
+        <Footer />
       </BrowserRouter>
       <PageTransition />
     </div>
