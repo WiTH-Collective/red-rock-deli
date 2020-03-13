@@ -6,7 +6,7 @@ import DiscoverTheRange from "./components/DiscoverTheRange";
 const ParticlePlayground = () => {
   return (
     <div className="page-wrapper home-page">
-      <DiscoverTheRange />
+      <DiscoverTheRange showCanvas={true} />
 
       <Helmet>
         <title>{"Red Rock Deli® : PARTICLE TEST"}</title>

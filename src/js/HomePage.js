@@ -14,7 +14,7 @@ const HomePage = () => {
       <Hero />
       <SecretSuppers />
       <MeetTheChefs />
-      <DiscoverTheRange />
+      <DiscoverTheRange showCanvas={false} />
       <WhereToBuy />
       <InstaFeed />
 

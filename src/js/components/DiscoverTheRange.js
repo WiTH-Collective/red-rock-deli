@@ -4,7 +4,6 @@ import ButtonPrimary from "./ButtonPrimary";
 import Particles from "./Particles";
 
 const DiscoverTheRange = props => {
-
   // parse JSON
   // console.log("productsList", ProductsData[0]);
 
@@ -13,7 +12,6 @@ const DiscoverTheRange = props => {
   });
 
   // console.log("productsList", productsList);
-
 
   // check value is within range of products array
   const checkRange = (n, i) => {
@@ -36,7 +34,7 @@ const DiscoverTheRange = props => {
 
   return (
     <section className="DiscoverTheRange">
-      {/* <Particles current={current} data={ProductsData[0]} /> */}
+      {props.showCanvas ? <Particles current={current} data={ProductsData[0]} /> : null}
       <div className="scroll-prompt scroll-prompt-top" />
       <h2>Discover The Range</h2>
 
@@ -81,8 +79,6 @@ const DiscoverTheRange = props => {
 };
 
 export default DiscoverTheRange;
-
-
 
 const Item = props => {
   return (
