@@ -32,6 +32,13 @@ const DiscoverTheRange = props => {
   const [current, setCurrent] = useState(2);
   setClassNames();
 
+  // check CANVAS is supported
+  const canUseCanvas = window.HTMLCanvasElement;
+  let hideDomImages;
+  canUseCanvas && props.showCanvas ? (hideDomImages = "hide-dom-images") : (hideDomImages = "");
+
+  console.log("RENDERING DiscoverTheRange");
+
   return (
     <section className="DiscoverTheRange">
       {props.showCanvas ? <Particles current={current} data={ProductsData[0]} /> : null}
@@ -42,7 +49,7 @@ const DiscoverTheRange = props => {
         <div className="items">
           <div>
             {productsList.map((product, i) => {
-              return <Item key={i} id={i} {...product} />;
+              return <Item hideDomImages={hideDomImages} key={i} id={i} {...product} />;
             })}
           </div>
         </div>
@@ -82,7 +89,7 @@ export default DiscoverTheRange;
 
 const Item = props => {
   return (
-    <div className={`item ${props.productClass}`}>
+    <div className={`item ${props.productClass} ${props.hideDomImages}`}>
       <div className="product-image">
         <img src={props.imageUrl} alt={props.title} />
       </div>

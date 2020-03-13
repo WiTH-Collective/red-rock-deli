@@ -68,6 +68,10 @@
 
           &.isActive {
             display: block !important;
+
+            &.hide-dom-images {
+              display: none !important;
+            }
           }
 
           &.far-left {

@@ -1,15 +1,20 @@
 [
   {
     "config": {
-      "smallSpriteCount": 100,
+      "smallSpriteCount": 70,
       "smallSpriteSize": 100,
-      "largeSpriteCount": 10,
-      "largeSpriteSize": 200
+      "largeSpriteCount": 6,
+      "largeSpriteSize": 200,
+      "productSize": 400
     },
     "products": [
       {
         "imageUrl": "/product/SeaSalt_2x.png",
         "title": "Sea Salt",
+        "product": {
+          "x": 1,
+          "y": 0
+        },
         "particles": {
           "particleMapIndex": 1,
           "smallItemCount": 6,
@@ -20,6 +25,10 @@
       {
         "imageUrl": "/product/Mixed-Nuts-Balsamic-Vinegar-&-Chilli_2x.png",
         "title": "Mixed Nuts Balsamic Vinegar & Chilli",
+        "product": {
+          "x": 1,
+          "y": 1
+        },
         "particles": {
           "particleMapIndex": 2,
           "smallItemCount": 4,
@@ -30,6 +39,10 @@
       {
         "imageUrl": "/product/LimeBlackPepper.png",
         "title": "Lime & Black Pepper",
+        "product": {
+          "x": 0,
+          "y": 2
+        },
         "particles": {
           "particleMapIndex": 3,
           "smallItemCount": 6,
@@ -40,6 +53,10 @@
       {
         "imageUrl": "/product/Glazed-Nuts-Apple-Cinnamon-Crumble-2x.png",
         "title": "Glazed Nuts Apple Cinnamon Crumble",
+        "product": {
+          "x": 1,
+          "y": 2
+        },
         "particles": {
           "particleMapIndex": 4,
           "smallItemCount": 7,
@@ -50,6 +67,10 @@
       {
         "imageUrl": "/product/SweetChilliSourCream_2x.png",
         "title": "Sweet Chilli Sour Cream",
+        "product": {
+          "x": 0,
+          "y": 0
+        },
         "PLACEHOLDER_PARTICLES____": "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!",
         "particles": {
           "particleMapIndex": 3,
@@ -61,6 +82,10 @@
       {
         "imageUrl": "/product/Roasted-Red-Capsicum-dip_2x.png",
         "title": "Roasted Red Capsicum dip",
+        "product": {
+          "x": 0,
+          "y": 1
+        },
         "particles": {
           "particleMapIndex": 0,
           "smallItemCount": 2,
