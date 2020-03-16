@@ -5,7 +5,7 @@ const TermsOfUse = () => {
   return (
     <div className="page-wrappers legal">
       <section>
-        <div className="container2">
+        <div className="container">
           <div className="content">
             <h1>Terms of Use</h1>
             <ol className="items">

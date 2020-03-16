@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import "./scss/App.scss";
 import Nav from "./js/components/Nav";
@@ -11,12 +11,20 @@ import FAQs from "./js/FAQs";
 import TermsOfUse from "./js/TermsOfUse";
 import PrivacyPolicy from "./js/PrivacyPolicy";
 import ScrollToTop from "./js/components/ScrollToTop";
+import Logo from "./js/components/Logo";
 
 function App() {
-  let wrapperClass = "wrapper";
+  const [wrapperClass, setWrapperClass] = useState("wrapper");
 
   useEffect(() => {
-    wrapperClass = "wrapper";
+    console.log("Mounting App");
+    setWrapperClass("wrapper appHasLoaded");
+    const loader = document.querySelector(".loader-logo");
+    loader.classList.add("page-has-loaded");
+
+    return () => {
+      console.log("Unmounting App");
+    };
   }, []);
 
   return (

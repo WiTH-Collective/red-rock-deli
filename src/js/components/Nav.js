@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import Logo from "../../img/logos/rrd-logo-01.svg";
+import Logo from "./Logo";
 
 
 function Nav() {
@@ -41,11 +41,7 @@ function Nav() {
 
         <div className="hamburger" onClick={toggleTrueFalse}></div>
 
-        <div className="logo-container">
-          <Link className="logo" to="/">
-            <img src={Logo} alt="Red Rock Deli" />
-          </Link>
-        </div>
+        <Logo />
       </div>
     </div>
   );

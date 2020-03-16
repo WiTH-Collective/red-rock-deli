@@ -1,6 +1,6 @@
 .WhereToBuy {
   margin: 0;
-  padding: 80px 60px;
+  padding: 40px 0;
 
   background-color: $lightgrey;
   background-size: cover;
@@ -42,6 +42,8 @@
   }
 
   @include lg {
+    padding: 80px 60px;
+
     .stores {
       justify-content: center;
       max-width: 700px;

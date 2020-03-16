@@ -5,6 +5,10 @@
   padding: 60px 0;
   margin: 0;
 
+  .container {
+    padding: 0;
+  }
+
   .button-primary {
     position: absolute;
     bottom: 0;
@@ -19,7 +23,6 @@
 
   .copy {
     width: 100%;
-    padding: 30px;
     max-width: 720px;
     margin: 0 auto;
     text-align: center;
@@ -29,19 +32,16 @@
   // ---------------
   .black-background {
     background: black;
-    padding: 0 40px;
-    margin-top: 150px;
-    margin-bottom: 150px;
+    padding: 0 20px;
+    margin: 80px 0;
 
     .content {
       position: relative;
-      padding-top: 250px;
-      padding-bottom: 500px;
 
       .chef-holder {
         width: 100%;
-        top: -80px;
-        position: absolute;
+        top: -40px;
+        position: relative;
         display: flex;
         flex-flow: column;
       }
@@ -49,17 +49,12 @@
       .locations {
         background: $grey;
         display: flex;
-        flex-flow: row;
-        height: 540px;
-        position: absolute;
-        bottom: -80px;
-
-        .locations-list,
-        .locations-image {
-          width: 50%;
-        }
+        flex-flow: column;
+        position: relative;
+        bottom: -40px;
 
         .locations-image {
+          height: 50vw;
           object-fit: cover;
         }
 
@@ -68,7 +63,7 @@
           display: flex;
           flex-flow: column;
           justify-content: center;
-          padding: 0 50px;
+          padding: 40px 20px;
 
           .location {
             position: relative;
@@ -95,34 +90,36 @@
               margin-bottom: 10px;
             }
 
-            h5 {
-            }
+            .chevron-holder {
+              @include flexCenter;
 
-            .chevron {
-              width: 50px;
-              height: 50px;
-              background: url("../../img/ui/chevron-black-circle.svg") no-repeat;
-              background-size: contain;
+              .chevron {
+                margin-left: 20px;
+              }
             }
+          }
+        }
+
+        @include md {
+          flex-flow: row;
+
+          .locations-list,
+          .locations-image {
+            width: 50%;
+          }
+
+          .locations-image {
+            max-height: 400px;
           }
         }
       }
     }
   }
-  @include lg {
-    padding: 120px 60px;
-    // margin: 0 60px;
 
+  @include sm {
     .black-background {
-      background: black;
-      padding: 0 80px;
-      margin-top: 150px;
-      margin-bottom: 150px;
-
       .content {
         position: relative;
-        padding-top: 250px;
-        padding-bottom: 500px;
 
         .chef-holder {
           flex-flow: row;
@@ -131,13 +128,59 @@
       }
     }
   }
+
+  @include md {
+    .copy {
+      padding: 30px 0;
+    }
+  }
+
+  @include lg {
+    padding: 120px 60px;
+
+    .black-background {
+      background: black;
+      padding: 0 80px;
+    }
+
+    .black-background {
+      background: black;
+      padding: 0 40px;
+      margin: 160px 0;
+
+      .content {
+        .chef-holder {
+          top: -80px;
+        }
+
+        .locations {
+          bottom: -80px;
+
+          .locations-list,
+          .locations-image {
+            width: 50%;
+          }
+
+          .locations-list {
+            position: relative;
+            display: flex;
+            flex-flow: column;
+            justify-content: center;
+            padding: 20px;
+          }
+        }
+      }
+    }
+  }
+
   // looking for a ticket
   .looking-for-a-ticket {
-    margin: 0 auto;
-    width: 100%;
+    margin: 0 20px;
+    // width: 100%;
     max-width: 1120px;
     height: 320px;
-    background: url("../../img/backgrounds/2019-06-20-Concrete-Playground-Red-Rock-Duncan-Kitti-Gould-3.jpg") no-repeat;
+    background: url("../../img/backgrounds/2019-06-20-Concrete-Playground-Red-Rock-Duncan-Kitti-Gould-3.jpg")
+      no-repeat;
     background-size: cover;
     background-position: center center;
     display: flex;
@@ -145,13 +188,38 @@
     align-items: center;
 
     & > div {
-      display: inline-block;
       background: rgba(0, 0, 0, 0.9);
-      padding: 33px 60px;
+      margin-top: 7%;
+      padding: 30px;
+      width: 65%;
+      max-width: 420px;
       position: relative;
+
+      .icon-ticket {
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        top: -20px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: url("../../img/icons/ticket.svg");
+      }
+    }
+
+    @include md {
+      & > div {
+        padding: 40px 50px;
+
+        .icon-ticket {
+          width: 50px;
+          height: 50px;
+          top: -25px;
+        }
+      }
     }
 
     @include lg {
+      margin: 0 40px;
       h2 {
         font-size: 30px;
       }
@@ -164,44 +232,44 @@
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
-  min-height: 240px;
+  margin-bottom: 20px;
+  min-height: 280px;
+  height: 60vw;
+  max-height: 480px;
   display: flex;
   align-items: flex-end;
 
+  &:last-child {
+    margin-bottom: 0;
+  }
+
   .chefName {
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0) 100%);
+    background: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.9) 0%,
+      rgba(0, 0, 0, 0) 100%
+    );
     padding: 60px 20px 40px;
     width: 100%;
 
-    h3 {
-      padding-left: 40px;
-      font-size: 18px;
+    display: flex;
+    // display: flex;
+    // justify-content: center;
+    align-items: center;
+
+    .chevron {
+      margin-right: 10px;
+      padding: 0;
     }
-    span {
-      position: absolute;
-      left: 0;
-      top: -7px;
-      width: 30px;
-      height: 30px;
-      background: url("../../img/ui/chevron-black-circle.svg") no-repeat;
-      background-size: contain;
+
+    h3 {
+      font-size: 18px;
     }
   }
 
-  @include lg {
-    width: 32%;
-    min-height: 300px;
-
-    .chefName {
-      h3 {
-        padding-left: 60px;
-
-        span {
-          top: -15px;
-          width: 50px;
-          height: 50px;
-        }
-      }
-    }
+  @include sm {
+    width: calc(50% - 10px);
+    height: 33vw;
+    margin-bottom: 0px;
   }
 }

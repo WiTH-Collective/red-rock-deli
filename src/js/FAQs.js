@@ -6,7 +6,7 @@ const FAQs = () => {
   return (
     <div className="page-wrappers legal faqs">
       <section>
-        <div className="container2">
+        <div className="container">
           <h1>Frequently Asked Questions</h1>
           <div className="items">
             <FrequentlyAskedQuestion

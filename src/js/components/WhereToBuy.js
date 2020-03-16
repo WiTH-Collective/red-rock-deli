@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 const WhereToBuy = props => {
   return (
     <section className="WhereToBuy">
-      <div className="container2">
+      <div className="container">
         <div className="content">
           <h2>Available To Buy</h2>
           <p>

@@ -16,16 +16,18 @@ section {
 
   .container {
     position: relative;
-    max-width: 1440px;
-    margin: 0 auto;
+    width: 100%;
 
-    .content {
-    }
+    padding: 20px;
   }
 
-  .container2 {
-    position: relative;
-    width: 100%;
+  @include lg {
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+
+      padding: 80px;
+    }
   }
 
   .scroll-prompt {
@@ -46,14 +48,6 @@ section {
     &.scroll-prompt-top {
       top: 0;
       bottom: unset;
-    }
-  }
-
-  @include lg {
-    .container2 {
-      
-      max-width: 1280px;
-      margin: 0 auto;
     }
   }
 }

@@ -6,7 +6,7 @@ import Logo from "../../img/logos/rrd-logo-01.svg";
 function Footer() {
   return (
     <section className="Footer">
-      <div className="container2">
+      <div className="container">
         <div className="top">
           <div className="left">
             <img className="logo" src={Logo} alt="Red Rock Deli™" />

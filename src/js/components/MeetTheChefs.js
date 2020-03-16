@@ -10,7 +10,7 @@ import { Link } from "react-router-dom";
 const MeetTheChefs = () => {
   return (
     <section className="MeetTheChefs">
-      <div className="container2">
+      <div className="container">
         <h2>MEET THE CHEFS</h2>
 
         <div className="black-background">
@@ -18,14 +18,14 @@ const MeetTheChefs = () => {
             <div className="chef-holder">
               <Chef imageUrl={ChefImage1} chefName="Chef Name 1" key={1} />
               <Chef imageUrl={ChefImage2} chefName="Chef Name 2" key={2} />
-              <Chef imageUrl={ChefImage3} chefName="Chef Name 3" key={3} />
             </div>
 
             <div className="copy">
               <h2>SECRET SUPPERS</h2>
               <p>
-                New flavour combinations, new secret locations - find out more below and enter the ballot for your chance to
-                secure your tickets.
+                New flavour combinations, new secret locations - find out more
+                below and enter the ballot for your chance to secure your
+                tickets.
               </p>
             </div>
 
@@ -42,18 +42,6 @@ const MeetTheChefs = () => {
                   location={"Secret Melbourne Location"}
                   chefName={"Chef Name 2"}
                   eventURL="events/e2"
-                />
-                <Location
-                  date={"Sept 16, 2020"}
-                  location={"Secret Sydney Location"}
-                  chefName={"Chef Name 3"}
-                  eventURL="events/e3"
-                />
-                <Location
-                  date={"Sept 18, 2020"}
-                  location={"Secret Melbourne Location"}
-                  chefName={"Chef Name 4"}
-                  eventURL="events/e4"
                 />
               </div>
               <img
@@ -89,7 +77,9 @@ const Location = props => {
           {props.chefName}
         </h5>
       </div>
-      <div className="chevron" />
+      <div className="chevron-holder">
+        <div className="chevron" />
+      </div>
     </Link>
   );
 };

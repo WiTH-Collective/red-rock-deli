@@ -5,7 +5,7 @@ const PrivacyPolicy = () => {
   return (
     <div className="page-wrappers legal">
       <section>
-        <div className="container2">
+        <div className="container">
           <div className="content">
             <h1>Privacy Policy</h1>
             <ol className="items">

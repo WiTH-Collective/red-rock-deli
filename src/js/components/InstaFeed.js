@@ -6,7 +6,7 @@ import ButtonPrimary from "./ButtonPrimary";
 const InstaFeed = props => {
   return (
     <section className="InstaFeed">
-      <div className="container2">
+      <div className="container">
         <div className="content">
           <h2>@RED_ROCK_DELI</h2>
         </div>
