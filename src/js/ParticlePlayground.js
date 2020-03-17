@@ -4,7 +4,7 @@ import { Helmet } from "react-helmet";
 import DiscoverTheRange from "./components/DiscoverTheRange";
 
 const ParticlePlayground = () => {
-  console.log("rendering Particle Playground");
+  
 
   return (
     <div className="page-wrapper home-page">

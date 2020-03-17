@@ -21,6 +21,8 @@ function App() {
     setWrapperClass("wrapper appHasLoaded");
     const loader = document.querySelector(".loader-logo");
     loader.classList.add("page-has-loaded");
+    const root = document.querySelector("#root");
+    root.classList.remove("isLoading");
 
     return () => {
       console.log("Unmounting App");
