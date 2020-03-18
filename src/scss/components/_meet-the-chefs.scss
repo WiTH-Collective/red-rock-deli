@@ -130,6 +130,10 @@
   }
 
   @include md {
+    .black-background {
+      padding: 0 40px;
+    }
+
     .copy {
       padding: 30px 0;
     }
@@ -144,8 +148,7 @@
     }
 
     .black-background {
-      background: black;
-      padding: 0 40px;
+      padding: 0 80px;
       margin: 160px 0;
 
       .content {
@@ -177,7 +180,6 @@
   .looking-for-a-ticket {
     margin: 0 20px;
     // width: 100%;
-    max-width: 1120px;
     height: 320px;
     background: url("../../img/backgrounds/2019-06-20-Concrete-Playground-Red-Rock-Duncan-Kitti-Gould-3.jpg")
       no-repeat;
@@ -207,6 +209,8 @@
     }
 
     @include md {
+      margin: 0 40px;
+
       & > div {
         padding: 40px 50px;
 
@@ -219,7 +223,7 @@
     }
 
     @include lg {
-      margin: 0 40px;
+      margin: 0 80px;
       h2 {
         font-size: 30px;
       }

@@ -11,43 +11,76 @@ import FAQs from "./js/FAQs";
 import TermsOfUse from "./js/TermsOfUse";
 import PrivacyPolicy from "./js/PrivacyPolicy";
 import ScrollToTop from "./js/components/ScrollToTop";
-import Logo from "./js/components/Logo";
+import ChefPage01 from "./js/ChefPage01";
+import EventPageSydney from "./js/EventPage";
 
 function App() {
-  const [wrapperClass, setWrapperClass] = useState("wrapper");
+    const [wrapperClass, setWrapperClass] = useState("wrapper");
+    const [hasLoaded, setHasLoaded] = useState(false);
 
-  useEffect(() => {
-    console.log("Mounting App");
-    setWrapperClass("wrapper appHasLoaded");
-    const loader = document.querySelector(".loader-logo");
-    loader.classList.add("page-has-loaded");
-    const root = document.querySelector("#root");
-    root.classList.remove("isLoading");
+    useEffect(() => {
+        console.log("Mounting App");
 
-    return () => {
-      console.log("Unmounting App");
-    };
-  }, []);
+        setWrapperClass("wrapper appHasLoaded");
 
-  return (
-    <div className={wrapperClass}>
-      <BrowserRouter>
-        <Nav />
-        <ScrollToTop>
-          <Switch>
-            <Route path="/" exact component={HomePage} />
-            <Route path="/faq" exact component={FAQs} />
-            <Route path="/privacy-policy" exact component={PrivacyPolicy} />
-            <Route path="/terms-of-use" exact component={TermsOfUse} />
-            <Route path="/particles" exact component={ParticlePlayground} />
-            <Route path="/" component={PageNotFound} />
-          </Switch>
-        </ScrollToTop>
-        <Footer />
-      </BrowserRouter>
-      <PageTransition />
-    </div>
-  );
+        if (!hasLoaded) setHasLoaded(true);
+
+        const loader = document.querySelector(".loader-logo");
+        loader.classList.add("page-has-loaded");
+        const root = document.querySelector("#root");
+        root.classList.remove("isLoading");
+
+        return () => {
+            console.log("Unmounting App");
+        };
+    }, []);
+
+    return (
+        <div className={wrapperClass}>
+            {hasLoaded ? (
+                <BrowserRouter>
+                    <Nav />
+                    <ScrollToTop>
+                        <Switch>
+                            <Route path="/" exact component={HomePage} />
+                            <Route path="/faq" exact component={FAQs} />
+                            <Route path="/chef1" exact component={ChefPage01} />
+                            <Route path="/chef2" exact component={ChefPage01} />
+                            <Route
+                                path="/events/sydney"
+                                exact
+                                component={EventPageSydney}
+                            />
+                            <Route
+                                path="/events/melbourne"
+                                exact
+                                component={EventPageSydney}
+                            />
+
+                            <Route
+                                path="/privacy-policy"
+                                exact
+                                component={PrivacyPolicy}
+                            />
+                            <Route
+                                path="/terms-of-use"
+                                exact
+                                component={TermsOfUse}
+                            />
+                            <Route
+                                path="/particles"
+                                exact
+                                component={ParticlePlayground}
+                            />
+                            <Route path="/" component={PageNotFound} />
+                        </Switch>
+                    </ScrollToTop>
+                    <Footer />
+                </BrowserRouter>
+            ) : null}
+            <PageTransition />
+        </div>
+    );
 }
 
 export default App;

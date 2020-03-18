@@ -19,34 +19,68 @@
 @import "pages/legal_pages";
 
 @import "layout/grid";
+@import "layout/forms";
 @import "layout/404";
 
 body {
-  margin: 0;
-  background: $grey;
-  scroll-behavior: smooth;
+    margin: 0;
+    background: $grey;
+    scroll-behavior: smooth;
 }
 
 body,
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 .wrapper {
-  margin-top: 60px;
-  background: $black;
-  animation: fadeInPage 0.5s ease-in;
+    margin-top: 60px;
+    background: $black;
+    animation: fadeInPage 0.5s ease-in;
 
-  @include lg{
-    margin-top: 90px;
-  }
+    @include lg {
+        margin-top: 90px;
+    }
+
+    .stone-wall-bakground {
+        margin: 0;
+        background: url("../img/backgrounds/texture-light-grey-conctere-wall.jpg")
+            repeat top center;
+        background-size: 500px 500px;
+    }
+}
+
+.black-block {
+    padding: 20px 0;
+    width: 100%;
+    background: $black;
+    position: relative;
+    color: white;
+    text-align: center;
+
+    h3 {
+        font-size: 24px;
+        line-height: 1.1;
+    }
+
+    .scroll-prompt {
+        &:after {
+            background: $black;
+        }
+    }
+
+    @include lg {
+        h3 {
+            font-size: 30px;
+        }
+    }
 }
 
 @keyframes fadeInPage {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }

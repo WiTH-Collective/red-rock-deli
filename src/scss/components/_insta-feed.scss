@@ -1,6 +1,6 @@
 .InstaFeed {
   margin: 0;
-  padding: 80px 60px;
+  padding: 80px 0;
 
   background-color: #c7ccd0;
   background-image: url("../../img/backgrounds/instafeed-background.jpg");
@@ -20,32 +20,43 @@
     }
   }
 
-  .feed {
-    padding: 0 40px;
-    margin-bottom: 40px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: stretch;
-    width: 1120px;
-    overflow-x: unset;
+  .container {
+    padding: 0;
+  }
 
-    a.item {
-      width: 31.25%;
+  .feed-holder {
+    position: relative;
+    overflow-x: scroll;
+    width: 100%;
 
-      background-color: white;
-      box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.2);
-      margin: 30px 15px;
+    .feed {
+      margin-bottom: 40px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: stretch;
+      max-width: 1120px;
+      width: 300%;
+      padding: 0 20px;
+      overflow-x: unset;
 
-      img {
-        width: 100%;
-      }
+      a.item {
+        width: calc(33.33% - 80px / 3);
 
-      div {
-        padding: 15px;
-        color: black;
-        a {
-          color: $blue;
+        background-color: white;
+        box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.2);
+        margin: 30px 0;
+
+        img {
+          width: 100%;
+        }
+
+        div {
+          padding: 15px;
+          color: black;
+          a {
+            color: $blue;
+          }
         }
       }
     }

@@ -1,53 +1,61 @@
 section {
-  position: relative;
-  background-image: none;
-  background-repeat: repeat-x;
-  margin: 60px 0;
-
-  &.meet-the-chefs {
-    background-image: url("../../img/backgrounds/texture-rough-paint.jpg");
-  }
-
-  .absolute-overlay-container {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-  }
-
-  .container {
     position: relative;
-    width: 100%;
+    background-image: none;
+    background-repeat: repeat-x;
+    margin: 60px 0;
 
-    padding: 20px;
-  }
-
-  @include lg {
-    .container {
-      max-width: 1280px;
-      margin: 0 auto;
-
-      padding: 80px;
+    &.meet-the-chefs {
+        background-image: url("../../img/backgrounds/texture-rough-paint.jpg");
     }
-  }
 
-  .scroll-prompt {
+    .absolute-overlay-container {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+    }
+
+    .container {
+        position: relative;
+        width: 100%;
+
+        padding: 20px;
+    }
+
+    @include lg {
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+
+            padding: 80px;
+        }
+    }
+}
+
+.scroll-prompt {
     position: absolute;
     bottom: 0;
     left: 50%;
 
     &:after {
-      content: "";
-      position: absolute;
-      top: -40px;
-      left: -1px;
-      width: 2px;
-      height: 80px;
-      background: white;
+        content: "";
+        position: absolute;
+        top: -40px;
+        left: -1px;
+        width: 2px;
+        height: 80px;
+        background: $white;
     }
 
     &.scroll-prompt-top {
-      top: 0;
-      bottom: unset;
+        top: 0;
+        bottom: unset;
     }
-  }
+
+    &.scroll-prompt-black {
+        &::after {
+            height: 80px;
+            top: 0;
+            background: rgba(0, 0, 0, 0.5);
+        }
+    }
 }
