@@ -7,32 +7,35 @@ import MeetTheChefs from "./components/MeetTheChefs";
 import DiscoverTheRange from "./components/DiscoverTheRange";
 import WhereToBuy from "./components/WhereToBuy";
 import InstaFeed from "./components/InstaFeed";
+import ScrollReveal from "./components/ScrollReveal";
 
 const HomePage = () => {
     return (
-        <div className="page-wrapper home-page">
-            <Hero />
+        <ScrollReveal>
+            <div className="page-wrapper home-page">
+                <Hero />
 
-            <SecretSuppers />
-            <MeetTheChefs />
-            <DiscoverTheRange showCanvas={false} />
-            <WhereToBuy />
-            <InstaFeed />
+                <SecretSuppers />
+                <MeetTheChefs />
+                <DiscoverTheRange showCanvas={false} />
+                <WhereToBuy />
+                <InstaFeed />
 
-            <Helmet>
-                <title>{"Red Rock Deli®"}</title>
-                <meta
-                    name="description"
-                    content={"Red Rock Deli® - Feed Your Curiosity™"}
-                />
-                <meta
-                    name="keywords"
-                    content={
-                        "Red, Rock, Deli, Chips, Nuts, Feed your curiosity, curious chips and nuts"
-                    }
-                />
-            </Helmet>
-        </div>
+                <Helmet>
+                    <title>{"Red Rock Deli®"}</title>
+                    <meta
+                        name="description"
+                        content={"Red Rock Deli® - Feed Your Curiosity™"}
+                    />
+                    <meta
+                        name="keywords"
+                        content={
+                            "Red, Rock, Deli, Chips, Nuts, Feed your curiosity, curious chips and nuts"
+                        }
+                    />
+                </Helmet>
+            </div>
+        </ScrollReveal>
     );
 };
 

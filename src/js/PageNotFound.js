@@ -1,17 +1,20 @@
 import React, { Component } from "react";
 import ButtonPrimary from "./components/ButtonPrimary";
+import ScrollReveal from "./components/ScrollReveal";
 
 class PageNotFound extends Component {
     render() {
         return (
-            <div className="PageNotFound">
+            <ScrollReveal>
                 <section className="PageNotFound">
-                    <h1>404 Page not found.</h1>
-                    <div>
-                        <ButtonPrimary>Take me home</ButtonPrimary>
-                    </div>
+                    <section className="PageNotFound">
+                        <h1>404 Page not found.</h1>
+                        <div>
+                            <ButtonPrimary>Take me home</ButtonPrimary>
+                        </div>
+                    </section>
                 </section>
-            </div>
+            </ScrollReveal>
         );
     }
 }

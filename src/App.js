@@ -42,49 +42,43 @@ function App() {
                 <BrowserRouter>
                     <ScrollReveal>
                         <Nav />
-                        <ScrollToTop>
-                            <Switch>
-                                <Route path="/" exact component={HomePage} />
-                                <Route path="/faq" exact component={FAQs} />
-                                <Route
-                                    path="/chef1"
-                                    exact
-                                    component={ChefPage01}
-                                />
-                                <Route
-                                    path="/chef2"
-                                    exact
-                                    component={ChefPage01}
-                                />
-                                <Route
-                                    path="/events/sydney"
-                                    exact
-                                    component={EventPageSydney}
-                                />
-                                <Route
-                                    path="/events/melbourne"
-                                    exact
-                                    component={EventPageSydney}
-                                />
+                    </ScrollReveal>
+                    <ScrollToTop>
+                        <Switch>
+                            <Route path="/" exact component={HomePage} />
+                            <Route path="/faq" exact component={FAQs} />
+                            <Route path="/chef1" exact component={ChefPage01} />
+                            <Route path="/chef2" exact component={ChefPage01} />
+                            <Route
+                                path="/events/sydney"
+                                exact
+                                component={EventPageSydney}
+                            />
+                            <Route
+                                path="/events/melbourne"
+                                exact
+                                component={EventPageSydney}
+                            />
 
-                                <Route
-                                    path="/privacy-policy"
-                                    exact
-                                    component={PrivacyPolicy}
-                                />
-                                <Route
-                                    path="/terms-of-use"
-                                    exact
-                                    component={TermsOfUse}
-                                />
-                                <Route
-                                    path="/particles"
-                                    exact
-                                    component={ParticlePlayground}
-                                />
-                                <Route path="/" component={PageNotFound} />
-                            </Switch>
-                        </ScrollToTop>
+                            <Route
+                                path="/privacy-policy"
+                                exact
+                                component={PrivacyPolicy}
+                            />
+                            <Route
+                                path="/terms-of-use"
+                                exact
+                                component={TermsOfUse}
+                            />
+                            <Route
+                                path="/particles"
+                                exact
+                                component={ParticlePlayground}
+                            />
+                            <Route path="/" component={PageNotFound} />
+                        </Switch>
+                    </ScrollToTop>
+                    <ScrollReveal>
                         <Footer />
                     </ScrollReveal>
                 </BrowserRouter>

@@ -7,7 +7,6 @@ const ScrollReveal = props => {
 
     const onScroll = () => {
         if (animationContainerReference) {
-            console.log("SCROLLING!!");
             itemsArray.map(item => {
                 const itemBounds = item.getBoundingClientRect();
 
