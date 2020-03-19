@@ -1,7 +1,7 @@
 import React from "react";
 import { Helmet } from "react-helmet";
 import { HeroStatic } from "./components/Hero";
-import ScrollReveal from "./components/ScrollReveal";
+import ScrollReveal from "./utils/ScrollReveal";
 
 const ChefPage01 = () => {
     return (

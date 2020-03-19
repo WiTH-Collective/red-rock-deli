@@ -13,7 +13,7 @@ import PrivacyPolicy from "./js/PrivacyPolicy";
 import ScrollToTop from "./js/components/ScrollToTop";
 import ChefPage01 from "./js/ChefPage01";
 import EventPageSydney from "./js/EventPage";
-import ScrollReveal from "./js/components/ScrollReveal";
+import ScrollReveal from "./js/utils/ScrollReveal";
 
 function App() {
     const [wrapperClass, setWrapperClass] = useState("wrapper");

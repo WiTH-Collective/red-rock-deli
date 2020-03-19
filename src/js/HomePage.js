@@ -7,7 +7,7 @@ import MeetTheChefs from "./components/MeetTheChefs";
 import DiscoverTheRange from "./components/DiscoverTheRange";
 import WhereToBuy from "./components/WhereToBuy";
 import InstaFeed from "./components/InstaFeed";
-import ScrollReveal from "./components/ScrollReveal";
+import ScrollReveal from "./utils/ScrollReveal";
 
 const HomePage = () => {
     return (

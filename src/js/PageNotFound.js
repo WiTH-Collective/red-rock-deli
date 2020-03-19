@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import ButtonPrimary from "./components/ButtonPrimary";
-import ScrollReveal from "./components/ScrollReveal";
+import ScrollReveal from "./utils/ScrollReveal";
 
 class PageNotFound extends Component {
     render() {
