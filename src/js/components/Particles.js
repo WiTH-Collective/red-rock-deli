@@ -263,7 +263,11 @@ const Particles = props => {
                 canUpdate = true;
             }
         });
-        TL.to(Product, 0.25, { x: 400 * Product.direction, alpha: 0 });
+        TL.to(Product, 0.25, {
+            x: 400 * Product.direction,
+            rotation: 0,
+            alpha: 0
+        });
         particleArray.map(p => {
             TL.to(
                 p,

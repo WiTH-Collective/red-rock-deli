@@ -73,9 +73,15 @@ const DiscoverTheRange = props => {
                     </div>
                 </div>
             </div>
-            <div>
-                <ButtonPrimary>Button Primary</ButtonPrimary>
-            </div>
+            {props.hideButton ? (
+                ""
+            ) : (
+                <div>
+                    <ButtonPrimary linkTo="/our-range">
+                        Button Primary
+                    </ButtonPrimary>
+                </div>
+            )}
         </section>
     );
 };
