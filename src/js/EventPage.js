@@ -1,7 +1,6 @@
 import React from "react";
 import { Helmet } from "react-helmet";
 import { HeroStatic } from "./components/Hero";
-import { BlackBlockTitle } from "./components/BlackBlockTitle";
 
 const EventPageSydney = () => {
     return (
@@ -9,10 +8,8 @@ const EventPageSydney = () => {
             <HeroStatic
                 backgroundUrl={"/images/secret-suppers-shhh-hero.jpg"}
                 title={"Earthly Delights"}
-            />
-            <BlackBlockTitle
-                heading="September 21, 2020"
-                subHeading="Secret location in Sydney"
+                h3="September 21, 2020"
+                p="Secret location in Sydney"
             />
             <section className="stone-wall-bakground">
                 <div className="scroll-prompt scroll-prompt-top  scroll-prompt-black " />

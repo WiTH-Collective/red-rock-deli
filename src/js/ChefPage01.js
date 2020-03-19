@@ -1,7 +1,6 @@
 import React from "react";
 import { Helmet } from "react-helmet";
 import { HeroStatic } from "./components/Hero";
-import { BlackBlockTitle } from "./components/BlackBlockTitle";
 
 const ChefPage01 = () => {
     return (
@@ -10,7 +9,6 @@ const ChefPage01 = () => {
                 backgroundUrl={"/images/colin-fassnidge-hero.jpg"}
                 title={"Colin Fassnidge"}
             />
-            <BlackBlockTitle />
             <section className="stone-wall-bakground">
                 <div className="scroll-prompt scroll-prompt-top  scroll-prompt-black " />
                 <div className="container">

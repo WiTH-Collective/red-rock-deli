@@ -2,6 +2,7 @@ import React, { useRef, useEffect } from "react";
 import FeedYourCuriosity from "../../img/lockups/feed-your-curiosity---165x550-x39sprites.png";
 import SecretSuppersLockup from "../../img/lockups/secret-suppers-header-lockup-wide.png";
 import { TweenMax, SteppedEase } from "gsap";
+import BlackBlockTitle from "./BlackBlockTitle";
 
 function Hero(props) {
     const videoRef = useRef(null);
@@ -16,7 +17,7 @@ function Hero(props) {
     }, []);
 
     return (
-        <section className="Hero">
+        <section className="Hero sr-item">
             <div className="background-video full-width">
                 <video
                     ref={videoRef}
@@ -52,20 +53,23 @@ export default Hero;
 
 export function HeroStatic(props) {
     return (
-        <section
-            className="Hero HeroStatic"
-            style={{ backgroundImage: `url(${props.backgroundUrl})` }}
-        >
-            <div className="container">
-                <div className="title">
-                    <img
-                        className="lockup"
-                        src={SecretSuppersLockup}
-                        alt="Secret Suppers"
-                    />
-                    <h1>{props.title}</h1>
+        <React.Fragment>
+            <section
+                className="Hero HeroStatic sr-item"
+                style={{ backgroundImage: `url(${props.backgroundUrl})` }}
+            >
+                <div className="container">
+                    <div className="title">
+                        <img
+                            className="lockup"
+                            src={SecretSuppersLockup}
+                            alt="Secret Suppers"
+                        />
+                        <h1>{props.title}</h1>
+                    </div>
                 </div>
-            </div>
-        </section>
+            </section>
+            <BlackBlockTitle heading={props.h3} subHeading={props.p} />
+        </React.Fragment>
     );
 }

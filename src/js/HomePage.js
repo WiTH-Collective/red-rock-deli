@@ -9,30 +9,31 @@ import WhereToBuy from "./components/WhereToBuy";
 import InstaFeed from "./components/InstaFeed";
 
 const HomePage = () => {
-  return (
-    <div className="page-wrapper home-page">
-      <Hero />
-      <SecretSuppers />
-      <MeetTheChefs />
-      <DiscoverTheRange showCanvas={false} />
-      <WhereToBuy />
-      <InstaFeed />
+    return (
+        <div className="page-wrapper home-page">
+            <Hero />
 
-      <Helmet>
-        <title>{"Red Rock Deli®"}</title>
-        <meta
-          name="description"
-          content={"Red Rock Deli® - Feed Your Curiosity™"}
-        />
-        <meta
-          name="keywords"
-          content={
-            "Red, Rock, Deli, Chips, Nuts, Feed your curiosity, curious chips and nuts"
-          }
-        />
-      </Helmet>
-    </div>
-  );
+            <SecretSuppers />
+            <MeetTheChefs />
+            <DiscoverTheRange showCanvas={false} />
+            <WhereToBuy />
+            <InstaFeed />
+
+            <Helmet>
+                <title>{"Red Rock Deli®"}</title>
+                <meta
+                    name="description"
+                    content={"Red Rock Deli® - Feed Your Curiosity™"}
+                />
+                <meta
+                    name="keywords"
+                    content={
+                        "Red, Rock, Deli, Chips, Nuts, Feed your curiosity, curious chips and nuts"
+                    }
+                />
+            </Helmet>
+        </div>
+    );
 };
 
 export default HomePage;

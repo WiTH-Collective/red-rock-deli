@@ -5,7 +5,7 @@ import ButtonPrimary from "./ButtonPrimary";
 
 const SecretSuppers = () => {
     return (
-        <section className="SecretSuppers">
+        <section className="SecretSuppers sr-item">
             <div className="container">
                 <div className="content">
                     <div className="image-holder content-cover">

@@ -1,6 +1,6 @@
 import React from "react";
 
-export const BlackBlockTitle = props => {
+const BlackBlockTitle = props => {
     return (
         <div class="black-block">
             {props.heading ? <h3>{props.heading}</h3> : null}
@@ -8,3 +8,5 @@ export const BlackBlockTitle = props => {
         </div>
     );
 };
+
+export default BlackBlockTitle;

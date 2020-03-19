@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 
 const MeetTheChefs = () => {
     return (
-        <section className="MeetTheChefs">
+        <section className="MeetTheChefs sr-item">
             <div className="container">
                 <h2>MEET THE CHEFS</h2>
 

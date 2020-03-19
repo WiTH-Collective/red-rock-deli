@@ -46,7 +46,7 @@ const DiscoverTheRange = props => {
     console.log("RENDERING DiscoverTheRange");
 
     return (
-        <section className="DiscoverTheRange">
+        <section className="DiscoverTheRange sr-item">
             {props.showCanvas ? (
                 <Particles current={current} data={ProductsData[0]} />
             ) : null}

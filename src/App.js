@@ -13,6 +13,7 @@ import PrivacyPolicy from "./js/PrivacyPolicy";
 import ScrollToTop from "./js/components/ScrollToTop";
 import ChefPage01 from "./js/ChefPage01";
 import EventPageSydney from "./js/EventPage";
+import ScrollReveal from "./js/components/ScrollReveal";
 
 function App() {
     const [wrapperClass, setWrapperClass] = useState("wrapper");
@@ -39,43 +40,53 @@ function App() {
         <div className={wrapperClass}>
             {hasLoaded ? (
                 <BrowserRouter>
-                    <Nav />
-                    <ScrollToTop>
-                        <Switch>
-                            <Route path="/" exact component={HomePage} />
-                            <Route path="/faq" exact component={FAQs} />
-                            <Route path="/chef1" exact component={ChefPage01} />
-                            <Route path="/chef2" exact component={ChefPage01} />
-                            <Route
-                                path="/events/sydney"
-                                exact
-                                component={EventPageSydney}
-                            />
-                            <Route
-                                path="/events/melbourne"
-                                exact
-                                component={EventPageSydney}
-                            />
+                    <ScrollReveal>
+                        <Nav />
+                        <ScrollToTop>
+                            <Switch>
+                                <Route path="/" exact component={HomePage} />
+                                <Route path="/faq" exact component={FAQs} />
+                                <Route
+                                    path="/chef1"
+                                    exact
+                                    component={ChefPage01}
+                                />
+                                <Route
+                                    path="/chef2"
+                                    exact
+                                    component={ChefPage01}
+                                />
+                                <Route
+                                    path="/events/sydney"
+                                    exact
+                                    component={EventPageSydney}
+                                />
+                                <Route
+                                    path="/events/melbourne"
+                                    exact
+                                    component={EventPageSydney}
+                                />
 
-                            <Route
-                                path="/privacy-policy"
-                                exact
-                                component={PrivacyPolicy}
-                            />
-                            <Route
-                                path="/terms-of-use"
-                                exact
-                                component={TermsOfUse}
-                            />
-                            <Route
-                                path="/particles"
-                                exact
-                                component={ParticlePlayground}
-                            />
-                            <Route path="/" component={PageNotFound} />
-                        </Switch>
-                    </ScrollToTop>
-                    <Footer />
+                                <Route
+                                    path="/privacy-policy"
+                                    exact
+                                    component={PrivacyPolicy}
+                                />
+                                <Route
+                                    path="/terms-of-use"
+                                    exact
+                                    component={TermsOfUse}
+                                />
+                                <Route
+                                    path="/particles"
+                                    exact
+                                    component={ParticlePlayground}
+                                />
+                                <Route path="/" component={PageNotFound} />
+                            </Switch>
+                        </ScrollToTop>
+                        <Footer />
+                    </ScrollReveal>
                 </BrowserRouter>
             ) : null}
             <PageTransition />
