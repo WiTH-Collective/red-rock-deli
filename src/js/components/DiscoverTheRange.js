@@ -11,36 +11,6 @@ const DiscoverTheRange = props => {
         return p;
     });
 
-    // console.log("productsList", productsList);
-
-    // check value is within range of products array
-
-    // const setClassNames = () => {
-    //     productsList[current].productClass = "isActive current";
-    //     productsList[checkRange(current, -2)].productClass =
-    //         "isActive far-left";
-    //     productsList[checkRange(current, -1)].productClass =
-    //         "isActive near-left";
-    //     productsList[checkRange(current, 1)].productClass =
-    //         "isActive near-right";
-    //     productsList[checkRange(current, 2)].productClass =
-    //         "isActive far-right";
-    // };
-
-    // set initila state
-
-    // const [current, setCurrent] = useState(2);
-    // setClassNames();
-
-    // const checkRange = (n, i) => {
-    //     let num = parseInt(n) + i;
-    //     num < 0 ? (num += productsList.length) : (num %= productsList.length);
-    //     return num;
-    // };
-
-    // const [current, setCurrent] = useState(2);
-    // setClassNames();
-
     // check CANVAS is supported
     const canUseCanvas = window.HTMLCanvasElement;
     let hideDomImages;

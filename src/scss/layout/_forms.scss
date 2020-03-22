@@ -67,9 +67,8 @@
         .form-group {
             width: 100%;
             display: flex;
-            flex-direction: row;
+            flex-direction: column;
             justify-content: space-between;
-            margin-bottom: 40px;
         }
     }
 
@@ -79,6 +78,7 @@
 
         padding: 4px;
         margin-right: 20px;
+        margin-bottom: 40px;
         &.full-width {
             width: 100%;
         }
@@ -129,6 +129,14 @@
     @include md {
         .hide-mobile {
             display: inline-block;
+        }
+    }
+
+    @include lg {
+        form {
+            .form-group {
+                flex-direction: row;
+            }
         }
     }
 }

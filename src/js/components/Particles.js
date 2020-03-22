@@ -19,6 +19,7 @@ const Particles = props => {
     let particleArray = [];
     let TL = null;
     let canUpdate = false;
+    let scaleMultiplier = 1;
 
     const Product = {
         x: 0,
@@ -86,7 +87,9 @@ const Particles = props => {
     // point at the center of the canvas
     const origin = {
         x: null,
-        y: null
+        y: null,
+        width: null,
+        height: null
     };
 
     const onResize = () => {
@@ -97,8 +100,13 @@ const Particles = props => {
         can.height = canBox.height;
         origin.x = Math.round(can.width * 0.5);
         origin.y = Math.round(can.height * 0.5);
+        origin.width = canBox.width;
+        origin.height = canBox.height;
 
-        if (hasInit) updateCanvas();
+        if (hasInit) {
+            updateProduct();
+            updateCanvas();
+        }
     };
 
     const updateProduct = () => {
@@ -111,7 +119,16 @@ const Particles = props => {
         Product.alpha = 1;
         Product.x = 0;
         Product.rotation = Math.PI * 0.05;
-        Product.scale = 0.5;
+        if (origin.width < 480) {
+            Product.scale = 0.4;
+            scaleMultiplier = 0.7;
+        } else if (origin.width < 768) {
+            Product.scale = 0.5;
+            scaleMultiplier = 0.85;
+        } else {
+            Product.scale = 0.6;
+            scaleMultiplier = 1;
+        }
     };
 
     const drawProduct = context => {
@@ -188,14 +205,15 @@ const Particles = props => {
                 y: randomLinePosition * -lineHeight + CosRandom() * randomRange,
                 alpha: 1,
                 rotation: FauxRandom() * Math.PI * 2,
-                scale: FauxRandom() * 0.2 + 0.5
+                scale: FauxRandom() * 0.15 + 0.45
             };
 
             if (Math.abs(p.x) < 80) {
+                var productSpacing = 240;
                 if (p.x < 0) {
-                    p.x -= 80 + FauxRandom() * 120;
+                    p.x -= productSpacing * 0.5 + FauxRandom() * productSpacing;
                 } else {
-                    p.x += 80 + FauxRandom() * 120;
+                    p.x += productSpacing * 0.5 + FauxRandom() * productSpacing;
                 }
             }
 
@@ -219,28 +237,28 @@ const Particles = props => {
 
         // set depth based on particleArray index:
         for (let i = 0; i < Math.floor(config.smallSpriteCount * 0.33); ++i) {
-            particleArray[i].depth = 1;
+            particleArray[i].depth = 1.25;
         }
         for (
             let i = Math.floor(config.smallSpriteCount * 0.33);
             i < Math.floor(config.smallSpriteCount * 0.66);
             ++i
         ) {
-            particleArray[i].depth = 1.25;
+            particleArray[i].depth = 1.5;
         }
         for (
             let i = Math.floor(config.smallSpriteCount * 0.66);
             i < config.smallSpriteCount;
             ++i
         ) {
-            particleArray[i].depth = 1.5;
+            particleArray[i].depth = 2.0;
         }
         for (
             let i = config.smallSpriteCount;
             i < config.smallSpriteCount + config.largeSpriteCount;
             ++i
         ) {
-            particleArray[i].depth = 2;
+            particleArray[i].depth = 2.5;
         }
     };
 
@@ -307,10 +325,10 @@ const Particles = props => {
                         p.img.y,
                         p.img.size,
                         p.img.size,
-                        p.img.size * -0.5 * p.scale,
-                        p.img.size * -0.5 * p.scale,
-                        p.img.size * p.scale,
-                        p.img.size * p.scale
+                        p.img.size * -0.5 * p.scale * scaleMultiplier,
+                        p.img.size * -0.5 * p.scale * scaleMultiplier,
+                        p.img.size * p.scale * scaleMultiplier,
+                        p.img.size * p.scale * scaleMultiplier
                     );
                     ctx.rotate(-p.rotation - p.wiggle.rotation);
                     ctx.translate(
@@ -320,7 +338,7 @@ const Particles = props => {
                 }
             };
 
-            // draw canvas
+            // upper layer, has dropshadow
             ctx.filter = `blur(3px)`;
             for (
                 let i = 0;
@@ -329,25 +347,17 @@ const Particles = props => {
             ) {
                 drawParticle(particleArray[i]);
             }
-            ctx.filter = `blur(2px)`;
-            for (
-                let i = Math.floor(config.smallSpriteCount * 0.33);
-                i < Math.floor(config.smallSpriteCount * 0.66);
-                ++i
-            ) {
-                drawParticle(particleArray[i]);
-            }
+            // upper layer, has dropshadow
             ctx.filter = `none`;
             for (
-                let i = Math.floor(config.smallSpriteCount * 0.66);
+                let i = Math.floor(config.smallSpriteCount * 0.33);
                 i < config.smallSpriteCount;
                 ++i
             ) {
                 drawParticle(particleArray[i]);
             }
-
+            // upper layer, has dropshadow
             ctx.filter = `drop-shadow(0px 20px 5px rgba(0,0,0,0.2))`;
-
             drawProduct(ctx);
 
             for (
@@ -363,27 +373,30 @@ const Particles = props => {
     };
 
     const initCanvas = () => {
+        const time = 5;
+
         if (TL) {
             TL.kill();
         }
-
         TL = new TimelineMax({
             delay: 0,
             onUpdate: () => {
                 updateCanvas();
             }
         });
+        // animate product image
         TL.from(Product, 0.5, {
             x: 150 * -Product.direction,
             rotation: 0,
             alpha: 0,
             ease: Power3.easeOut
         });
+        // animates particles.
         particleArray.map(p => {
             const pDelay = FauxRandom() * 2;
             TL.from(
                 p,
-                5 + pDelay,
+                time + pDelay,
                 {
                     x: p.x * 0.5,
                     y: p.y * 0.5,
