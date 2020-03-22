@@ -15,11 +15,14 @@
         border-radius: 4px;
         cursor: pointer;
 
+        transition: background-color 0.2s ease-out;
+
         // transition: transform 0.1s ease-out;
         // transform: scale(1);
 
         &:hover {
             // transform: scale(1.05);
+            background: $orangeHover;
 
             span {
                 animation: arrowRight 0.3s ease-in-out;
@@ -55,6 +58,11 @@
     &.button-black {
         button {
             background: $black;
+
+            &:hover {
+                // transform: scale(1.05);
+                background: $blackHover;
+            }
         }
     }
 }
@@ -64,8 +72,9 @@
     position: relative;
     width: 30px;
     height: 30px;
-    background-color: #c1b9ab;
+    background-color: $cream;
     border-radius: 50%;
+    transition: background-color 0.2s ease-out;
 
     &::after {
         content: "";
@@ -75,6 +84,7 @@
     }
 
     &:hover {
+        background-color: $creamHover;
         &::after {
             animation: arrowRight 0.3s ease-in-out;
         }

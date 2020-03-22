@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Link } from "react-router-dom";
+import { ExternalLink } from "react-external-link";
 import ButtonPrimary from "./ButtonPrimary";
 
 const InstaFeed = props => {
@@ -32,7 +32,13 @@ const InstaFeed = props => {
             </div>
 
             <div className="showMore">
-                <ButtonPrimary isBlack hideChevron buttonText="Show me more">
+                <ButtonPrimary
+                    isBlack
+                    hideChevron
+                    buttonText="Show me more"
+                    linkTo="https://www.instagram.com/red_rock_deli/"
+                    isExternalLink
+                >
                     Show me more
                 </ButtonPrimary>
             </div>
@@ -49,11 +55,11 @@ const FeedItem = props => {
     const description = p.innerText;
 
     return (
-        <Link className="item" to={props.itemUrl}>
+        <ExternalLink className="item" to={props.itemUrl}>
             <img src={props.imageUrl} alt="Red Rock Deli Instagram Feed" />
             <div>
                 <p>{description}</p>
             </div>
-        </Link>
+        </ExternalLink>
     );
 };

@@ -3,20 +3,28 @@ $tradeGothic: "TradeGothic", Helvetica, sans-serif;
 $roboto: "Roboto", Helvetica, sans-serif;
 
 // Navigation / Header
-$navHeightMobile: 60px;
 $navHeight: 90px;
+$navHeightMobile: 60px;
 $logoWidth: 110px;
+
+$containerPadding: 120px 80px;
+$containerPaddingMobile: 40px 20px;
 
 // Colors:
 $black: black;
+$blackHover: #111111;
 $white: white;
 $halfWhite: rgba(255, 255, 255, 0.5);
 $threeQtrWhite: rgba(255, 255, 255, 0.75);
 
 $cream: #c1b9ab;
+$creamHover: #fff;
 $orange: #cf4a21;
+$orangeHover: #dd602b;
 $grey: #131417;
+$greyHover: #191a1e;
 $lightgrey: #374048;
+$lightgreyHover: #48535e;
 $blue: #0052b1;
 
 // ------------------------------

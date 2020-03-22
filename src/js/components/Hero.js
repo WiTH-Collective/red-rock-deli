@@ -1,5 +1,5 @@
 import React, { useRef, useEffect } from "react";
-import FeedYourCuriosity from "../../img/lockups/feed-your-curiosity---165x550-x39sprites.png";
+import FeedYourCuriosity from "../../img/lockups/feed-your-curiosity---sprites.png";
 import SecretSuppersLockup from "../../img/lockups/secret-suppers-header-lockup-wide.png";
 import { TweenMax, SteppedEase } from "gsap";
 import BlackBlockTitle from "./BlackBlockTitle";
@@ -9,10 +9,10 @@ function Hero(props) {
     const lockup = useRef(null);
 
     useEffect(() => {
-        TweenMax.from(lockup.current, 1.5, {
+        TweenMax.from(lockup.current, 1, {
             y: "-100%",
-            ease: SteppedEase.config(40),
-            delay: 0.33
+            ease: SteppedEase.config(24),
+            delay: 0.5
         });
     }, []);
 

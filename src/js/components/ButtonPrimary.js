@@ -1,16 +1,31 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { ExternalLink } from "react-external-link";
 
 const ButtonPrimary = props => {
     let classes = "button-primary";
     if (props.isBlack) classes += " button-black";
     return (
-        <Link to={props.linkTo ? props.linkTo : ""} className={classes}>
-            <button>
-                {props.children}
-                {!props.hideChevron ? <span /> : null}
-            </button>
-        </Link>
+        <React.Fragment>
+            {props.isExternalLink ? (
+                <ExternalLink
+                    href={props.linkTo ? props.linkTo : ""}
+                    className={classes}
+                >
+                    <button>
+                        {props.children}
+                        {!props.hideChevron ? <span /> : null}
+                    </button>
+                </ExternalLink>
+            ) : (
+                <Link to={props.linkTo ? props.linkTo : ""} className={classes}>
+                    <button>
+                        {props.children}
+                        {!props.hideChevron ? <span /> : null}
+                    </button>
+                </Link>
+            )}
+        </React.Fragment>
     );
 };
 
