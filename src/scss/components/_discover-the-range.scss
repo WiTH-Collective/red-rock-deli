@@ -3,8 +3,9 @@
     padding: 120px 0px;
 
     background-color: $lightgrey;
-    background-image: url("../../img/backgrounds/texture-blue-products-background.jpg");
-    background-size: cover;
+    background-image: url("../../img/backgrounds/texture-blue-products-tiled.jpg");
+    background-size: 750px 500px;
+    background-repeat: repeat;
     background-position: top;
 
     @include flexCenter;

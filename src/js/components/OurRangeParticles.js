@@ -6,12 +6,13 @@ import { TimelineMax, Power3, Linear } from "gsap";
 
 const OurRangeParticles = props => {
     console.log("RENDERING COMPONENT");
+    const productSpacing = 150;
     let current = 2;
-    const imagesTotal = 2;
+    const imagesTotal = 1;
     let imagesLoaded = 0;
     const sprites = {
         particles: null,
-        products: null,
+        product: null,
         globalAlpha: 1
     };
     let hasInit = false;
@@ -31,7 +32,7 @@ const OurRangeParticles = props => {
         img: {
             x: 0,
             y: 0,
-            size: 800
+            size: 600
         }
     };
 
@@ -71,13 +72,12 @@ const OurRangeParticles = props => {
         return img;
     };
     useEffect(() => {
-        sprites.particles = loadImg(SpritesUrl);
-        sprites.products = loadImg(ProductsUrl);
+        sprites.particles = props.spriteImg;
+        sprites.product = loadImg(props.current.product.packImageUrl);
 
         return () => {
             console.log("Unmounting: Particle system");
-            sprites.particles.remove();
-            sprites.products.remove();
+            sprites.product.remove();
             // clean-up on dismount.
             window.removeEventListener("resize", onResize);
         };
@@ -110,22 +110,22 @@ const OurRangeParticles = props => {
 
     const updateProduct = () => {
         const config = props.data.config;
-        const data = props.data.products[current].product;
+        const data = props.current.product.particles;
 
-        Product.img.x = data.x * config.productSize;
-        Product.img.y = data.y * config.productSize;
-        Product.img.size = config.productSize;
+        Product.img.x = 0;
+        Product.img.y = 0;
+        Product.img.size = 600;
         Product.alpha = 1;
         Product.x = 0;
         Product.rotation = Math.PI * 0.05;
         if (origin.width < 480) {
-            Product.scale = 0.4;
+            Product.scale = 0.5;
             scaleMultiplier = 0.7;
         } else if (origin.width < 768) {
-            Product.scale = 0.5;
+            Product.scale = 0.6;
             scaleMultiplier = 0.85;
         } else {
-            Product.scale = 0.6;
+            Product.scale = 0.7;
             scaleMultiplier = 1;
         }
     };
@@ -138,7 +138,7 @@ const OurRangeParticles = props => {
         context.globalAlpha = Product.alpha;
         context.rotate(Product.rotation);
         context.drawImage(
-            sprites.products,
+            sprites.product,
             Product.img.x,
             Product.img.y,
             Product.img.size,
@@ -176,7 +176,7 @@ const OurRangeParticles = props => {
             const randomLinePosition = CosRandom() * 0.5;
             const randomRange = 60;
             let lineWidth;
-            can.width < 600 ? (lineWidth = 300) : (lineWidth = can.width * 0.5);
+            can.width < 600 ? (lineWidth = 300) : (lineWidth = can.width * 0.4);
             let lineHeight = lineWidth * 0.5;
 
             // large sprites
@@ -208,7 +208,6 @@ const OurRangeParticles = props => {
             };
 
             if (Math.abs(p.x) < 80) {
-                var productSpacing = 240;
                 if (p.x < 0) {
                     p.x -= productSpacing * 0.5 + FauxRandom() * productSpacing;
                 } else {
@@ -433,8 +432,14 @@ const OurRangeParticles = props => {
 
     return (
         <div className="canvas-container">
-            <canvas ref={canvasRef} className="particle-system" />
-
+            <div className="canvas-inner">
+                <canvas ref={canvasRef} className="particle-system" />
+            </div>
+            <div className="description">
+                <h1>{props.current.product.title}</h1>
+                <p className="large">{props.current.product.copy}</p>
+                <p>{props.current.product.subCopy}</p>
+            </div>
             <div className="controls">
                 <div>
                     <button
