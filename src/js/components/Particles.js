@@ -36,8 +36,6 @@ const Particles = props => {
     };
 
     //
-    //
-    //
     const checkRange = (n, i) => {
         let num = parseInt(n) + i;
         num < 0
@@ -46,8 +44,6 @@ const Particles = props => {
         return num;
     };
 
-    //
-    //
     //
     const setCurrent = increment => {
         if (canUpdate) {
@@ -59,8 +55,6 @@ const Particles = props => {
         }
     };
 
-    //
-    //
     //
     // image preloader
     const loadImg = source => {
@@ -79,8 +73,11 @@ const Particles = props => {
         sprites.products = loadImg(ProductsUrl);
 
         return () => {
+            console.log("Unmounting: Particle system");
             sprites.particles.remove();
             sprites.products.remove();
+            // clean-up on dismount.
+            window.removeEventListener("resize", onResize);
         };
     }, []);
 
@@ -430,12 +427,6 @@ const Particles = props => {
 
         // on mount.
         window.addEventListener("resize", onResize);
-
-        return () => {
-            // clean-up on dismount.
-            console.log("Unmounting: Particle system");
-            window.removeEventListener("resize", onResize);
-        };
     };
 
     return (

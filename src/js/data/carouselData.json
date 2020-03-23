@@ -7,6 +7,39 @@
             "largeSpriteSize": 200,
             "productSize": 800
         },
+        "nav": [
+            {
+                "imageUrl": "/products/packs/potato-chips/Honey-Soy-Chicken.png",
+                "label": "Potato Chips",
+                "baseUrl": "potato-chips"
+            },
+            {
+                "imageUrl": "/products/packs/tortilla-chips/Tortilla-Creamy-Feta-Avo-And-Lime.png",
+                "label": "Tortilla Chips",
+                "baseUrl": "tortilla-chips"
+            },
+            {
+                "imageUrl": "/products/packs/deluxe-crisps/Deluxe-Crisps-Chilli-Roast-Garlic-Lem-Oil.png",
+                "label": "Deluxe Crisps",
+                "baseUrl": "deluxe-crisps"
+            },
+            {
+                "imageUrl": "/products/packs/dips/Balsamic-Beetroot.png",
+                "label": "Dips",
+                "baseUrl": "dips"
+            },
+            {
+                "imageUrl": "/products/packs/limited-edition/Maple-Glazed-Bacon-And-Cheddar.png",
+                "label": "Limited Edition",
+                "baseUrl": "limited-edition"
+            },
+            {
+                "imageUrl": "/products/packs/nuts/Glazed-Nuts-Apple-Cinnamon-Crumble.png",
+                "label": "Nuts",
+                "baseUrl": "nuts"
+            }
+        ],
+
         "products": [
             {
                 "title": "Sea Salt",

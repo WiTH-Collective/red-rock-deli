@@ -15,6 +15,7 @@ import ChefPage01 from "./js/ChefPage01";
 import EventPageSydney from "./js/EventPage";
 import ScrollReveal from "./js/utils/ScrollReveal";
 import OurRange from "./js/OurRange";
+import history from "./js/history";
 
 function App() {
     const [wrapperClass, setWrapperClass] = useState("wrapper");
@@ -40,7 +41,7 @@ function App() {
     return (
         <div className={wrapperClass}>
             {hasLoaded ? (
-                <BrowserRouter>
+                <BrowserRouter history={history}>
                     <ScrollReveal>
                         <Nav />
                     </ScrollReveal>
@@ -48,11 +49,7 @@ function App() {
                         <Switch>
                             <Route path="/" exact component={HomePage} />
                             <Route path="/faq" exact component={FAQs} />
-                            <Route
-                                path="/our-range"
-                                exact
-                                component={OurRange}
-                            />
+                            <Route path="/our-range" component={OurRange} />
                             <Route path="/chef1" exact component={ChefPage01} />
                             <Route path="/chef2" exact component={ChefPage01} />
                             <Route
