@@ -19,7 +19,10 @@ const OurRange = props => {
     const [current, setCurrent] = useState({
         group: null,
         index: null,
-        product: null
+        product: null,
+        products: null,
+        next: null,
+        previous: null
     });
 
     const getCurrentProduct = () => {
@@ -28,7 +31,10 @@ const OurRange = props => {
         const obj = {
             group: "",
             index: 0,
-            product: null
+            product: null,
+            products: null,
+            next: "",
+            previous: ""
         };
 
         // if product group is not found in list of products, set to default value
@@ -38,6 +44,8 @@ const OurRange = props => {
         group
             ? (obj.group = group)
             : (obj.group = Object.keys(data.product)[0]);
+
+        obj.products = data.product[obj.group];
 
         // find product in list of products.
         const currentIndex = data.product[obj.group].findIndex(
@@ -60,38 +68,28 @@ const OurRange = props => {
 
     const selectProduct = (product, increment) => {
         // On click function, for Particle componenet
-        // console.log("ProductID: ", product, increment);
+        console.log("ProductID: ", product, increment);
     };
 
     const navigateTo = url => {
-        // console.log("navigating to", url);
+        console.log("navigating to", url);
         history.push(baseUrl + url + "/");
         setPathname(window.location.pathname);
     };
 
+    console.log("rendering:", ProductsData, "caca", current.product);
+
     return (
         <ScrollReveal>
             <div className="page-wrappers our-range">
-                {ProductsData && current ? (
+                {ProductsData && current.group ? (
                     <React.Fragment>
-                        <img
-                            src={particleSprites}
-                            ref={particleSpritesImage}
-                            alt="Particle Sprites"
-                            onLoad={() => {
-                                setSpriteImg(particleSpritesImage.current);
-                            }}
-                            className="hidden"
-                        />
                         <section className="DiscoverTheRange">
-                            {spriteImg ? (
-                                <OurRangeParticles
-                                    spriteImg={spriteImg}
-                                    data={ProductsData[0]}
-                                    current={current}
-                                    onClickFunction={selectProduct}
-                                />
-                            ) : null}
+                            <OurRangeParticles
+                                data={ProductsData[0]}
+                                current={current}
+                                onClickFunction={navigateTo}
+                            />
                         </section>
                         <section className="range-nav">
                             <div className="container">

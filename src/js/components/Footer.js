@@ -37,14 +37,17 @@ function Footer() {
                                 description={`The Red Rock Deli Chip Company<br />
                     553-567 South Road,<br />
                     Regency Park, SA, 5010, Australia`}
+                                link="https://goo.gl/maps/iMNEpNASEv6uh7aB8"
                             />
                             <ContactItem
                                 iconClass="phone"
                                 description="1800 500 502"
+                                link="tel:info@redrockdeli.com"
                             />
                             <ContactItem
                                 iconClass="email"
                                 description="info@redrockdeli.com"
+                                link="mailto:info@redrockdeli.com"
                             />
                         </div>
                     </div>
@@ -70,13 +73,34 @@ export default Footer;
 
 const ContactItem = props => {
     return (
-        <div className="item">
-            <div className={"icon " + props.iconClass}>
-                <span className="email" />
-            </div>
-            <div className="description">
-                <p dangerouslySetInnerHTML={{ __html: props.description }} />
-            </div>
-        </div>
+        <React.Fragment>
+            {props.link ? (
+                <ExternalLink href={props.link} className="item">
+                    <div className={"icon " + props.iconClass}>
+                        <span className="email" />
+                    </div>
+                    <div className="description">
+                        <p
+                            dangerouslySetInnerHTML={{
+                                __html: props.description
+                            }}
+                        />
+                    </div>
+                </ExternalLink>
+            ) : (
+                <div className="item">
+                    <div className={"icon " + props.iconClass}>
+                        <span className="email" />
+                    </div>
+                    <div className="description">
+                        <p
+                            dangerouslySetInnerHTML={{
+                                __html: props.description
+                            }}
+                        />
+                    </div>
+                </div>
+            )}
+        </React.Fragment>
     );
 };

@@ -16,7 +16,7 @@ const ScrollReveal = props => {
                         opacity: 1,
                         visibility: "visible"
                     });
-                } else if (window.innerHeight - 100 > itemBounds.y) {
+                } else if (window.innerHeight + 100 > itemBounds.y) {
                     // check if item is coming into view
                     if (!item.classList.contains("sr-item-showing")) {
                         console.log(item);
