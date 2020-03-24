@@ -73,7 +73,6 @@ const OurRange = props => {
         history.push(baseUrl + url + "/" + direction);
         setPathname(window.location.pathname);
     };
-
     //
 
     return (
@@ -103,6 +102,23 @@ const OurRange = props => {
                                 })}
                             </div>
                         </section>
+                        <div className="hidden">
+                            {current.products
+                                ? current.products.map((p, i) => {
+                                      return (
+                                          <Link
+                                              to={
+                                                  baseUrl +
+                                                  current.group +
+                                                  "/" +
+                                                  encodeURI(p.title)
+                                              }
+                                              key={9000 + i}
+                                          />
+                                      );
+                                  })
+                                : ""}
+                        </div>
                     </React.Fragment>
                 ) : null}
 
