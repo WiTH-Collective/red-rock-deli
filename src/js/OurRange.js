@@ -10,12 +10,9 @@ import history from "./history";
 import { Link } from "react-router-dom";
 
 const OurRange = props => {
-    const particleSpritesImage = useRef(null);
     const data = ProductsData[0];
     const baseUrl = "/our-range/";
     const [pathname, setPathname] = useState(window.location.pathname);
-    const [spriteImg, setSpriteImg] = useState(null);
-
     const [current, setCurrent] = useState({
         group: null,
         index: null,
@@ -34,7 +31,8 @@ const OurRange = props => {
             product: null,
             products: null,
             next: "",
-            previous: ""
+            previous: "",
+            productAnimationDirection: null
         };
 
         // if product group is not found in list of products, set to default value
@@ -58,26 +56,25 @@ const OurRange = props => {
         // define current product
         obj.product = data.product[obj.group][obj.index];
 
+        // check if direction is defined
+        if (urlArray[4]) obj.productAnimationDirection = parseInt(urlArray[4]);
+
         return obj;
     };
 
     useEffect(() => {
-        // console.log(getCurrentProduct());
+        console.log("--> Getting current product");
         setCurrent({ ...getCurrentProduct() });
+        // console.log("rendering:", ProductsData, "caca", current.product);
     }, [pathname]);
 
-    const selectProduct = (product, increment) => {
-        // On click function, for Particle componenet
-        console.log("ProductID: ", product, increment);
-    };
-
-    const navigateTo = url => {
+    const navigateTo = (url, direction = "") => {
         console.log("navigating to", url);
-        history.push(baseUrl + url + "/");
+        history.push(baseUrl + url + "/" + direction);
         setPathname(window.location.pathname);
     };
 
-    console.log("rendering:", ProductsData, "caca", current.product);
+    //
 
     return (
         <ScrollReveal>

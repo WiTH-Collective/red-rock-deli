@@ -1,11 +1,15 @@
 import React, { useEffect, useRef, useState } from "react";
 import { FauxRandom, CosRandom } from "../utils/FauxRandom";
-import { TimelineMax, Power3, Linear } from "gsap";
+import { TimelineMax, Power3, Back, Sine } from "gsap";
 import history from "../history";
+import { mixed } from "yup";
 
 const OurRangeParticles = props => {
+    console.log("--> Start of OurRangeParticles Component");
+
     const productSpacing = 150;
     const [current, setCurrent] = useState(props.current.index);
+
     const imagesTotal = 2;
     let imagesLoaded = 0;
     const sprites = {
@@ -24,10 +28,10 @@ const OurRangeParticles = props => {
     const Product = {
         x: 0,
         y: 0,
-        direction: 0,
+        direction: props.current.productAnimationDirection,
         alpha: 1,
         scale: 1,
-        rotation: Math.PI * 0.05,
+        rotation: Math.PI * 0.03,
         img: {
             x: 0,
             y: 0,
@@ -50,7 +54,7 @@ const OurRangeParticles = props => {
             canUpdate = false;
 
             Product.direction = -increment;
-            const next = checkRange(current, increment);
+            const next = checkRange(props.current.index, increment);
             nextProductUrl = `${props.current.group}/${encodeURI(
                 props.current.products[next].title
             )}`;
@@ -72,19 +76,26 @@ const OurRangeParticles = props => {
         return img;
     };
     useEffect(() => {
-        console.log("props.current", props.current);
+        // console.log("props.current", props.current);
 
-        sprites.particles = loadImg(props.current.product.particleUrl);
-        sprites.product = loadImg(props.current.product.packImageUrl);
+        updateSpriteImages();
 
         return () => {
             console.log("Unmounting: Particle system");
-            sprites.particles.remove();
-            sprites.product.remove();
+            removeSpriteImages();
             // clean-up on dismount.
             window.removeEventListener("resize", onResize);
         };
     }, [props.current]);
+
+    const updateSpriteImages = () => {
+        sprites.particles = loadImg(props.current.product.particleUrl);
+        sprites.product = loadImg(props.current.product.packImageUrl);
+    };
+    const removeSpriteImages = () => {
+        sprites.particles.remove();
+        sprites.product.remove();
+    };
 
     // point at the center of the canvas
     const origin = {
@@ -152,7 +163,12 @@ const OurRangeParticles = props => {
     const defineParticles = () => {
         const can = canvasRef.current;
         const config = props.data.config;
-        console.log(props.current, props.current, current);
+        console.log(
+            "Defning Particles: ",
+            props.current.group,
+            "/",
+            props.current.product.title
+        );
 
         const data = props.current.product.particles;
         const spriteSheetY =
@@ -271,27 +287,30 @@ const OurRangeParticles = props => {
                 updateCanvas();
             },
             onComplete: () => {
-                props.onClickFunction(nextProductUrl);
+                canUpdate = true;
+                imagesLoaded = 0;
+                removeSpriteImages();
+                props.onClickFunction(nextProductUrl, Product.direction);
                 // defineParticles();
                 // updateProduct();
                 // initCanvas();
-                canUpdate = true;
             }
         });
-        TL.to(Product, 0.25, {
-            x: 400 * Product.direction,
+        TL.to(Product, 0.33, {
+            x: 150 * Product.direction,
             rotation: 0,
-            alpha: 0
+            alpha: 0,
+            ease: Sine.easeIn
         });
         particleArray.map(p => {
             TL.to(
                 p,
-                0.25,
+                0.33,
                 {
                     alpha: 0,
                     x: p.x * p.depth,
                     y: p.y * p.depth,
-                    ease: Linear.easeNone
+                    ease: Sine.easeNone
                 },
                 0
             );
@@ -382,12 +401,29 @@ const OurRangeParticles = props => {
             }
         });
         // animate product image
-        TL.from(Product, 0.5, {
-            x: 150 * -Product.direction,
-            rotation: 0,
+        TL.from(Product, 0.2, {
             alpha: 0,
             ease: Power3.easeOut
-        });
+        })
+            .from(
+                Product,
+                1.0,
+                {
+                    x: 150 * -props.current.productAnimationDirection,
+                    ease: Power3.easeOut
+                },
+                0
+            )
+            .to(
+                Product,
+                5,
+                {
+                    rotation: -0.06,
+                    ease: Sine.easeInOut
+                },
+                0
+            );
+
         // animates particles.
         particleArray.map(p => {
             const pDelay = FauxRandom() * 2;
