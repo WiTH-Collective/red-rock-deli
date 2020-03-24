@@ -61,7 +61,7 @@
                     "packImageUrl": "/products/potato-chips/Lime-Black-Pepper.png",
                     "particleUrl": "/products/potato-chips/potato-chip-particles.png",
                     "particles": {
-                        "particleMapIndex": 1,
+                        "index": 1,
                         "smallItemCount": 6,
                         "largeItemCount": 6,
                         "randomSeed": 78
@@ -74,7 +74,7 @@
                     "packImageUrl": "/products/potato-chips/Sea-Salt-Balsamic.png",
                     "particleUrl": "/products/potato-chips/potato-chip-particles.png",
                     "particles": {
-                        "particleMapIndex": 0,
+                        "index": 0,
                         "smallItemCount": 6,
                         "largeItemCount": 5,
                         "randomSeed": 0
@@ -87,7 +87,7 @@
                     "packImageUrl": "/products/potato-chips/Sea-Salt.png",
                     "particleUrl": "/products/potato-chips/potato-chip-particles.png",
                     "particles": {
-                        "particleMapIndex": 0,
+                        "index": 0,
                         "smallItemCount": 6,
                         "largeItemCount": 3,
                         "randomSeed": 0
@@ -100,7 +100,7 @@
                     "packImageUrl": "/products/potato-chips/Sweet-Chilli-Sour-Cream.png",
                     "particleUrl": "/products/potato-chips/potato-chip-particles.png",
                     "particles": {
-                        "particleMapIndex": 2,
+                        "index": 2,
                         "smallItemCount": 8,
                         "largeItemCount": 6,
                         "randomSeed": 0
@@ -151,8 +151,8 @@
             "deluxe-crisps": [
                 {
                     "title": "Chilli Roast Garlic & Lemon Oil",
-                    "copy": "",
-                    "subCopy": "",
+                    "copy": "Our Chilli, Roast Garlic and Lemon Oil Deluxe Potato Crisps are seasoned with sweet slow roasted garlic, combined with the kick of chilli and are complemented with a light spritz of zesty lemon oil.",
+                    "subCopy": "Red Rock Deli Deluxe Crisps use only the finest quality potatoes, slow cooked until they’re golden and crunchy. They’re spritzed with premium infused oils and paired with seasonings carefully selected to work in perfect harmony.",
                     "packImageUrl": "/products/deluxe-crisps/Deluxe-Crisps-Chilli-Roast-Garlic-Lem-Oil.png",
                     "particleUrl": "/products/deluxe-crisps/deluxe-particles.png",
                     "particles": {
@@ -164,8 +164,8 @@
                 },
                 {
                     "title": "Parmesan & Black Truffle Oil",
-                    "copy": "",
-                    "subCopy": "",
+                    "copy": "Our Parmesan & Black Truffle Oil Deluxe Potato Crisps are seasoned with the distinctive sharp taste of parmesan and are complemented with a light spritz of decadent, rich truffle oil.",
+                    "subCopy": "Red Rock Deli Deluxe Crisps use only the finest quality potatoes, slow cooked until they’re golden and crunchy. They’re spritzed with premium infused oils and paired with seasonings carefully selected to work in perfect harmony.",
                     "packImageUrl": "/products/deluxe-crisps/Deluxe-Crisps-Parm-And-Black-Truffle-Oil.png",
                     "particleUrl": "/products/deluxe-crisps/deluxe-particles.png",
                     "particles": {
@@ -177,8 +177,8 @@
                 },
                 {
                     "title": "Vintage Cheddar, Onion & Rosemary",
-                    "copy": "",
-                    "subCopy": "",
+                    "copy": "Placeholder",
+                    "subCopy": "Red Rock Deli Deluxe Crisps use only the finest quality potatoes, slow cooked until they’re golden and crunchy. They’re spritzed with premium infused oils and paired with seasonings carefully selected to work in perfect harmony.",
                     "packImageUrl": "/products/deluxe-crisps/Deluxe-Crisps-Vintage-Ched-Cara-Rose-Oil.png",
                     "particleUrl": "/products/deluxe-crisps/deluxe-particles.png",
                     "particles": {
@@ -189,18 +189,95 @@
                     }
                 }
             ],
-
             "dips": [
                 {
                     "title": "Balsamic Beetroot",
-                    "copy": "",
-                    "subCopy": "",
+                    "copy": "Placeholder",
+                    "subCopy": "Placeholder Copy",
                     "packImageUrl": "/products/dips/Balsamic-Beetroot.png",
-                    "particleUrl": "/products/",
+                    "particleUrl": "/products/dips/particles.png",
+                    "particles": {
+                        "index": 0,
+                        "smallItemCount": 4,
+                        "largeItemCount": 3,
+                        "randomSeed": 0
+                    }
+                },
+                {
+                    "title": "Basil Pesto Pecorino",
+                    "copy": "Placeholder",
+                    "subCopy": "Placeholder Copy",
+                    "packImageUrl": "/products/dips/Basil-Pesto-Pecorino.png",
+                    "particleUrl": "/products/dips/particles.png",
                     "particles": {
                         "index": 1,
-                        "smallItemCount": 1,
-                        "largeItemCount": 1,
+                        "smallItemCount": 5,
+                        "largeItemCount": 4,
+                        "randomSeed": 0
+                    }
+                },
+                {
+                    "title": "Roast Pumpkin",
+                    "copy": "Placeholder",
+                    "subCopy": "Placeholder Copy",
+                    "packImageUrl": "/products/dips/Roast-Pumpkin.png",
+                    "particleUrl": "/products/dips/particles.png",
+                    "particles": {
+                        "index": 2,
+                        "smallItemCount": 5,
+                        "largeItemCount": 3,
+                        "randomSeed": 0
+                    }
+                },
+                {
+                    "title": "Roast Tomato, Feta, Basil & Cashew",
+                    "copy": "Placeholder",
+                    "subCopy": "Placeholder Copy",
+                    "packImageUrl": "/products/dips/Roast-Tomato-Feta-Basil-And-Cashew.png",
+                    "particleUrl": "/products/dips/particles.png",
+                    "particles": {
+                        "index": 3,
+                        "smallItemCount": 5,
+                        "largeItemCount": 4,
+                        "randomSeed": 0
+                    }
+                },
+                {
+                    "title": "Roasted Red Capsicum",
+                    "copy": "Placeholder",
+                    "subCopy": "Placeholder Copy",
+                    "packImageUrl": "/products/dips/Roasted-Red-Capsicum.png",
+                    "particleUrl": "/products/dips/particles.png",
+                    "particles": {
+                        "index": 4,
+                        "smallItemCount": 2,
+                        "largeItemCount": 5,
+                        "randomSeed": 0
+                    }
+                },
+                {
+                    "title": "Spicy Capsicum",
+                    "copy": "Placeholder",
+                    "subCopy": "Placeholder Copy",
+                    "packImageUrl": "/products/dips/RRD-Spicy-Capsicum.png",
+                    "particleUrl": "/products/dips/particles.png",
+                    "particles": {
+                        "index": 5,
+                        "smallItemCount": 5,
+                        "largeItemCount": 4,
+                        "randomSeed": 0
+                    }
+                },
+                {
+                    "title": "Thai Chilli",
+                    "copy": "Placeholder",
+                    "subCopy": "Placeholder Copy",
+                    "packImageUrl": "/products/dips/Thai-Chilli.png",
+                    "particleUrl": "/products/dips/particles.png",
+                    "particles": {
+                        "index": 6,
+                        "smallItemCount": 6,
+                        "largeItemCount": 3,
                         "randomSeed": 0
                     }
                 }
@@ -208,8 +285,8 @@
             "limited-edition": [
                 {
                     "title": "Maple Glazed Bacon & Cheddar",
-                    "copy": "",
-                    "subCopy": "",
+                    "copy": "Our Maple Glazed Bacon & Cheddar potato chips combine the rich, sweet smokiness of maple bacon with the subtle creaminess of cheddar.",
+                    "subCopy": "We begin with the finest potatoes harvested from Australian farms, roughly cut and slow-cooked in Sunflower Oil, for the most delectable crunch. And with surprising twists,  grinds and blends of carefully selected flavours, there’s an enticing taste journey waiting to be discovered in every bite.",
                     "packImageUrl": "/products/limited-edition/Maple-Glazed-Bacon-And-Cheddar.png",
                     "particleUrl": "/products/limited-edition/limited-edition-particles.png",
                     "particles": {
@@ -221,8 +298,8 @@
                 },
                 {
                     "title": "Morrocan Spiced Chicken",
-                    "copy": "",
-                    "subCopy": "",
+                    "copy": "Our Moroccan Spiced Chicken & Lemon potato chips blend the exotic flavour of Moroccan spices and succulent chicken with the freshness of zesty lemon.",
+                    "subCopy": "We begin with the finest potatoes harvested from Australian farms, roughly cut and slow-cooked in Sunflower Oil, for the most delectable crunch. And with surprising twists,  grinds and blends of carefully selected flavours, there’s an enticing taste journey waiting to be discovered in every bite.",
                     "packImageUrl": "/products/limited-edition/Maple-Glazed-Bacon-And-Cheddar.png",
                     "particleUrl": "/products/limited-edition/limited-edition-particles.png",
                     "particles": {
@@ -236,14 +313,66 @@
             "nuts": [
                 {
                     "title": "Apple Cinnamon Crumble",
-                    "copy": "",
-                    "subCopy": "",
+                    "copy": "Our Cinnamon And Apple Crumble Glazed Nuts combine the delicate sweetness of sliced pink lady apples and currants with deliciously fragrant and spicy cinnamon and a pinch of brown sugar to deliver a delicious sweet twist to a delectable crunchy snack.",
+                    "subCopy": "Discover our delicious Red Rock Deli Glazed Mix range, crafted with fine quality peanuts, almonds and cashews, and combined with dried fruit and sophisticated gourmet deli inspired ingredients to deliver a unique taste sensation.",
                     "packImageUrl": "/products/nuts/Glazed-Nuts-Apple-Cinnamon-Crumble.png",
-                    "particleUrl": "/products/",
+                    "particleUrl": "/products/nuts/particles.png",
+                    "particles": {
+                        "index": 3,
+                        "smallItemCount": 7,
+                        "largeItemCount": 3,
+                        "randomSeed": 0
+                    }
+                },
+                {
+                    "title": "Honey, Vanilla & Cranberry",
+                    "copy": "Our Honey, Vanilla And Cranberries Glazed Nuts combine the delicious tanginess of cranberries with notes of fragrant vanilla and a caramelised honey glaze to deliver a delicious sweet twist to a delectable crunchy snack.",
+                    "subCopy": "Discover our delicious Red Rock Deli Glazed Mix range, crafted with fine quality peanuts, almonds and cashews, and combined with dried fruit and sophisticated gourmet deli inspired ingredients to deliver a unique taste sensation.",
+                    "packImageUrl": "/products/nuts/Glazed-Nuts-Vanilla-Cranberry-And-Honey.png",
+                    "particleUrl": "/products/nuts/particles.png",
+                    "particles": {
+                        "index": 4,
+                        "smallItemCount": 6,
+                        "largeItemCount": 3,
+                        "randomSeed": 0
+                    }
+                },
+                {
+                    "title": "Balsamic Vinegar & Chilli",
+                    "copy": "Placeholder",
+                    "subCopy": "Placeholder Copy",
+                    "packImageUrl": "/products/nuts/Mixed-Nuts-Balsamic-Vinegar-And-Chilli.png",
+                    "particleUrl": "/products/nuts/particles.png",
                     "particles": {
                         "index": 1,
-                        "smallItemCount": 1,
-                        "largeItemCount": 1,
+                        "smallItemCount": 4,
+                        "largeItemCount": 2,
+                        "randomSeed": 0
+                    }
+                },
+                {
+                    "title": "Cramalised Garlic & Lemon",
+                    "copy": "Placeholder",
+                    "subCopy": "Placeholder Copy",
+                    "packImageUrl": "/products/nuts/Mixed-Nuts-Cramalised-Garlic-And-Lemon.png",
+                    "particleUrl": "/products/nuts/particles.png",
+                    "particles": {
+                        "index": 0,
+                        "smallItemCount": 4,
+                        "largeItemCount": 4,
+                        "randomSeed": 0
+                    }
+                },
+                {
+                    "title": "Sweet Honey & Sea Salt.png",
+                    "copy": "Placeholder",
+                    "subCopy": "Placeholder Copy",
+                    "packImageUrl": "/products/nuts/Peanuts-Sweet-Honey-And-Sea-Salt.png",
+                    "particleUrl": "/products/nuts/particles.png",
+                    "particles": {
+                        "index": 2,
+                        "smallItemCount": 5,
+                        "largeItemCount": 3,
                         "randomSeed": 0
                     }
                 }
