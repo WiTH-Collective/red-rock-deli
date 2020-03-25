@@ -189,9 +189,15 @@ const OurRange = props => {
                             <img
                                 src={modalInfo.image}
                                 alt={modalInfo.heading}
+                                onClick={() => {
+                                    closeModal();
+                                }}
                             />
                             {modalInfo.copy ? (
                                 <div
+                                    onClick={() => {
+                                        closeModal();
+                                    }}
                                     className="copy"
                                     dangerouslySetInnerHTML={{
                                         __html: modalInfo.copy

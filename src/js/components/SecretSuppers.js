@@ -31,7 +31,9 @@ const SecretSuppers = () => {
                             combinations.
                         </p>
                     </div>
-                    <ButtonPrimary linkTo="/">Primary CTA Button</ButtonPrimary>
+                    <ButtonPrimary linkTo="/secret-suppers">
+                        Primary CTA Button
+                    </ButtonPrimary>
                 </div>
             </div>
         </section>

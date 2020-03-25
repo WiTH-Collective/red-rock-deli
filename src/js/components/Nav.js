@@ -34,7 +34,7 @@ function Nav() {
                         <li>
                             <Link
                                 className="logo"
-                                to="/secter-suppers"
+                                to="/secret-suppers"
                                 onClick={hideHamburger}
                             >
                                 SECRET SUPPERS

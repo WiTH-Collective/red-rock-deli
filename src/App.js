@@ -16,6 +16,7 @@ import EventPageSydney from "./js/EventPage";
 import ScrollReveal from "./js/utils/ScrollReveal";
 import OurRange from "./js/OurRange";
 import history from "./js/history";
+import SecretSuppersPage from "./js/SecretSuppersPage";
 
 function App() {
     const [wrapperClass, setWrapperClass] = useState("wrapper");
@@ -50,6 +51,11 @@ function App() {
                             <Route path="/" exact component={HomePage} />
                             <Route path="/faq" exact component={FAQs} />
                             <Route path="/our-range" component={OurRange} />
+                            <Route
+                                path="/secret-suppers"
+                                exact
+                                component={SecretSuppersPage}
+                            />
                             <Route path="/chef1" exact component={ChefPage01} />
                             <Route path="/chef2" exact component={ChefPage01} />
                             <Route
