@@ -5,6 +5,14 @@ import Logo from "./Logo";
 function Nav() {
     const [isToggled, setToggled] = useState(false);
     const toggleTrueFalse = () => setToggled(!isToggled);
+    const showContact = () => {
+        hideHamburger();
+        window.scrollTo(
+            0,
+            document.getElementById("contact").offsetTop -
+                document.body.scrollTop
+        );
+    };
     const hideHamburger = () => {
         console.log("toggling");
         setToggled(false);
@@ -20,11 +28,7 @@ function Nav() {
                 <nav>
                     <ul>
                         <li>
-                            <Link
-                                className="logo"
-                                to="/our-range"
-                                onClick={hideHamburger}
-                            >
+                            <Link to="/our-range" onClick={hideHamburger}>
                                 OUR RANGE
                             </Link>
                         </li>
@@ -32,11 +36,7 @@ function Nav() {
                             <div className="divider"></div>
                         </li>
                         <li>
-                            <Link
-                                className="logo"
-                                to="/secret-suppers"
-                                onClick={hideHamburger}
-                            >
+                            <Link to="/secret-suppers" onClick={hideHamburger}>
                                 SECRET SUPPERS
                             </Link>
                         </li>
@@ -44,13 +44,9 @@ function Nav() {
                             <div className="divider"></div>
                         </li>
                         <li>
-                            <Link
-                                className="logo"
-                                to="/contact"
-                                onClick={hideHamburger}
-                            >
+                            <div className="a" onClick={showContact}>
                                 CONTACT
-                            </Link>
+                            </div>
                         </li>
                     </ul>
                 </nav>

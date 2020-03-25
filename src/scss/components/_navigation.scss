@@ -102,9 +102,12 @@
                     background: white;
                 }
 
-                a {
+                a,
+                .a {
                     font-family: $tradeGothic;
                     font-size: 36px;
+                    color: $white;
+                    cursor: pointer;
                 }
             }
         }
@@ -201,14 +204,15 @@
                         margin: 0 10px;
                     }
 
-                    a {
+                    a,
+                    .a {
                         font-family: $tradeGothic;
                         font-size: 16px;
                         margin: 0;
                         padding: 8px 10px;
                         background: rgba(255, 255, 255, 0);
                         border-radius: 2px;
-                        transition: background 0.15s ease-out;
+                        transition: background-color 0.15s ease-out;
 
                         &:hover {
                             padding: 8px 10px;

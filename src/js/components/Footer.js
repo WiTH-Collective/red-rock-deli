@@ -6,7 +6,7 @@ import EnquiryForm from "./EnquiryForms";
 
 function Footer() {
     return (
-        <section className="Footer">
+        <section className="Footer" id="contact" name="contact">
             <div className="container">
                 <div className="top">
                     <div className="left">
