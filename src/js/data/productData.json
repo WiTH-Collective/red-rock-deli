@@ -48,6 +48,20 @@
                     "subCopy": "We begin with the finest potatoes harvested from Australian farms, roughly cut and slow-cooked in Sunflower Oil, for the most delectable crunch. And with surprising twists, grinds and blends of carefully selected flavours, there’s an enticing taste journey waiting to be discovered in every bite.",
                     "packImageUrl": "/products/potato-chips/Honey-Soy-Chicken.png",
                     "particleUrl": "/products/potato-chips/potato-chip-particles.png",
+                    "flavourPairing": {
+                        "image": "/images/flavour-pairings/placeholder.jpg",
+                        "copy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+                    },
+                    "nutritionalInfo": {
+                        "image": "/products/potato-chips/info-SweetChilliSourCream.png"
+                    },
+                    "flavourPairing": {
+                        "image": "/images/flavour-pairings/placeholder.jpg",
+                        "copy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+                    },
+                    "nutritionalInfo": {
+                        "image": "/products/potato-chips/info-SweetChilliSourCream.png"
+                    },
                     "particles": {
                         "index": 3,
                         "smallItemCount": 7,
@@ -62,6 +76,13 @@
                     "subCopy": "We begin with the finest potatoes harvested from Australian farms, roughly cut and slow-cooked in Sunflower Oil, for the most delectable crunch. And with surprising twists, grinds and blends of carefully selected flavours, there’s an enticing taste journey waiting to be discovered in every bite.",
                     "packImageUrl": "/products/potato-chips/Lime-Black-Pepper.png",
                     "particleUrl": "/products/potato-chips/potato-chip-particles.png",
+                    "flavourPairing": {
+                        "image": "/images/flavour-pairings/placeholder.jpg",
+                        "copy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+                    },
+                    "nutritionalInfo": {
+                        "image": "/products/potato-chips/info-SweetChilliSourCream.png"
+                    },
                     "particles": {
                         "index": 1,
                         "smallItemCount": 6,
@@ -76,6 +97,13 @@
                     "subCopy": "We begin with the finest potatoes harvested from Australian farms, roughly cut and slow-cooked in Sunflower Oil, for the most delectable crunch. And with surprising twists, grinds and blends of carefully selected flavours, there’s an enticing taste journey waiting to be discovered in every bite.",
                     "packImageUrl": "/products/potato-chips/Sea-Salt-Balsamic.png",
                     "particleUrl": "/products/potato-chips/potato-chip-particles.png",
+                    "flavourPairing": {
+                        "image": "/images/flavour-pairings/placeholder.jpg",
+                        "copy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+                    },
+                    "nutritionalInfo": {
+                        "image": "/products/potato-chips/info-SweetChilliSourCream.png"
+                    },
                     "particles": {
                         "index": 0,
                         "smallItemCount": 6,
@@ -90,6 +118,13 @@
                     "subCopy": "We begin with the finest potatoes harvested from Australian farms, roughly cut and slow-cooked in Sunflower Oil, for the most delectable crunch. And with surprising twists, grinds and blends of carefully selected flavours, there’s an enticing taste journey waiting to be discovered in every bite.",
                     "packImageUrl": "/products/potato-chips/Sea-Salt.png",
                     "particleUrl": "/products/potato-chips/potato-chip-particles.png",
+                    "flavourPairing": {
+                        "image": "/images/flavour-pairings/placeholder.jpg",
+                        "copy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+                    },
+                    "nutritionalInfo": {
+                        "image": "/products/potato-chips/info-SweetChilliSourCream.png"
+                    },
                     "particles": {
                         "index": 0,
                         "smallItemCount": 6,
@@ -104,6 +139,13 @@
                     "subCopy": "We begin with the finest potatoes harvested from Australian farms, roughly cut and slow-cooked in Sunflower Oil, for the most delectable crunch. And with surprising twists, grinds and blends of carefully selected flavours, there’s an enticing taste journey waiting to be discovered in every bite.",
                     "packImageUrl": "/products/potato-chips/Sweet-Chilli-Sour-Cream.png",
                     "particleUrl": "/products/potato-chips/potato-chip-particles.png",
+                    "flavourPairing": {
+                        "image": "/images/flavour-pairings/placeholder.jpg",
+                        "copy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+                    },
+                    "nutritionalInfo": {
+                        "image": "/products/potato-chips/info-SweetChilliSourCream.png"
+                    },
                     "particles": {
                         "index": 2,
                         "smallItemCount": 8,
@@ -120,6 +162,13 @@
                     "subCopy": "Our Red Rock Deli Tortilla Chips are made with finely selected corn harvested from Australian farms. Our special tortilla chips are carefully cut and generously seasoned with deli inspired flavour combinations, to enhance the naturally delicious taste of the corn. Enjoy Red Rock Deli’s authentic thick cut tortilla chips made with only the finest quality ingredients for a truly unique flavour sensation.",
                     "packImageUrl": "/products/tortilla-chips/Tortilla-Creamy-Feta-Avo-And-Lime.png",
                     "particleUrl": "/products/tortilla-chips/tortilla-chip-particles.png",
+                    "flavourPairing": {
+                        "image": "/images/flavour-pairings/placeholder.jpg",
+                        "copy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+                    },
+                    "nutritionalInfo": {
+                        "image": "/products/potato-chips/info-SweetChilliSourCream.png"
+                    },
                     "particles": {
                         "index": 0,
                         "smallItemCount": 4,
@@ -134,6 +183,13 @@
                     "subCopy": "Our Red Rock Deli Tortilla Chips are made with finely selected corn harvested from Australian farms. Our special tortilla chips are carefully cut and generously seasoned with deli inspired flavour combinations, to enhance the naturally delicious taste of the corn. Enjoy Red Rock Deli’s authentic thick cut tortilla chips made with only the finest quality ingredients for a truly unique flavour sensation.",
                     "packImageUrl": "/products/tortilla-chips/Tortilla-Tangy-Tomato-Relish.png",
                     "particleUrl": "/products/tortilla-chips/tortilla-chip-particles.png",
+                    "flavourPairing": {
+                        "image": "/images/flavour-pairings/placeholder.jpg",
+                        "copy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+                    },
+                    "nutritionalInfo": {
+                        "image": "/products/potato-chips/info-SweetChilliSourCream.png"
+                    },
                     "particles": {
                         "index": 2,
                         "smallItemCount": 6,
@@ -148,6 +204,13 @@
                     "subCopy": "Our Red Rock Deli Tortilla Chips are made with finely selected corn harvested from Australian farms. Our special tortilla chips are carefully cut and generously seasoned with deli inspired flavour combinations, to enhance the naturally delicious taste of the corn. Enjoy Red Rock Deli’s authentic thick cut tortilla chips made with only the finest quality ingredients for a truly unique flavour sensation.",
                     "packImageUrl": "/products/tortilla-chips/Tortilla-Parmesan-And-Caramelised-Onion.png",
                     "particleUrl": "/products/tortilla-chips/tortilla-chip-particles.png",
+                    "flavourPairing": {
+                        "image": "/images/flavour-pairings/placeholder.jpg",
+                        "copy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+                    },
+                    "nutritionalInfo": {
+                        "image": "/products/potato-chips/info-SweetChilliSourCream.png"
+                    },
                     "particles": {
                         "index": 1,
                         "smallItemCount": 5,
@@ -164,6 +227,13 @@
                     "subCopy": "Red Rock Deli Deluxe Crisps use only the finest quality potatoes, slow cooked until they’re golden and crunchy. They’re spritzed with premium infused oils and paired with seasonings carefully selected to work in perfect harmony.",
                     "packImageUrl": "/products/deluxe-crisps/Deluxe-Crisps-Chilli-Roast-Garlic-Lem-Oil.png",
                     "particleUrl": "/products/deluxe-crisps/deluxe-particles.png",
+                    "flavourPairing": {
+                        "image": "/images/flavour-pairings/placeholder.jpg",
+                        "copy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+                    },
+                    "nutritionalInfo": {
+                        "image": "/products/potato-chips/info-SweetChilliSourCream.png"
+                    },
                     "particles": {
                         "index": 0,
                         "smallItemCount": 7,
@@ -178,6 +248,13 @@
                     "subCopy": "Red Rock Deli Deluxe Crisps use only the finest quality potatoes, slow cooked until they’re golden and crunchy. They’re spritzed with premium infused oils and paired with seasonings carefully selected to work in perfect harmony.",
                     "packImageUrl": "/products/deluxe-crisps/Deluxe-Crisps-Parm-And-Black-Truffle-Oil.png",
                     "particleUrl": "/products/deluxe-crisps/deluxe-particles.png",
+                    "flavourPairing": {
+                        "image": "/images/flavour-pairings/placeholder.jpg",
+                        "copy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+                    },
+                    "nutritionalInfo": {
+                        "image": "/products/potato-chips/info-SweetChilliSourCream.png"
+                    },
                     "particles": {
                         "index": 1,
                         "smallItemCount": 6,
@@ -192,6 +269,13 @@
                     "subCopy": "Red Rock Deli Deluxe Crisps use only the finest quality potatoes, slow cooked until they’re golden and crunchy. They’re spritzed with premium infused oils and paired with seasonings carefully selected to work in perfect harmony.",
                     "packImageUrl": "/products/deluxe-crisps/Deluxe-Crisps-Vintage-Ched-Cara-Rose-Oil.png",
                     "particleUrl": "/products/deluxe-crisps/deluxe-particles.png",
+                    "flavourPairing": {
+                        "image": "/images/flavour-pairings/placeholder.jpg",
+                        "copy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+                    },
+                    "nutritionalInfo": {
+                        "image": "/products/potato-chips/info-SweetChilliSourCream.png"
+                    },
                     "particles": {
                         "index": 2,
                         "smallItemCount": 5,
@@ -208,6 +292,13 @@
                     "subCopy": "Placeholder Copy",
                     "packImageUrl": "/products/dips/Balsamic-Beetroot.png",
                     "particleUrl": "/products/dips/particles.png",
+                    "flavourPairing": {
+                        "image": "/images/flavour-pairings/placeholder.jpg",
+                        "copy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+                    },
+                    "nutritionalInfo": {
+                        "image": "/products/potato-chips/info-SweetChilliSourCream.png"
+                    },
                     "particles": {
                         "index": 0,
                         "smallItemCount": 4,
@@ -222,6 +313,13 @@
                     "subCopy": "Placeholder Copy",
                     "packImageUrl": "/products/dips/Basil-Pesto-Pecorino.png",
                     "particleUrl": "/products/dips/particles.png",
+                    "flavourPairing": {
+                        "image": "/images/flavour-pairings/placeholder.jpg",
+                        "copy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+                    },
+                    "nutritionalInfo": {
+                        "image": "/products/potato-chips/info-SweetChilliSourCream.png"
+                    },
                     "particles": {
                         "index": 1,
                         "smallItemCount": 5,
@@ -236,6 +334,13 @@
                     "subCopy": "Placeholder Copy",
                     "packImageUrl": "/products/dips/Roast-Pumpkin.png",
                     "particleUrl": "/products/dips/particles.png",
+                    "flavourPairing": {
+                        "image": "/images/flavour-pairings/placeholder.jpg",
+                        "copy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+                    },
+                    "nutritionalInfo": {
+                        "image": "/products/potato-chips/info-SweetChilliSourCream.png"
+                    },
                     "particles": {
                         "index": 2,
                         "smallItemCount": 5,
@@ -250,6 +355,13 @@
                     "subCopy": "Placeholder Copy",
                     "packImageUrl": "/products/dips/Roast-Tomato-Feta-Basil-And-Cashew.png",
                     "particleUrl": "/products/dips/particles.png",
+                    "flavourPairing": {
+                        "image": "/images/flavour-pairings/placeholder.jpg",
+                        "copy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+                    },
+                    "nutritionalInfo": {
+                        "image": "/products/potato-chips/info-SweetChilliSourCream.png"
+                    },
                     "particles": {
                         "index": 3,
                         "smallItemCount": 5,
@@ -264,6 +376,13 @@
                     "subCopy": "Placeholder Copy",
                     "packImageUrl": "/products/dips/Roasted-Red-Capsicum.png",
                     "particleUrl": "/products/dips/particles.png",
+                    "flavourPairing": {
+                        "image": "/images/flavour-pairings/placeholder.jpg",
+                        "copy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+                    },
+                    "nutritionalInfo": {
+                        "image": "/products/potato-chips/info-SweetChilliSourCream.png"
+                    },
                     "particles": {
                         "index": 4,
                         "smallItemCount": 2,
@@ -278,6 +397,13 @@
                     "subCopy": "Placeholder Copy",
                     "packImageUrl": "/products/dips/RRD-Spicy-Capsicum.png",
                     "particleUrl": "/products/dips/particles.png",
+                    "flavourPairing": {
+                        "image": "/images/flavour-pairings/placeholder.jpg",
+                        "copy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+                    },
+                    "nutritionalInfo": {
+                        "image": "/products/potato-chips/info-SweetChilliSourCream.png"
+                    },
                     "particles": {
                         "index": 5,
                         "smallItemCount": 5,
@@ -292,6 +418,13 @@
                     "subCopy": "Placeholder Copy",
                     "packImageUrl": "/products/dips/Thai-Chilli.png",
                     "particleUrl": "/products/dips/particles.png",
+                    "flavourPairing": {
+                        "image": "/images/flavour-pairings/placeholder.jpg",
+                        "copy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+                    },
+                    "nutritionalInfo": {
+                        "image": "/products/potato-chips/info-SweetChilliSourCream.png"
+                    },
                     "particles": {
                         "index": 6,
                         "smallItemCount": 6,
@@ -308,6 +441,13 @@
                     "subCopy": "We begin with the finest potatoes harvested from Australian farms, roughly cut and slow-cooked in Sunflower Oil, for the most delectable crunch. And with surprising twists,  grinds and blends of carefully selected flavours, there’s an enticing taste journey waiting to be discovered in every bite.",
                     "packImageUrl": "/products/limited-edition/Maple-Glazed-Bacon-And-Cheddar.png",
                     "particleUrl": "/products/limited-edition/limited-edition-particles.png",
+                    "flavourPairing": {
+                        "image": "/images/flavour-pairings/placeholder.jpg",
+                        "copy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+                    },
+                    "nutritionalInfo": {
+                        "image": "/products/potato-chips/info-SweetChilliSourCream.png"
+                    },
                     "particles": {
                         "index": 0,
                         "smallItemCount": 6,
@@ -322,6 +462,13 @@
                     "subCopy": "We begin with the finest potatoes harvested from Australian farms, roughly cut and slow-cooked in Sunflower Oil, for the most delectable crunch. And with surprising twists,  grinds and blends of carefully selected flavours, there’s an enticing taste journey waiting to be discovered in every bite.",
                     "packImageUrl": "/products/limited-edition/Maple-Glazed-Bacon-And-Cheddar.png",
                     "particleUrl": "/products/limited-edition/limited-edition-particles.png",
+                    "flavourPairing": {
+                        "image": "/images/flavour-pairings/placeholder.jpg",
+                        "copy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+                    },
+                    "nutritionalInfo": {
+                        "image": "/products/potato-chips/info-SweetChilliSourCream.png"
+                    },
                     "particles": {
                         "index": 1,
                         "smallItemCount": 4,
@@ -338,6 +485,13 @@
                     "subCopy": "Discover our delicious Red Rock Deli Glazed Mix range, crafted with fine quality peanuts, almonds and cashews, and combined with dried fruit and sophisticated gourmet deli inspired ingredients to deliver a unique taste sensation.",
                     "packImageUrl": "/products/nuts/Glazed-Nuts-Apple-Cinnamon-Crumble.png",
                     "particleUrl": "/products/nuts/particles.png",
+                    "flavourPairing": {
+                        "image": "/images/flavour-pairings/placeholder.jpg",
+                        "copy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+                    },
+                    "nutritionalInfo": {
+                        "image": "/products/potato-chips/info-SweetChilliSourCream.png"
+                    },
                     "particles": {
                         "index": 3,
                         "smallItemCount": 7,
@@ -352,6 +506,13 @@
                     "subCopy": "Discover our delicious Red Rock Deli Glazed Mix range, crafted with fine quality peanuts, almonds and cashews, and combined with dried fruit and sophisticated gourmet deli inspired ingredients to deliver a unique taste sensation.",
                     "packImageUrl": "/products/nuts/Glazed-Nuts-Vanilla-Cranberry-And-Honey.png",
                     "particleUrl": "/products/nuts/particles.png",
+                    "flavourPairing": {
+                        "image": "/images/flavour-pairings/placeholder.jpg",
+                        "copy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+                    },
+                    "nutritionalInfo": {
+                        "image": "/products/potato-chips/info-SweetChilliSourCream.png"
+                    },
                     "particles": {
                         "index": 4,
                         "smallItemCount": 6,
@@ -366,6 +527,13 @@
                     "subCopy": "Placeholder Copy",
                     "packImageUrl": "/products/nuts/Mixed-Nuts-Balsamic-Vinegar-And-Chilli.png",
                     "particleUrl": "/products/nuts/particles.png",
+                    "flavourPairing": {
+                        "image": "/images/flavour-pairings/placeholder.jpg",
+                        "copy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+                    },
+                    "nutritionalInfo": {
+                        "image": "/products/potato-chips/info-SweetChilliSourCream.png"
+                    },
                     "particles": {
                         "index": 1,
                         "smallItemCount": 4,
@@ -380,6 +548,13 @@
                     "subCopy": "Placeholder Copy",
                     "packImageUrl": "/products/nuts/Mixed-Nuts-Cramalised-Garlic-And-Lemon.png",
                     "particleUrl": "/products/nuts/particles.png",
+                    "flavourPairing": {
+                        "image": "/images/flavour-pairings/placeholder.jpg",
+                        "copy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+                    },
+                    "nutritionalInfo": {
+                        "image": "/products/potato-chips/info-SweetChilliSourCream.png"
+                    },
                     "particles": {
                         "index": 0,
                         "smallItemCount": 4,
@@ -394,6 +569,13 @@
                     "subCopy": "Placeholder Copy",
                     "packImageUrl": "/products/nuts/Peanuts-Sweet-Honey-And-Sea-Salt.png",
                     "particleUrl": "/products/nuts/particles.png",
+                    "flavourPairing": {
+                        "image": "/images/flavour-pairings/placeholder.jpg",
+                        "copy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+                    },
+                    "nutritionalInfo": {
+                        "image": "/products/potato-chips/info-SweetChilliSourCream.png"
+                    },
                     "particles": {
                         "index": 2,
                         "smallItemCount": 5,

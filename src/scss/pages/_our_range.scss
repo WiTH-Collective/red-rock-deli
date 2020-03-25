@@ -1,16 +1,150 @@
 .our-range {
+    position: relative;
     .hidden {
         display: none;
     }
 
+    .blur-container {
+        transition: filter 0.3s ease-out;
+        &.blurred {
+            filter: blur(5px);
+        }
+    }
+
+    .modal {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0);
+        display: none;
+        pointer-events: none;
+        transition: all 0.3s ease-out;
+
+        &.isActive {
+            @include flexCenter;
+            align-items: flex-start;
+            background-color: rgba(0, 0, 0, 0.2);
+            pointer-events: all;
+        }
+
+        .info {
+            margin-top: 50px;
+            width: calc(100% - 80px);
+            max-width: 280px;
+
+            .black-box {
+                background: $black;
+                color: $white;
+                border: 2px solid $white;
+                box-shadow: 0 5px 12px rgba(0, 0, 0, 0.25);
+                margin-bottom: 20px;
+            }
+
+            img {
+                width: 100%;
+            }
+
+            .header,
+            .copy {
+                padding: 10px;
+            }
+
+            .header {
+                position: relative;
+                &::after {
+                    content: "";
+                    position: absolute;
+                    right: 10px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    width: 20px;
+                    height: 20px;
+                    background: url("../../img/ui/close.svg") no-repeat;
+                    background-size: cover;
+                    transition: opacity 0.2s ease-out;
+                }
+
+                &:hover {
+                    &::after {
+                        opacity: 0.8;
+                    }
+                }
+            }
+        }
+    }
+
+    .icons {
+        position: relative;
+        width: 100%;
+        @include flexCenter;
+        align-items: flex-start;
+
+        .item {
+            position: relative;
+            text-align: center;
+            width: 120px;
+
+            .label {
+                font-size: 12px;
+                color: $white;
+                font-weight: bold;
+            }
+
+            .icon {
+                width: 50px;
+                height: 50px;
+                margin: 15px;
+                background: $midGrey;
+                border-radius: 50%;
+                margin: 0 auto;
+                margin-bottom: 10px;
+                @include flexCenter;
+                position: relative;
+                transition: background-color 0.3s ease-in;
+
+                svg {
+                    width: 50%;
+                    height: 50%;
+                    fill: $white;
+                    transition: all 0.3s ease-out;
+                    content: "";
+                }
+
+                &:hover,
+                &.isActive {
+                    background: $white;
+                    svg {
+                        fill: $midGrey;
+                        transform: scale(1.2);
+                    }
+                }
+            }
+        }
+    }
+
     .controls {
         div {
+            position: absolute;
+            top: 25%;
             max-width: 1120px;
+        }
+    }
+    @include md {
+        .controls {
+            div {
+                top: 30%;
+                bottom: 200px;
+            }
         }
     }
     @include lg {
         .controls {
             div {
+                position: relative;
+                top: 0;
+                bottom: 0px;
                 width: calc(100% - 40px);
             }
         }
@@ -21,7 +155,8 @@
     }
 
     .DiscoverTheRange {
-        min-height: 600px;
+        min-height: 400px;
+        height: calc(100% - 150px);
         padding-top: 0;
 
         .canvas-container {
@@ -33,11 +168,12 @@
             .canvas-inner {
                 width: 100%;
                 height: 100%;
+                margin-top: 30px;
                 margin-bottom: -30px;
                 @include flexCenter;
                 canvas.particle-system {
-                    min-height: 500px;
-                    min-width: 900px;
+                    min-height: 350px;
+                    min-width: 600px;
                 }
             }
         }
@@ -63,46 +199,27 @@
                 font-size: 19px;
                 line-height: 1.2;
             }
-            .icons {
-                position: relative;
-                width: 100%;
-                @include flexCenter;
-
-                .icon {
-                    width: 50px;
-                    height: 50px;
-                    margin: 15px;
-                    background: $midGrey;
-                    border-radius: 50%;
-                    @include flexCenter;
-                    position: relative;
-                    transition: background-color 0.2s ease-out;
-
-                    svg {
-                        width: 50%;
-                        height: 50%;
-                        fill: $white;
-                        transition: all 0.2s ease-out;
-                        content: "";
-                    }
-
-                    &:hover,
-                    &.isActive {
-                        background: $white;
-                        svg {
-                            fill: $midGrey;
-                            transform: scale(1.2);
-                        }
-                    }
-                }
-            }
         }
 
         @include md {
             //
+            min-height: 600px;
+
             .description {
                 p.large {
                     font-size: 22px;
+                }
+            }
+
+            .canvas-container {
+                .canvas-inner {
+                    margin-top: 0px;
+                    // width: 100%;
+                    // height: 100%;
+                    canvas.particle-system {
+                        min-height: 500px;
+                        min-width: 900px;
+                    }
                 }
             }
         }
