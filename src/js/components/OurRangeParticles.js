@@ -8,19 +8,6 @@ import OurRangeIcons from "./OurRangeIcons";
 const OurRangeParticles = props => {
     console.log("--> Start of OurRangeParticles Component");
     console.log(">> RANGE >> props.pageIsLoading", props.pageIsLoading);
-
-    const [pageLoading, setPageLoading] = useState(true);
-    const [revealDelay, setRevealDelay] = useState(1.5);
-    useEffect(() => {
-        setTimeout(() => {
-            if (pageLoading && !props.pageIsLoading) {
-                console.log("LOADED RANGE PARTICLES");
-                setPageLoading(false);
-                setRevealDelay(0.3);
-            }
-        }, 100);
-    }, [props.pageIsLoading]);
-
     const productSpacing = 150;
     const [current, setCurrent] = useState(props.current.index);
 
@@ -35,10 +22,28 @@ const OurRangeParticles = props => {
     const canvasRef = useRef(null);
     let particleArray = [];
     let TL = null;
-    let canUpdate = false;
+    let canUpdate = true;
     let scaleMultiplier = 1;
     let nextProductUrl = "";
 
+    // load staggger
+    const [pageLoading, setPageLoading] = useState(true);
+    const [revealDelay, setRevealDelay] = useState(1.5);
+    useEffect(() => {
+        setTimeout(() => {
+            if (pageLoading && !props.pageIsLoading) {
+                console.log("LOADED RANGE PARTICLES");
+                setPageLoading(false);
+                setRevealDelay(0.3);
+
+                hasInit = true;
+                canUpdate = true;
+            }
+        }, 100);
+    }, [props.pageIsLoading]);
+
+    //
+    //
     const Product = {
         x: 0,
         y: 0,
@@ -64,6 +69,8 @@ const OurRangeParticles = props => {
 
     //
     const nextProduct = increment => {
+        console.log("canUpdate", canUpdate);
+
         if (canUpdate) {
             canUpdate = false;
 
@@ -107,8 +114,10 @@ const OurRangeParticles = props => {
         sprites.product = loadImg(props.current.product.packImageUrl);
     };
     const removeSpriteImages = () => {
-        sprites.particles.remove();
-        sprites.product.remove();
+        if (sprites.particles && sprites.product) {
+            sprites.particles.remove();
+            sprites.product.remove();
+        }
     };
 
     // point at the center of the canvas
@@ -130,10 +139,10 @@ const OurRangeParticles = props => {
         origin.width = canBox.width;
         origin.height = canBox.height;
 
-        if (hasInit) {
-            updateProduct();
-            updateCanvas();
-        }
+        // if (hasInit) {
+        //     updateProduct();
+        //     updateCanvas();
+        // }
     };
 
     const updateProduct = () => {
@@ -396,7 +405,7 @@ const OurRangeParticles = props => {
                 drawParticle(particleArray[i]);
             }
             // upper layer, has dropshadow
-            // ctx.filter = `drop-shadow(0px 20px 5px rgba(0,0,0,0.2))`;
+            ctx.filter = `drop-shadow(0px 20px 5px rgba(0,0,0,0.2))`;
             drawProduct(ctx);
 
             for (
@@ -418,22 +427,34 @@ const OurRangeParticles = props => {
             TL.kill();
         }
 
+        updateCanvas();
+
         TL = new TimelineMax({
-            delay: 0,
+            delay: revealDelay,
             onUpdate: () => {
                 updateCanvas();
+                // updateCanvas();
             }
         });
         // animate product image
         TL.set(".description .copy", { opacity: 0 })
             .from(
                 Product,
-                0.2,
+                0.33,
                 {
                     alpha: 0,
-                    ease: Power3.easeOut
+                    ease: Power3.easeIn
                 },
-                revealDelay
+                0
+            )
+            .from(
+                canvasRef.current,
+                0.33,
+                {
+                    alpha: 0,
+                    ease: Power3.easeIn
+                },
+                0
             )
             .from(
                 Product,
@@ -442,7 +463,7 @@ const OurRangeParticles = props => {
                     x: 150 * -props.current.productAnimationDirection,
                     ease: Power3.easeOut
                 },
-                0 + revealDelay
+                0
             )
             .to(
                 ".description .copy",
@@ -451,7 +472,7 @@ const OurRangeParticles = props => {
                     opacity: 1,
                     ease: Power3.easeOut
                 },
-                0.25 + revealDelay
+                0.25
             )
             .to(
                 Product,
@@ -461,7 +482,7 @@ const OurRangeParticles = props => {
                     scale: "+=0.02",
                     ease: Linear.easeNone
                 },
-                0 + revealDelay
+                0
             );
 
         // animates particles.
@@ -476,27 +497,27 @@ const OurRangeParticles = props => {
                     rotation: p.rotation + CosRandom() * Math.PI * 0.25,
                     ease: Power4.easeOut
                 },
-                0 + revealDelay
+                0
             );
             TL.to(
                 p.wiggle,
                 8 + pDelay * 0.5,
                 {
-                    x: `+=${p.x * 0.05}`,
-                    y: `+=${p.y * 0.05}`,
-                    rotation: `+=${CosRandom() * Math.PI * 0.2}`,
+                    x: `+=${p.x * 0.1}`,
+                    y: `+=${p.y * 0.1}`,
+                    rotation: `+=${CosRandom() * Math.PI * 0.1}`,
                     ease: Linear.easeNone
                 },
-                0 + revealDelay
+                0
             );
             TL.from(
                 p,
-                0.25,
+                0.33,
                 {
                     alpha: 0,
                     ease: Power3.easeIn
                 },
-                0 + revealDelay
+                0
             );
         });
     };
@@ -521,9 +542,9 @@ const OurRangeParticles = props => {
         };
     };
 
-    let copyClass = "copy hidden";
+    let hidden = " hidden";
     if (!pageLoading) {
-        copyClass = "copy";
+        hidden = "";
     }
 
     return (
@@ -532,7 +553,7 @@ const OurRangeParticles = props => {
                 <canvas ref={canvasRef} className="particle-system" />
             </div>
             <div className="description">
-                <div className={copyClass}>
+                <div className={"copy" + hidden}>
                     <h1>{props.current.product.title}</h1>
                     <p className="large">{props.current.product.copy}</p>
                     <p>{props.current.product.subCopy}</p>
@@ -542,7 +563,7 @@ const OurRangeParticles = props => {
             <div className="controls">
                 <div>
                     <button
-                        className="previous"
+                        className={"previous" + hidden}
                         onClick={() => {
                             nextProduct(-1);
                         }}
@@ -555,7 +576,7 @@ const OurRangeParticles = props => {
                         </svg>
                     </button>
                     <button
-                        className="next"
+                        className={"next" + hidden}
                         onClick={() => {
                             nextProduct(+1);
                         }}
