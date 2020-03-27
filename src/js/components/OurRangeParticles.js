@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { FauxRandom, CosRandom } from "../utils/FauxRandom";
-import { TimelineMax, Power3, Back, Sine } from "gsap";
+import { TimelineMax, Power3, Back, Sine, SlowMo, Power4, Linear } from "gsap";
 import history from "../history";
 import { mixed } from "yup";
 import OurRangeIcons from "./OurRangeIcons";
@@ -45,7 +45,7 @@ const OurRangeParticles = props => {
         direction: props.current.productAnimationDirection,
         alpha: 1,
         scale: 1,
-        rotation: Math.PI * 0.03,
+        rotation: Math.PI * 0.02,
         img: {
             x: 0,
             y: 0,
@@ -378,7 +378,7 @@ const OurRangeParticles = props => {
             };
 
             // upper layer, has dropshadow
-            ctx.filter = `blur(3px)`;
+            // ctx.filter = `blur(0px)`;
             for (
                 let i = 0;
                 i < Math.floor(config.smallSpriteCount * 0.33);
@@ -396,7 +396,7 @@ const OurRangeParticles = props => {
                 drawParticle(particleArray[i]);
             }
             // upper layer, has dropshadow
-            ctx.filter = `drop-shadow(0px 20px 5px rgba(0,0,0,0.2))`;
+            // ctx.filter = `drop-shadow(0px 20px 5px rgba(0,0,0,0.2))`;
             drawProduct(ctx);
 
             for (
@@ -455,10 +455,11 @@ const OurRangeParticles = props => {
             )
             .to(
                 Product,
-                5,
+                8,
                 {
-                    rotation: -0.06,
-                    ease: Sine.easeInOut
+                    rotation: "+=0.015",
+                    scale: "+=0.02",
+                    ease: Linear.easeNone
                 },
                 0 + revealDelay
             );
@@ -468,12 +469,23 @@ const OurRangeParticles = props => {
             const pDelay = FauxRandom() * 2;
             TL.from(
                 p,
-                time + pDelay,
+                0.8 + pDelay * 0.5,
                 {
                     x: p.x * 0.5,
                     y: p.y * 0.5,
                     rotation: p.rotation + CosRandom() * Math.PI * 0.25,
-                    ease: Power3.easeOut
+                    ease: Power4.easeOut
+                },
+                0 + revealDelay
+            );
+            TL.to(
+                p.wiggle,
+                8 + pDelay * 0.5,
+                {
+                    x: `+=${p.x * 0.05}`,
+                    y: `+=${p.y * 0.05}`,
+                    rotation: `+=${CosRandom() * Math.PI * 0.2}`,
+                    ease: Linear.easeNone
                 },
                 0 + revealDelay
             );
@@ -509,13 +521,18 @@ const OurRangeParticles = props => {
         };
     };
 
+    let copyClass = "copy hidden";
+    if (!pageLoading) {
+        copyClass = "copy";
+    }
+
     return (
         <div className="canvas-container">
             <div className="canvas-inner">
                 <canvas ref={canvasRef} className="particle-system" />
             </div>
             <div className="description">
-                <div className="copy">
+                <div className={copyClass}>
                     <h1>{props.current.product.title}</h1>
                     <p className="large">{props.current.product.copy}</p>
                     <p>{props.current.product.subCopy}</p>
