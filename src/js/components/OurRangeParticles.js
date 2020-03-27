@@ -9,9 +9,9 @@ const OurRangeParticles = props => {
     console.log(">> RANGE >> props.pageIsLoading", props.pageIsLoading);
     const productSpacing = 150;
     const [current, setCurrent] = useState(props.current.index);
-    const [showCopy, setShowCopy] = useState(" hidden");
 
     const imagesTotal = 2;
+    let showCopy = " hidden";
     let imagesLoaded = 0;
     const sprites = {
         particles: null,
@@ -320,10 +320,18 @@ const OurRangeParticles = props => {
                 // initCanvas();
             }
         });
+        TL.to(
+            canvasRef.current,
+            0.33,
+            {
+                opacity: 0,
+                ease: Power3.easeIn
+            },
+            0
+        );
         TL.to(Product, 0.33, {
             x: 150 * Product.direction,
             rotation: 0,
-            alpha: 0,
             ease: Sine.easeIn
         });
         TL.to(
@@ -340,7 +348,6 @@ const OurRangeParticles = props => {
                 p,
                 0.33,
                 {
-                    alpha: 0,
                     x: p.x * p.depth,
                     y: p.y * p.depth,
                     ease: Sine.easeNone
@@ -427,17 +434,13 @@ const OurRangeParticles = props => {
         }
 
         updateCanvas();
-        let oneTimeSwitch = false;
 
         TL = new TimelineMax({
             delay: revealDelay,
             onUpdate: () => {
                 updateCanvas();
                 // updateCanvas();
-                if (!oneTimeSwitch) {
-                    oneTimeSwitch = true;
-                    setShowCopy("");
-                }
+                showCopy = "";
             }
         });
         // animate product image
@@ -451,11 +454,12 @@ const OurRangeParticles = props => {
                 },
                 0
             )
-            .from(
+            .set(canvasRef.current, { opacity: 0 }, 0)
+            .to(
                 canvasRef.current,
                 0.33,
                 {
-                    alpha: 0,
+                    opacity: 1,
                     ease: Power3.easeIn
                 },
                 0
@@ -549,7 +553,7 @@ const OurRangeParticles = props => {
     return (
         <div className="canvas-container">
             <div className="canvas-inner">
-                <canvas ref={canvasRef} className="particle-system" />
+                <canvas ref={canvasRef} className={"particle-system"} />
             </div>
             <div className="description">
                 <div className={"copy" + showCopy}>
