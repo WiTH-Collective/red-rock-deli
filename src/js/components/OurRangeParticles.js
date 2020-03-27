@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { FauxRandom, CosRandom } from "../utils/FauxRandom";
-import { TimelineMax, Power3, Sine, Linear } from "gsap";
+import { TimelineMax, Power3, Power4, Sine, Linear } from "gsap";
 import history from "../history";
 import OurRangeIcons from "./OurRangeIcons";
 
@@ -422,19 +422,22 @@ const OurRangeParticles = props => {
     };
 
     const initCanvas = () => {
-        setShowCopy("");
-
         if (TL) {
             TL.kill();
         }
 
         updateCanvas();
+        let oneTimeSwitch = false;
 
         TL = new TimelineMax({
             delay: revealDelay,
             onUpdate: () => {
                 updateCanvas();
                 // updateCanvas();
+                if (!oneTimeSwitch) {
+                    oneTimeSwitch = true;
+                    setShowCopy("");
+                }
             }
         });
         // animate product image
