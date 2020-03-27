@@ -42,7 +42,7 @@ const OurRangeParticles = props => {
             if (pageLoading && !props.pageIsLoading) {
                 console.log("LOADED RANGE PARTICLES");
                 setPageLoading(false);
-                setRevealDelay(0.3);
+                setRevealDelay(0.05);
                 hasInit = true;
                 // canUpdate = true;
             }
