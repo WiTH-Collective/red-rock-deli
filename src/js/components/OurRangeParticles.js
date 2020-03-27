@@ -10,6 +10,7 @@ const OurRangeParticles = props => {
     const productSpacing = 150;
     const [current, setCurrent] = useState(props.current.index);
     const [isHidden, setIsHidden] = useState(" hidden");
+    const [canUpdate, setCanUpdate] = useState(false);
 
     const imagesTotal = 2;
     let imagesLoaded = 0;
@@ -20,9 +21,10 @@ const OurRangeParticles = props => {
     };
     let hasInit = false;
     const canvasRef = useRef(null);
+    const description = useRef();
     let particleArray = [];
     let TL = null;
-    let canUpdate = true;
+
     let scaleMultiplier = 1;
     let nextProductUrl = "";
 
@@ -34,6 +36,7 @@ const OurRangeParticles = props => {
         const can = canvasRef.current;
         const ctx = can.getContext("2d");
         ctx.clearRect(0, 0, can.width, can.height);
+        description.current.style.opacity = 0;
 
         setTimeout(() => {
             if (pageLoading && !props.pageIsLoading) {
@@ -41,7 +44,7 @@ const OurRangeParticles = props => {
                 setPageLoading(false);
                 setRevealDelay(0.3);
                 hasInit = true;
-                canUpdate = true;
+                // canUpdate = true;
             }
         }, 100);
     }, [props.pageIsLoading]);
@@ -76,7 +79,7 @@ const OurRangeParticles = props => {
         console.log("canUpdate", canUpdate);
 
         if (canUpdate) {
-            canUpdate = false;
+            setCanUpdate(false);
 
             Product.direction = -increment;
             const next = checkRange(props.current.index, increment);
@@ -315,7 +318,6 @@ const OurRangeParticles = props => {
                 updateCanvas();
             },
             onComplete: () => {
-                canUpdate = true;
                 imagesLoaded = 0;
                 removeSpriteImages();
                 props.onClickFunction(nextProductUrl, Product.direction);
@@ -339,7 +341,7 @@ const OurRangeParticles = props => {
             ease: Sine.easeIn
         });
         TL.to(
-            ".description .copy",
+            description.current,
             0.33,
             {
                 opacity: 0,
@@ -444,17 +446,8 @@ const OurRangeParticles = props => {
             }
         });
         // animate product image
-        TL.set(".description .copy", { opacity: 0 })
-            .from(
-                Product,
-                0.33,
-                {
-                    alpha: 0,
-                    ease: Power3.easeIn
-                },
-                0
-            )
-            .set(canvasRef.current, { opacity: 0 }, 0)
+        TL.set(canvasRef.current, { opacity: 0 }, 0)
+            .set(".icons .icon", { opacity: 0, y: 30 }, 0)
             .to(
                 canvasRef.current,
                 0.33,
@@ -474,13 +467,20 @@ const OurRangeParticles = props => {
                 0
             )
             .to(
-                ".description .copy",
+                description.current,
                 0.6,
                 {
                     opacity: 1,
                     ease: Power3.easeOut
                 },
                 0.25
+            )
+            .staggerTo(
+                ".icons .icon",
+                0.4,
+                { y: 0, opacity: 1, ease: Power3.easeOut },
+                0.1,
+                0.5
             )
             .to(
                 Product,
@@ -539,7 +539,7 @@ const OurRangeParticles = props => {
         updateProduct();
         initCanvas();
         hasInit = true;
-        canUpdate = true;
+        if (!canUpdate) setCanUpdate(true);
 
         // on mount.
         window.addEventListener("resize", onResize);
@@ -558,15 +558,15 @@ const OurRangeParticles = props => {
                     className={"particle-system" + isHidden}
                 />
             </div>
-            <div className="description">
-                <div className={"copy" + isHidden}>
+            <div ref={description} className={"description" + isHidden}>
+                <div className={"copy"}>
                     <h1>{props.current.product.title}</h1>
                     <p className="large">{props.current.product.copy}</p>
                     <p>{props.current.product.subCopy}</p>
                 </div>
                 <OurRangeIcons onClickFunction={props.showModal} />
             </div>
-            <div className="controls">
+            <div className={canUpdate ? "controls" : "controls disabled"}>
                 <div>
                     <button
                         className={"previous" + isHidden}
