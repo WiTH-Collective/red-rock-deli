@@ -88,6 +88,11 @@ function EnquiryForm(props) {
                             phone: "",
                             email: "",
                             message: "",
+                            productname: "",
+                            bestbydate: "",
+                            barcode: "",
+                            storename: "",
+                            storelocation: "",
                             promoOptIn: false,
                             consentToReply: false
                         }}
@@ -146,19 +151,20 @@ function EnquiryForm(props) {
                                                 name="productname"
                                                 type="inuput"
                                             />
+                                        </div>
+                                        <div className="form-group">
                                             <TextFieldWithLabel
-                                                className="short"
-                                                label="Best before date &amp; Barcode"
+                                                className="date"
+                                                label="Best before date"
                                                 placeholder="01/01/2010"
                                                 name="bestbydate"
                                                 type="date"
                                             />
                                             <TextFieldWithLabel
-                                                className="short"
-                                                label=" "
+                                                label="Barcode"
                                                 placeholder="Code#"
                                                 name="barcode"
-                                                type="number"
+                                                type="input"
                                             />
                                         </div>
                                         <div className="form-group">
@@ -269,13 +275,13 @@ const TextFieldWithLabel = ({
     const errorText = meta.error && meta.touched ? meta.error : "";
     return (
         <Field
-            className="input-wrapper"
+            className={"input-wrapper " + props.className}
             type={type}
             label={label}
             placeholder={placeholder}
             {...field}
             as={TextField}
-            // error={errorText}
+            error={errorText}
             required={true}
             InputProps={{
                 startAdornment: (
