@@ -224,7 +224,8 @@ const OurRangeParticles = props => {
             let imgY = spriteSheetY + config.smallSpriteSize;
             // small sprites
             if (isSmall) {
-                count = data.smallItemCount;
+                // first 3 particles are hard coded blur images.
+                count = data.smallItemCount + 3;
                 size = config.smallSpriteSize;
                 imgY = spriteSheetY;
             }
