@@ -9,9 +9,9 @@ const OurRangeParticles = props => {
     console.log(">> RANGE >> props.pageIsLoading", props.pageIsLoading);
     const productSpacing = 150;
     const [current, setCurrent] = useState(props.current.index);
+    const [isHidden, setIsHidden] = useState(" hidden");
 
     const imagesTotal = 2;
-    let showCopy = " hidden";
     let imagesLoaded = 0;
     const sprites = {
         particles: null,
@@ -30,12 +30,16 @@ const OurRangeParticles = props => {
     const [pageLoading, setPageLoading] = useState(true);
     const [revealDelay, setRevealDelay] = useState(1.5);
     useEffect(() => {
+        setIsHidden("");
+        const can = canvasRef.current;
+        const ctx = can.getContext("2d");
+        ctx.clearRect(0, 0, can.width, can.height);
+
         setTimeout(() => {
             if (pageLoading && !props.pageIsLoading) {
                 console.log("LOADED RANGE PARTICLES");
                 setPageLoading(false);
                 setRevealDelay(0.3);
-
                 hasInit = true;
                 canUpdate = true;
             }
@@ -433,14 +437,10 @@ const OurRangeParticles = props => {
             TL.kill();
         }
 
-        updateCanvas();
-
         TL = new TimelineMax({
             delay: revealDelay,
             onUpdate: () => {
                 updateCanvas();
-                // updateCanvas();
-                showCopy = "";
             }
         });
         // animate product image
@@ -553,10 +553,13 @@ const OurRangeParticles = props => {
     return (
         <div className="canvas-container">
             <div className="canvas-inner">
-                <canvas ref={canvasRef} className={"particle-system"} />
+                <canvas
+                    ref={canvasRef}
+                    className={"particle-system" + isHidden}
+                />
             </div>
             <div className="description">
-                <div className={"copy" + showCopy}>
+                <div className={"copy" + isHidden}>
                     <h1>{props.current.product.title}</h1>
                     <p className="large">{props.current.product.copy}</p>
                     <p>{props.current.product.subCopy}</p>
@@ -566,7 +569,7 @@ const OurRangeParticles = props => {
             <div className="controls">
                 <div>
                     <button
-                        className={"previous" + showCopy}
+                        className={"previous" + isHidden}
                         onClick={() => {
                             nextProduct(-1);
                         }}
@@ -579,7 +582,7 @@ const OurRangeParticles = props => {
                         </svg>
                     </button>
                     <button
-                        className={"next" + showCopy}
+                        className={"next" + isHidden}
                         onClick={() => {
                             nextProduct(+1);
                         }}
