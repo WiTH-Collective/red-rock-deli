@@ -44,7 +44,6 @@ const OurRangeParticles = props => {
                 setPageLoading(false);
                 setRevealDelay(0.05);
                 hasInit = true;
-                // canUpdate = true;
             }
         }, 100);
     }, [props.pageIsLoading]);

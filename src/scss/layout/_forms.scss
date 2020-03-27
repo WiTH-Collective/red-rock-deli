@@ -126,6 +126,41 @@
         }
     }
 
+    .button-dropdown {
+        position: relative;
+        ul {
+            position: absolute;
+            overflow: hidden;
+            height: 130px;
+            width: 100%;
+            transition: all 0.2s ease-out;
+            z-index: 2;
+
+            &.collapsed {
+                height: 0;
+            }
+
+            li {
+                background: $black;
+                user-select: none;
+                padding: 20px 50px;
+                border-bottom: 1px solid $halfWhite;
+                position: relative;
+                background-image: url("../../img/ui/chevron-white.svg");
+                background-repeat: no-repeat;
+                background-size: 15px 15px;
+                background-position: 8px center;
+
+                transition: all 0.2s ease-out;
+
+                &:hover {
+                    border-color: $white;
+                    background-position: 12px center;
+                }
+            }
+        }
+    }
+
     @include md {
         .hide-mobile {
             display: inline-block;

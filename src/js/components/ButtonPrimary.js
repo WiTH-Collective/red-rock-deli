@@ -32,7 +32,7 @@ const ButtonPrimary = props => {
 export const ButtonSubmit = props => {
     return (
         <div className="button-primary">
-            <button>
+            <button type={props.type}>
                 {props.children}
                 {!props.hideChevron ? <span /> : null}
             </button>

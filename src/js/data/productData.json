@@ -1,9 +1,9 @@
 [
     {
         "config": {
-            "smallSpriteCount": 100,
+            "smallSpriteCount": 60,
             "smallSpriteSize": 100,
-            "largeSpriteCount": 7,
+            "largeSpriteCount": 6,
             "largeSpriteSize": 200,
             "productSize": 600
         },

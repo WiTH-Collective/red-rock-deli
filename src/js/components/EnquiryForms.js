@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Formik, Field, useField } from "formik";
 import {
     TextField,
@@ -39,6 +39,9 @@ const validationSchema = yup.object({
 });
 
 function EnquiryForm(props) {
+    const [enquiryType, setEnquiryType] = useState(null);
+    const [showDropdown, toggleShowDropdown] = useState(false);
+
     return (
         <div className={"enquiryForm" + props.classes}>
             <div className="enquity-type-selection">
@@ -48,133 +51,201 @@ function EnquiryForm(props) {
                 </p>
                 <div>
                     <div className="button-dropdown">
-                        <button>
+                        <button
+                            onClick={() => {
+                                toggleShowDropdown(!showDropdown);
+                            }}
+                        >
                             Select enquiry option <span />
                         </button>
-                        <ul>
-                            <li></li>
-                            <li></li>
+                        <ul className={showDropdown ? "" : "collapsed"}>
+                            <li
+                                onClick={() => {
+                                    setEnquiryType("general");
+                                    toggleShowDropdown(false);
+                                }}
+                            >
+                                General enquiry
+                            </li>
+                            <li
+                                onClick={() => {
+                                    setEnquiryType("product");
+                                    toggleShowDropdown(false);
+                                }}
+                            >
+                                Product enquiry
+                            </li>
                         </ul>
                     </div>
                 </div>
             </div>
-            <Formik
-                initialValues={{
-                    firstName: "",
-                    lastName: "",
-                    phone: "",
-                    email: "",
-                    message: "",
-                    promoOptIn: false,
-                    consentToReply: false
-                }}
-                validationSchema={validationSchema}
-                onSubmit={(data, { setSubmitting }) => {
-                    setSubmitting(true);
-                    // make asynch calls here
-                    console.log(data);
-                    setSubmitting(false);
-                }}
-            >
-                {({
-                    values,
-                    errors,
-                    isSubmitting,
-                    handleChange,
-                    handleBlur,
-                    handleSubmit
-                }) => (
-                    <form onSubmit={handleSubmit}>
-                        <div className="form-group">
-                            <TextFieldWithLabel
-                                label="First name"
-                                placeholder="E.g. John"
-                                name="firstName"
-                                type="input"
-                            />
-                            <TextFieldWithLabel
-                                label="Last name"
-                                placeholder="E.g. Smith"
-                                name="lastName"
-                                type="input"
-                            />
-                        </div>
-                        <div className="form-group">
-                            <TextFieldWithLabel
-                                label="Contact Number"
-                                placeholder="+61"
-                                name="phone"
-                                type="tel"
-                            />
-                            <TextFieldWithLabel
-                                label="Contact Email"
-                                placeholder="example@gmail.com"
-                                name="email"
-                                type="input"
-                            />
-                        </div>
-                        <div className="textarea-wrapper">
-                            <label
-                                className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink Mui-required Mui-required"
-                                data-shrink="true"
-                            >
-                                Reason for enquiry
-                                <span className="MuiFormLabel-asterisk MuiInputLabel-asterisk">
-                                     *
-                                </span>
-                            </label>
-                            <TextareaAutosize
-                                name="message"
-                                rowsMin={3}
-                                value={values.message}
-                                placeholder="Type your message here"
-                                onChange={handleChange}
-                                onBlur={handleBlur}
-                            />
-                        </div>
-                        <FormGroup className="checkbox-wrapper">
-                            <FormControlLabel
-                                control={
-                                    <Checkbox
-                                        name="promoOptIn"
-                                        checked={values.promoOptIn}
-                                        value={values.promoOptIn}
+            <React.Fragment>
+                {enquiryType ? (
+                    <Formik
+                        initialValues={{
+                            firstName: "",
+                            lastName: "",
+                            phone: "",
+                            email: "",
+                            message: "",
+                            promoOptIn: false,
+                            consentToReply: false
+                        }}
+                        validationSchema={validationSchema}
+                        onSubmit={(data, { setSubmitting }) => {
+                            setSubmitting(true);
+                            // make asynch calls here
+                            console.log(data);
+                            setSubmitting(false);
+                        }}
+                    >
+                        {({
+                            values,
+                            errors,
+                            isSubmitting,
+                            handleChange,
+                            handleBlur,
+                            handleSubmit
+                        }) => (
+                            <form onSubmit={handleSubmit}>
+                                <div className="form-group">
+                                    <TextFieldWithLabel
+                                        label="First name"
+                                        placeholder="E.g. John"
+                                        name="firstName"
+                                        type="input"
+                                    />
+                                    <TextFieldWithLabel
+                                        label="Last name"
+                                        placeholder="E.g. Smith"
+                                        name="lastName"
+                                        type="input"
+                                    />
+                                </div>
+                                <div className="form-group">
+                                    <TextFieldWithLabel
+                                        label="Contact Number"
+                                        placeholder="+61"
+                                        name="phone"
+                                        type="tel"
+                                    />
+                                    <TextFieldWithLabel
+                                        label="Contact Email"
+                                        placeholder="example@gmail.com"
+                                        name="email"
+                                        type="input"
+                                    />
+                                </div>
+
+                                {enquiryType === "product" ? (
+                                    <div className="product-enquiry">
+                                        <div className="form-group">
+                                            <TextFieldWithLabel
+                                                label="Product Name &amp; Flavour"
+                                                placeholder="e.g. Deluxe Chips, Parmesan Truffle"
+                                                name="productname"
+                                                type="inuput"
+                                            />
+                                            <TextFieldWithLabel
+                                                className="short"
+                                                label="Best before date &amp; Barcode"
+                                                placeholder="01/01/2010"
+                                                name="bestbydate"
+                                                type="date"
+                                            />
+                                            <TextFieldWithLabel
+                                                className="short"
+                                                label=" "
+                                                placeholder="Code#"
+                                                name="barcode"
+                                                type="number"
+                                            />
+                                        </div>
+                                        <div className="form-group">
+                                            <TextFieldWithLabel
+                                                label="Store purchased"
+                                                placeholder="e.g. Woolworths"
+                                                name="storename"
+                                                type="input"
+                                            />
+                                            <TextFieldWithLabel
+                                                label="Store location"
+                                                placeholder="e.g. Millers Point"
+                                                name="storelocation"
+                                                type="input"
+                                            />
+                                        </div>
+                                    </div>
+                                ) : (
+                                    ""
+                                )}
+
+                                <div className="textarea-wrapper">
+                                    <label
+                                        className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink Mui-required Mui-required"
+                                        data-shrink="true"
+                                    >
+                                        Reason for enquiry
+                                        <span className="MuiFormLabel-asterisk MuiInputLabel-asterisk">
+                                             *
+                                        </span>
+                                    </label>
+                                    <TextareaAutosize
+                                        name="message"
+                                        rowsMin={3}
+                                        value={values.message}
+                                        placeholder="Type your message here"
                                         onChange={handleChange}
                                         onBlur={handleBlur}
                                     />
-                                }
-                                label="I’d like to receive further information regarding our products and promotions"
-                            />
-                            <FormControlLabel
-                                control={
-                                    <Checkbox
-                                        required={true}
-                                        name="consentToReply"
-                                        checked={values.consentToReply}
-                                        value={values.consentToReply}
-                                        onChange={handleChange}
-                                        onBlur={handleBlur}
+                                </div>
+                                <FormGroup className="checkbox-wrapper">
+                                    <FormControlLabel
+                                        control={
+                                            <Checkbox
+                                                name="promoOptIn"
+                                                checked={values.promoOptIn}
+                                                value={values.promoOptIn}
+                                                onChange={handleChange}
+                                                onBlur={handleBlur}
+                                            />
+                                        }
+                                        label="I’d like to receive further information regarding our products and promotions"
                                     />
-                                }
-                                label="Please tick this box if you give us your consent to respond to your query or comment. Any personal information you provide to us will be held in accordance with our privacy policy."
-                            />
-                        </FormGroup>
+                                    <FormControlLabel
+                                        control={
+                                            <Checkbox
+                                                required={true}
+                                                name="consentToReply"
+                                                checked={values.consentToReply}
+                                                value={values.consentToReply}
+                                                onChange={handleChange}
+                                                onBlur={handleBlur}
+                                            />
+                                        }
+                                        label="Please tick this box if you give us your consent to respond to your query or comment. Any personal information you provide to us will be held in accordance with our privacy policy."
+                                    />
+                                </FormGroup>
 
-                        <ButtonSubmit
-                            disabled={isSubmitting || errors}
-                            type="submit"
-                        >
-                            Submit enquiry
-                        </ButtonSubmit>
+                                <ButtonSubmit
+                                    disabled={isSubmitting || errors}
+                                    type="submit"
+                                >
+                                    Submit enquiry
+                                </ButtonSubmit>
 
-                        {/* 
-                        // ERROR MESSAGES
-                        <pre>{JSON.stringify(values, null, 2)}</pre>
-                        <pre>{JSON.stringify(errors, null, 2)}</pre> 
-                        */}
-                    </form>
+                                {/* 
+                            // ERROR MESSAGES
+                            <pre>{JSON.stringify(values, null, 2)}</pre>
+                            <pre>{JSON.stringify(errors, null, 2)}</pre> 
+                            */}
+                            </form>
+                        )}
+                    </Formik>
+                ) : (
+                    ""
                 )}
-            </Formik>
+            </React.Fragment>
         </div>
     );
 }
