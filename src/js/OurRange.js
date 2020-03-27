@@ -1,8 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import { Helmet } from "react-helmet";
 import { createBrowserHistory } from "history";
-// import { HeroStatic } from "./components/Hero";
-import particleSprites from "../img/products/particle-sprites.png";
 import ProductsData from "./data/productData.json";
 import ScrollReveal from "./utils/ScrollReveal";
 import OurRangeParticles from "./components/OurRangeParticles";
@@ -103,6 +101,11 @@ const OurRange = props => {
         // modal.current.classList.remove("isActive");
     };
 
+    const [pageLoading, setPageLoading] = useState(true);
+    useEffect(() => {
+        setPageLoading(false);
+    });
+
     //
     // Extract current product from URL.
     useEffect(() => {
@@ -116,7 +119,6 @@ const OurRange = props => {
         setPathname(window.location.pathname);
     };
     //
-
     return (
         <ScrollReveal>
             <div className="page-wrappers our-range">
@@ -133,6 +135,7 @@ const OurRange = props => {
                                     current={current}
                                     onClickFunction={navigateTo}
                                     showModal={showModal}
+                                    pageIsLoading={pageLoading}
                                 />
                             </section>
                             <section className="range-nav">

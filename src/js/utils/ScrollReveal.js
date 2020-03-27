@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import { TweenMax, Power3 } from "gsap";
 
 const ScrollReveal = props => {
@@ -34,22 +34,59 @@ const ScrollReveal = props => {
         }
     };
 
-    useEffect(() => {
-        if (animationContainerReference) {
-            Array.from(
-                animationContainerReference.current.querySelectorAll("section")
-            ).map(item => {
-                itemsArray.push(item);
-            });
-            itemsArray.map(item => {
-                if (!item.classList.contains("sr-item-showing")) {
-                    TweenMax.set(item, { opacity: 0 });
-                }
-            });
+    // useEffect(() => {
+    //     if (animationContainerReference) {
+    //         Array.from(
+    //             animationContainerReference.current.querySelectorAll("section")
+    //         ).map(item => {
+    //             itemsArray.push(item);
+    //         });
+    //         itemsArray.map(item => {
+    //             if (!item.classList.contains("sr-item-showing")) {
+    //                 TweenMax.set(item, { opacity: 0 });
+    //             }
+    //         });
 
-            window.addEventListener("scroll", onScroll);
-            onScroll();
-        }
+    //         window.addEventListener("scroll", onScroll);
+    //         onScroll();
+    //     }
+
+    //     return () => {
+    //         window.removeEventListener("scroll", onScroll);
+    //         itemsArray.map(item => {
+    //             TweenMax.killTweensOf(item);
+    //             return null;
+    //         });
+    //     };
+    // }, [animationContainerReference]);
+
+    const [pageLoading, setPageLoading] = useState(true);
+    useEffect(() => {
+        setTimeout(() => {
+            if (pageLoading && !props.pageIsLoading) {
+                console.log("LOADED");
+                setPageLoading(false);
+                console.log("SCROLL LOADING!!!!!!");
+
+                if (animationContainerReference) {
+                    Array.from(
+                        animationContainerReference.current.querySelectorAll(
+                            "section"
+                        )
+                    ).map(item => {
+                        itemsArray.push(item);
+                    });
+                    itemsArray.map(item => {
+                        if (!item.classList.contains("sr-item-showing")) {
+                            TweenMax.set(item, { opacity: 0 });
+                        }
+                    });
+
+                    window.addEventListener("scroll", onScroll);
+                    onScroll();
+                }
+            }
+        }, 500);
 
         return () => {
             window.removeEventListener("scroll", onScroll);
@@ -58,7 +95,7 @@ const ScrollReveal = props => {
                 return null;
             });
         };
-    }, [animationContainerReference]);
+    }, [props.pageIsLoading, animationContainerReference]);
 
     return (
         <div

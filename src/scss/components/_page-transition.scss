@@ -1,4 +1,5 @@
-canvas.page-transition{
+canvas.page-transition,
+.page-blocker {
     position: fixed;
     top: 0;
     left: 0;
@@ -6,6 +7,10 @@ canvas.page-transition{
     height: 100%;
     background: black;
     pointer-events: none;
-    will-change: transform;
+    // will-change: transform;
     z-index: 9998;
+}
+
+.page-blocker {
+    // background: red;
 }

@@ -5,7 +5,6 @@ import Nav from "./js/components/Nav";
 import HomePage from "./js/HomePage";
 import PageNotFound from "./js/PageNotFound";
 import PageTransition from "./js/components/PageTransition";
-import ParticlePlayground from "./js/ParticlePlayground";
 import Footer from "./js/components/Footer";
 import FAQs from "./js/FAQs";
 import TermsOfUse from "./js/TermsOfUse";
@@ -22,6 +21,8 @@ function App() {
     const [wrapperClass, setWrapperClass] = useState("wrapper");
     const [hasLoaded, setHasLoaded] = useState(false);
 
+    const [pageLoading, setPageLoading] = useState(true);
+
     useEffect(() => {
         console.log("Mounting App");
 
@@ -34,23 +35,29 @@ function App() {
         const root = document.querySelector("#root");
         root.classList.remove("isLoading");
 
-        return () => {
-            console.log("Unmounting App");
-        };
+        // return () => {
+        //     console.log("Unmounting App");
+        // };
+
+        setPageLoading(false);
     }, []);
 
     return (
         <div className={wrapperClass}>
             {hasLoaded ? (
                 <BrowserRouter history={history}>
-                    <ScrollReveal>
+                    <ScrollReveal pageIsLoading={pageLoading}>
                         <Nav />
                     </ScrollReveal>
-                    <ScrollToTop>
+                    <ScrollToTop pageIsLoading={pageLoading}>
                         <Switch>
                             <Route path="/" exact component={HomePage} />
                             <Route path="/faq" exact component={FAQs} />
-                            <Route path="/our-range" component={OurRange} />
+                            <Route
+                                path="/our-range"
+                                component={OurRange}
+                                pageIsLoading={pageLoading}
+                            />
                             <Route
                                 path="/secret-suppers"
                                 exact
@@ -79,20 +86,15 @@ function App() {
                                 exact
                                 component={TermsOfUse}
                             />
-                            <Route
-                                path="/particles"
-                                exact
-                                component={ParticlePlayground}
-                            />
                             <Route path="/" component={PageNotFound} />
                         </Switch>
                     </ScrollToTop>
-                    <ScrollReveal>
+                    <ScrollReveal pageIsLoading={pageLoading}>
                         <Footer />
                     </ScrollReveal>
                 </BrowserRouter>
             ) : null}
-            <PageTransition />
+            <PageTransition pageIsLoading={pageLoading} />
         </div>
     );
 }

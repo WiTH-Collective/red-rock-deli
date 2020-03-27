@@ -7,6 +7,19 @@ import OurRangeIcons from "./OurRangeIcons";
 
 const OurRangeParticles = props => {
     console.log("--> Start of OurRangeParticles Component");
+    console.log(">> RANGE >> props.pageIsLoading", props.pageIsLoading);
+
+    const [pageLoading, setPageLoading] = useState(true);
+    const [revealDelay, setRevealDelay] = useState(1.5);
+    useEffect(() => {
+        setTimeout(() => {
+            if (pageLoading && !props.pageIsLoading) {
+                console.log("LOADED RANGE PARTICLES");
+                setPageLoading(false);
+                setRevealDelay(0.3);
+            }
+        }, 100);
+    }, [props.pageIsLoading]);
 
     const productSpacing = 150;
     const [current, setCurrent] = useState(props.current.index);
@@ -413,10 +426,15 @@ const OurRangeParticles = props => {
         });
         // animate product image
         TL.set(".description .copy", { opacity: 0 })
-            .from(Product, 0.2, {
-                alpha: 0,
-                ease: Power3.easeOut
-            })
+            .from(
+                Product,
+                0.2,
+                {
+                    alpha: 0,
+                    ease: Power3.easeOut
+                },
+                revealDelay
+            )
             .from(
                 Product,
                 1.0,
@@ -424,7 +442,7 @@ const OurRangeParticles = props => {
                     x: 150 * -props.current.productAnimationDirection,
                     ease: Power3.easeOut
                 },
-                0
+                0 + revealDelay
             )
             .to(
                 ".description .copy",
@@ -433,7 +451,7 @@ const OurRangeParticles = props => {
                     opacity: 1,
                     ease: Power3.easeOut
                 },
-                0.25
+                0.25 + revealDelay
             )
             .to(
                 Product,
@@ -442,7 +460,7 @@ const OurRangeParticles = props => {
                     rotation: -0.06,
                     ease: Sine.easeInOut
                 },
-                0
+                0 + revealDelay
             );
 
         // animates particles.
@@ -457,7 +475,7 @@ const OurRangeParticles = props => {
                     rotation: p.rotation + CosRandom() * Math.PI * 0.25,
                     ease: Power3.easeOut
                 },
-                0
+                0 + revealDelay
             );
             TL.from(
                 p,
@@ -466,7 +484,7 @@ const OurRangeParticles = props => {
                     alpha: 0,
                     ease: Power3.easeIn
                 },
-                0
+                0 + revealDelay
             );
         });
     };
