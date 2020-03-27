@@ -1,8 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { FauxRandom, CosRandom } from "../utils/FauxRandom";
-import { TimelineMax, Power3, Back, Sine, SlowMo, Power4, Linear } from "gsap";
+import { TimelineMax, Power3, Sine, Linear } from "gsap";
 import history from "../history";
-import { mixed } from "yup";
 import OurRangeIcons from "./OurRangeIcons";
 
 const OurRangeParticles = props => {
@@ -10,6 +9,7 @@ const OurRangeParticles = props => {
     console.log(">> RANGE >> props.pageIsLoading", props.pageIsLoading);
     const productSpacing = 150;
     const [current, setCurrent] = useState(props.current.index);
+    const [showCopy, setShowCopy] = useState(" hidden");
 
     const imagesTotal = 2;
     let imagesLoaded = 0;
@@ -422,7 +422,7 @@ const OurRangeParticles = props => {
     };
 
     const initCanvas = () => {
-        const time = 5;
+        setShowCopy("");
 
         if (TL) {
             TL.kill();
@@ -543,18 +543,13 @@ const OurRangeParticles = props => {
         };
     };
 
-    let hidden = " hidden";
-    if (!pageLoading) {
-        hidden = "";
-    }
-
     return (
         <div className="canvas-container">
             <div className="canvas-inner">
                 <canvas ref={canvasRef} className="particle-system" />
             </div>
             <div className="description">
-                <div className={"copy" + hidden}>
+                <div className={"copy" + showCopy}>
                     <h1>{props.current.product.title}</h1>
                     <p className="large">{props.current.product.copy}</p>
                     <p>{props.current.product.subCopy}</p>
@@ -564,7 +559,7 @@ const OurRangeParticles = props => {
             <div className="controls">
                 <div>
                     <button
-                        className={"previous" + hidden}
+                        className={"previous" + showCopy}
                         onClick={() => {
                             nextProduct(-1);
                         }}
@@ -577,7 +572,7 @@ const OurRangeParticles = props => {
                         </svg>
                     </button>
                     <button
-                        className={"next" + hidden}
+                        className={"next" + showCopy}
                         onClick={() => {
                             nextProduct(+1);
                         }}
