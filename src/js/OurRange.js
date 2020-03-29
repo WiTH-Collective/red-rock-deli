@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from "react";
-import { Helmet } from "react-helmet";
+// import { Helmet } from "react-helmet";
 import { createBrowserHistory } from "history";
 import ProductsData from "./data/productData.json";
 import ScrollReveal from "./utils/ScrollReveal";
@@ -118,7 +118,7 @@ const OurRange = props => {
         history.push(baseUrl + url + "/" + direction);
         setPathname(window.location.pathname);
     };
-    //
+    //props.current.product.title
     return (
         <ScrollReveal>
             <div className="page-wrappers our-range">
@@ -214,13 +214,6 @@ const OurRange = props => {
                     </div>
                 </div>
             </div>
-            <Helmet>
-                <title>{"Red Rock Deli®"}</title>
-                <meta
-                    name="description"
-                    content={"Red Rock Deli® - Feed Your Curiosity™"}
-                />
-            </Helmet>
         </ScrollReveal>
     );
 };

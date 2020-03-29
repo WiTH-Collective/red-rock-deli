@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import { Helmet } from "react-helmet";
 import { FauxRandom, CosRandom } from "../utils/FauxRandom";
 import { TimelineMax, Power3, Power4, Sine, Linear } from "gsap";
 import history from "../history";
@@ -11,6 +12,14 @@ const OurRangeParticles = props => {
     const [current, setCurrent] = useState(props.current.index);
     const [isHidden, setIsHidden] = useState(" hidden");
     const [canUpdate, setCanUpdate] = useState(false);
+
+    const metaDescription = () => {
+        if (props.current.product.copy.length > 100) {
+            return props.current.product.copy.slice(0, 100) + "...";
+        } else {
+            return props.current.product.copy;
+        }
+    };
 
     const imagesTotal = 2;
     let imagesLoaded = 0;
@@ -595,6 +604,19 @@ const OurRangeParticles = props => {
                     </button>
                 </div>
             </div>
+            <Helmet>
+                <title>{"Red Rock Deli®"}</title>
+                <meta name="description" content={metaDescription()} />
+                <meta name="og:title" content={"Red Rock Deli®"} />
+                <meta name="og:description" content={metaDescription()} />
+                <meta
+                    property="og:image"
+                    content={
+                        "https://red-rock-deli-2020.netlify.com" +
+                        props.current.product.packImageUrl
+                    }
+                />
+            </Helmet>
         </div>
     );
 };
