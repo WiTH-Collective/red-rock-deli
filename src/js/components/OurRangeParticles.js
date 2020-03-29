@@ -606,9 +606,19 @@ const OurRangeParticles = props => {
             </div>
             <Helmet>
                 <title>{"Red Rock Deli®"}</title>
-                <meta name="description" content={metaDescription()} />
+                <meta name="description" content={props.current.product.copy} />
+                <meta
+                    name="keywords"
+                    content={
+                        "Red, Rock, Deli, Chips, Nuts, Feed your curiosity, curious chips and nuts"
+                    }
+                />
+                <meta property="og:site_name" content={"Red Rock Deli®"} />
                 <meta name="og:title" content={"Red Rock Deli®"} />
-                <meta name="og:description" content={metaDescription()} />
+                <meta
+                    name="og:description"
+                    content={props.current.product.copy}
+                />
                 <meta
                     property="og:image"
                     content={
