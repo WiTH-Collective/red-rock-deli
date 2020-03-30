@@ -158,7 +158,7 @@ const Particles = props => {
             (config.smallSpriteSize + config.largeSpriteSize) * current;
 
         // Set random seed:
-        const seed = Math.floor(Math.random() * 500);
+        const seed = Math.floor(Math.random() * 2399);
         // const seed = 285;
 
         // FauxRandom(data.randomSeed);

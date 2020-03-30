@@ -3,17 +3,21 @@ import { Helmet } from "react-helmet";
 import { HeroStatic } from "./components/Hero";
 import ScrollReveal from "./utils/ScrollReveal";
 import SecretSuppers from "./components/SecretSuppers";
+import MeetTheChefs from "./components/MeetTheChefs";
 
 const SecretSuppersPage = () => {
     return (
         <ScrollReveal>
             <div className="page-wrappers chef-page">
                 <HeroStatic
-                    backgroundUrl={"/images/colin-fassnidge-hero.jpg"}
-                    title={"Secret Suppers"}
+                    backgroundUrl={
+                        "/images/secret-suppers/rrd-ss-hero-wide.jpg"
+                    }
+                    title={"WORK IN PROGRESS"}
+                    h3="red rock deli secret suppers is back with 3 new chefs and 4 new secret locations!"
                 />
                 <SecretSuppers />
-                <section className="stone-wall-bakground">
+                {/* <section className="stone-wall-bakground">
                     <div className="scroll-prompt scroll-prompt-top  scroll-prompt-black " />
                     <div className="container">
                         <div className="content">
@@ -32,7 +36,9 @@ const SecretSuppersPage = () => {
                             </p>
                         </div>
                     </div>
-                </section>
+                </section> */}
+
+                <MeetTheChefs onSecretSuppersPage />
 
                 <Helmet>
                     <title>{"Red Rock Deli®"}</title>

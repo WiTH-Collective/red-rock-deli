@@ -7,9 +7,15 @@ import ButtonPrimary from "./ButtonPrimary";
 import Chef from "./chef";
 import { Link } from "react-router-dom";
 
-const MeetTheChefs = () => {
+const MeetTheChefs = props => {
     return (
-        <section className="MeetTheChefs sr-item">
+        <section
+            className={
+                props.onSecretSuppersPage
+                    ? "MeetTheChefs onSecretSuppersPage"
+                    : "MeetTheChefs"
+            }
+        >
             <div className="container">
                 <h2>MEET THE CHEFS</h2>
 
