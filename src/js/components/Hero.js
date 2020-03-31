@@ -1,6 +1,7 @@
 import React, { useRef, useEffect } from "react";
 import FeedYourCuriosity from "../../img/lockups/feed-your-curiosity---sprites.png";
 import SecretSuppersLockup from "../../img/lockups/secret-suppers-header-lockup-wide.png";
+import SecretSuppersLockupStacked from "../../img/lockups/secret-suppers-lockup--white.png";
 import { TweenMax, SteppedEase } from "gsap";
 import BlackBlockTitle from "./BlackBlockTitle";
 
@@ -59,17 +60,33 @@ export function HeroStatic(props) {
                 style={{ backgroundImage: `url(${props.backgroundUrl})` }}
             >
                 <div className="container">
-                    <div className="title">
-                        <img
-                            className="lockup"
-                            src={SecretSuppersLockup}
-                            alt="Secret Suppers"
-                        />
-                        <h1>{props.title}</h1>
-                    </div>
+                    {props.onSecretSupperPage ? (
+                        <div className="title">
+                            <h1 className="hidden">{props.title}</h1>
+                        </div>
+                    ) : (
+                        <div className="title">
+                            <img
+                                className="lockup"
+                                src={SecretSuppersLockup}
+                                alt="Secret Suppers"
+                            />
+                            <h1>{props.title}</h1>
+                        </div>
+                    )}
                 </div>
             </section>
-            <BlackBlockTitle heading={props.h3} subHeading={props.p} />
+            <BlackBlockTitle heading={props.h3} subHeading={props.p}>
+                {props.onSecretSupperPage ? (
+                    <img
+                        className="ss-lockup-stacked"
+                        src={SecretSuppersLockupStacked}
+                        alt="Red Rock Deli, Secret Suppers"
+                    />
+                ) : (
+                    ""
+                )}
+            </BlackBlockTitle>
         </React.Fragment>
     );
 }

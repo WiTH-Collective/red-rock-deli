@@ -61,6 +61,11 @@ a {
     font-family: $roboto;
 }
 
+p.large {
+    font-size: 19px;
+    line-height: 1.2;
+}
+
 a {
     text-decoration: none;
     color: white;
@@ -85,7 +90,17 @@ h5 {
     }
 }
 
+@include md {
+    p.large {
+        font-size: 22px;
+    }
+}
+
 @include lg {
+    p.large {
+        font-size: 24px;
+    }
+
     h2 {
         font-size: 52px;
     }

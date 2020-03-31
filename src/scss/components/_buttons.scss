@@ -75,6 +75,11 @@
     background-color: $cream;
     border-radius: 50%;
     transition: background-color 0.2s ease-out;
+    cursor: pointer;
+
+    &.flipped {
+        transform: rotate(180deg);
+    }
 
     &::after {
         content: "";
@@ -103,6 +108,7 @@
 
 .button-dropdown {
     button {
+        cursor: pointer;
         background: $black;
         text-align: center;
         padding: 20px;

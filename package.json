@@ -19,8 +19,10 @@
         "react-gsap": "^1.2.0",
         "react-helmet": "^5.2.1",
         "react-instafeed": "^1.0.0",
+        "react-items-carousel": "^2.8.0",
         "react-router-dom": "^5.1.2",
         "react-scripts": "3.3.1",
+        "react-slideshow-image": "^1.4.0",
         "redux": "^4.0.5",
         "video-react": "^0.14.1",
         "yup": "^0.28.3"

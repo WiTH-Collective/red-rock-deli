@@ -119,6 +119,7 @@ function EnquiryForm(props) {
                                         placeholder="E.g. John"
                                         name="firstName"
                                         type="input"
+                                        error=""
                                     />
                                     <TextFieldWithLabel
                                         label="Last name"
@@ -199,6 +200,7 @@ function EnquiryForm(props) {
                                     <TextareaAutosize
                                         name="message"
                                         rowsMin={3}
+                                        required={true}
                                         value={values.message}
                                         placeholder="Type your message here"
                                         onChange={handleChange}
@@ -272,7 +274,7 @@ const TextFieldWithLabel = ({
     // Adds input props element to force label into reduced position.
     //
     const _adornment = adornment ? adornment : "";
-    const errorText = meta.error && meta.touched ? meta.error : "";
+    const errorText = meta.error && meta.touched ? meta.error : false;
     return (
         <Field
             className={"input-wrapper " + props.className}

@@ -12,8 +12,8 @@ const MeetTheChefs = props => {
         <section
             className={
                 props.onSecretSuppersPage
-                    ? "MeetTheChefs onSecretSuppersPage"
-                    : "MeetTheChefs"
+                    ? "MeetTheChefs onSecretSuppersPage line-top line-top-black"
+                    : "MeetTheChefs line-top line-top-black"
             }
         >
             <div className="container">

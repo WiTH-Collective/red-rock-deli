@@ -8,15 +8,17 @@ import FeatureVideoItem from "./components/FeatureVideoItem";
 import ImageSlider from "./components/ImageSlider";
 import ButtonPrimary from "./components/ButtonPrimary";
 
-const ChefPage01 = () => {
+const EventPageSydney = () => {
     return (
         <ScrollReveal>
             <div className="page-wrappers SecretSuppersPage">
                 <HeroStatic
                     backgroundUrl={
-                        "/images/secret-suppers/colin-fassnidge-hero.jpg"
+                        "/images/secret-suppers/ss-event1-hero-wide.jpg"
                     }
-                    title={"Colin Fassnidge"}
+                    title={"Earlthy delights"}
+                    h3="MONTH XX, YYYY"
+                    p="Location details"
                 />
                 <section className="SecretSuppersCarousel sr-item line-top line-top-black">
                     <div className="container">
@@ -47,7 +49,7 @@ const ChefPage01 = () => {
                 </section>
 
                 <MeetTheChefs onSecretSuppersPage />
-                <WideFooterImage imageUrl="/images/secret-suppers/ss-chef1-hero-wide.jpg" />
+                <WideFooterImage imageUrl="/images/secret-suppers/ss-event1-footer-wide.jpg" />
                 <Helmet>
                     <title>{"Red Rock Deli®"}</title>
                     <meta
@@ -60,4 +62,4 @@ const ChefPage01 = () => {
     );
 };
 
-export default ChefPage01;
+export default EventPageSydney;

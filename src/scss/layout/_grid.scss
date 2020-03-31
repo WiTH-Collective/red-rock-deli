@@ -60,3 +60,28 @@ section {
         }
     }
 }
+
+section.line-top,
+section.line-top-black {
+    &:after {
+        position: absolute;
+        top: 0;
+        left: calc(50% - 1px);
+        width: 2px;
+        height: 60px;
+        background: $white;
+        content: "";
+    }
+
+    @include lg {
+        &:after {
+            height: 80px;
+        }
+    }
+}
+
+section.line-top-black {
+    &:after {
+        background: $black;
+    }
+}

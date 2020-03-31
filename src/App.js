@@ -11,7 +11,7 @@ import TermsOfUse from "./js/TermsOfUse";
 import PrivacyPolicy from "./js/PrivacyPolicy";
 import ScrollToTop from "./js/components/ScrollToTop";
 import ChefPage01 from "./js/ChefPage01";
-import EventPageSydney from "./js/EventPage";
+import EventPageSydney from "./js/EventPageSydney";
 import ScrollReveal from "./js/utils/ScrollReveal";
 import OurRange from "./js/OurRange";
 import history from "./js/history";
