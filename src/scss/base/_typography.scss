@@ -83,11 +83,15 @@ h5 {
     font-size: 14px;
     em,
     i {
-        display: inline-block;
         font-weight: bold;
-        transform: skewX(-10deg);
-        margin-right: 5px;
     }
+}
+
+em,
+i {
+    display: inline-block;
+    transform: skewX(-10deg);
+    margin-right: 5px;
 }
 
 @include md {

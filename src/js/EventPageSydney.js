@@ -8,6 +8,7 @@ import FeatureVideoItem from "./components/FeatureVideoItem";
 import InstaFeed from "./components/InstaFeed";
 import ButtonPrimary from "./components/ButtonPrimary";
 import Locations from "./components/Locations";
+import EventInfo from "./components/EventIntro";
 
 const EventPageSydney = () => {
     return (
@@ -21,7 +22,56 @@ const EventPageSydney = () => {
                     h3="MONTH XX, YYYY"
                     p="Location details"
                 />
+
                 <section className="SecretSuppersCarousel sr-item line-top line-top-black">
+                    <EventInfo
+                        info={
+                            <React.Fragment>
+                                <h3>MONTH XX, YYYY</h3>
+                                <p>Location address</p>
+                                <div>
+                                    <h5>
+                                        <em>Hosted by:</em>
+                                        Colin Fassnidge
+                                    </h5>
+                                </div>
+                            </React.Fragment>
+                        }
+                        time="Thursday, May 21, 2020"
+                        location="Secret Sydney Location"
+                        price="$110.00"
+                    >
+                        <h2>Earthly delights showcase</h2>
+                        <p className="large">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing
+                            elit. Suspendisse venenatis sit amet nisi vitae
+                            aliquet. Vestibulum eget diam erat. Proin rhoncus
+                            magna eget nibh semper tincidunt non sed enim. Nam
+                            ac sapien lacus. Proin rhoncus magna eget nibh
+                            semper tincidunt non sed enim. Nam ac sapien lacus.
+                        </p>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing
+                            elit. Quisque ut tincidunt lectus. Integer suscipit
+                            scelerisque massa. Lorem ipsum dolor sit amet,
+                            consectetur adipiscing elit. Quisque ut tincidunt
+                            lectus. Integer suscipit scelerisque massa.Lorem
+                            ipsum dolor sit amet, consectetur adipiscing elit.
+                            Quisque ut tincidunt lectus. Integer suscipit
+                            scelerisque massa.Lorem ipsum dolor sit amet,
+                            consectetur adipiscing elit. Quisque ut tincidunt
+                            lectus. Integer suscipit scelerisque massa. Lorem
+                            ipsum dolor sit amet, consectetur adipiscing elit.
+                            Quisque ut tincidunt lectus. Integer suscipit
+                            scelerisque massa. Lorem ipsum dolor sit amet,
+                            consectetur adipiscing elit. Lorem ipsum dolor sit
+                            amet, consectetur adipiscing elit. Quisque ut
+                            tincidunt lectus. Integer suscipit scelerisque
+                            massa. Lorem ipsum dolor sit amet, consectetur
+                            adipiscing elit.
+                        </p>
+                    </EventInfo>
+
                     <div className="container">
                         <div className="content intro">
                             <p>Your exclusive chef for the evening</p>
