@@ -8,6 +8,7 @@ import FeatureVideoItem from "./components/FeatureVideoItem";
 import ImageSlider from "./components/ImageSlider";
 import ButtonPrimary from "./components/ButtonPrimary";
 import Chef from "./components/chef";
+import ChefBio from "./components/ChefBio";
 
 const ChefPage01 = () => {
     return (
@@ -20,13 +21,33 @@ const ChefPage01 = () => {
                     title={"Colin Fassnidge"}
                 />
                 <section className="SecretSuppersCarousel sr-item line-top line-top-black">
-                    <div className="container">
-                        <div className="copy centered700 black">
-                            <p>Your exclusive chef for the evening</p>
-                            <h2>Colin Fassnidge</h2>
-                        </div>
-                    </div>
+                    {/* =================================== */}
+                    <ChefBio
+                        photoUrl="/images/meet-the-chefs/chef-profile-photo-1.jpg"
+                        photoAlt="Chef's name"
+                    >
+                        <h2>Chef Name Title</h2>
+                        <p className="large">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing
+                            elit. Quisque ut tincidunt lectus. Integer suscipit
+                            scelerisque massa.{" "}
+                        </p>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing
+                            elit. Quisque ut tincidunt lectus. Integer suscipit
+                            scelerisque massa. Lorem ipsum dolor sit amet,
+                            consectetur adipiscing elit. Quisque ut tincidunt
+                            lectus. Integer suscipit scelerisque massa.Lorem
+                            ipsum dolor sit amet, consectetur adipiscing elit.
+                            Quisque ut tincidunt lectus. Lorem ipsum dolor sit
+                            amet, consectetur adipiscing elit. Quisque ut
+                            tincidunt lectus. Integer suscipit scelerisque
+                            massa. Lorem ipsum dolor sit amet, consectetur
+                            adipiscing elit. Quisque ut tincidunt lectus.
+                        </p>
+                    </ChefBio>
 
+                    {/* Image Slider ============================================= */}
                     <div className="container1280">
                         <ImageSlider
                             images={[

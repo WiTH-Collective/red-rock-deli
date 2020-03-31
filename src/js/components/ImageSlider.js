@@ -66,7 +66,10 @@ const ImageSlider = props => {
                 <div
                     className="track"
                     style={{
-                        transform: "translateX(" + offset * -image.width + "px)"
+                        transform:
+                            "translateX(" +
+                            offset * (-image.width - config.margin) +
+                            "px)"
                     }}
                 >
                     {props.images.map((imageUrl, index) => {
