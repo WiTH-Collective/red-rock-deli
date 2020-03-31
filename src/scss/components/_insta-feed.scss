@@ -8,6 +8,10 @@
     background-position: top;
     overflow: hidden;
 
+    &.no-background {
+        background: none;
+    }
+
     .content {
         max-width: 700px;
         margin: 0 auto 40px;

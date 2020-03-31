@@ -9,9 +9,9 @@ const FeatureVideoItem = props => {
         <div className="FeaturedVideoHolder">
             <div
                 className={
-                    props.blackBackground
-                        ? "background wide black"
-                        : "background wide"
+                    "background" +
+                    (props.blackBackground ? " black" : "") +
+                    (props.wideBackground ? " wide" : "")
                 }
             >
                 <div className="container">

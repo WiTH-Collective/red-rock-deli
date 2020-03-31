@@ -15,7 +15,7 @@ const ImageSlider = props => {
             height: 220,
             width: 340
         },
-        margin: 20,
+        margin: 40,
         imagesVisible: 3,
         current: 0,
         showControls: true

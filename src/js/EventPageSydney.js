@@ -5,8 +5,9 @@ import ScrollReveal from "./utils/ScrollReveal";
 import MeetTheChefs from "./components/MeetTheChefs";
 import WideFooterImage from "./components/WideFooterImage";
 import FeatureVideoItem from "./components/FeatureVideoItem";
-import ImageSlider from "./components/ImageSlider";
+import InstaFeed from "./components/InstaFeed";
 import ButtonPrimary from "./components/ButtonPrimary";
+import Locations from "./components/Locations";
 
 const EventPageSydney = () => {
     return (
@@ -46,9 +47,32 @@ const EventPageSydney = () => {
                             </div>
                         </div>
                     </FeatureVideoItem>
+
+                    <div
+                        className="container"
+                        style={{ marginTop: "80px", paddingBottom: "0" }}
+                    >
+                        <div className="copy centered700 black">
+                            <h2>Secret Suppers Events</h2>
+                            <p>
+                                Red Rock Deli secret suppers is back with 3 new
+                                chefs and 4 new secret locations! Find your
+                                nearest event, and enter the ballot for your
+                                chance to get invited.
+                            </p>
+                        </div>
+                    </div>
+                    <div
+                        className="container"
+                        style={{ paddingTop: "0", paddingBottom: "160px" }}
+                    >
+                        <Locations imageUrl="/images/meet-the-chefs/secret-locations2.jpg" />
+                    </div>
+
+                    <InstaFeed noBackground />
                 </section>
 
-                <MeetTheChefs onSecretSuppersPage />
+                {/* <MeetTheChefs onSecretSuppersPage /> */}
                 <WideFooterImage imageUrl="/images/secret-suppers/ss-event1-footer-wide.jpg" />
                 <Helmet>
                     <title>{"Red Rock Deli®"}</title>

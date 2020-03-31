@@ -5,6 +5,10 @@
     padding: 60px 0;
     margin: 0;
 
+    &.no-background {
+        background: transparent;
+    }
+
     &.onSecretSuppersPage {
         // --
         // REVERSED OUT, white on black variation.
@@ -78,74 +82,6 @@
                 position: relative;
                 display: flex;
                 flex-flow: column;
-            }
-
-            .locations {
-                background: $grey;
-                display: flex;
-                flex-flow: column;
-                position: relative;
-                bottom: -40px;
-
-                .locations-image {
-                    height: 50vw;
-                    object-fit: cover;
-                }
-
-                .locations-list {
-                    position: relative;
-                    display: flex;
-                    flex-flow: column;
-                    justify-content: center;
-                    padding: 40px 20px;
-
-                    .location {
-                        position: relative;
-                        display: flex;
-                        flex-direction: row;
-                        justify-content: space-between;
-
-                        width: 100%;
-                        padding: 30px 5px;
-                        border-bottom: 1px solid $cream;
-
-                        &:first-child {
-                            border-top: 1px solid $cream;
-                        }
-
-                        h3,
-                        p,
-                        h5 {
-                            display: inline-block;
-                        }
-
-                        h3 {
-                            margin-right: 30px;
-                            margin-bottom: 10px;
-                        }
-
-                        .chevron-holder {
-                            @include flexCenter;
-
-                            .chevron {
-                                margin-left: 20px;
-                            }
-                        }
-                    }
-                }
-
-                @include md {
-                    flex-flow: row;
-
-                    .locations-list,
-                    .locations-image {
-                        width: 50%;
-                    }
-
-                    .locations-image {
-                        max-height: 400px;
-                    }
-                }
             }
         }
     }
@@ -308,5 +244,74 @@
         width: calc(50% - 10px);
         height: 33vw;
         margin-bottom: 0px;
+    }
+}
+
+// Locations ---------------
+.locations {
+    background: $grey;
+    display: flex;
+    flex-flow: column;
+    position: relative;
+    bottom: -40px;
+
+    .locations-image {
+        height: 50vw;
+        object-fit: cover;
+    }
+
+    .locations-list {
+        position: relative;
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        padding: 40px 20px;
+
+        .location {
+            position: relative;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+
+            width: 100%;
+            padding: 30px 5px;
+            border-bottom: 1px solid $cream;
+
+            &:first-child {
+                border-top: 1px solid $cream;
+            }
+
+            h3,
+            p,
+            h5 {
+                display: inline-block;
+            }
+
+            h3 {
+                margin-right: 30px;
+                margin-bottom: 10px;
+            }
+
+            .chevron-holder {
+                @include flexCenter;
+
+                .chevron {
+                    margin-left: 20px;
+                }
+            }
+        }
+    }
+
+    @include md {
+        flex-flow: row;
+
+        .locations-list,
+        .locations-image {
+            width: 50%;
+        }
+
+        .locations-image {
+            max-height: 400px;
+        }
     }
 }

@@ -32,6 +32,35 @@ section {
     }
 }
 
+.copy {
+    &.centered700 {
+        max-width: 700px;
+        margin: 0 auto;
+        text-align: center;
+    }
+    &.centered600 {
+        max-width: 600px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    &.white {
+        p,
+        h3,
+        h2 {
+            color: $white;
+        }
+    }
+
+    &.black {
+        p,
+        h3,
+        h2 {
+            color: $black;
+        }
+    }
+}
+
 .scroll-prompt {
     position: absolute;
     bottom: 0;

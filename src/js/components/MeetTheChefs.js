@@ -1,11 +1,8 @@
 import React from "react";
-import ChefImage1 from "../../img/meet-the-chefs/meet-the-chefs-placeholder-1.jpg";
-import ChefImage2 from "../../img/meet-the-chefs/meet-the-chefs-placeholder-2.jpg";
-import ChefImage3 from "../../img/meet-the-chefs/meet-the-chefs-placeholder-3.jpg";
-import locationImage from "../../img/meet-the-chefs/secret-locations.jpg";
 import ButtonPrimary from "./ButtonPrimary";
 import Chef from "./chef";
 import { Link } from "react-router-dom";
+import Locations from "./Locations";
 
 const MeetTheChefs = props => {
     return (
@@ -23,13 +20,13 @@ const MeetTheChefs = props => {
                     <div className="content">
                         <div className="chef-holder">
                             <Chef
-                                imageUrl={ChefImage1}
+                                imageUrl="/images/meet-the-chefs/meet-the-chefs-placeholder-1.jpg"
                                 chefName="Chef Name 1"
                                 key={1}
                                 linkTo="/chef1"
                             />
                             <Chef
-                                imageUrl={ChefImage2}
+                                imageUrl="/images/meet-the-chefs/meet-the-chefs-placeholder-2.jpg"
                                 chefName="Chef Name 2"
                                 key={2}
                                 linkTo="/chef1"
@@ -45,27 +42,7 @@ const MeetTheChefs = props => {
                             </p>
                         </div>
 
-                        <div className="locations">
-                            <div className="locations-list">
-                                <Location
-                                    date={"May 21, 2020"}
-                                    location={"Secret Sydney Location"}
-                                    chefName={"Chef Name 1"}
-                                    eventURL="events/sydney"
-                                />
-                                <Location
-                                    date={"May 28, 2020"}
-                                    location={"Secret Melbourne Location"}
-                                    chefName={"Chef Name 2"}
-                                    eventURL="events/melbourne"
-                                />
-                            </div>
-                            <img
-                                src={locationImage}
-                                className="locations-image"
-                                alt="Shhh, stay up to date with our latest secret locations."
-                            />
-                        </div>
+                        <Locations imageUrl="/images/meet-the-chefs/secret-locations.jpg" />
                     </div>
                 </div>
 
@@ -78,25 +55,6 @@ const MeetTheChefs = props => {
                 </div>
             </div>
         </section>
-    );
-};
-
-const Location = props => {
-    return (
-        <Link className="location" to={props.eventURL}>
-            <div className="location-copy">
-                <h3 className="date">{props.date}</h3>
-                <p className="location-text">{props.location}</p>
-                <br />
-                <h5 className="name">
-                    <em>Hosted by </em>
-                    {props.chefName}
-                </h5>
-            </div>
-            <div className="chevron-holder">
-                <div className="chevron" />
-            </div>
-        </Link>
     );
 };
 
