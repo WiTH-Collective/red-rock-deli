@@ -2,7 +2,7 @@
     button {
         position: relative;
         height: 54px;
-        min-width: 230px;
+        min-width: 250px;
         padding: 0 30px;
         border: 0;
         outline: 0;
@@ -111,13 +111,12 @@
         cursor: pointer;
         background: $black;
         text-align: center;
-        padding: 20px;
+        padding: 15px;
         border: 2px solid $white;
         border-radius: 4px;
         color: $white;
         font-size: 16px;
         width: 100%;
-
         @include flexCenter;
 
         span {
@@ -129,6 +128,10 @@
             background-repeat: no-repeat;
             background-image: url("../../img/ui/dropdown-arrow-01.svg");
             margin-left: 30px;
+        }
+
+        @include md {
+            padding: 20px;
         }
     }
 }

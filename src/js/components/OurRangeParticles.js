@@ -174,7 +174,7 @@ const OurRangeParticles = props => {
             Product.scale = 0.6;
             scaleMultiplier = 0.85;
         } else {
-            Product.scale = 0.7;
+            Product.scale = 0.8;
             scaleMultiplier = 1;
         }
     };

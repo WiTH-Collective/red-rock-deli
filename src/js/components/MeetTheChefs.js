@@ -10,7 +10,7 @@ const MeetTheChefs = props => {
             className={
                 props.onSecretSuppersPage
                     ? "MeetTheChefs onSecretSuppersPage line-top line-top-black"
-                    : "MeetTheChefs line-top line-top-black"
+                    : "MeetTheChefs line-top"
             }
         >
             <div className="container">

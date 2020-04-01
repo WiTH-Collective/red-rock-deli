@@ -48,7 +48,7 @@ const DiscoverTheRange = props => {
             ) : (
                 <div>
                     <ButtonPrimary linkTo="/our-range">
-                        Button Primary
+                        Explore our range
                     </ButtonPrimary>
                 </div>
             )}
