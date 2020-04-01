@@ -57,8 +57,13 @@ function Footer() {
                 <div className="bottom">
                     <div className="left">
                         <Link to="/faq">FAQs</Link>|
-                        <Link to="/privacy-policy">Privacy Policy</Link>|
-                        <Link to="/terms-of-use">Terms of Use</Link>
+                        <ExternalLink href="https://www.smiths.com.au/assets/PepsiCo-Australian-Privacy-and-Credit-Reporting-Policy-December-2014-72bf6e0725d535527672d7a6b67309aa7feda4a4207e8e87864491f249e29f9c.pdf">
+                            Privacy Policy
+                        </ExternalLink>
+                        |
+                        <ExternalLink href="http://www.pepsico.com.au/terms/">
+                            Terms of Use
+                        </ExternalLink>
                     </div>
                     <div className="right">
                         <p>&copy;Red Rock Deli™ 2020</p>

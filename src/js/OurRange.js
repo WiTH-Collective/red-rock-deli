@@ -53,7 +53,7 @@ const OurRange = props => {
 
         // find product in list of products.
         const currentIndex = data.product[obj.group].findIndex(
-            product => product.title === decodeURI(urlArray[3])
+            product => product.url === decodeURI(urlArray[3])
         );
 
         // if index not found, use default index
@@ -162,7 +162,7 @@ const OurRange = props => {
                                                       baseUrl +
                                                       current.group +
                                                       "/" +
-                                                      encodeURI(p.title)
+                                                      encodeURI(p.url)
                                                   }
                                                   key={9000 + i}
                                               />

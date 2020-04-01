@@ -2,7 +2,6 @@ import React from "react";
 import { Helmet } from "react-helmet";
 import { HeroStatic } from "./components/Hero";
 import ScrollReveal from "./utils/ScrollReveal";
-import MeetTheChefs from "./components/MeetTheChefs";
 import WideFooterImage from "./components/WideFooterImage";
 import FeatureVideoItem from "./components/FeatureVideoItem";
 import InstaFeed from "./components/InstaFeed";

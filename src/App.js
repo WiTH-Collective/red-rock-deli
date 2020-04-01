@@ -67,17 +67,6 @@ function App() {
                                 exact
                                 component={EventPageSydney}
                             />
-
-                            <Route
-                                path="/privacy-policy"
-                                exact
-                                component={PrivacyPolicy}
-                            />
-                            <Route
-                                path="/terms-of-use"
-                                exact
-                                component={TermsOfUse}
-                            />
                             <Route path="/" component={PageNotFound} />
                         </Switch>
                     </ScrollToTop>

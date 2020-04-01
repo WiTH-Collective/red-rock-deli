@@ -92,7 +92,7 @@ const OurRangeParticles = props => {
             Product.direction = -increment;
             const next = checkRange(props.current.index, increment);
             nextProductUrl = `${props.current.group}/${encodeURI(
-                props.current.products[next].title
+                props.current.products[next].url
             )}`;
             hideParticles();
         }
