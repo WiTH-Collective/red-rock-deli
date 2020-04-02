@@ -25,6 +25,7 @@ function Hero(props) {
                     poster="/videos/homepage_video-sml.jpg"
                     muted
                     loop
+                    playsinline
                     onCanPlay={() => {
                         videoRef.current.play();
                     }}

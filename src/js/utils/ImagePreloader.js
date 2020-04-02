@@ -23,7 +23,7 @@ function LoadImage(source, callBackFunction) {
         console.log(" ### using cached image");
         config.loaded++;
         if (config.loaded === config.total) {
-            setTimeout(callBackFunction, 50);
+            setTimeout(callBackFunction, 150);
         }
     } else {
         // otherwise, load image, and store it once loaded.
