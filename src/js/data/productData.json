@@ -44,7 +44,7 @@
             "potato-chips": [
                 {
                     "title": "Honey Soy Chicken",
-                    "url": "honey-soy-chicken",
+                    "url": "honey-soy-chicken-potato-chips",
                     "copy": "Our Honey Soy Chicken potato  chips blends the sweetness of honey cut by the subtle richness of soy sauce.",
                     "subCopy": "We begin with the finest potatoes harvested from Australian farms, roughly cut and slow-cooked in Sunflower Oil, for the most delectable crunch. And with surprising twists, grinds and blends of carefully selected flavours, there’s an enticing taste journey waiting to be discovered in every bite.",
                     "packImageUrl": "/products/potato-chips/Honey-Soy-Chicken.png",
@@ -65,7 +65,7 @@
                 },
                 {
                     "title": "Lime & Black Pepper",
-                    "url": "lime-black-pepper",
+                    "url": "lime-black-pepper-potato-chips",
                     "copy": "Our Lime & Black Pepper potato chips meld a tangy combination of fresh lime cut by the subtle heat of freshly ground black peppercorns.",
                     "subCopy": "We begin with the finest potatoes harvested from Australian farms, roughly cut and slow-cooked in Sunflower Oil, for the most delectable crunch. And with surprising twists, grinds and blends of carefully selected flavours, there’s an enticing taste journey waiting to be discovered in every bite.",
                     "packImageUrl": "/products/potato-chips/Lime-Black-Pepper.png",
@@ -81,12 +81,12 @@
                         "index": 1,
                         "smallItemCount": 6,
                         "largeItemCount": 6,
-                        "randomSeed": 0
+                        "randomSeed": 1531
                     }
                 },
                 {
                     "title": "Sea Salt Balsamic",
-                    "url": "sea-salt-balsamic",
+                    "url": "sea-salt-balsamic-potato-chips",
                     "copy": "Our Sea Salt & Balsamic Vinegar potato chips blend a grind of fresh sea salt with a generous splash of the sweet sharpness of balsamic vinegar.",
                     "subCopy": "We begin with the finest potatoes harvested from Australian farms, roughly cut and slow-cooked in Sunflower Oil, for the most delectable crunch. And with surprising twists, grinds and blends of carefully selected flavours, there’s an enticing taste journey waiting to be discovered in every bite.",
                     "packImageUrl": "/products/potato-chips/Sea-Salt-Balsamic.png",
@@ -102,12 +102,12 @@
                         "index": 0,
                         "smallItemCount": 6,
                         "largeItemCount": 4,
-                        "randomSeed": 0
+                        "randomSeed": 1583
                     }
                 },
                 {
                     "title": "Sea Salt",
-                    "url": "sea-salt",
+                    "url": "sea-salt-potato-chips",
                     "copy": "Our classic potato chips are seasoned with a grinding of Australian sea salt to enrich the natural potato taste.",
                     "subCopy": "We begin with the finest potatoes harvested from Australian farms, roughly cut and slow-cooked in Sunflower Oil, for the most delectable crunch. And with surprising twists, grinds and blends of carefully selected flavours, there’s an enticing taste journey waiting to be discovered in every bite.",
                     "packImageUrl": "/products/potato-chips/Sea-Salt.png",
@@ -123,12 +123,12 @@
                         "index": 0,
                         "smallItemCount": 6,
                         "largeItemCount": 4,
-                        "randomSeed": 0
+                        "randomSeed": 680
                     }
                 },
                 {
                     "title": "Sweet Chilli & Sour Cream",
-                    "url": "sweeti-chilli-sour-cream",
+                    "url": "sweeti-chilli-sour-cream-potato-chips",
                     "copy": "Our Sweet Chilli & Sour Cream potato chips fuse the lingering sweet heat of chilli and paprika with a hint of smooth tangy sour cream.",
                     "subCopy": "We begin with the finest potatoes harvested from Australian farms, roughly cut and slow-cooked in Sunflower Oil, for the most delectable crunch. And with surprising twists, grinds and blends of carefully selected flavours, there’s an enticing taste journey waiting to be discovered in every bite.",
                     "packImageUrl": "/products/potato-chips/Sweet-Chilli-Sour-Cream.png",
@@ -144,14 +144,14 @@
                         "index": 2,
                         "smallItemCount": 8,
                         "largeItemCount": 6,
-                        "randomSeed": 0
+                        "randomSeed": 1755
                     }
                 }
             ],
             "tortilla-chips": [
                 {
                     "title": "Creamy Feta, Avocado & Lime",
-                    "url": "creamy-feta-avocado-lime",
+                    "url": "creamy-feta-avocado-lime-tortilla-chips",
                     "copy": "Our Red Rock Deli Creamy Feta, Avocado & Lime flavoured Tortilla Chips combine the creamy flavour of feta, complemented by the rich smoothness of avocado and a fresh burst of lime.",
                     "subCopy": "Our Red Rock Deli Tortilla Chips are made with finely selected corn harvested from Australian farms. Our special tortilla chips are carefully cut and generously seasoned with deli inspired flavour combinations, to enhance the naturally delicious taste of the corn. Enjoy Red Rock Deli’s authentic thick cut tortilla chips made with only the finest quality ingredients for a truly unique flavour sensation.",
                     "packImageUrl": "/products/tortilla-chips/Tortilla-Creamy-Feta-Avo-And-Lime.png",
@@ -167,12 +167,12 @@
                         "index": 0,
                         "smallItemCount": 3,
                         "largeItemCount": 5,
-                        "randomSeed": 0
+                        "randomSeed": 319
                     }
                 },
                 {
                     "title": "Tangy Roast Tomato Relish",
-                    "url": "tangy-roast-tomato-relish",
+                    "url": "tangy-roast-tomato-relish-tortilla-chips",
                     "copy": "Our Red Rock Deli Tangy Roast Tomato Relish flavoured Tortilla Chips pairs the richness of roasted tomatoes with a hint of black pepper and paprika to create a deliciously sweet and tangy relish.",
                     "subCopy": "Our Red Rock Deli Tortilla Chips are made with finely selected corn harvested from Australian farms. Our special tortilla chips are carefully cut and generously seasoned with deli inspired flavour combinations, to enhance the naturally delicious taste of the corn. Enjoy Red Rock Deli’s authentic thick cut tortilla chips made with only the finest quality ingredients for a truly unique flavour sensation.",
                     "packImageUrl": "/products/tortilla-chips/Tortilla-Tangy-Tomato-Relish.png",
@@ -186,14 +186,14 @@
                     },
                     "particles": {
                         "index": 2,
-                        "smallItemCount": 5,
+                        "smallItemCount": 3,
                         "largeItemCount": 5,
-                        "randomSeed": 0
+                        "randomSeed": 666
                     }
                 },
                 {
                     "title": "Parmesan & Caramelised Onion",
-                    "url": "parmesan-caramelised-onion",
+                    "url": "parmesan-caramelised-onion-tortilla-chips",
                     "copy": "Our Red Rock Deli Parmesan & Caramelised Onion Tortilla Chips blend the sharp and mature taste of parmesan with the delicate sweetness of caramelised onions for an irresistibly rich, sweet and savoury tortilla chip taste.",
                     "subCopy": "Our Red Rock Deli Tortilla Chips are made with finely selected corn harvested from Australian farms. Our special tortilla chips are carefully cut and generously seasoned with deli inspired flavour combinations, to enhance the naturally delicious taste of the corn. Enjoy Red Rock Deli’s authentic thick cut tortilla chips made with only the finest quality ingredients for a truly unique flavour sensation.",
                     "packImageUrl": "/products/tortilla-chips/Tortilla-Parmesan-And-Caramelised-Onion.png",
@@ -208,15 +208,15 @@
                     "particles": {
                         "index": 1,
                         "smallItemCount": 4,
-                        "largeItemCount": 3,
-                        "randomSeed": 0
+                        "largeItemCount": 5,
+                        "randomSeed": 1585
                     }
                 }
             ],
             "deluxe-crisps": [
                 {
                     "title": "Chilli Roast Garlic & Lemon Oil",
-                    "url": "chilli-roast-garlic-lemon-oil",
+                    "url": "chilli-roast-garlic-lemon-oil-deluxe-crisps",
                     "copy": "Our Chilli, Roast Garlic and Lemon Oil Deluxe Potato Crisps are seasoned with sweet slow roasted garlic, combined with the kick of chilli and are complemented with a light spritz of zesty lemon oil.",
                     "subCopy": "Red Rock Deli Deluxe Crisps use only the finest quality potatoes, slow cooked until they’re golden and crunchy. They’re spritzed with premium infused oils and paired with seasonings carefully selected to work in perfect harmony.",
                     "packImageUrl": "/products/deluxe-crisps/Deluxe-Crisps-Chilli-Roast-Garlic-Lem-Oil.png",
@@ -232,12 +232,12 @@
                         "index": 0,
                         "smallItemCount": 5,
                         "largeItemCount": 5,
-                        "randomSeed": 0
+                        "randomSeed": 341
                     }
                 },
                 {
                     "title": "Parmesan & Black Truffle Oil",
-                    "url": "parmesan-black-truffle-oil",
+                    "url": "parmesan-black-truffle-oil-deluxe-crisps",
                     "copy": "Our Parmesan & Black Truffle Oil Deluxe Potato Crisps are seasoned with the distinctive sharp taste of parmesan and are complemented with a light spritz of decadent, rich truffle oil.",
                     "subCopy": "Red Rock Deli Deluxe Crisps use only the finest quality potatoes, slow cooked until they’re golden and crunchy. They’re spritzed with premium infused oils and paired with seasonings carefully selected to work in perfect harmony.",
                     "packImageUrl": "/products/deluxe-crisps/Deluxe-Crisps-Parm-And-Black-Truffle-Oil.png",
@@ -253,12 +253,12 @@
                         "index": 1,
                         "smallItemCount": 2,
                         "largeItemCount": 5,
-                        "randomSeed": 0
+                        "randomSeed": 1086
                     }
                 },
                 {
                     "title": "Vintage Cheddar, Onion & Rosemary",
-                    "url": "vintage-cheddar-onion-rosemary",
+                    "url": "vintage-cheddar-onion-rosemary-deluxe-crisps",
                     "copy": "Placeholder",
                     "subCopy": "Red Rock Deli Deluxe Crisps use only the finest quality potatoes, slow cooked until they’re golden and crunchy. They’re spritzed with premium infused oils and paired with seasonings carefully selected to work in perfect harmony.",
                     "packImageUrl": "/products/deluxe-crisps/Deluxe-Crisps-Vintage-Ched-Cara-Rose-Oil.png",
@@ -274,7 +274,7 @@
                         "index": 2,
                         "smallItemCount": 4,
                         "largeItemCount": 6,
-                        "randomSeed": 0
+                        "randomSeed": 290
                     }
                 }
             ],
@@ -282,7 +282,7 @@
             "dips": [
                 {
                     "title": "Balsamic Beetroot",
-                    "url": "balsamic-beetroot",
+                    "url": "balsamic-beetroot-dip",
                     "copy": "Placeholder",
                     "subCopy": "Placeholder Copy",
                     "packImageUrl": "/products/dips/Balsamic-Beetroot.png",
@@ -296,14 +296,14 @@
                     },
                     "particles": {
                         "index": 0,
-                        "smallItemCount": 4,
-                        "largeItemCount": 3,
-                        "randomSeed": 0
+                        "smallItemCount": 2,
+                        "largeItemCount": 4,
+                        "randomSeed": 1239
                     }
                 },
                 {
                     "title": "Basil Pesto Pecorino",
-                    "url": "basil-pesto-pecorino",
+                    "url": "basil-pesto-pecorino-dip",
                     "copy": "Placeholder",
                     "subCopy": "Placeholder Copy",
                     "packImageUrl": "/products/dips/Basil-Pesto-Pecorino.png",
@@ -317,14 +317,14 @@
                     },
                     "particles": {
                         "index": 1,
-                        "smallItemCount": 5,
-                        "largeItemCount": 4,
-                        "randomSeed": 0
+                        "smallItemCount": 2,
+                        "largeItemCount": 3,
+                        "randomSeed": 949
                     }
                 },
                 {
                     "title": "Roast Pumpkin",
-                    "url": "roast-pumpkin",
+                    "url": "roast-pumpkin-dip",
                     "copy": "Placeholder",
                     "subCopy": "Placeholder Copy",
                     "packImageUrl": "/products/dips/Roast-Pumpkin.png",
@@ -338,14 +338,14 @@
                     },
                     "particles": {
                         "index": 2,
-                        "smallItemCount": 5,
+                        "smallItemCount": 2,
                         "largeItemCount": 3,
-                        "randomSeed": 0
+                        "randomSeed": 412
                     }
                 },
                 {
                     "title": "Roast Tomato, Feta, Basil & Cashew",
-                    "url": "roast-tomato-feta-basil-cashew",
+                    "url": "roast-tomato-feta-basil-cashew-dip",
                     "copy": "Placeholder",
                     "subCopy": "Placeholder Copy",
                     "packImageUrl": "/products/dips/Roast-Tomato-Feta-Basil-And-Cashew.png",
@@ -359,14 +359,14 @@
                     },
                     "particles": {
                         "index": 3,
-                        "smallItemCount": 5,
+                        "smallItemCount": 2,
                         "largeItemCount": 4,
                         "randomSeed": 1055
                     }
                 },
                 {
                     "title": "Roasted Red Capsicum",
-                    "url": "roasted-red-capsicum",
+                    "url": "roasted-red-capsicum-dip",
                     "copy": "Placeholder",
                     "subCopy": "Placeholder Copy",
                     "packImageUrl": "/products/dips/Roasted-Red-Capsicum.png",
@@ -382,12 +382,12 @@
                         "index": 4,
                         "smallItemCount": 2,
                         "largeItemCount": 5,
-                        "randomSeed": 0
+                        "randomSeed": 1269
                     }
                 },
                 {
                     "title": "Spicy Capsicum",
-                    "url": "spicy-capsicum",
+                    "url": "spicy-capsicum-dip",
                     "copy": "Placeholder",
                     "subCopy": "Placeholder Copy",
                     "packImageUrl": "/products/dips/RRD-Spicy-Capsicum.png",
@@ -401,14 +401,14 @@
                     },
                     "particles": {
                         "index": 5,
-                        "smallItemCount": 5,
+                        "smallItemCount": 3,
                         "largeItemCount": 4,
-                        "randomSeed": 0
+                        "randomSeed": 1989
                     }
                 },
                 {
                     "title": "Thai Chilli",
-                    "url": "thai-chilli",
+                    "url": "thai-chilli-dip",
                     "copy": "Placeholder",
                     "subCopy": "Placeholder Copy",
                     "packImageUrl": "/products/dips/Thai-Chilli.png",
@@ -422,16 +422,16 @@
                     },
                     "particles": {
                         "index": 6,
-                        "smallItemCount": 6,
-                        "largeItemCount": 3,
-                        "randomSeed": 0
+                        "smallItemCount": 5,
+                        "largeItemCount": 4,
+                        "randomSeed": 1363
                     }
                 }
             ],
             "limited-edition": [
                 {
                     "title": "Maple Glazed Bacon & Cheddar",
-                    "url": "maple-glazed-bacon-cheddar",
+                    "url": "maple-glazed-bacon-cheddar-limited-edition",
                     "copy": "Our Maple Glazed Bacon & Cheddar potato chips combine the rich, sweet smokiness of maple bacon with the subtle creaminess of cheddar.",
                     "subCopy": "We begin with the finest potatoes harvested from Australian farms, roughly cut and slow-cooked in Sunflower Oil, for the most delectable crunch. And with surprising twists,  grinds and blends of carefully selected flavours, there’s an enticing taste journey waiting to be discovered in every bite.",
                     "packImageUrl": "/products/limited-edition/Maple-Glazed-Bacon-And-Cheddar.png",
@@ -447,12 +447,12 @@
                         "index": 0,
                         "smallItemCount": 6,
                         "largeItemCount": 5,
-                        "randomSeed": 0
+                        "randomSeed": 1381
                     }
                 },
                 {
                     "title": "Morrocan Spiced Chicken",
-                    "url": "morrocan-spiced-chicken",
+                    "url": "morrocan-spiced-chicken-limited-edition",
                     "copy": "Our Moroccan Spiced Chicken & Lemon potato chips blend the exotic flavour of Moroccan spices and succulent chicken with the freshness of zesty lemon.",
                     "subCopy": "We begin with the finest potatoes harvested from Australian farms, roughly cut and slow-cooked in Sunflower Oil, for the most delectable crunch. And with surprising twists,  grinds and blends of carefully selected flavours, there’s an enticing taste journey waiting to be discovered in every bite.",
                     "packImageUrl": "/products/limited-edition/Moroccan-Spiced-Chicken-And-Lemon.png",
@@ -468,14 +468,14 @@
                         "index": 1,
                         "smallItemCount": 4,
                         "largeItemCount": 5,
-                        "randomSeed": 1325
+                        "randomSeed": 1382
                     }
                 }
             ],
             "nuts": [
                 {
                     "title": "Apple Cinnamon Crumble",
-                    "url": "apple-cinnamon-crumble",
+                    "url": "apple-cinnamon-crumble-glazed-nuts",
                     "copy": "Our Cinnamon And Apple Crumble Glazed Nuts combine the delicate sweetness of sliced pink lady apples and currants with deliciously fragrant and spicy cinnamon and a pinch of brown sugar to deliver a delicious sweet twist to a delectable crunchy snack.",
                     "subCopy": "Discover our delicious Red Rock Deli Glazed Mix range, crafted with fine quality peanuts, almonds and cashews, and combined with dried fruit and sophisticated gourmet deli inspired ingredients to deliver a unique taste sensation.",
                     "packImageUrl": "/products/nuts/Glazed-Nuts-Apple-Cinnamon-Crumble.png",
@@ -491,12 +491,12 @@
                         "index": 3,
                         "smallItemCount": 7,
                         "largeItemCount": 3,
-                        "randomSeed": 0
+                        "randomSeed": 432
                     }
                 },
                 {
                     "title": "Honey, Vanilla & Cranberry",
-                    "url": "honey-vanilla-cranberry",
+                    "url": "honey-vanilla-cranberry-glazed-nuts",
                     "copy": "Our Honey, Vanilla And Cranberries Glazed Nuts combine the delicious tanginess of cranberries with notes of fragrant vanilla and a caramelised honey glaze to deliver a delicious sweet twist to a delectable crunchy snack.",
                     "subCopy": "Discover our delicious Red Rock Deli Glazed Mix range, crafted with fine quality peanuts, almonds and cashews, and combined with dried fruit and sophisticated gourmet deli inspired ingredients to deliver a unique taste sensation.",
                     "packImageUrl": "/products/nuts/Glazed-Nuts-Vanilla-Cranberry-And-Honey.png",
@@ -512,12 +512,12 @@
                         "index": 4,
                         "smallItemCount": 6,
                         "largeItemCount": 3,
-                        "randomSeed": 0
+                        "randomSeed": 1624
                     }
                 },
                 {
                     "title": "Balsamic Vinegar & Chilli",
-                    "url": "balsamic-vinegar-chilli",
+                    "url": "balsamic-vinegar-chilli-mixed-nuts",
                     "copy": "Placeholder",
                     "subCopy": "Placeholder Copy",
                     "packImageUrl": "/products/nuts/Mixed-Nuts-Balsamic-Vinegar-And-Chilli.png",
@@ -533,12 +533,12 @@
                         "index": 1,
                         "smallItemCount": 4,
                         "largeItemCount": 2,
-                        "randomSeed": 0
+                        "randomSeed": 1190
                     }
                 },
                 {
                     "title": "Caramelised Garlic & Lemon",
-                    "url": "cramalised-garlic-lemon",
+                    "url": "cramalised-garlic-lemon-mixed-nuts",
                     "copy": "Placeholder",
                     "subCopy": "Placeholder Copy",
                     "packImageUrl": "/products/nuts/Mixed-Nuts-Cramalised-Garlic-And-Lemon.png",
@@ -554,12 +554,12 @@
                         "index": 0,
                         "smallItemCount": 4,
                         "largeItemCount": 4,
-                        "randomSeed": 0
+                        "randomSeed": 569
                     }
                 },
                 {
-                    "title": "Sweet Honey & Sea Salt.png",
-                    "url": "sweet-honey-sea-salt.png",
+                    "title": "Sweet Honey & Sea Salt",
+                    "url": "sweet-honey-sea-salt-peanuts",
                     "copy": "Placeholder",
                     "subCopy": "Placeholder Copy",
                     "packImageUrl": "/products/nuts/Peanuts-Sweet-Honey-And-Sea-Salt.png",
@@ -575,7 +575,7 @@
                         "index": 2,
                         "smallItemCount": 5,
                         "largeItemCount": 3,
-                        "randomSeed": 0
+                        "randomSeed": 1716
                     }
                 }
             ]

@@ -8,7 +8,7 @@ import { IconLast, IconNext } from "./SVGIcons";
 const OurRangeParticles = props => {
     console.log("--> Start of OurRangeParticles Component");
     console.log(">> RANGE >> props.pageIsLoading", props.pageIsLoading);
-    const productSpacing = 150;
+    const productSpacing = props.data.config.productSpacing;
     const [current, setCurrent] = useState(props.current.index);
     const [isHidden, setIsHidden] = useState(" hidden");
     const [canUpdate, setCanUpdate] = useState(false);
@@ -290,15 +290,27 @@ const OurRangeParticles = props => {
                 scale: FauxRandom() * 0.15 + 0.45
             };
 
-            if (Math.abs(p.x) < 150 * particleDistribution) {
+            // asdfasdf
+            let nutMultiplier = 1;
+            props.current.product.packImageUrl.indexOf("/nuts/") > -1
+                ? (nutMultiplier = 0.66)
+                : (nutMultiplier = 1);
+
+            if (Math.abs(p.x) < 150 * particleDistribution * nutMultiplier) {
                 if (p.x < 0) {
                     p.x -=
                         productSpacing * 0.5 +
-                        FauxRandom() * (productSpacing * particleDistribution);
+                        FauxRandom() *
+                            (productSpacing *
+                                particleDistribution *
+                                nutMultiplier);
                 } else {
                     p.x +=
                         productSpacing * 0.5 +
-                        FauxRandom() * (productSpacing * particleDistribution);
+                        FauxRandom() *
+                            (productSpacing *
+                                particleDistribution *
+                                nutMultiplier);
                 }
             }
 

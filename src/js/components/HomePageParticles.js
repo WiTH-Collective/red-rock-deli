@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import { FauxRandom, CosRandom } from "../utils/FauxRandom";
 import { ImagePreloader } from "../utils/ImagePreloader";
-import { TimelineMax, Power2, Power3, Power4, Sine, Linear } from "gsap";
+import { TimelineMax, Power3, Linear } from "gsap";
 import { IconLast, IconNext } from "./SVGIcons";
 import history from "../history";
 
@@ -291,20 +291,37 @@ const HomePageParticles = props => {
                 scale: FauxRandom() * 0.15 + 0.45
             };
 
+            //
+
+            // Adjust spacing for small packaging.
+            let multiplier = 1;
+            _Product.product.packImageUrl.indexOf("/nuts/") > -1
+                ? (multiplier = 0.66)
+                : (multiplier = 1);
+
+            _Product.product.packImageUrl.indexOf("/dips/") > -1
+                ? (multiplier = 0.82)
+                : (multiplier = 1);
+
             // check particle is not too close to pack.
-            if (Math.abs(p.x) < 150 * Slider.particleDistribution) {
+            if (
+                Math.abs(p.x) <
+                150 * Slider.particleDistribution * multiplier
+            ) {
                 if (p.x < 0) {
                     p.x -=
                         config.productSpacing * 0.5 +
                         FauxRandom() *
                             (config.productSpacing *
-                                Slider.particleDistribution);
+                                Slider.particleDistribution *
+                                multiplier);
                 } else {
                     p.x +=
                         config.productSpacing * 0.5 +
                         FauxRandom() *
                             (config.productSpacing *
-                                Slider.particleDistribution);
+                                Slider.particleDistribution *
+                                multiplier);
                 }
             }
 
