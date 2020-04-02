@@ -489,3 +489,65 @@
         }
     }
 }
+
+.our-range {
+    .DiscoverTheRange {
+        padding-top: 100px;
+    }
+
+    .range-nav-top {
+        .dropdown {
+            position: absolute;
+            overflow: hidden;
+            height: 450px;
+            width: 260px;
+            top: 30px;
+            left: calc(50% - 130px);
+
+            transition: all 0.2s ease-out;
+            z-index: 2;
+
+            &.collapsed {
+                height: 51px;
+            }
+
+            .nav-item {
+                color: white;
+                padding: 8px 50px;
+
+                &.label {
+                    text-align: center;
+                    border-bottom: 2px solid white;
+                }
+
+                &:not(.label) {
+                    background: rgba(0, 0, 0, 0.75);
+                    user-select: none;
+                    border-bottom: 1px solid $halfWhite;
+                    position: relative;
+                    background-image: url("../../img/ui/chevron-white.svg");
+                    background-repeat: no-repeat;
+                    background-size: 15px 15px;
+                    background-position: 30px center;
+                    padding: 10px 20px 10px 70px;
+
+                    transition: all 0.2s ease-out;
+
+                    &:hover {
+                        border-color: $white;
+                        background-position: 34px center;
+                    }
+                }
+            }
+        }
+    }
+
+    @include lg {
+        .DiscoverTheRange {
+            padding-top: 0px;
+        }
+        .range-nav-top {
+            display: none;
+        }
+    }
+}

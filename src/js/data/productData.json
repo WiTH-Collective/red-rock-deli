@@ -54,7 +54,7 @@
                         "copy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
                     },
                     "nutritionalInfo": {
-                        "image": "/products/potato-chips/info-SweetChilliSourCream.png"
+                        "image": "products/nutritional-info/potato-chip-HoneySoyChicken-Info@2x.png"
                     },
                     "particles": {
                         "index": 3,
@@ -75,7 +75,7 @@
                         "copy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
                     },
                     "nutritionalInfo": {
-                        "image": "/products/potato-chips/info-SweetChilliSourCream.png"
+                        "image": "products/nutritional-info/potato-chip-LimeCrackedPepper-Info@2x.png"
                     },
                     "particles": {
                         "index": 1,
@@ -96,7 +96,7 @@
                         "copy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
                     },
                     "nutritionalInfo": {
-                        "image": "/products/potato-chips/info-SweetChilliSourCream.png"
+                        "image": "products/nutritional-info/potato-chip-SeaSaltBalsamic-Info@2x.png"
                     },
                     "particles": {
                         "index": 0,
@@ -117,7 +117,7 @@
                         "copy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
                     },
                     "nutritionalInfo": {
-                        "image": "/products/potato-chips/info-SweetChilliSourCream.png"
+                        "image": "products/nutritional-info/potato-chip-SeaSalt-Info@2x.png"
                     },
                     "particles": {
                         "index": 0,
@@ -138,7 +138,7 @@
                         "copy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
                     },
                     "nutritionalInfo": {
-                        "image": "/products/potato-chips/info-SweetChilliSourCream.png"
+                        "image": "products/nutritional-info/potato-chip-SweetChilliSourCream-Info@2x.png"
                     },
                     "particles": {
                         "index": 2,
@@ -161,7 +161,7 @@
                         "copy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
                     },
                     "nutritionalInfo": {
-                        "image": "/products/potato-chips/info-SweetChilliSourCream.png"
+                        "image": "products/nutritional-info/tortilla-chips-FetaAvoLime-Info@2x.png"
                     },
                     "particles": {
                         "index": 0,
@@ -182,7 +182,7 @@
                         "copy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
                     },
                     "nutritionalInfo": {
-                        "image": "/products/potato-chips/info-SweetChilliSourCream.png"
+                        "image": "products/nutritional-info/tortilla-chips-TangyTomatoRelish-Info@2x.png"
                     },
                     "particles": {
                         "index": 2,
@@ -203,7 +203,7 @@
                         "copy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
                     },
                     "nutritionalInfo": {
-                        "image": "/products/potato-chips/info-SweetChilliSourCream.png"
+                        "image": "products/nutritional-info/tortilla-chips-ParmesanCaramelisedOnion-Info@2x.png"
                     },
                     "particles": {
                         "index": 1,
@@ -226,7 +226,7 @@
                         "copy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
                     },
                     "nutritionalInfo": {
-                        "image": "/products/potato-chips/info-SweetChilliSourCream.png"
+                        "image": "products/nutritional-info/deluxe-crisps-ChilliRoastGarlic-Info@2x.png"
                     },
                     "particles": {
                         "index": 0,
@@ -247,7 +247,7 @@
                         "copy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
                     },
                     "nutritionalInfo": {
-                        "image": "/products/potato-chips/info-SweetChilliSourCream.png"
+                        "image": "products/nutritional-info/deluxe-crisps-ParmesanBlackTruffle-Info@2x.png"
                     },
                     "particles": {
                         "index": 1,
@@ -259,7 +259,7 @@
                 {
                     "title": "Vintage Cheddar, Onion & Rosemary",
                     "url": "vintage-cheddar-onion-rosemary-deluxe-crisps",
-                    "copy": "Placeholder",
+                    "copy": "Our Vintage Cheddar, Caramelised Onion & Rosemary Oil Deluxe Potato Crisps are seasoned with the creamy sharp taste of vintage cheddar combined with the sweetness of caramelised onion  and are complemented with a light spritz rosemary oil.",
                     "subCopy": "Red Rock Deli Deluxe Crisps use only the finest quality potatoes, slow cooked until they’re golden and crunchy. They’re spritzed with premium infused oils and paired with seasonings carefully selected to work in perfect harmony.",
                     "packImageUrl": "/products/deluxe-crisps/Deluxe-Crisps-Vintage-Ched-Cara-Rose-Oil.png",
                     "particleUrl": "/products/deluxe-crisps/particles-deluxe.png",
@@ -268,7 +268,7 @@
                         "copy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
                     },
                     "nutritionalInfo": {
-                        "image": "/products/potato-chips/info-SweetChilliSourCream.png"
+                        "image": "products/nutritional-info/deluxe-crisps-VintageCheddar-Info@2x.png"
                     },
                     "particles": {
                         "index": 2,
@@ -292,7 +292,7 @@
                         "copy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
                     },
                     "nutritionalInfo": {
-                        "image": "/products/potato-chips/info-SweetChilliSourCream.png"
+                        "image": ""
                     },
                     "particles": {
                         "index": 0,
@@ -313,7 +313,7 @@
                         "copy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
                     },
                     "nutritionalInfo": {
-                        "image": "/products/potato-chips/info-SweetChilliSourCream.png"
+                        "image": ""
                     },
                     "particles": {
                         "index": 1,
@@ -334,7 +334,7 @@
                         "copy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
                     },
                     "nutritionalInfo": {
-                        "image": "/products/potato-chips/info-SweetChilliSourCream.png"
+                        "image": ""
                     },
                     "particles": {
                         "index": 2,
@@ -355,7 +355,7 @@
                         "copy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
                     },
                     "nutritionalInfo": {
-                        "image": "/products/potato-chips/info-SweetChilliSourCream.png"
+                        "image": ""
                     },
                     "particles": {
                         "index": 3,
@@ -376,7 +376,7 @@
                         "copy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
                     },
                     "nutritionalInfo": {
-                        "image": "/products/potato-chips/info-SweetChilliSourCream.png"
+                        "image": ""
                     },
                     "particles": {
                         "index": 4,
@@ -397,7 +397,7 @@
                         "copy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
                     },
                     "nutritionalInfo": {
-                        "image": "/products/potato-chips/info-SweetChilliSourCream.png"
+                        "image": ""
                     },
                     "particles": {
                         "index": 5,
@@ -418,7 +418,7 @@
                         "copy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
                     },
                     "nutritionalInfo": {
-                        "image": "/products/potato-chips/info-SweetChilliSourCream.png"
+                        "image": ""
                     },
                     "particles": {
                         "index": 6,
@@ -441,7 +441,7 @@
                         "copy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
                     },
                     "nutritionalInfo": {
-                        "image": "/products/potato-chips/info-SweetChilliSourCream.png"
+                        "image": "products/nutritional-info/limited-edition-MapleGlazedBaconCheddar-Info.png"
                     },
                     "particles": {
                         "index": 0,
@@ -462,7 +462,7 @@
                         "copy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
                     },
                     "nutritionalInfo": {
-                        "image": "/products/potato-chips/info-SweetChilliSourCream.png"
+                        "image": "products/nutritional-info/limited-edition-MorrocanChickenLemon-Info.png"
                     },
                     "particles": {
                         "index": 1,
@@ -485,7 +485,7 @@
                         "copy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
                     },
                     "nutritionalInfo": {
-                        "image": "/products/potato-chips/info-SweetChilliSourCream.png"
+                        "image": "products/nutritional-info/nuts-AppleCinnamonCrumble-Info@2x.png"
                     },
                     "particles": {
                         "index": 3,
@@ -506,7 +506,7 @@
                         "copy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
                     },
                     "nutritionalInfo": {
-                        "image": "/products/potato-chips/info-SweetChilliSourCream.png"
+                        "image": "products/nutritional-info/nuts-VanillaCranberryHoney-Info@2x.png"
                     },
                     "particles": {
                         "index": 4,
@@ -518,8 +518,8 @@
                 {
                     "title": "Balsamic Vinegar & Chilli",
                     "url": "balsamic-vinegar-chilli-mixed-nuts",
-                    "copy": "Placeholder",
-                    "subCopy": "Placeholder Copy",
+                    "copy": "Our Balsamic Vinegar and Chilli Roasted Nuts combine the sweet and tangy flavour of balsamic with the sharp heat of chilli for an irresistibly delicious snack. ",
+                    "subCopy": "Discover our delicious Red Rock Deli Roasted Nuts Range, crafted with fine quality peanuts, almonds and cashews and combined with sophisticated gourmet deli inspired ingredients to deliver a unique taste sensation.",
                     "packImageUrl": "/products/nuts/Mixed-Nuts-Balsamic-Vinegar-And-Chilli.png",
                     "particleUrl": "/products/nuts/particles-nuts.png",
                     "flavourPairing": {
@@ -527,7 +527,7 @@
                         "copy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
                     },
                     "nutritionalInfo": {
-                        "image": "/products/potato-chips/info-SweetChilliSourCream.png"
+                        "image": "products/nutritional-info/nuts-BalsamicVinegar&Chilli-Info@2x.png"
                     },
                     "particles": {
                         "index": 1,
@@ -539,8 +539,8 @@
                 {
                     "title": "Caramelised Garlic & Lemon",
                     "url": "cramalised-garlic-lemon-mixed-nuts",
-                    "copy": "Placeholder",
-                    "subCopy": "Placeholder Copy",
+                    "copy": "Our Caramelised Garlic and Lemon Roasted Nuts combine the delicate sweetness of caramelised garlic with tangy lemon for an irresistibly delicious snack.",
+                    "subCopy": "Discover our delicious Red Rock Deli Roasted Nuts Range, crafted with fine quality peanuts, almonds and cashews and combined with sophisticated gourmet deli inspired ingredients to deliver a unique taste sensation.",
                     "packImageUrl": "/products/nuts/Mixed-Nuts-Cramalised-Garlic-And-Lemon.png",
                     "particleUrl": "/products/nuts/particles-nuts.png",
                     "flavourPairing": {
@@ -548,7 +548,7 @@
                         "copy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
                     },
                     "nutritionalInfo": {
-                        "image": "/products/potato-chips/info-SweetChilliSourCream.png"
+                        "image": "products/nutritional-info/nuts-CaramelisedGarlicLemon-Info@2x.png"
                     },
                     "particles": {
                         "index": 0,
@@ -560,8 +560,8 @@
                 {
                     "title": "Sweet Honey & Sea Salt",
                     "url": "sweet-honey-sea-salt-peanuts",
-                    "copy": "Placeholder",
-                    "subCopy": "Placeholder Copy",
+                    "copy": "Our Oven Roasted Sweet Honey & Sea Salt Peanuts combine the intensity of salt that cuts through the delicate sweetness of honey to deliver an unexpected sweet savoury twist to an irresistibly delicious snack.",
+                    "subCopy": "Discover our delicious Red Rock Deli Roasted Nuts Range, crafted with fine quality peanuts, almonds and cashews and combined with sophisticated gourmet deli inspired ingredients to deliver a unique taste sensation.",
                     "packImageUrl": "/products/nuts/Peanuts-Sweet-Honey-And-Sea-Salt.png",
                     "particleUrl": "/products/nuts/particles-nuts.png",
                     "flavourPairing": {
@@ -569,7 +569,7 @@
                         "copy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
                     },
                     "nutritionalInfo": {
-                        "image": "/products/potato-chips/info-SweetChilliSourCream.png"
+                        "image": "products/nutritional-info/nuts-SweetHoneySeaSalt-Info@2x.png"
                     },
                     "particles": {
                         "index": 2,

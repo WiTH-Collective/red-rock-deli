@@ -18,6 +18,7 @@ const OurRange = props => {
         image: "",
         copy: null
     });
+    const [navToggle, setNavToggle] = useState(false);
     const [pathname, setPathname] = useState(window.location.pathname);
     const [current, setCurrent] = useState({
         group: null,
@@ -137,7 +138,43 @@ const OurRange = props => {
                                     showModal={showModal}
                                     pageIsLoading={pageLoading}
                                 />
+
+                                <div className="range-nav-top">
+                                    {current ? (
+                                        <div
+                                            className={
+                                                navToggle
+                                                    ? "dropdown"
+                                                    : "dropdown collapsed"
+                                            }
+                                            onClick={() => {
+                                                setNavToggle(!navToggle);
+                                            }}
+                                        >
+                                            <div className="nav-item label">
+                                                <h3>{current.group}</h3>
+                                            </div>
+                                            {data.nav.map((item, i) => {
+                                                return (
+                                                    <NavItem
+                                                        hideImage
+                                                        {...item}
+                                                        rangeUrl={baseUrl}
+                                                        onClickFunction={
+                                                            navigateTo
+                                                        }
+                                                        pathname={pathname}
+                                                        key={3000 + i}
+                                                    />
+                                                );
+                                            })}
+                                        </div>
+                                    ) : (
+                                        ""
+                                    )}
+                                </div>
                             </section>
+
                             <section className="range-nav">
                                 <div className="container">
                                     {data.nav.map((item, i) => {
@@ -233,7 +270,8 @@ const NavItem = props => {
                 props.onClickFunction(props.baseUrl);
             }}
         >
-            <img src={props.imageUrl} alt="product" />
+            {props.hideImage ? "" : <img src={props.imageUrl} alt="product" />}
+
             <h3>{props.label}</h3>
             <Link className="hidden" to={props.rangeUrl + props.baseUrl} />
         </div>
