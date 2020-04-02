@@ -22,14 +22,14 @@ function Hero(props) {
             <div className="background-video full-width">
                 <video
                     ref={videoRef}
-                    poster="/videos/placeholder-video.jpg"
+                    poster="homepage_video-sml.jpg"
                     muted
                     loop
                     onCanPlay={() => {
                         videoRef.current.play();
                     }}
                 >
-                    {/* <source src="/videos/placeholder-video-sq.mp4" /> */}
+                    <source src="/videos/homepage_video-sml.mp4" />
                 </video>
             </div>
 
