@@ -1,9 +1,9 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Helmet } from "react-helmet";
 import { FauxRandom, CosRandom } from "../utils/FauxRandom";
-import { TimelineMax, Power3, Power4, Sine, Linear } from "gsap";
-import history from "../history";
+import { TimelineMax, Power3, Power4, Sine, Linear, Strong } from "gsap";
 import OurRangeIcons from "./OurRangeIcons";
+import { IconLast, IconNext } from "./SVGIcons";
 
 const OurRangeParticles = props => {
     console.log("--> Start of OurRangeParticles Component");
@@ -35,6 +35,16 @@ const OurRangeParticles = props => {
     let TL = null;
 
     let scaleMultiplier = 1;
+    let particleDistribution = 1;
+    console.log(
+        ">> props.current.product.packImageUrl",
+        props.current.product.packImageUrl
+    );
+
+    String(props.current.product.packImageUrl).indexOf("/dips/") > -1
+        ? (particleDistribution = 0.82)
+        : (particleDistribution = 1);
+
     let nextProductUrl = "";
 
     // load staggger
@@ -98,19 +108,45 @@ const OurRangeParticles = props => {
         }
     };
 
-    //
+    // =======================================
     // image preloader
+    // =======================================
     const loadImg = source => {
-        const img = document.createElement("img");
-        img.src = source;
-        img.onload = () => {
-            const i = imagesLoaded;
-            imagesLoaded++;
-            console.log("imagesLoaded: ", i + 1);
-            if (imagesLoaded === imagesTotal) allImagesLoaded();
+        if (!window.imageCache) {
+            window.imageCache = [];
+        }
+        const image = {
+            el: null,
+            source: null
         };
-        return img;
+        // check if image is found in image cache.
+        const index = window.imageCache.findIndex(img => img.source === source);
+        if (index > -1) {
+            image.el = window.imageCache[index].el;
+            image.source = window.imageCache[index].source;
+        } else {
+            image.el = document.createElement("img");
+            image.el.src = image.source = source;
+        }
+
+        if (image.el.complete) {
+            // if image was already loaded, use image.
+            console.log(" ### using cached image");
+            imagesLoaded++;
+            if (imagesLoaded === imagesTotal) allImagesLoaded();
+        } else {
+            // otherwise, load image, and store it once loaded.
+            console.log(" ### new image");
+            image.el.onload = () => {
+                window.imageCache.push(image);
+                console.log("window.imageCache", window.imageCache);
+                imagesLoaded++;
+                if (imagesLoaded === imagesTotal) allImagesLoaded();
+            };
+        }
+        return image.el;
     };
+
     useEffect(() => {
         // console.log("props.current", props.current);
 
@@ -130,8 +166,8 @@ const OurRangeParticles = props => {
     };
     const removeSpriteImages = () => {
         if (sprites.particles && sprites.product) {
-            sprites.particles.remove();
-            sprites.product.remove();
+            // sprites.particles.remove();
+            // sprites.product.remove();
         }
     };
 
@@ -147,17 +183,17 @@ const OurRangeParticles = props => {
         // console.log(e.target.innerWidth, e.target.innerHeight);
         const can = canvasRef.current;
         const canBox = can.getBoundingClientRect();
-        can.width = canBox.width;
-        can.height = canBox.height;
+        can.width = can.offsetWidth;
+        can.height = can.offsetHeight;
         origin.x = Math.round(can.width * 0.5);
         origin.y = Math.round(can.height * 0.5);
         origin.width = canBox.width;
         origin.height = canBox.height;
 
-        // if (hasInit) {
-        //     updateProduct();
-        //     updateCanvas();
-        // }
+        if (hasInit) {
+            updateProduct();
+            updateCanvas();
+        }
     };
 
     const updateProduct = () => {
@@ -167,16 +203,8 @@ const OurRangeParticles = props => {
         Product.alpha = 1;
         Product.x = 0;
         Product.rotation = Math.PI * 0.05;
-        if (origin.width < 480) {
-            Product.scale = 0.5;
-            scaleMultiplier = 0.7;
-        } else if (origin.width < 768) {
-            Product.scale = 0.6;
-            scaleMultiplier = 0.85;
-        } else {
-            Product.scale = 0.8;
-            scaleMultiplier = 1;
-        }
+        // SCALE
+        Product.scale = 0.75;
     };
 
     const drawProduct = context => {
@@ -214,10 +242,10 @@ const OurRangeParticles = props => {
             parseInt(data.index);
 
         // Set random seed:
-        const seed = Math.floor(Math.random() * 500);
-        // const seed = 285;
-
-        // FauxRandom(data.randomSeed);
+        let seed;
+        data.randomSeed === 0
+            ? (seed = Math.floor(Math.random() * 2000))
+            : (seed = data.randomSeed);
         FauxRandom(seed);
         console.log("seed", seed);
 
@@ -230,8 +258,8 @@ const OurRangeParticles = props => {
             const randomLinePosition = CosRandom() * 0.5;
             const randomRange = 60;
             let lineWidth;
-            can.width < 600 ? (lineWidth = 300) : (lineWidth = can.width * 0.5);
-            let lineHeight = lineWidth * 0.5;
+            can.width < 500 ? (lineWidth = 200) : (lineWidth = can.width * 0.4);
+            let lineHeight = lineWidth * 1.0;
 
             // large sprites
             let count = data.largeItemCount;
@@ -262,13 +290,20 @@ const OurRangeParticles = props => {
                 scale: FauxRandom() * 0.15 + 0.45
             };
 
-            if (Math.abs(p.x) < 80) {
+            if (Math.abs(p.x) < 150 * particleDistribution) {
                 if (p.x < 0) {
-                    p.x -= productSpacing * 0.5 + FauxRandom() * productSpacing;
+                    p.x -=
+                        productSpacing * 0.5 +
+                        FauxRandom() * (productSpacing * particleDistribution);
                 } else {
-                    p.x += productSpacing * 0.5 + FauxRandom() * productSpacing;
+                    p.x +=
+                        productSpacing * 0.5 +
+                        FauxRandom() * (productSpacing * particleDistribution);
                 }
             }
+
+            p.x *= particleDistribution;
+            p.y *= particleDistribution;
 
             return p;
         };
@@ -562,6 +597,8 @@ const OurRangeParticles = props => {
         <div className="canvas-container">
             <div className="canvas-inner">
                 <canvas
+                    width="100%"
+                    height="100%"
                     ref={canvasRef}
                     className={"particle-system" + isHidden}
                 />
@@ -575,34 +612,22 @@ const OurRangeParticles = props => {
                 <OurRangeIcons onClickFunction={props.showModal} />
             </div>
             <div className={canUpdate ? "controls" : "controls disabled"}>
-                <div>
-                    <button
-                        className={"previous" + isHidden}
-                        onClick={() => {
-                            nextProduct(-1);
-                        }}
-                    >
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 50 50"
-                        >
-                            <path d="M16.85,26.31l8.62,8.35a1.21,1.21,0,0,0,1.68,0,1.12,1.12,0,0,0,0-1.63L19.37,25.5,27.15,18a1.11,1.11,0,0,0,0-1.62,1.21,1.21,0,0,0-1.68,0l-8.62,8.34A1.12,1.12,0,0,0,16.85,26.31Z" />
-                        </svg>
-                    </button>
-                    <button
-                        className={"next" + isHidden}
-                        onClick={() => {
-                            nextProduct(+1);
-                        }}
-                    >
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 50 50"
-                        >
-                            <path d="M33.15,24.68l-8.62-8.34a1.21,1.21,0,0,0-1.68,0,1.11,1.11,0,0,0,0,1.62l7.78,7.54L22.85,33a1.12,1.12,0,0,0,0,1.63,1.21,1.21,0,0,0,1.68,0l8.62-8.35A1.12,1.12,0,0,0,33.15,24.68Z" />
-                        </svg>
-                    </button>
-                </div>
+                <button
+                    className={"previous" + isHidden}
+                    onClick={() => {
+                        nextProduct(-1);
+                    }}
+                >
+                    <IconLast />
+                </button>
+                <button
+                    className={"next" + isHidden}
+                    onClick={() => {
+                        nextProduct(+1);
+                    }}
+                >
+                    <IconNext />
+                </button>
             </div>
             <Helmet>
                 <title>{"Red Rock Deli®"}</title>

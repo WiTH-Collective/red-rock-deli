@@ -125,139 +125,8 @@
         }
     }
 
-    .controls {
-        transition: opacity 0.2s ease-out;
-        user-select: none;
-
-        &.disabled {
-            pointer-events: none;
-            opacity: 0.5;
-        }
-
-        div {
-            position: absolute;
-            top: 25%;
-            max-width: 1120px;
-        }
-    }
-    @include md {
-        .controls {
-            div {
-                top: 30%;
-                bottom: 200px;
-            }
-        }
-    }
-    @include lg {
-        .controls {
-            div {
-                position: relative;
-                top: 0;
-                bottom: 0px;
-                width: calc(100% - 40px);
-            }
-        }
-    }
-
     section {
         // visibility: visible;
-    }
-
-    .DiscoverTheRange {
-        min-height: 400px;
-        height: calc(100% - 150px);
-        padding-top: 0;
-
-        .canvas-container {
-            overflow: hidden;
-            position: relative;
-            flex-flow: column;
-            pointer-events: all;
-
-            .canvas-inner {
-                width: 100%;
-                height: 100%;
-                margin-top: 30px;
-                margin-bottom: -30px;
-                @include flexCenter;
-                canvas.particle-system {
-                    min-height: 350px;
-                    min-width: 600px;
-                }
-            }
-        }
-
-        .description {
-            padding: 0 20px;
-            width: 100%;
-            z-index: 2;
-            text-align: center;
-            max-width: 700px;
-            text-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
-
-            h1 {
-                color: $white;
-                line-height: 1.1;
-                margin-bottom: 15px;
-            }
-            p {
-                color: $white;
-                margin-bottom: 15px;
-            }
-            p.large {
-                font-size: 19px;
-                line-height: 1.2;
-            }
-        }
-
-        @include md {
-            //
-            min-height: 600px;
-
-            .description {
-                p.large {
-                    font-size: 22px;
-                }
-            }
-
-            .canvas-container {
-                .canvas-inner {
-                    margin-top: 0px;
-                    // width: 100%;
-                    // height: 100%;
-                    canvas.particle-system {
-                        min-height: 500px;
-                        min-width: 900px;
-                    }
-                }
-            }
-        }
-
-        @include lg {
-            padding: 40px 0;
-            .description {
-                width: 30%;
-                margin-left: -4%;
-                min-width: 450px;
-            }
-            .canvas-container {
-                max-width: 1280px;
-                margin: 0 auto;
-                justify-content: start;
-                flex-flow: row;
-                min-height: 600px;
-                .canvas-inner {
-                    width: 55%;
-                    height: 100%;
-                    min-height: 500px;
-
-                    canvas.particle-system {
-                        height: 700px;
-                        width: 1400px;
-                    }
-                }
-            }
-        }
     }
 
     .range-nav {
@@ -333,6 +202,288 @@
                             transform: translate(-50%, -38px) rotate(45deg);
                         }
                     }
+                }
+            }
+        }
+    }
+}
+
+// ======================================
+.our-range,
+.home-page {
+    .DiscoverTheRange {
+        min-height: 400px;
+        height: calc(100% - 150px);
+        padding-top: 0;
+        padding-bottom: 40px;
+
+        .canvas-container {
+            overflow: hidden;
+            position: relative;
+            display: block;
+            padding-top: 340px;
+            pointer-events: all;
+
+            canvas.particle-system {
+                width: 1280px;
+                height: 1200px;
+                position: absolute;
+                top: -120px;
+                left: 50%;
+                transform-origin: 50% 0%;
+                transform: translateX(-50%) scale(0.75);
+
+                // background: rgba(255, 0, 0, 0.4);
+            }
+        }
+
+        .description {
+            display: block;
+            position: relative;
+            padding: 0 20px;
+            width: 100%;
+            z-index: 2;
+            text-align: center;
+            max-width: 700px;
+            text-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
+
+            h1 {
+                color: $white;
+                line-height: 1;
+                letter-spacing: -1px;
+                margin-bottom: 15px;
+            }
+            p {
+                color: $white;
+                margin-bottom: 15px;
+            }
+            p.large {
+                font-size: 19px;
+                line-height: 1.2;
+            }
+        }
+
+        @include sm {
+            .description {
+                h1 {
+                    line-height: 1.1;
+                }
+            }
+
+            .canvas-container {
+                padding-top: 450px;
+
+                canvas.particle-system {
+                    top: -140px;
+                    transform: translateX(-50%) scale(0.9);
+                }
+            }
+        }
+
+        @include md {
+            .description {
+                padding-top: 40px;
+                max-width: 400px;
+                min-height: 520px;
+                width: 45%;
+                p.large {
+                    font-size: 22px;
+                }
+            }
+
+            .canvas-container {
+                padding: 0 50px 50px 0;
+                overflow: visible;
+                margin-top: 0px;
+                display: flex;
+                flex-flow: row;
+                justify-content: flex-end;
+                canvas.particle-system {
+                    top: -60px;
+                    left: 27%;
+                    transform: translateX(-50%) scale(0.9);
+                }
+            }
+        }
+
+        @include lg {
+            // padding: 40px 0;
+            .description {
+                padding-top: 100px;
+                max-width: 450px;
+                min-height: 650px;
+                width: 45%;
+                p.large {
+                    font-size: 22px;
+                }
+            }
+
+            .canvas-container {
+                max-width: 1280px;
+                margin: 0 auto;
+                padding: 0 120px 0 0;
+
+                canvas.particle-system {
+                    left: 30%;
+                    top: -50px;
+                    transform: translateX(-50%) scale(1);
+                }
+            }
+        }
+    }
+    // ======================================
+    .controls {
+        transition: opacity 0.2s ease-out;
+        user-select: none;
+        width: calc(100% - 20px);
+        display: flex;
+        align-items: center;
+        top: 200px;
+        left: 10px;
+
+        &.disabled {
+            pointer-events: none;
+            opacity: 0.5;
+        }
+
+        div {
+            position: absolute;
+            top: 0px;
+
+            width: calc(100% -40px);
+            max-width: 1120px;
+            left: 20px;
+        }
+    }
+    @include md {
+        .controls {
+            top: 270px;
+        }
+    }
+    @include lg {
+        .controls {
+            // position: relative;
+            // top: 0;
+            // bottom: 0px;
+            left: 30px;
+            top: 330px;
+            width: calc(100% - 60px);
+        }
+    }
+}
+
+.home-page {
+    .DiscoverTheRange {
+        position: relative;
+        height: 540px;
+        overflow: hidden;
+        display: block;
+        overflow: hidden;
+
+        .button-holder {
+            position: absolute;
+            width: 100%;
+            bottom: 40px;
+            @include flexCenter;
+        }
+
+        h2 {
+            margin-top: 80px;
+        }
+
+        .controls {
+            transition: opacity 0.2s ease-out;
+            user-select: none;
+            width: calc(100% - 20px);
+            top: 270px;
+            left: 10px;
+        }
+
+        .canvas-container {
+            overflow: visible;
+            position: absolute;
+            display: block;
+            padding-top: 0;
+            top: 0;
+            pointer-events: all;
+            top: 0px;
+            left: 50%;
+            transform: translateX(-50%);
+
+            canvas.particle-system {
+                width: 1280px;
+                height: 1200px;
+                position: absolute;
+                top: 0px;
+                left: 50%;
+                transform-origin: 50% 0%;
+                transform: translateX(-50%) scale(0.7);
+            }
+        }
+
+        @include sm {
+            height: 680px;
+
+            .controls {
+                top: 350px;
+                width: calc(100% - 100px);
+                left: 50px;
+            }
+
+            .button-holder {
+                bottom: 60px;
+            }
+
+            .canvas-container {
+                padding-top: 0;
+                canvas.particle-system {
+                    top: 20px;
+                    transform: translateX(-50%) scale(0.8);
+                }
+            }
+        }
+
+        @include md {
+            height: 780px;
+
+            .controls {
+                transition: opacity 0.2s ease-out;
+                user-select: none;
+                width: calc(100% - 300px);
+                top: 380px;
+                left: 150px;
+            }
+
+            .button-holder {
+                bottom: 80px;
+            }
+
+            .canvas-container {
+                padding: 0;
+                margin-top: 0px;
+                display: flex;
+                flex-flow: row;
+                justify-content: flex-end;
+                canvas.particle-system {
+                    transform: translateX(-50%) scale(0.9);
+                }
+            }
+        }
+
+        @include lg {
+            height: 880px;
+
+            .controls {
+                transition: opacity 0.2s ease-out;
+                user-select: none;
+                width: calc(100% - 700px);
+                top: 430px;
+                left: 350px;
+            }
+
+            .canvas-container {
+                canvas.particle-system {
+                    transform: translateX(-50%) scale(1);
                 }
             }
         }

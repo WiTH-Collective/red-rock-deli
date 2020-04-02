@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { Router, Route, Switch } from "react-router-dom";
 import "./scss/App.scss";
 import Nav from "./js/components/Nav";
 import HomePage from "./js/HomePage";
@@ -7,8 +7,6 @@ import PageNotFound from "./js/PageNotFound";
 import PageTransition from "./js/components/PageTransition";
 import Footer from "./js/components/Footer";
 import FAQs from "./js/FAQs";
-import TermsOfUse from "./js/TermsOfUse";
-import PrivacyPolicy from "./js/PrivacyPolicy";
 import ScrollToTop from "./js/components/ScrollToTop";
 import ChefPage01 from "./js/ChefPage01";
 import EventPageSydney from "./js/EventPageSydney";
@@ -16,6 +14,7 @@ import ScrollReveal from "./js/utils/ScrollReveal";
 import OurRange from "./js/OurRange";
 import history from "./js/history";
 import SecretSuppersPage from "./js/SecretSuppersPage";
+import ParticlePlayground from "./js/ParticlePlayground";
 
 function App() {
     const [wrapperClass, setWrapperClass] = useState("wrapper");
@@ -41,13 +40,18 @@ function App() {
     return (
         <div className={wrapperClass}>
             {hasLoaded ? (
-                <BrowserRouter history={history}>
+                <Router history={history}>
                     <ScrollReveal pageIsLoading={pageLoading}>
                         <Nav />
                     </ScrollReveal>
                     <ScrollToTop pageIsLoading={pageLoading}>
                         <Switch>
                             <Route path="/" exact component={HomePage} />
+                            <Route
+                                path="/particles"
+                                exact
+                                component={ParticlePlayground}
+                            />
                             <Route path="/faq" exact component={FAQs} />
                             <Route path="/our-range" component={OurRange} />
                             <Route
@@ -73,7 +77,7 @@ function App() {
                     <ScrollReveal pageIsLoading={pageLoading}>
                         <Footer />
                     </ScrollReveal>
-                </BrowserRouter>
+                </Router>
             ) : null}
             <PageTransition pageIsLoading={pageLoading} />
         </div>

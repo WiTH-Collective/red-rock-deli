@@ -1,5 +1,5 @@
 import React, { useRef, useEffect, useState } from "react";
-import { TweenMax, Power2, TimelineMax } from "gsap";
+import { TimelineMax, Power2 } from "gsap";
 
 const PageTransition = props => {
     const canvas = useRef();

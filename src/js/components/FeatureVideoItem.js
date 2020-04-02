@@ -1,5 +1,4 @@
 import React, { useRef, useState } from "react";
-import ButtonPrimary from "./ButtonPrimary";
 
 const FeatureVideoItem = props => {
     const videoRef = useRef();

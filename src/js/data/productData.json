@@ -5,7 +5,8 @@
             "smallSpriteSize": 100,
             "largeSpriteCount": 6,
             "largeSpriteSize": 200,
-            "productSize": 600
+            "productSize": 600,
+            "productSpacing": 150
         },
         "nav": [
             {
@@ -59,7 +60,7 @@
                         "index": 3,
                         "smallItemCount": 6,
                         "largeItemCount": 6,
-                        "randomSeed": 0
+                        "randomSeed": 863
                     }
                 },
                 {
@@ -80,7 +81,7 @@
                         "index": 1,
                         "smallItemCount": 6,
                         "largeItemCount": 6,
-                        "randomSeed": 78
+                        "randomSeed": 0
                     }
                 },
                 {
@@ -360,7 +361,7 @@
                         "index": 3,
                         "smallItemCount": 5,
                         "largeItemCount": 4,
-                        "randomSeed": 0
+                        "randomSeed": 1055
                     }
                 },
                 {
@@ -467,7 +468,7 @@
                         "index": 1,
                         "smallItemCount": 4,
                         "largeItemCount": 5,
-                        "randomSeed": 0
+                        "randomSeed": 1325
                     }
                 }
             ],

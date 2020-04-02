@@ -1,69 +1,19 @@
 import React, { useState, useEffect, useLayoutEffect } from "react";
-import ProductsData from "../data/carouselData.json";
+import ProductsData from "../data/productData.json";
 import ButtonPrimary from "./ButtonPrimary";
-import Particles from "./Particles";
+import HomePageParticles from "./HomePageParticles";
 
 const DiscoverTheRange = props => {
-    // parse JSON
-    // console.log("productsList", ProductsData[0]);
-
-    const productsList = ProductsData[0].products.map(p => {
-        return p;
-    });
-
     // check CANVAS is supported
-    const canUseCanvas = window.HTMLCanvasElement;
-    let hideDomImages;
-    canUseCanvas && props.showCanvas
-        ? (hideDomImages = "hide-dom-images")
-        : (hideDomImages = "");
-
-    console.log("RENDERING DiscoverTheRange");
-
+    // const canUseCanvas = window.HTMLCanvasElement;
     return (
         <section className="DiscoverTheRange sr-item">
             <h2>Discover The Range</h2>
 
-            {ProductsData ? <Particles data={ProductsData[0]} /> : null}
+            {ProductsData ? <HomePageParticles data={ProductsData[0]} /> : null}
             <div className="scroll-prompt scroll-prompt-top" />
-
-            <div className="Carousel">
-                <div className="items">
-                    <div>
-                        {productsList.map((product, i) => {
-                            return (
-                                <Item
-                                    hideDomImages={hideDomImages}
-                                    key={i}
-                                    id={i}
-                                    {...product}
-                                />
-                            );
-                        })}
-                    </div>
-                </div>
-            </div>
-            {props.hideButton ? (
-                ""
-            ) : (
-                <div>
-                    <ButtonPrimary linkTo="/our-range">
-                        Explore our range
-                    </ButtonPrimary>
-                </div>
-            )}
         </section>
     );
 };
 
 export default DiscoverTheRange;
-
-const Item = props => {
-    return (
-        <div className={`item ${props.productClass} ${props.hideDomImages}`}>
-            <div className="product-image">
-                <img src={props.imageUrl} alt={props.title} />
-            </div>
-        </div>
-    );
-};
