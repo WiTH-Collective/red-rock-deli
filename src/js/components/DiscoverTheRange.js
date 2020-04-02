@@ -11,7 +11,7 @@ const DiscoverTheRange = props => {
             <h2>Discover The Range</h2>
 
             {ProductsData ? <HomePageParticles data={ProductsData[0]} /> : null}
-            <div className="scroll-prompt scroll-prompt-top" />
+            {/* <div className="scroll-prompt scroll-prompt-top" /> */}
         </section>
     );
 };

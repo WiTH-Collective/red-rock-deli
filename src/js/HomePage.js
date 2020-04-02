@@ -14,10 +14,10 @@ const HomePage = () => {
         <ScrollReveal>
             <div className="page-wrapper home-page">
                 <Hero />
+                <DiscoverTheRange showCanvas={false} />
 
                 <SecretSuppers />
                 <MeetTheChefs />
-                <DiscoverTheRange showCanvas={false} />
                 <WhereToBuy />
                 <InstaFeed />
 
