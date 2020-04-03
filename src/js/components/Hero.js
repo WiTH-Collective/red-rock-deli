@@ -22,18 +22,16 @@ function Hero(props) {
             <div className="background-video full-width">
                 <video
                     ref={videoRef}
+                    onCanPlay={() => {
+                        videoRef.current.play();
+                    }}
                     playsinline
                     loop
                     muted
                     autoplay
                     poster="https://red-rock-deli-2020.netlify.com/videos/homepage_video-sml.jpg"
-                    src="/videos/homepage_video-sml.mp4"
-                    onCanPlay={() => {
-                        videoRef.current.play();
-                    }}
-                >
-                    <source src="/videos/homepage_video-sml.mp4" />
-                </video>
+                    src="https://red-rock-deli-2020.netlify.com/videos/homepage_video-sml.mp4"
+                ></video>
             </div>
 
             <div className="absolute-overlay-container">
