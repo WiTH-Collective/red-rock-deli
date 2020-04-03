@@ -1,21 +1,33 @@
-import React from "react";
+import React, { Suspense } from "react";
 import { Helmet } from "react-helmet";
 
 import Hero from "./components/Hero";
 import SecretSuppers from "./components/SecretSuppers";
 import MeetTheChefs from "./components/MeetTheChefs";
-import DiscoverTheRange from "./components/DiscoverTheRange";
+// import DiscoverTheRange from "./components/DiscoverTheRange";
 import WhereToBuy from "./components/WhereToBuy";
 import InstaFeed from "./components/InstaFeed";
 import ScrollReveal from "./utils/ScrollReveal";
 
 const HomePage = () => {
+    const DiscoverTheRange = React.lazy(() =>
+        import("./components/DiscoverTheRange")
+    );
+
     return (
         <ScrollReveal>
             <div className="page-wrapper home-page">
                 <Hero />
-                <DiscoverTheRange showCanvas={false} />
 
+                <Suspense
+                    fallback={
+                        <div>
+                            <h1>LOADING...</h1>
+                        </div>
+                    }
+                >
+                    <DiscoverTheRange showCanvas={false} />
+                </Suspense>
                 <SecretSuppers />
                 <MeetTheChefs />
                 <WhereToBuy />

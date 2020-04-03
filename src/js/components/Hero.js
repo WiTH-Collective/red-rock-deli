@@ -6,8 +6,7 @@ import { TweenMax, SteppedEase } from "gsap";
 import BlackBlockTitle from "./BlackBlockTitle";
 import ReactPlayer from "react-player";
 
-function Hero(props) {
-    const videoRef = useRef(null);
+function Hero() {
     const lockup = useRef(null);
 
     useEffect(() => {
