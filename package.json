@@ -21,6 +21,7 @@
         "react-instafeed": "^1.0.0",
         "react-items-carousel": "^2.8.0",
         "react-juicer-feed": "0.0.2-alpha-4",
+        "react-player": "^1.15.3",
         "react-router-dom": "^5.1.2",
         "react-scripts": "3.3.1",
         "react-slideshow-image": "^1.4.0",

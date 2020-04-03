@@ -4,6 +4,7 @@ import SecretSuppersLockup from "../../img/lockups/secret-suppers-header-lockup-
 import SecretSuppersLockupStacked from "../../img/lockups/secret-suppers-lockup--white.png";
 import { TweenMax, SteppedEase } from "gsap";
 import BlackBlockTitle from "./BlackBlockTitle";
+import ReactPlayer from "react-player";
 
 function Hero(props) {
     const videoRef = useRef(null);
@@ -43,22 +44,13 @@ function Hero(props) {
                     backgroundPosition: "center"
                 }}
             >
-                <video
-                    ref={videoRef}
-                    onCanPlay={() => {
-                        videoRef.current.play();
-                    }}
-                    autoplay
-                    muted
-                    loop
-                    playsinline
-                    webkit-playsinline
-                    x5-playsinline
-                    src="/videos/homepage_video-sml.mp4"
-                >
-                    <source src="/videos/homepage_video-sml.mp4" />
-                    <source src="/videos/homepage_video-sml.mp4" />
-                </video>
+                <ReactPlayer
+                    className="hero-video"
+                    width="100%"
+                    height="100%"
+                    url="/videos/homepage_video-sml.mp4"
+                    playing
+                />
             </div>
 
             <div className="absolute-overlay-container">
