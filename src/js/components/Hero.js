@@ -45,7 +45,6 @@ function Hero(props) {
             >
                 <video
                     style={{ display: "none" }}
-                    ref={videoRef}
                     playsinline
                     loop
                     muted
