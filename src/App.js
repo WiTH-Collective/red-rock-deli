@@ -48,26 +48,34 @@ function App() {
                         <Switch>
                             <Route path="/" exact component={HomePage} />
                             <Route
-                                path="/particles"
+                                path="/particles/"
                                 exact
                                 component={ParticlePlayground}
                             />
-                            <Route path="/faq" exact component={FAQs} />
-                            <Route path="/our-range" component={OurRange} />
+                            <Route path="/faq/" exact component={FAQs} />
+                            <Route path="/our-range/" component={OurRange} />
                             <Route
-                                path="/secret-suppers"
+                                path="/secret-suppers/"
                                 exact
                                 component={SecretSuppersPage}
                             />
-                            <Route path="/chef1" exact component={ChefPage01} />
-                            <Route path="/chef2" exact component={ChefPage01} />
                             <Route
-                                path="/events/sydney"
+                                path="/secret-suppers/chef-name-1/"
+                                exact
+                                component={ChefPage01}
+                            />
+                            <Route
+                                path="/secret-suppers/chef-name-2/"
+                                exact
+                                component={ChefPage01}
+                            />
+                            <Route
+                                path="/secret-suppers/sydney/"
                                 exact
                                 component={EventPageSydney}
                             />
                             <Route
-                                path="/events/melbourne"
+                                path="/secret-suppers/melbourne/"
                                 exact
                                 component={EventPageSydney}
                             />

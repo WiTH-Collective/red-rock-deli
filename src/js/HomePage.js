@@ -19,13 +19,7 @@ const HomePage = () => {
             <div className="page-wrapper home-page">
                 <Hero />
 
-                <Suspense
-                    fallback={
-                        <div>
-                            <h1>LOADING...</h1>
-                        </div>
-                    }
-                >
+                <Suspense fallback={<div>Loading...</div>}>
                     <DiscoverTheRange showCanvas={false} />
                 </Suspense>
                 <SecretSuppers />

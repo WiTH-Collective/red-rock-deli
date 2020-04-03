@@ -28,7 +28,7 @@ function Nav() {
                 <nav>
                     <ul>
                         <li>
-                            <Link to="/our-range" onClick={hideHamburger}>
+                            <Link to="/our-range/" onClick={hideHamburger}>
                                 OUR RANGE
                             </Link>
                         </li>
@@ -36,7 +36,7 @@ function Nav() {
                             <div className="divider"></div>
                         </li>
                         <li>
-                            <Link to="/secret-suppers" onClick={hideHamburger}>
+                            <Link to="/secret-suppers/" onClick={hideHamburger}>
                                 SECRET SUPPERS
                             </Link>
                         </li>

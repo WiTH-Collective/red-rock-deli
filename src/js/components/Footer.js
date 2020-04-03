@@ -42,7 +42,7 @@ function Footer() {
                             <ContactItem
                                 iconClass="phone"
                                 description="1800 500 502"
-                                link="tel:info@redrockdeli.com"
+                                link="tel:+611800500502"
                             />
                             <ContactItem
                                 iconClass="email"
@@ -56,7 +56,7 @@ function Footer() {
                 </div>
                 <div className="bottom">
                     <div className="left">
-                        <Link to="/faq">FAQs</Link>|
+                        <Link to="/faq/">FAQs</Link>|
                         <ExternalLink href="https://www.smiths.com.au/assets/PepsiCo-Australian-Privacy-and-Credit-Reporting-Policy-December-2014-72bf6e0725d535527672d7a6b67309aa7feda4a4207e8e87864491f249e29f9c.pdf">
                             Privacy Policy
                         </ExternalLink>

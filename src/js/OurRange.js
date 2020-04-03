@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
 // import { Helmet } from "react-helmet";
-import { createBrowserHistory } from "history";
+// import { createBrowserHistory } from "history";
 import ProductsData from "./data/productData.json";
 import ScrollReveal from "./utils/ScrollReveal";
 import OurRangeParticles from "./components/OurRangeParticles";
 import history from "./history";
 import { Link } from "react-router-dom";
 import OurRangeIcons from "./components/OurRangeIcons";
+import { TweenMax, Power3 } from "gsap";
 
 const OurRange = props => {
     const data = ProductsData[0];
@@ -72,6 +73,15 @@ const OurRange = props => {
     // Show Modal
     const showModal = modalType => {
         console.log("SHOW MODAL");
+
+        const smoothScroll = { y: window.scrollY };
+        TweenMax.to(smoothScroll, 0.25, {
+            y: 0,
+            onUpdate: () => {
+                window.scrollTo(0, smoothScroll.y);
+            },
+            ease: Power3.easeOut
+        });
 
         setModalShowing(true);
         // blurContainer.current.classList.add("blurred");

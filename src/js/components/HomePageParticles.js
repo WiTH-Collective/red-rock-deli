@@ -118,7 +118,7 @@ const HomePageParticles = props => {
             Slider.previous = checkRange(Slider.current, -1);
 
             Slider.linkTo =
-                "/our-range/" + Slider.Products[Slider.current].category;
+                "/our-range/" + Slider.Products[Slider.current].category + "/";
             // -- to implement ------
             updateProducts();
             updateTimelines();
@@ -450,85 +450,85 @@ const HomePageParticles = props => {
         }
     };
 
-    const initProduct = Product => {
-        const TL = Product.timeline;
-        if (TL) {
-            TL.kill();
-        }
+    // const initProduct = Product => {
+    //     const TL = Product.timeline;
+    //     if (TL) {
+    //         TL.kill();
+    //     }
 
-        TL = new TimelineMax({
-            delay: 0.1,
-            onUpdate: () => {
-                updateCanvas();
-            }
-        });
-        // animate product image
-        TL.set(Slider.canvas.current, { opacity: 0 }, 0)
-            .to(
-                Slider.canvas.current,
-                0.33,
-                {
-                    opacity: 1,
-                    ease: Power3.easeIn
-                },
-                0
-            )
-            .from(
-                Product,
-                1.0,
-                {
-                    x: 150 * -props.current.productAnimationDirection,
-                    ease: Power3.easeOut
-                },
-                0
-            )
-            .to(
-                Product,
-                8,
-                {
-                    rotation: "+=0.015",
-                    scale: "+=0.02",
-                    ease: Linear.easeNone
-                },
-                0
-            );
+    //     TL = new TimelineMax({
+    //         delay: 0.1,
+    //         onUpdate: () => {
+    //             updateCanvas();
+    //         }
+    //     });
+    //     // animate product image
+    //     TL.set(Slider.canvas.current, { opacity: 0 }, 0)
+    //         .to(
+    //             Slider.canvas.current,
+    //             0.33,
+    //             {
+    //                 opacity: 1,
+    //                 ease: Power3.easeIn
+    //             },
+    //             0
+    //         )
+    //         .from(
+    //             Product,
+    //             1.0,
+    //             {
+    //                 x: 150 * -props.current.productAnimationDirection,
+    //                 ease: Power3.easeOut
+    //             },
+    //             0
+    //         )
+    //         .to(
+    //             Product,
+    //             8,
+    //             {
+    //                 rotation: "+=0.015",
+    //                 scale: "+=0.02",
+    //                 ease: Linear.easeNone
+    //             },
+    //             0
+    //         );
 
-        // // animates particles.
-        // particleArray.map(p => {
-        //     const pDelay = FauxRandom() * 2;
-        //     TL.from(
-        //         p,
-        //         0.8 + pDelay * 0.5,
-        //         {
-        //             x: p.x * 0.5,
-        //             y: p.y * 0.5,
-        //             rotation: p.rotation + CosRandom() * Math.PI * 0.25,
-        //             ease: Power4.easeOut
-        //         },
-        //         0
-        //     );
-        //     TL.to(
-        //         p.wiggle,
-        //         8 + pDelay * 0.5,
-        //         {
-        //             x: `+=${p.x * 0.1}`,
-        //             y: `+=${p.y * 0.1}`,
-        //             rotation: `+=${CosRandom() * Math.PI * 0.1}`,
-        //             ease: Linear.easeNone
-        //         },
-        //         0
-        //     );
-        //     TL.from(
-        //         p,
-        //         0.33,
-        //         {
-        //             alpha: 0,
-        //             ease: Power3.easeIn
-        //         },
-        //         0
-        //     );
-        // });
-    };
+    // // animates particles.
+    // particleArray.map(p => {
+    //     const pDelay = FauxRandom() * 2;
+    //     TL.from(
+    //         p,
+    //         0.8 + pDelay * 0.5,
+    //         {
+    //             x: p.x * 0.5,
+    //             y: p.y * 0.5,
+    //             rotation: p.rotation + CosRandom() * Math.PI * 0.25,
+    //             ease: Power4.easeOut
+    //         },
+    //         0
+    //     );
+    //     TL.to(
+    //         p.wiggle,
+    //         8 + pDelay * 0.5,
+    //         {
+    //             x: `+=${p.x * 0.1}`,
+    //             y: `+=${p.y * 0.1}`,
+    //             rotation: `+=${CosRandom() * Math.PI * 0.1}`,
+    //             ease: Linear.easeNone
+    //         },
+    //         0
+    //     );
+    //     TL.from(
+    //         p,
+    //         0.33,
+    //         {
+    //             alpha: 0,
+    //             ease: Power3.easeIn
+    //         },
+    //         0
+    //     );
+    // });
+    // };
 
     // MOUNTING -----------------------------
     const allImagesLoaded = () => {
