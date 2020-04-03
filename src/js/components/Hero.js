@@ -22,10 +22,12 @@ function Hero(props) {
             <div className="background-video full-width">
                 <video
                     ref={videoRef}
-                    poster="/videos/homepage_video-sml.jpg"
-                    muted
+                    playsinline
                     loop
-                    playsInline
+                    muted
+                    autoplay
+                    poster="https://red-rock-deli-2020.netlify.com/videos/homepage_video-sml.jpg"
+                    src="/videos/homepage_video-sml.mp4"
                     onCanPlay={() => {
                         videoRef.current.play();
                     }}
