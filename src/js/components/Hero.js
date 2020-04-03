@@ -35,7 +35,14 @@ function Hero(props) {
 
     return (
         <section className="Hero sr-item">
-            <div className="background-video full-width">
+            <div
+                className="background-video full-width"
+                style={{
+                    backgroundImage: "url(/videos/homepage_video-sml.jpg)",
+                    backgroundSize: "cover",
+                    backgroundPosition: "center"
+                }}
+            >
                 <video
                     ref={videoRef}
                     onCanPlay={() => {
@@ -45,7 +52,6 @@ function Hero(props) {
                     loop
                     muted
                     autoplay
-                    poster="/videos/homepage_video-sml.jpg"
                     src="/videos/homepage_video-sml.mp4"
                 ></video>
             </div>
