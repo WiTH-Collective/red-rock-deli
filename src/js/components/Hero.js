@@ -34,12 +34,16 @@ function Hero(props) {
         return check;
     };
 
+    const video_url = isMobile()
+        ? "/videos/homepage_video_sml.mp4"
+        : "/videos/homepage_video.mp4";
+
     return (
         <section className="Hero sr-item">
             <div
                 className="background-video full-width"
                 style={{
-                    backgroundImage: "url(/videos/homepage_video-sml.jpg)",
+                    backgroundImage: "url(/videos/homepage_video_sml.jpg)",
                     backgroundSize: "cover",
                     backgroundPosition: "center"
                 }}
@@ -48,7 +52,7 @@ function Hero(props) {
                     className="hero-video"
                     width="100%"
                     height="100%"
-                    url="/videos/homepage_video-sml.mp4"
+                    url={video_url}
                     autoplay
                     muted
                     loop
