@@ -518,10 +518,6 @@
         transition: all 0.2s ease-out;
         overflow: hidden;
         height: 100%;
-
-        &.collapsed {
-            height: 0px;
-        }
     }
     .nav-item {
         color: white;
@@ -549,6 +545,15 @@
                 border-color: $white;
                 background-position: 34px center;
             }
+        }
+    }
+
+    &.collapsed {
+        height: 0px;
+        height: 65px;
+        transition: all 0.2s ease-in;
+        .dropdown {
+            height: 0px;
         }
     }
 }

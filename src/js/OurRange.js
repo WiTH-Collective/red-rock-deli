@@ -140,7 +140,11 @@ const OurRange = props => {
                                 />
                                 {current ? (
                                     <div
-                                        className="our-range-nav-dropdown"
+                                        className={
+                                            navToggle
+                                                ? "our-range-nav-dropdown"
+                                                : "our-range-nav-dropdown collapsed"
+                                        }
                                         onClick={() => {
                                             setNavToggle(!navToggle);
                                         }}
@@ -148,13 +152,7 @@ const OurRange = props => {
                                         <div className="nav-item label">
                                             <h3>{current.group}</h3>
                                         </div>
-                                        <div
-                                            className={
-                                                navToggle
-                                                    ? "dropdown"
-                                                    : "dropdown collapsed"
-                                            }
-                                        >
+                                        <div className={"dropdown"}>
                                             {data.nav.map((item, i) => {
                                                 return (
                                                     <NavItem
