@@ -44,6 +44,15 @@ function Hero(props) {
                 }}
             >
                 <video
+                    style={{ display: "none" }}
+                    ref={videoRef}
+                    playsinline
+                    loop
+                    muted
+                    autoplay
+                    src="/videos/homepage_video-sml.mp4"
+                ></video>
+                <video
                     ref={videoRef}
                     onCanPlay={() => {
                         if (!isMobile()) videoRef.current.play();
