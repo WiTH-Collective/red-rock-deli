@@ -138,22 +138,23 @@ const OurRange = props => {
                                     showModal={showModal}
                                     pageIsLoading={pageLoading}
                                 />
-
-                                <div className="range-nav-top">
-                                    {current ? (
+                                {current ? (
+                                    <div
+                                        className="our-range-nav-dropdown"
+                                        onClick={() => {
+                                            setNavToggle(!navToggle);
+                                        }}
+                                    >
+                                        <div className="nav-item label">
+                                            <h3>{current.group}</h3>
+                                        </div>
                                         <div
                                             className={
                                                 navToggle
                                                     ? "dropdown"
                                                     : "dropdown collapsed"
                                             }
-                                            onClick={() => {
-                                                setNavToggle(!navToggle);
-                                            }}
                                         >
-                                            <div className="nav-item label">
-                                                <h3>{current.group}</h3>
-                                            </div>
                                             {data.nav.map((item, i) => {
                                                 return (
                                                     <NavItem
@@ -169,10 +170,10 @@ const OurRange = props => {
                                                 );
                                             })}
                                         </div>
-                                    ) : (
-                                        ""
-                                    )}
-                                </div>
+                                    </div>
+                                ) : (
+                                    ""
+                                )}
                             </section>
 
                             <section className="range-nav">

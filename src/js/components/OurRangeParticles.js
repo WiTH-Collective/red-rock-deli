@@ -50,6 +50,11 @@ const OurRangeParticles = props => {
     // load staggger
     const [pageLoading, setPageLoading] = useState(true);
     const [revealDelay, setRevealDelay] = useState(1.5);
+    const clearCanvas = () => {
+        const can = canvasRef.current;
+        const ctx = can.getContext("2d");
+        ctx.clearRect(0, 0, can.width, can.height);
+    };
     useEffect(() => {
         setIsHidden("");
         const can = canvasRef.current;
@@ -133,7 +138,9 @@ const OurRangeParticles = props => {
             // if image was already loaded, use image.
             console.log(" ### using cached image");
             imagesLoaded++;
-            if (imagesLoaded === imagesTotal) allImagesLoaded();
+            if (imagesLoaded === imagesTotal) {
+                setTimeout(allImagesLoaded, 150);
+            }
         } else {
             // otherwise, load image, and store it once loaded.
             console.log(" ### new image");
@@ -593,6 +600,7 @@ const OurRangeParticles = props => {
         defineParticles();
         updateProduct();
         initCanvas();
+        clearCanvas();
         hasInit = true;
         if (!canUpdate) setCanUpdate(true);
 
