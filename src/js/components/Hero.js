@@ -44,24 +44,21 @@ function Hero(props) {
                 }}
             >
                 <video
-                    style={{ display: "none" }}
-                    playsinline
-                    loop
-                    muted
-                    autoplay
-                    src="/videos/homepage_video-sml.mp4"
-                ></video>
-                <video
                     ref={videoRef}
                     onCanPlay={() => {
-                        if (!isMobile()) videoRef.current.play();
+                        videoRef.current.play();
                     }}
-                    playsinline
-                    loop
-                    muted
                     autoplay
+                    muted
+                    loop
+                    playsinline
+                    webkit-playsinline
+                    x5-playsinline
                     src="/videos/homepage_video-sml.mp4"
-                ></video>
+                >
+                    <source src="/videos/homepage_video-sml.mp4" />
+                    <source src="/videos/homepage_video-sml.mp4" />
+                </video>
             </div>
 
             <div className="absolute-overlay-container">
