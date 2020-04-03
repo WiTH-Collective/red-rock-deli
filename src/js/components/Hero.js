@@ -49,6 +49,10 @@ function Hero(props) {
                     width="100%"
                     height="100%"
                     url="/videos/homepage_video-sml.mp4"
+                    autoplay
+                    muted
+                    loop
+                    playsinline
                     playing
                 />
             </div>
