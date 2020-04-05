@@ -168,8 +168,6 @@ const OurRangeParticles = (props) => {
         updateSpriteImages();
 
         return () => {
-            console.log("Unmounting: Particle system");
-
             // clean-up on dismount.
             window.removeEventListener("resize", onResize);
         };
@@ -600,7 +598,7 @@ const OurRangeParticles = (props) => {
 
     // MOUNTING -----------------------------
     const allImagesLoaded = () => {
-        console.log("MOUNTING: CURRENT: ", current);
+        // console.log("MOUNTING: CURRENT: ", current);
 
         onResize();
         defineParticles();
@@ -614,7 +612,7 @@ const OurRangeParticles = (props) => {
         window.addEventListener("resize", onResize);
 
         return () => {
-            console.log("DIS-MOUNTING: CURRENT: ", current);
+            // console.log("DIS-MOUNTING: CURRENT: ", current);
             window.removeEventListener("resize", onResize);
         };
     };

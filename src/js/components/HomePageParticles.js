@@ -6,7 +6,7 @@ import { IconLast, IconNext } from "./SVGIcons";
 import history from "../history";
 
 const HomePageParticles = (props) => {
-    console.log("--> Start of HomePageParticles Component");
+    // console.log("--> Start of HomePageParticles Component");
 
     // Main OBJECT for Slider.
     const Slider = {
@@ -231,8 +231,6 @@ const HomePageParticles = (props) => {
         prev.sprite.scale = 0.4;
         prev.sprite.rotation = 0;
 
-        console.log("Slider.direction, ", Slider.direction);
-
         if (Slider.TL) Slider.TL.kill();
         Slider.TL = new TimelineMax();
         const tweenObject = {
@@ -294,7 +292,6 @@ const HomePageParticles = (props) => {
             ? (seed = Math.floor(Math.random() * 2000))
             : (seed = data.randomSeed);
         FauxRandom(seed);
-
         // console.log(">>> RANDOM SEED: ", seed);
 
         //
@@ -507,7 +504,7 @@ const HomePageParticles = (props) => {
 
     // MOUNTING -----------------------------
     const allImagesLoaded = () => {
-        console.log(">>> MOUNTING: CURRENT: ", Slider.current);
+        // console.log(">>> MOUNTING: CURRENT: ", Slider.current);
 
         onResize();
         Slider.ctx = Slider.canvas.current.getContext("2d");
@@ -519,7 +516,7 @@ const HomePageParticles = (props) => {
         window.addEventListener("resize", onResize);
 
         return () => {
-            console.log("DIS-MOUNTING: CURRENT: ", Slider.current);
+            // console.log("DIS-MOUNTING: CURRENT: ", Slider.current);
             window.removeEventListener("resize", onResize);
         };
     };
