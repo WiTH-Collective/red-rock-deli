@@ -304,7 +304,7 @@
                 flex-flow: row;
                 justify-content: flex-end;
                 canvas.particle-system {
-                    top: -40px;
+                    top: 0px;
                     left: 27%;
                     transform: translateX(-50%) scale(0.9);
                 }
@@ -356,24 +356,23 @@
             position: absolute;
             top: 0px;
 
-            width: calc(100% -40px);
+            width: calc(100% - 40px);
             max-width: 1120px;
             left: 20px;
         }
-    }
-    @include md {
-        .controls {
-            top: 380px;
+
+        @include sm {
+            top: 300px;
         }
-    }
-    @include lg {
-        .controls {
-            // position: relative;
-            // top: 0;
-            // bottom: 0px;
-            left: 30px;
-            top: 330px;
+        @include md {
+            top: 340px;
             width: calc(100% - 60px);
+            left: 30px;
+        }
+        @include lg {
+            top: 330px;
+            left: 60px;
+            width: calc(100% - 120px);
         }
     }
 }
