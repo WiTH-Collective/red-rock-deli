@@ -1,13 +1,22 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Helmet } from "react-helmet";
 import { FauxRandom, CosRandom } from "../utils/FauxRandom";
-import { TimelineMax, Power3, Power4, Sine, Linear, Strong } from "gsap";
+import {
+    TimelineMax,
+    Power3,
+    Power4,
+    Sine,
+    Linear,
+    Strong,
+    TweenMax,
+} from "gsap";
 import OurRangeIcons from "./OurRangeIcons";
 import { IconLast, IconNext } from "./SVGIcons";
+import LoadingAnimation from "../utils/LoaderAnimation";
 
 const OurRangeParticles = (props) => {
-    console.log("--> Start of OurRangeParticles Component");
-    console.log(">> RANGE >> props.pageIsLoading", props.pageIsLoading);
+    // console.log("--> Start of OurRangeParticles Component");
+    // console.log(">> RANGE >> props.pageIsLoading", props.pageIsLoading);
     const productSpacing = props.data.config.productSpacing;
     const [current, setCurrent] = useState(props.current.index);
     const [isHidden, setIsHidden] = useState(" hidden");
@@ -38,10 +47,6 @@ const OurRangeParticles = (props) => {
 
     let scaleMultiplier = 1;
     let particleDistribution = 1;
-    console.log(
-        ">> props.current.product.packImageUrl",
-        props.current.product.packImageUrl
-    );
 
     String(props.current.product.packImageUrl).indexOf("/dips/") > -1
         ? (particleDistribution = 0.82)
@@ -51,7 +56,7 @@ const OurRangeParticles = (props) => {
 
     // load staggger
     const [pageLoading, setPageLoading] = useState(true);
-    const [revealDelay, setRevealDelay] = useState(1.5);
+    const [revealDelay, setRevealDelay] = useState(1.0);
     const clearCanvas = () => {
         const can = canvasRef.current;
         const ctx = can.getContext("2d");
@@ -66,7 +71,7 @@ const OurRangeParticles = (props) => {
 
         setTimeout(() => {
             if (pageLoading && !props.pageIsLoading) {
-                console.log("LOADED RANGE PARTICLES");
+                // console.log("LOADED RANGE PARTICLES");
                 setPageLoading(false);
                 setRevealDelay(0.05);
                 hasInit = true;
@@ -101,7 +106,7 @@ const OurRangeParticles = (props) => {
 
     //
     const nextProduct = (increment) => {
-        console.log("canUpdate", canUpdate);
+        // console.log("canUpdate", canUpdate);
 
         if (canUpdate) {
             setCanUpdate(false);
@@ -112,6 +117,10 @@ const OurRangeParticles = (props) => {
                 props.current.products[next].url
             )}`;
             hideParticles();
+            TweenMax.to(".loader-container", 0.2, {
+                opacity: 1,
+                ease: Power3.easeIn,
+            });
         }
     };
 
@@ -140,17 +149,17 @@ const OurRangeParticles = (props) => {
 
         if (image.el.complete) {
             // if image was already loaded, use image.
-            console.log(" ### using cached image");
+            // console.log(" ### using cached image");
             imagesLoaded++;
             if (imagesLoaded === imagesTotal) {
-                setTimeout(allImagesLoaded, 150);
+                setTimeout(allImagesLoaded, 100);
             }
         } else {
             // otherwise, load image, and store it once loaded.
-            console.log(" ### new image");
+            // console.log(" ### new image");
             image.el.onload = () => {
                 window.imageCache.push(image);
-                console.log("window.imageCache", window.imageCache);
+                // console.log("window.imageCache", window.imageCache);
                 imagesLoaded++;
                 if (imagesLoaded === imagesTotal) allImagesLoaded();
             };
@@ -387,9 +396,6 @@ const OurRangeParticles = (props) => {
                 imagesLoaded = 0;
                 removeSpriteImages();
                 props.onClickFunction(nextProductUrl, Product.direction);
-                // defineParticles();
-                // updateProduct();
-                // initCanvas();
             },
         });
         TL.to(
@@ -562,6 +568,12 @@ const OurRangeParticles = (props) => {
         // animates particles.
         particleArray.map((p) => {
             const pDelay = FauxRandom() * 2;
+            TL.to(
+                ".loader-container",
+                0.3,
+                { opacity: 0, ease: Power3.easeIn },
+                0
+            );
             TL.from(
                 p,
                 0.8 + pDelay * 0.5,
@@ -620,6 +632,7 @@ const OurRangeParticles = (props) => {
     return (
         <div className="canvas-container">
             <div className="canvas-inner">
+                <LoadingAnimation />
                 <canvas
                     width="100%"
                     height="100%"

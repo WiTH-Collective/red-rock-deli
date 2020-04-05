@@ -32,7 +32,7 @@
                 w[l] = w[l] || [];
                 w[l].push({
                     "gtm.start": new Date().getTime(),
-                    event: "gtm.js"
+                    event: "gtm.js",
                 });
                 var f = d.getElementsByTagName(s)[0],
                     j = d.createElement(s),
@@ -95,7 +95,7 @@
 
             .logo-spinner {
                 transform-origin: 50% 50%;
-                animation: spinnerAnimation 10s infinite linear;
+                animation: spinAnimation 10s infinite linear;
             }
 
             .loader-logo.page-has-loaded {
@@ -103,7 +103,7 @@
                 transition: opacity 0.3s ease-in;
             }
 
-            @keyframes spinnerAnimation {
+            @keyframes spinAnimation {
                 from {
                     transform: rotate(0deg);
                 }

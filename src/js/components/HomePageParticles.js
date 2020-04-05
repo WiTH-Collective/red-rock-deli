@@ -4,6 +4,7 @@ import { ImagePreloader } from "../utils/ImagePreloader";
 import { TimelineMax, Power4, Power3, Linear } from "gsap";
 import { IconLast, IconNext } from "./SVGIcons";
 import history from "../history";
+import LoadingAnimation from "../utils/LoaderAnimation";
 
 const HomePageParticles = (props) => {
     console.log("--> Start of HomePageParticles Component");
@@ -591,6 +592,7 @@ const HomePageParticles = (props) => {
 
     return (
         <div className="canvas-container">
+            <LoadingAnimation />
             <div className="canvas-inner">
                 <canvas
                     width="100%"

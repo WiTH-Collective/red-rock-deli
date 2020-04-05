@@ -25,7 +25,6 @@ const HomePage = () => {
         <ScrollReveal>
             <div className="page-wrapper home-page">
                 <Hero />
-
                 <Suspense fallback={<LoadingAnimation />}>
                     <DiscoverTheRange showCanvas={false} />
                 </Suspense>
