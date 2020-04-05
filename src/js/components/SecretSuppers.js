@@ -3,6 +3,7 @@ import secretSuppersHero from "../../img/backgrounds/backgorund-secret-suppers.j
 import secretSuppersLockup from "../../img/lockups/secret-suppers-lockup--white.png";
 import ButtonPrimary from "./ButtonPrimary";
 import EmailRegistration from "./EmailRegistrationForm";
+import Instagram from "./InstagramStatic";
 
 const SecretSuppers = () => {
     return (
@@ -50,6 +51,7 @@ const SecretSuppers = () => {
                     </div>
                 </div>
             </div>
+            <Instagram />
         </section>
     );
 };
