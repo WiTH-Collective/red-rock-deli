@@ -1,11 +1,11 @@
 import React, { useRef } from "react";
 import { FauxRandom, CosRandom } from "../utils/FauxRandom";
 import { ImagePreloader } from "../utils/ImagePreloader";
-import { TimelineMax, Power3, Linear } from "gsap";
+import { TimelineMax, Power4, Power3, Linear } from "gsap";
 import { IconLast, IconNext } from "./SVGIcons";
 import history from "../history";
 
-const HomePageParticles = props => {
+const HomePageParticles = (props) => {
     console.log("--> Start of HomePageParticles Component");
 
     // Main OBJECT for Slider.
@@ -25,7 +25,7 @@ const HomePageParticles = props => {
         particleDistribution: 1,
         linkTo: "/our-range/",
         next: 1,
-        previous: 5
+        previous: 5,
     };
 
     // Set canvas Origin.
@@ -33,7 +33,7 @@ const HomePageParticles = props => {
         x: null,
         y: null,
         width: null,
-        height: null
+        height: null,
     };
 
     // Images pre-loaded ==========================================================
@@ -55,22 +55,22 @@ const HomePageParticles = props => {
                 img: {
                     x: 0,
                     y: 0,
-                    size: 600
-                }
+                    size: 600,
+                },
             },
             particles: [],
             index: i,
             productImage: null,
-            particleImage: null
+            particleImage: null,
         };
         Slider.Products.push(p);
 
         ++i;
     }
 
-    console.log("PRODUCTS", Slider.Products);
+    // console.log("PRODUCTS", Slider.Products);
 
-    Slider.Products.map(p => {
+    Slider.Products.map((p) => {
         ImageURLArray.push(p.product.packImageUrl);
         ImageURLArray.push(p.product.particleUrl);
         return "";
@@ -108,24 +108,6 @@ const HomePageParticles = props => {
     };
 
     //
-    const nextProduct = increment => {
-        if (Slider.isUpdatable) {
-            Slider.isUpdatable = false;
-
-            Slider.direction = -increment;
-            Slider.current = checkRange(Slider.current, increment);
-            Slider.next = checkRange(Slider.current, 1);
-            Slider.previous = checkRange(Slider.current, -1);
-
-            Slider.linkTo =
-                "/our-range/" + Slider.Products[Slider.current].category + "/";
-            // -- to implement ------
-            updateProducts();
-            updateTimelines();
-        }
-    };
-
-    //
 
     // Canvas Resize ==========================================================
     const onResize = () => {
@@ -145,15 +127,34 @@ const HomePageParticles = props => {
 
     //
 
+    //
+    const nextProduct = (increment) => {
+        if (Slider.isUpdatable) {
+            Slider.isUpdatable = false;
+
+            Slider.direction = -increment;
+            Slider.current = checkRange(Slider.current, increment);
+            Slider.next = checkRange(Slider.current, 1);
+            Slider.previous = checkRange(Slider.current, -1);
+
+            Slider.linkTo =
+                "/our-range/" + Slider.Products[Slider.current].category + "/";
+            // -- to implement ------
+            updateProducts();
+            updateTimelines();
+        }
+    };
+
     // Images pre-loaded =========================================================
 
-    const initProducts = _Slider => {
-        _Slider.Products.map(product => {
+    const initProducts = (_Slider) => {
+        _Slider.Products.map((product) => {
             // define images.
             product.productImage = _Slider.ImageArray[product.index * 2];
             product.particleImage = _Slider.ImageArray[product.index * 2 + 1];
 
             initParticles(product);
+            createParticleAnimation(product);
             return "";
         });
         updateProducts();
@@ -167,7 +168,6 @@ const HomePageParticles = props => {
         );
         context.globalAlpha = Product.sprite.alpha;
         context.rotate(Product.sprite.rotation);
-        console.log("Product.productImage,", Product.productImage);
 
         context.drawImage(
             Product.productImage,
@@ -219,6 +219,9 @@ const HomePageParticles = props => {
         Slider.Products[Slider.current].sprite.x = 0;
         Slider.Products[Slider.current].sprite.scale = 0.75;
         Slider.Products[Slider.current].sprite.rotation = Math.PI * 0.02;
+
+        Slider.Products[Slider.current].TL.play(0);
+
         Slider.Products[Slider.previous].sprite.x = -440;
         Slider.Products[Slider.previous].sprite.scale = 0.4;
         Slider.Products[Slider.previous].sprite.rotation = 0;
@@ -229,16 +232,14 @@ const HomePageParticles = props => {
         Slider.isUpdatable = true;
     };
 
-    const initParticles = _Product => {
+    const initParticles = (_product) => {
         const can = Slider.canvas.current;
         const config = props.data.config;
-        const data = _Product.product.particles;
+        const data = _product.product.particles;
         const spriteSheetY =
             (config.smallSpriteSize + config.largeSpriteSize) *
             parseInt(data.index);
-
         //
-
         // Set random seed:
         let seed;
         data.randomSeed === 0
@@ -246,7 +247,7 @@ const HomePageParticles = props => {
             : (seed = data.randomSeed);
         FauxRandom(seed);
 
-        console.log(">>> RANDOM SEED: ", seed);
+        // console.log(">>> RANDOM SEED: ", seed);
 
         //
 
@@ -254,7 +255,7 @@ const HomePageParticles = props => {
         // distributed randomly along a diagonal line, extending
         // from the center of the canvas.
         // using data pulled from carouselData.json.
-        const newParticle = isSmall => {
+        const newParticle = (isSmall) => {
             // random position on line:
             const randomLinePosition = CosRandom() * 0.5;
             const randomRange = 60;
@@ -277,29 +278,29 @@ const HomePageParticles = props => {
                 img: {
                     x: Math.floor(FauxRandom() * count) * size,
                     y: imgY,
-                    size: size
+                    size: size,
                 },
                 wiggle: {
                     x: 0,
                     y: 0,
-                    rotation: 0
+                    rotation: 0,
                 },
                 x: randomLinePosition * lineWidth + CosRandom() * randomRange,
                 y: randomLinePosition * -lineHeight + CosRandom() * randomRange,
                 alpha: 1,
                 rotation: FauxRandom() * Math.PI * 2,
-                scale: FauxRandom() * 0.15 + 0.45
+                scale: FauxRandom() * 0.15 + 0.45,
             };
 
             //
 
             // Adjust spacing for small packaging.
             let multiplier = 1;
-            _Product.product.packImageUrl.indexOf("/nuts/") > -1
+            _product.product.packImageUrl.indexOf("/nuts/") > -1
                 ? (multiplier = 0.66)
                 : (multiplier = 1);
 
-            _Product.product.packImageUrl.indexOf("/dips/") > -1
+            _product.product.packImageUrl.indexOf("/dips/") > -1
                 ? (multiplier = 0.82)
                 : (multiplier = 1);
 
@@ -333,38 +334,38 @@ const HomePageParticles = props => {
         };
 
         // blank array for particles.
-        _Product.particles = [];
+        _product.particles = [];
         const smlCount = config.smallSpriteCount;
         const lrgCount = config.largeSpriteCount;
 
         // add small particles
         for (let i = 0; i < smlCount; ++i) {
             const p = newParticle(true);
-            _Product.particles.push(p);
+            _product.particles.push(p);
         }
 
         // add large particles
         for (let i = 0; i < lrgCount; ++i) {
             const p = newParticle();
-            _Product.particles.push(p);
+            _product.particles.push(p);
         }
 
-        // set depth based on _Product.particles index:
+        // set depth based on _product.particles index:
         for (let i = 0; i < Math.floor(smlCount * 0.33); ++i) {
-            _Product.particles[i].depth = 1.25;
+            _product.particles[i].depth = 1.25;
         }
         for (
             let i = Math.floor(smlCount * 0.33);
             i < Math.floor(smlCount * 0.66);
             ++i
         ) {
-            _Product.particles[i].depth = 1.5;
+            _product.particles[i].depth = 1.5;
         }
         for (let i = Math.floor(smlCount * 0.66); i < smlCount; ++i) {
-            _Product.particles[i].depth = 2.0;
+            _product.particles[i].depth = 2.0;
         }
         for (let i = smlCount; i < smlCount + lrgCount; ++i) {
-            _Product.particles[i].depth = 2.5;
+            _product.particles[i].depth = 2.5;
         }
     };
 
@@ -442,7 +443,6 @@ const HomePageParticles = props => {
                 i < config.smallSpriteCount + config.largeSpriteCount;
                 ++i
             ) {
-                // console.log("DRAWING LARGE");
                 drawParticle(Product.particles[i], ctx, Product.particleImage);
             }
 
@@ -530,16 +530,49 @@ const HomePageParticles = props => {
     // });
     // };
 
+    // animates particles.
+    const createParticleAnimation = (_product) => {
+        if (_product.TL) _product.TL.kill();
+        _product.TL = new TimelineMax({
+            paused: true,
+            onUpdate: () => {
+                updateCanvas();
+            },
+        });
+
+        _product.particles.map((p) => {
+            const pDelay = FauxRandom();
+            _product.TL.from(
+                p,
+                0.8 + pDelay * 0.5,
+                {
+                    x: p.x * 0.5,
+                    y: p.y * 0.5,
+                    rotation: p.rotation + CosRandom() * Math.PI * 0.25,
+                    ease: Power4.easeOut,
+                },
+                0
+            );
+            _product.TL.to(
+                p.wiggle,
+                8 + pDelay * 0.5,
+                {
+                    x: `+=${p.x * 0.1}`,
+                    y: `+=${p.y * 0.1}`,
+                    rotation: `+=${CosRandom() * Math.PI * 0.1}`,
+                    ease: Linear.easeNone,
+                },
+                0
+            );
+        });
+    };
+
     // MOUNTING -----------------------------
     const allImagesLoaded = () => {
         console.log(">>> MOUNTING: CURRENT: ", Slider.current);
-        console.log("Slider.ImageArray", Slider.ImageArray);
 
         onResize();
         Slider.ctx = Slider.canvas.current.getContext("2d");
-        // defineParticles();
-        // updateProduct();
-        // initCanvas();
         Slider.hasInit = true;
         Slider.isUpdatable = true;
         initProducts(Slider);

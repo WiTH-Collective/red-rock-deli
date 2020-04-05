@@ -221,17 +221,17 @@
             overflow: hidden;
             position: relative;
             display: block;
-            padding-top: 340px;
+            padding-top: 400px;
             pointer-events: all;
 
             canvas.particle-system {
                 width: 1280px;
                 height: 1200px;
                 position: absolute;
-                top: -120px;
+                top: 0px;
                 left: 50%;
                 transform-origin: 50% 0%;
-                transform: translateX(-50%) scale(0.75);
+                transform: translateX(-50%) scale(0.65);
 
                 // background: rgba(255, 0, 0, 0.4);
             }
@@ -241,6 +241,7 @@
             display: block;
             position: relative;
             padding: 0 20px;
+            margin-top: 50px;
             width: 100%;
             z-index: 2;
             text-align: center;
@@ -250,7 +251,6 @@
             h1 {
                 color: $white;
                 line-height: 1;
-                letter-spacing: -1px;
                 margin-bottom: 15px;
             }
             p {
@@ -265,6 +265,7 @@
 
         @include sm {
             .description {
+                margin-top: 50px;
                 h1 {
                     line-height: 1.1;
                 }
@@ -274,8 +275,8 @@
                 padding-top: 450px;
 
                 canvas.particle-system {
-                    top: -140px;
-                    transform: translateX(-50%) scale(0.9);
+                    top: -30px;
+                    transform: translateX(-50%) scale(0.8);
                 }
             }
         }
@@ -286,20 +287,24 @@
                 max-width: 400px;
                 min-height: 520px;
                 width: 45%;
+                h1 {
+                    letter-spacing: -1px;
+                }
+
                 p.large {
                     font-size: 22px;
                 }
             }
 
             .canvas-container {
-                padding: 0 50px 50px 0;
+                padding: 0 80px 50px 0;
                 overflow: visible;
                 margin-top: 0px;
                 display: flex;
                 flex-flow: row;
                 justify-content: flex-end;
                 canvas.particle-system {
-                    top: -60px;
+                    top: -40px;
                     left: 27%;
                     transform: translateX(-50%) scale(0.9);
                 }
@@ -309,6 +314,7 @@
         @include lg {
             // padding: 40px 0;
             .description {
+                margin-top: 0px;
                 padding-top: 100px;
                 max-width: 450px;
                 min-height: 650px;
@@ -321,7 +327,7 @@
             .canvas-container {
                 max-width: 1280px;
                 margin: 0 auto;
-                padding: 0 120px 0 0;
+                padding: 0 100px 0 0;
 
                 canvas.particle-system {
                     left: 30%;
@@ -338,7 +344,7 @@
         width: calc(100% - 20px);
         display: flex;
         align-items: center;
-        top: 200px;
+        top: 260px;
         left: 10px;
 
         &.disabled {
@@ -357,7 +363,7 @@
     }
     @include md {
         .controls {
-            top: 270px;
+            top: 380px;
         }
     }
     @include lg {
@@ -388,7 +394,12 @@
         }
 
         h2 {
+            position: absolute;
+            width: 100%;
+            text-align: center;
+            z-index: 5;
             margin-top: 80px;
+            text-shadow: 0 3px 5px rgba(0, 0, 0, 0.15);
         }
 
         .controls {
@@ -492,9 +503,9 @@
 
 .our-range {
     .DiscoverTheRange {
-        padding-top: 100px;
+        // padding-top: 100px;
     }
-    @include lg {
+    @include md {
         .DiscoverTheRange {
             padding-top: 0px;
         }
@@ -512,6 +523,7 @@
     left: calc(50% - 130px);
     z-index: 2;
     cursor: pointer;
+    user-select: none;
 
     .dropdown {
         position: relative;

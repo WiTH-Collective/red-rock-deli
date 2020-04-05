@@ -1,15 +1,15 @@
 const config = {
     total: null,
-    loaded: 0
+    loaded: 0,
 };
 
 function LoadImage(source, callBackFunction) {
     const image = {
         el: null,
-        source: null
+        source: null,
     };
     // check if image is found in image cache.
-    const index = window.imageCache.findIndex(img => img.source === source);
+    const index = window.imageCache.findIndex((img) => img.source === source);
     if (index > -1) {
         image.el = window.imageCache[index].el;
         image.source = window.imageCache[index].source;
@@ -20,7 +20,7 @@ function LoadImage(source, callBackFunction) {
 
     if (image.el.complete) {
         // if image was already loaded, use image.
-        console.log(" ### using cached image");
+        // console.log(" ### using cached image");
         config.loaded++;
         if (config.loaded === config.total) {
             setTimeout(callBackFunction, 150);
@@ -31,7 +31,7 @@ function LoadImage(source, callBackFunction) {
         window.imageCache.push(image);
         image.el.onload = () => {
             // window.imageCache.push(image);
-            console.log("window.imageCache", window.imageCache);
+            // console.log("window.imageCache", window.imageCache);
             config.loaded++;
             if (config.loaded === config.total) callBackFunction();
         };
@@ -45,7 +45,7 @@ export function ImagePreloader(imageURLArray, callBack) {
     }
     config.total = window.imageCache.length + imageURLArray.length;
     config.loaded = window.imageCache.length;
-    const imageArray = imageURLArray.map(image => {
+    const imageArray = imageURLArray.map((image) => {
         return LoadImage(image, callBack);
     });
 

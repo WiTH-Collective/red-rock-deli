@@ -5,7 +5,7 @@ import { TimelineMax, Power3, Power4, Sine, Linear, Strong } from "gsap";
 import OurRangeIcons from "./OurRangeIcons";
 import { IconLast, IconNext } from "./SVGIcons";
 
-const OurRangeParticles = props => {
+const OurRangeParticles = (props) => {
     console.log("--> Start of OurRangeParticles Component");
     console.log(">> RANGE >> props.pageIsLoading", props.pageIsLoading);
     const productSpacing = props.data.config.productSpacing;
@@ -21,12 +21,14 @@ const OurRangeParticles = props => {
         }
     };
 
+    // props.data
+
     const imagesTotal = 2;
     let imagesLoaded = 0;
     const sprites = {
         particles: null,
         product: null,
-        globalAlpha: 1
+        globalAlpha: 1,
     };
     let hasInit = false;
     const canvasRef = useRef(null);
@@ -84,8 +86,8 @@ const OurRangeParticles = props => {
         img: {
             x: 0,
             y: 0,
-            size: 600
-        }
+            size: 600,
+        },
     };
 
     //
@@ -98,7 +100,7 @@ const OurRangeParticles = props => {
     };
 
     //
-    const nextProduct = increment => {
+    const nextProduct = (increment) => {
         console.log("canUpdate", canUpdate);
 
         if (canUpdate) {
@@ -116,16 +118,18 @@ const OurRangeParticles = props => {
     // =======================================
     // image preloader
     // =======================================
-    const loadImg = source => {
+    const loadImg = (source) => {
         if (!window.imageCache) {
             window.imageCache = [];
         }
         const image = {
             el: null,
-            source: null
+            source: null,
         };
         // check if image is found in image cache.
-        const index = window.imageCache.findIndex(img => img.source === source);
+        const index = window.imageCache.findIndex(
+            (img) => img.source === source
+        );
         if (index > -1) {
             image.el = window.imageCache[index].el;
             image.source = window.imageCache[index].source;
@@ -183,7 +187,7 @@ const OurRangeParticles = props => {
         x: null,
         y: null,
         width: null,
-        height: null
+        height: null,
     };
 
     const onResize = () => {
@@ -214,7 +218,7 @@ const OurRangeParticles = props => {
         Product.scale = 0.75;
     };
 
-    const drawProduct = context => {
+    const drawProduct = (context) => {
         context.translate(origin.x + Product.x, origin.y + Product.y);
         context.globalAlpha = Product.alpha;
         context.rotate(Product.rotation);
@@ -260,7 +264,7 @@ const OurRangeParticles = props => {
         // distributed randomly along a diagonal line, extending
         // from the center of the canvas.
         // using data pulled from carouselData.json.
-        const newParticle = isSmall => {
+        const newParticle = (isSmall) => {
             // random position on line:
             const randomLinePosition = CosRandom() * 0.5;
             const randomRange = 60;
@@ -283,18 +287,18 @@ const OurRangeParticles = props => {
                 img: {
                     x: Math.floor(FauxRandom() * count) * size,
                     y: imgY,
-                    size: size
+                    size: size,
                 },
                 wiggle: {
                     x: 0,
                     y: 0,
-                    rotation: 0
+                    rotation: 0,
                 },
                 x: randomLinePosition * lineWidth + CosRandom() * randomRange,
                 y: randomLinePosition * -lineHeight + CosRandom() * randomRange,
                 alpha: 1,
                 rotation: FauxRandom() * Math.PI * 2,
-                scale: FauxRandom() * 0.15 + 0.45
+                scale: FauxRandom() * 0.15 + 0.45,
             };
 
             // asdfasdf
@@ -386,39 +390,39 @@ const OurRangeParticles = props => {
                 // defineParticles();
                 // updateProduct();
                 // initCanvas();
-            }
+            },
         });
         TL.to(
             canvasRef.current,
             0.33,
             {
                 opacity: 0,
-                ease: Power3.easeIn
+                ease: Power3.easeIn,
             },
             0
         );
         TL.to(Product, 0.33, {
             x: 150 * Product.direction,
             rotation: 0,
-            ease: Sine.easeIn
+            ease: Sine.easeIn,
         });
         TL.to(
             description.current,
             0.33,
             {
                 opacity: 0,
-                ease: Power3.easeIn
+                ease: Power3.easeIn,
             },
             0
         );
-        particleArray.map(p => {
+        particleArray.map((p) => {
             TL.to(
                 p,
                 0.33,
                 {
                     x: p.x * p.depth,
                     y: p.y * p.depth,
-                    ease: Sine.easeNone
+                    ease: Sine.easeNone,
                 },
                 0
             );
@@ -435,7 +439,7 @@ const OurRangeParticles = props => {
             // clear canvas
             ctx.clearRect(0, 0, can.width, can.height);
 
-            const drawParticle = p => {
+            const drawParticle = (p) => {
                 if (p) {
                     ctx.translate(
                         origin.x + p.x + p.wiggle.x,
@@ -505,7 +509,7 @@ const OurRangeParticles = props => {
             delay: revealDelay,
             onUpdate: () => {
                 updateCanvas();
-            }
+            },
         });
         // animate product image
         TL.set(canvasRef.current, { opacity: 0 }, 0)
@@ -515,7 +519,7 @@ const OurRangeParticles = props => {
                 0.33,
                 {
                     opacity: 1,
-                    ease: Power3.easeIn
+                    ease: Power3.easeIn,
                 },
                 0
             )
@@ -524,7 +528,7 @@ const OurRangeParticles = props => {
                 1.0,
                 {
                     x: 150 * -props.current.productAnimationDirection,
-                    ease: Power3.easeOut
+                    ease: Power3.easeOut,
                 },
                 0
             )
@@ -533,7 +537,7 @@ const OurRangeParticles = props => {
                 0.6,
                 {
                     opacity: 1,
-                    ease: Power3.easeOut
+                    ease: Power3.easeOut,
                 },
                 0.25
             )
@@ -550,13 +554,13 @@ const OurRangeParticles = props => {
                 {
                     rotation: "+=0.015",
                     scale: "+=0.02",
-                    ease: Linear.easeNone
+                    ease: Linear.easeNone,
                 },
                 0
             );
 
         // animates particles.
-        particleArray.map(p => {
+        particleArray.map((p) => {
             const pDelay = FauxRandom() * 2;
             TL.from(
                 p,
@@ -565,7 +569,7 @@ const OurRangeParticles = props => {
                     x: p.x * 0.5,
                     y: p.y * 0.5,
                     rotation: p.rotation + CosRandom() * Math.PI * 0.25,
-                    ease: Power4.easeOut
+                    ease: Power4.easeOut,
                 },
                 0
             );
@@ -576,7 +580,7 @@ const OurRangeParticles = props => {
                     x: `+=${p.x * 0.1}`,
                     y: `+=${p.y * 0.1}`,
                     rotation: `+=${CosRandom() * Math.PI * 0.1}`,
-                    ease: Linear.easeNone
+                    ease: Linear.easeNone,
                 },
                 0
             );
@@ -585,7 +589,7 @@ const OurRangeParticles = props => {
                 0.33,
                 {
                     alpha: 0,
-                    ease: Power3.easeIn
+                    ease: Power3.easeIn,
                 },
                 0
             );

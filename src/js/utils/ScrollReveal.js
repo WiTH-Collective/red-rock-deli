@@ -1,32 +1,29 @@
 import React, { useRef, useEffect, useState } from "react";
 import { TweenMax, Power3 } from "gsap";
 
-const ScrollReveal = props => {
+const ScrollReveal = (props) => {
     const animationContainerReference = useRef();
     const itemsArray = [];
 
     const onScroll = () => {
         if (animationContainerReference) {
-            itemsArray.map(item => {
+            itemsArray.map((item) => {
                 const itemBounds = item.getBoundingClientRect();
 
                 if (itemBounds.bottom < 0) {
                     // check is not already above viewport:
                     TweenMax.set(item, {
                         opacity: 1,
-                        visibility: "visible"
+                        visibility: "visible",
                     });
                 } else if (window.innerHeight + 100 > itemBounds.y) {
                     // check if item is coming into view
                     if (!item.classList.contains("sr-item-showing")) {
-                        console.log(item);
-
                         item.classList.add("sr-item-showing");
-
                         TweenMax.to(item, 0.5, {
                             opacity: 1,
                             visibility: "visible",
-                            ease: Power3.easeIn
+                            ease: Power3.easeIn,
                         });
                     }
                 }
@@ -37,21 +34,19 @@ const ScrollReveal = props => {
 
     const [pageLoading, setPageLoading] = useState(true);
     useEffect(() => {
-        setTimeout(() => {
+        const timer = { interval: null, timeout: null };
+        timer.interval = setInterval(() => {
             if (pageLoading && !props.pageIsLoading) {
-                // console.log("LOADED");
                 setPageLoading(false);
-                // console.log("SCROLL LOADING!!!!!!");
-
                 if (animationContainerReference) {
                     Array.from(
                         animationContainerReference.current.querySelectorAll(
                             "section"
                         )
-                    ).map(item => {
+                    ).map((item) => {
                         itemsArray.push(item);
                     });
-                    itemsArray.map(item => {
+                    itemsArray.map((item) => {
                         if (!item.classList.contains("sr-item-showing")) {
                             TweenMax.set(item, { opacity: 0 });
                         }
@@ -63,9 +58,16 @@ const ScrollReveal = props => {
             }
         }, 500);
 
+        timer.timeout = setTimeout(() => {
+            console.log("cleared timeout");
+            window.clearInterval(timer.interval);
+        }, 60000 * 5);
+
         return () => {
+            window.clearTimeout(timer.timeout);
+            window.clearInterval(timer.interval);
             window.removeEventListener("scroll", onScroll);
-            itemsArray.map(item => {
+            itemsArray.map((item) => {
                 TweenMax.killTweensOf(item);
                 return null;
             });

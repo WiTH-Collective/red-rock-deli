@@ -48,7 +48,7 @@ h2 {
 }
 
 h1 {
-    font-size: 52px;
+    font-size: 36px;
 }
 
 h2 {
@@ -95,6 +95,10 @@ i {
 }
 
 @include md {
+    h1 {
+        font-size: 44px;
+    }
+
     p.large {
         font-size: 22px;
     }
@@ -103,6 +107,10 @@ i {
 @include lg {
     p.large {
         font-size: 24px;
+    }
+
+    h1 {
+        font-size: 52px;
     }
 
     h2 {

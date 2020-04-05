@@ -13,7 +13,7 @@ function Hero() {
         TweenMax.from(lockup.current, 1, {
             y: "-100%",
             ease: SteppedEase.config(24),
-            delay: 2.5
+            delay: 2.5,
         });
     }, []);
 
@@ -44,7 +44,7 @@ function Hero() {
                 style={{
                     backgroundImage: "url(/videos/homepage_video_sml.jpg)",
                     backgroundSize: "cover",
-                    backgroundPosition: "center"
+                    backgroundPosition: "center",
                 }}
             >
                 <ReactPlayer
@@ -52,7 +52,7 @@ function Hero() {
                     width="100%"
                     height="100%"
                     url={video_url}
-                    autoplay
+                    autoPlay
                     muted
                     loop
                     playsinline

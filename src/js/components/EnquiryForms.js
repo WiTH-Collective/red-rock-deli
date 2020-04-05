@@ -8,7 +8,7 @@ import {
     FormGroup,
     FormControl,
     Button,
-    FormControlLabel
+    FormControlLabel,
 } from "@material-ui/core";
 import { ButtonPrimary, ButtonSubmit } from "./ButtonPrimary";
 import * as yup from "yup";
@@ -34,7 +34,7 @@ const validationSchema = yup.object({
     message: yup
         .string()
         .required()
-        .max(1024)
+        .max(1024),
     // consentToReply: yup.boolean().isValid(true)
 });
 
@@ -94,7 +94,7 @@ function EnquiryForm(props) {
                             storename: "",
                             storelocation: "",
                             promoOptIn: false,
-                            consentToReply: false
+                            consentToReply: false,
                         }}
                         validationSchema={validationSchema}
                         onSubmit={(data, { setSubmitting }) => {
@@ -110,7 +110,7 @@ function EnquiryForm(props) {
                             isSubmitting,
                             handleChange,
                             handleBlur,
-                            handleSubmit
+                            handleSubmit,
                         }) => (
                             <form onSubmit={handleSubmit}>
                                 <div className="form-group">
@@ -119,7 +119,6 @@ function EnquiryForm(props) {
                                         placeholder="E.g. John"
                                         name="firstName"
                                         type="input"
-                                        error=""
                                     />
                                     <TextFieldWithLabel
                                         label="Last name"
@@ -290,7 +289,7 @@ const TextFieldWithLabel = ({
                     <InputAdornment position="start">
                         {_adornment}
                     </InputAdornment>
-                )
+                ),
             }}
         />
     );
