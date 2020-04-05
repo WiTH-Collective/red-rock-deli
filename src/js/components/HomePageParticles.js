@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import { FauxRandom, CosRandom } from "../utils/FauxRandom";
 import { ImagePreloader } from "../utils/ImagePreloader";
-import { TimelineMax, Power4, Power3, Linear } from "gsap";
+import { TimelineMax, Power4, Power3, Sine } from "gsap";
 import { IconLast, IconNext } from "./SVGIcons";
 import history from "../history";
 
@@ -489,12 +489,12 @@ const HomePageParticles = (props) => {
             );
             _product.TL.to(
                 p.wiggle,
-                8 + pDelay,
+                4 + pDelay,
                 {
                     x: `+=${p.x * 0.1}`,
                     y: `+=${p.y * 0.1}`,
                     rotation: `+=${CosRandom() * Math.PI * 0.1}`,
-                    ease: Linear.easeNone,
+                    ease: Sine.easeOut,
                 },
                 0
             );

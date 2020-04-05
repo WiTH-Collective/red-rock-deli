@@ -1,15 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Helmet } from "react-helmet";
 import { FauxRandom, CosRandom } from "../utils/FauxRandom";
-import {
-    TimelineMax,
-    Power3,
-    Power4,
-    Sine,
-    Linear,
-    Strong,
-    TweenMax,
-} from "gsap";
+import { TimelineMax, Power3, Power4, Sine, Linear, TweenMax } from "gsap";
 import OurRangeIcons from "./OurRangeIcons";
 import { IconLast, IconNext } from "./SVGIcons";
 import LoadingAnimation from "../utils/LoaderAnimation";
@@ -544,11 +536,11 @@ const OurRangeParticles = (props) => {
             )
             .to(
                 Product,
-                8,
+                4,
                 {
                     rotation: "+=0.015",
                     scale: "+=0.02",
-                    ease: Linear.easeNone,
+                    ease: Sine.easeOut,
                 },
                 0
             );
@@ -575,12 +567,12 @@ const OurRangeParticles = (props) => {
             );
             TL.to(
                 p.wiggle,
-                8 + pDelay * 0.5,
+                4 + pDelay * 0.5,
                 {
                     x: `+=${p.x * 0.1}`,
                     y: `+=${p.y * 0.1}`,
                     rotation: `+=${CosRandom() * Math.PI * 0.1}`,
-                    ease: Linear.easeNone,
+                    ease: Sine.easeOut,
                 },
                 0
             );
