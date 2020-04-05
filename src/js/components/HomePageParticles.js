@@ -214,18 +214,66 @@ const HomePageParticles = (props) => {
     };
 
     const updateProducts = () => {
-        Slider.Products[Slider.next].sprite.x = 440;
-        Slider.Products[Slider.next].sprite.scale = 0.4;
-        Slider.Products[Slider.next].sprite.rotation = 0;
-        Slider.Products[Slider.current].sprite.x = 0;
-        Slider.Products[Slider.current].sprite.scale = 0.75;
-        Slider.Products[Slider.current].sprite.rotation = Math.PI * 0.02;
+        const spread = 440;
+        const time = 0.75;
+        const dir = Slider.direction;
+        const next = Slider.Products[Slider.next];
+        const curr = Slider.Products[Slider.current];
+        const prev = Slider.Products[Slider.previous];
 
-        Slider.Products[Slider.current].TL.play(0);
+        next.sprite.x = spread;
+        next.sprite.scale = 0.4;
+        next.sprite.rotation = 0;
+        curr.sprite.x = 0;
+        curr.sprite.scale = 0.75;
+        curr.sprite.rotation = Math.PI * 0.02;
+        curr.TL.play(0);
+        prev.sprite.x = -spread;
+        prev.sprite.scale = 0.4;
+        prev.sprite.rotation = 0;
 
-        Slider.Products[Slider.previous].sprite.x = -440;
-        Slider.Products[Slider.previous].sprite.scale = 0.4;
-        Slider.Products[Slider.previous].sprite.rotation = 0;
+        console.log("Slider.direction, ", Slider.direction);
+
+        if (Slider.TL) Slider.TL.kill();
+        Slider.TL = new TimelineMax();
+        const tweenObject = {
+            x: "+=" + spread * -dir,
+            scale: 0.4,
+            rotation: Math.PI * 0.02,
+            ease: Power3.easeOut,
+        };
+
+        // current / center
+        Slider.TL.from(curr.sprite, time, { ...tweenObject, rotation: 0 }, 0);
+
+        if (dir > 0) {
+            Slider.TL.from(
+                next.sprite,
+                time,
+                { ...tweenObject, scale: 0.75 },
+                0
+            );
+            Slider.TL.from(
+                prev.sprite,
+                time,
+                { ...tweenObject, scale: 0, x: "+=0" },
+                0
+            );
+        }
+        if (dir < 0) {
+            Slider.TL.from(
+                next.sprite,
+                time,
+                { ...tweenObject, scale: 0, x: "+=0" },
+                0
+            );
+            Slider.TL.from(
+                prev.sprite,
+                time,
+                { ...tweenObject, scale: 0.75 },
+                0
+            );
+        }
     };
 
     const updateTimelines = () => {
@@ -370,46 +418,6 @@ const HomePageParticles = (props) => {
         }
     };
 
-    // const hideParticles = () => {
-    //     if (TL) {
-    //         TL.kill();
-    //     }
-
-    //     TL = new TimelineMax({
-    //         delay: 0,
-    //         onUpdate: () => {
-    //             updateCanvas();
-    //         },
-    //         onComplete: () => {}
-    //     });
-    //     TL.to(
-    //         Slider.canvas.current,
-    //         0.33,
-    //         {
-    //             opacity: 0,
-    //             ease: Power3.easeIn
-    //         },
-    //         0
-    //     );
-    //     TL.to(Product, 0.33, {
-    //         x: 150 * Product.direction,
-    //         rotation: 0,
-    //         ease: Sine.easeIn
-    //     });
-    //     particleArray.map(p => {
-    //         TL.to(
-    //             p,
-    //             0.33,
-    //             {
-    //                 x: p.x * p.depth,
-    //                 y: p.y * p.depth,
-    //                 ease: Sine.easeNone
-    //             },
-    //             0
-    //         );
-    //     });
-    // };
-
     const updateCanvas = () => {
         const config = props.data.config;
         const can = Slider.canvas.current;
@@ -424,6 +432,10 @@ const HomePageParticles = (props) => {
             ctx.clearRect(0, 0, can.width, can.height);
             ctx.save();
 
+            // draw pack images
+            drawProduct(ctx, nextProduct);
+            drawProduct(ctx, previousProduct);
+
             // Draw small / blurred particles UNDER pack image
             for (let i = 0; i < config.smallSpriteCount; ++i) {
                 // drawParticle = (p, _ctx, imgElement, _origin, _scaleMultiplier) => {
@@ -433,9 +445,6 @@ const HomePageParticles = (props) => {
             // upper layer, has dropshadow
             ctx.filter = `drop-shadow(0px 20px 5px rgba(0,0,0,0.2))`;
 
-            // draw pack images
-            drawProduct(ctx, nextProduct);
-            drawProduct(ctx, previousProduct);
             drawProduct(ctx, Product);
 
             // Draw large particles OVER pack image
@@ -451,86 +460,6 @@ const HomePageParticles = (props) => {
         }
     };
 
-    // const initProduct = Product => {
-    //     const TL = Product.timeline;
-    //     if (TL) {
-    //         TL.kill();
-    //     }
-
-    //     TL = new TimelineMax({
-    //         delay: 0.1,
-    //         onUpdate: () => {
-    //             updateCanvas();
-    //         }
-    //     });
-    //     // animate product image
-    //     TL.set(Slider.canvas.current, { opacity: 0 }, 0)
-    //         .to(
-    //             Slider.canvas.current,
-    //             0.33,
-    //             {
-    //                 opacity: 1,
-    //                 ease: Power3.easeIn
-    //             },
-    //             0
-    //         )
-    //         .from(
-    //             Product,
-    //             1.0,
-    //             {
-    //                 x: 150 * -props.current.productAnimationDirection,
-    //                 ease: Power3.easeOut
-    //             },
-    //             0
-    //         )
-    //         .to(
-    //             Product,
-    //             8,
-    //             {
-    //                 rotation: "+=0.015",
-    //                 scale: "+=0.02",
-    //                 ease: Linear.easeNone
-    //             },
-    //             0
-    //         );
-
-    // // animates particles.
-    // particleArray.map(p => {
-    //     const pDelay = FauxRandom() * 2;
-    //     TL.from(
-    //         p,
-    //         0.8 + pDelay * 0.5,
-    //         {
-    //             x: p.x * 0.5,
-    //             y: p.y * 0.5,
-    //             rotation: p.rotation + CosRandom() * Math.PI * 0.25,
-    //             ease: Power4.easeOut
-    //         },
-    //         0
-    //     );
-    //     TL.to(
-    //         p.wiggle,
-    //         8 + pDelay * 0.5,
-    //         {
-    //             x: `+=${p.x * 0.1}`,
-    //             y: `+=${p.y * 0.1}`,
-    //             rotation: `+=${CosRandom() * Math.PI * 0.1}`,
-    //             ease: Linear.easeNone
-    //         },
-    //         0
-    //     );
-    //     TL.from(
-    //         p,
-    //         0.33,
-    //         {
-    //             alpha: 0,
-    //             ease: Power3.easeIn
-    //         },
-    //         0
-    //     );
-    // });
-    // };
-
     // animates particles.
     const createParticleAnimation = (_product) => {
         if (_product.TL) _product.TL.kill();
@@ -542,21 +471,29 @@ const HomePageParticles = (props) => {
         });
 
         _product.particles.map((p) => {
-            const pDelay = FauxRandom();
+            const pDelay = 0.3; //FauxRandom();
             _product.TL.from(
                 p,
-                0.8 + pDelay * 0.5,
+                0.8,
                 {
                     x: p.x * 0.5,
                     y: p.y * 0.5,
                     rotation: p.rotation + CosRandom() * Math.PI * 0.25,
                     ease: Power4.easeOut,
                 },
-                0
+                pDelay
+            );
+            _product.TL.from(
+                p,
+                0.2,
+                {
+                    alpha: 0,
+                },
+                pDelay
             );
             _product.TL.to(
                 p.wiggle,
-                8 + pDelay * 0.5,
+                8 + pDelay,
                 {
                     x: `+=${p.x * 0.1}`,
                     y: `+=${p.y * 0.1}`,
@@ -565,6 +502,7 @@ const HomePageParticles = (props) => {
                 },
                 0
             );
+            return "";
         });
     };
 

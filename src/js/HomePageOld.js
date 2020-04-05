@@ -32,7 +32,13 @@ const HomePage = () => {
                     <SecretSuppers />
                 </Suspense>
                 <Suspense fallback={<LoadingAnimation />}>
+                    <MeetTheChefs />
+                </Suspense>
+                <Suspense fallback={<LoadingAnimation />}>
                     <WhereToBuy />
+                </Suspense>
+                <Suspense fallback={<LoadingAnimation />}>
+                    <InstaFeed />
                 </Suspense>
 
                 <Helmet>

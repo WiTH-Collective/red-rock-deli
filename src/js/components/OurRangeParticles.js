@@ -149,17 +149,14 @@ const OurRangeParticles = (props) => {
 
         if (image.el.complete) {
             // if image was already loaded, use image.
-            // console.log(" ### using cached image");
             imagesLoaded++;
             if (imagesLoaded === imagesTotal) {
                 setTimeout(allImagesLoaded, 100);
             }
         } else {
             // otherwise, load image, and store it once loaded.
-            // console.log(" ### new image");
             image.el.onload = () => {
                 window.imageCache.push(image);
-                // console.log("window.imageCache", window.imageCache);
                 imagesLoaded++;
                 if (imagesLoaded === imagesTotal) allImagesLoaded();
             };
@@ -168,13 +165,11 @@ const OurRangeParticles = (props) => {
     };
 
     useEffect(() => {
-        // console.log("props.current", props.current);
-
         updateSpriteImages();
 
         return () => {
             console.log("Unmounting: Particle system");
-            removeSpriteImages();
+
             // clean-up on dismount.
             window.removeEventListener("resize", onResize);
         };
@@ -183,12 +178,6 @@ const OurRangeParticles = (props) => {
     const updateSpriteImages = () => {
         sprites.particles = loadImg(props.current.product.particleUrl);
         sprites.product = loadImg(props.current.product.packImageUrl);
-    };
-    const removeSpriteImages = () => {
-        if (sprites.particles && sprites.product) {
-            // sprites.particles.remove();
-            // sprites.product.remove();
-        }
     };
 
     // point at the center of the canvas
@@ -249,12 +238,12 @@ const OurRangeParticles = (props) => {
     const defineParticles = () => {
         const can = canvasRef.current;
         const config = props.data.config;
-        console.log(
-            "Defning Particles: ",
-            props.current.group,
-            "/",
-            props.current.product.title
-        );
+        // console.log(
+        //     "Defning Particles: ",
+        //     props.current.group,
+        //     "/",
+        //     props.current.product.title
+        // );
 
         const data = props.current.product.particles;
         const spriteSheetY =
@@ -267,7 +256,9 @@ const OurRangeParticles = (props) => {
             ? (seed = Math.floor(Math.random() * 2000))
             : (seed = data.randomSeed);
         FauxRandom(seed);
-        console.log("seed", seed);
+        // console.log("seed", seed);
+
+        //
 
         // create new particles.
         // distributed randomly along a diagonal line, extending
@@ -394,7 +385,6 @@ const OurRangeParticles = (props) => {
             },
             onComplete: () => {
                 imagesLoaded = 0;
-                removeSpriteImages();
                 props.onClickFunction(nextProductUrl, Product.direction);
             },
         });

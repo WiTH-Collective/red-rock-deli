@@ -38,7 +38,9 @@ const OurRange = (props) => {
             products: null,
             next: "",
             previous: "",
-            productAnimationDirection: null,
+            productAnimationDirection: parseInt(
+                localStorage.getItem("direction")
+            ),
         };
 
         // if product group is not found in list of products, set to default value
@@ -62,8 +64,10 @@ const OurRange = (props) => {
         // define current product
         obj.product = data.product[obj.group][obj.index];
 
-        // check if direction is defined
-        if (urlArray[4]) obj.productAnimationDirection = parseInt(urlArray[4]);
+        // // check if direction is defined
+        // if (urlArray[4]) obj.productAnimationDirection = parseInt(urlArray[4]);
+
+        console.log(obj.productAnimationDirection);
 
         return obj;
     };
@@ -124,7 +128,8 @@ const OurRange = (props) => {
 
     const navigateTo = (url, direction = "") => {
         console.log("navigating to", url);
-        history.push(baseUrl + url + "/" + direction);
+        localStorage.setItem("direction", direction);
+        history.push(baseUrl + url + "/");
         setPathname(window.location.pathname);
     };
     //props.current.product.title
