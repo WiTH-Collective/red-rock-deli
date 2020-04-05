@@ -1,7 +1,7 @@
 import React, { useRef, useEffect, useState } from "react";
 import { TimelineMax, Power2 } from "gsap";
 
-const PageTransition = props => {
+const PageTransition = (props) => {
     const canvas = useRef();
     const offset = { y1: 0, y2: 0, y3: 0 };
     const width = window.innerWidth;
@@ -37,7 +37,7 @@ const PageTransition = props => {
             onUpdate: drawCanvas,
             onComplete: () => {
                 canvas.current.style.display = "none";
-            }
+            },
         });
         tl.to(offset, 1.0, { y2: height, ease: Power2.easeInOut }, 0.0);
         tl.to(offset, 0.8, { y1: height, ease: Power2.easeInOut }, 0.2);
@@ -51,7 +51,7 @@ const PageTransition = props => {
     useEffect(() => {
         setTimeout(() => {
             if (pageLoading && !props.pageIsLoading) {
-                console.log("LOADED");
+                // console.log("LOADED");
                 setPageLoading(false);
                 revealAniamtion();
             }

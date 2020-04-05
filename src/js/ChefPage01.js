@@ -2,11 +2,8 @@ import React from "react";
 import { Helmet } from "react-helmet";
 import { HeroStatic } from "./components/Hero";
 import ScrollReveal from "./utils/ScrollReveal";
-import MeetTheChefs from "./components/MeetTheChefs";
 import WideFooterImage from "./components/WideFooterImage";
-import FeatureVideoItem from "./components/FeatureVideoItem";
 import ImageSlider from "./components/ImageSlider";
-import ButtonPrimary from "./components/ButtonPrimary";
 import Chef from "./components/chef";
 import ChefBio from "./components/ChefBio";
 
@@ -54,7 +51,7 @@ const ChefPage01 = () => {
                                 "/images/meet-the-chefs/slider-1.jpg",
                                 "/images/meet-the-chefs/slider-2.jpg",
                                 "/images/meet-the-chefs/slider-3.jpg",
-                                "/images/meet-the-chefs/slider-1.jpg"
+                                "/images/meet-the-chefs/slider-1.jpg",
                             ]}
                         />
                     </div>

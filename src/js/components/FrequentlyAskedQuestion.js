@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const FrequentlyAskedQuestion = props => {
+const FrequentlyAskedQuestion = (props) => {
     const [isExpanded, toggleExpand] = useState(false);
     let classes;
     isExpanded ? (classes = " expanded") : (classes = "");

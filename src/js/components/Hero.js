@@ -22,7 +22,7 @@ function Hero() {
             ? "/videos/homepage_video_sml.mp4"
             : "/videos/homepage_video.mp4";
 
-    console.log(video_url);
+    // console.log(video_url);
 
     return (
         <section className="Hero sr-item">

@@ -14,7 +14,7 @@ import ScrollReveal from "./js/utils/ScrollReveal";
 import OurRange from "./js/OurRange";
 import history from "./js/history";
 import SecretSuppersPage from "./js/SecretSuppersPage";
-import ParticlePlayground from "./js/ParticlePlayground";
+import GoogleTagManager from "./js/utils/GoogleTagManager";
 
 function App() {
     const [wrapperClass, setWrapperClass] = useState("wrapper");
@@ -23,7 +23,7 @@ function App() {
     const [pageLoading, setPageLoading] = useState(true);
 
     useEffect(() => {
-        console.log("Mounting App");
+        // console.log("Mounting App");
 
         setWrapperClass("wrapper appHasLoaded");
 
@@ -39,19 +39,15 @@ function App() {
 
     return (
         <div className={wrapperClass}>
+            <GoogleTagManager gtmId="GTM-W62527N" />
             {hasLoaded ? (
                 <Router history={history}>
-                    <ScrollReveal pageIsLoading={pageLoading}>
-                        <Nav />
-                    </ScrollReveal>
+                    {/* <ScrollReveal pageIsLoading={pageLoading}> */}
+                    <Nav />
+                    {/* </ScrollReveal> */}
                     <ScrollToTop pageIsLoading={pageLoading}>
                         <Switch>
                             <Route path="/" exact component={HomePage} />
-                            <Route
-                                path="/particles/"
-                                exact
-                                component={ParticlePlayground}
-                            />
                             <Route path="/faq/" exact component={FAQs} />
                             <Route path="/our-range/" component={OurRange} />
                             <Route

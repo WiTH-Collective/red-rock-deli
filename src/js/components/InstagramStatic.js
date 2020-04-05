@@ -81,7 +81,7 @@ const FeedItem = (props) => {
     // const description = p.innerText;
 
     return (
-        <ExternalLink className="item" to={props.itemUrl}>
+        <ExternalLink className="item" href={props.itemUrl}>
             <img src={props.imageUrl} alt="Red Rock Deli Instagram Feed" />
         </ExternalLink>
     );

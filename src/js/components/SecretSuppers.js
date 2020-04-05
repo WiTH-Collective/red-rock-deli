@@ -1,7 +1,6 @@
 import React from "react";
 import secretSuppersHero from "../../img/backgrounds/backgorund-secret-suppers.jpg";
 import secretSuppersLockup from "../../img/lockups/secret-suppers-lockup--white.png";
-import ButtonPrimary from "./ButtonPrimary";
 import EmailRegistration from "./EmailRegistrationForm";
 import Instagram from "./InstagramStatic";
 

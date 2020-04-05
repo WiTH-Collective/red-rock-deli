@@ -45,6 +45,7 @@ const ScrollReveal = (props) => {
                         )
                     ).map((item) => {
                         itemsArray.push(item);
+                        return "";
                     });
                     itemsArray.map((item) => {
                         if (!item.classList.contains("sr-item-showing")) {

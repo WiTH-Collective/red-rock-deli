@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Helmet } from "react-helmet";
 import { FauxRandom, CosRandom } from "../utils/FauxRandom";
-import { TimelineMax, Power3, Power4, Sine, Linear, TweenMax } from "gsap";
+import { TimelineMax, Power3, Power4, Sine, TweenMax } from "gsap";
 import OurRangeIcons from "./OurRangeIcons";
 import { IconLast, IconNext } from "./SVGIcons";
 import LoadingAnimation from "../utils/LoaderAnimation";

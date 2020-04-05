@@ -10,7 +10,9 @@ class PageNotFound extends Component {
                     <section className="PageNotFound">
                         <h1>404 Page not found.</h1>
                         <div>
-                            <ButtonPrimary>Take me home</ButtonPrimary>
+                            <ButtonPrimary linkTo="/">
+                                Take me home
+                            </ButtonPrimary>
                         </div>
                     </section>
                 </section>
