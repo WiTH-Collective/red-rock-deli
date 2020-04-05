@@ -1,8 +1,10 @@
 import React from "react";
 import ProductsData from "../data/productData.json";
-import HomePageParticles from "./HomePageParticles";
+// import HomePageParticles from "./HomePageParticles";
 
 const DiscoverTheRange = (props) => {
+    const HomePageParticles = React.lazy(() => import("./HomePageParticles"));
+
     return (
         <section className="DiscoverTheRange sr-item">
             {ProductsData ? <HomePageParticles data={ProductsData[0]} /> : null}
