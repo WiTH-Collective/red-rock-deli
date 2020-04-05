@@ -380,7 +380,7 @@
 .home-page {
     .DiscoverTheRange {
         position: relative;
-        height: 540px;
+        height: 620px;
         overflow: hidden;
         display: block;
         overflow: hidden;
@@ -388,7 +388,7 @@
         .button-holder {
             position: absolute;
             width: 100%;
-            bottom: 40px;
+            bottom: 80px;
             @include flexCenter;
         }
 
@@ -454,7 +454,7 @@
         }
 
         @include md {
-            height: 780px;
+            height: 800px;
 
             .controls {
                 transition: opacity 0.2s ease-out;
@@ -465,7 +465,7 @@
             }
 
             .button-holder {
-                bottom: 80px;
+                bottom: 100px;
             }
 
             .canvas-container {

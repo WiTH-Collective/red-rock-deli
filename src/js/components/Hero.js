@@ -13,7 +13,7 @@ function Hero() {
         TweenMax.from(lockup.current, 1, {
             y: "-100%",
             ease: SteppedEase.config(24),
-            delay: 2.5,
+            delay: 1.5,
         });
     }, []);
 

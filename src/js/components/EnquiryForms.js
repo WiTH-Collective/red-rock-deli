@@ -6,11 +6,9 @@ import {
     TextareaAutosize,
     Checkbox,
     FormGroup,
-    FormControl,
-    Button,
     FormControlLabel,
 } from "@material-ui/core";
-import { ButtonPrimary, ButtonSubmit } from "./ButtonPrimary";
+import { ButtonSubmit } from "./ButtonPrimary";
 import * as yup from "yup";
 
 const phoneRegExp = /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/;
@@ -99,8 +97,10 @@ function EnquiryForm(props) {
                         validationSchema={validationSchema}
                         onSubmit={(data, { setSubmitting }) => {
                             setSubmitting(true);
+
                             // make asynch calls here
-                            console.log(data);
+                            console.log("make asynch calls here...", data);
+
                             setSubmitting(false);
                         }}
                     >

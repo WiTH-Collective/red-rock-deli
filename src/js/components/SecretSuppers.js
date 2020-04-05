@@ -1,21 +1,15 @@
 import React from "react";
-import secretSuppersBackground from "../../img/backgrounds/backgorund-secret-suppers.jpg";
+import secretSuppersHero from "../../img/backgrounds/backgorund-secret-suppers.jpg";
 import secretSuppersLockup from "../../img/lockups/secret-suppers-lockup--white.png";
 import ButtonPrimary from "./ButtonPrimary";
+import EmailRegistration from "./EmailRegistrationForm";
 
 const SecretSuppers = () => {
     return (
         <section className="SecretSuppers sr-item">
-            <div className="container">
+            <div className="scroll-prompt scroll-prompt-top" />
+            <div className="container intro">
                 <div className="content">
-                    <div className="image-holder content-cover">
-                        <img
-                            src={secretSuppersBackground}
-                            alt="Red Rock Deli, Secret Suppers"
-                        />
-                        <div className="gradient-overlay" />
-                    </div>
-
                     <img
                         className="lockup"
                         src={secretSuppersLockup}
@@ -23,7 +17,7 @@ const SecretSuppers = () => {
                     />
 
                     <div className="copy">
-                        <h2>SECRET DINING EXPERIENCES</h2>
+                        <h3>SECRET DINING EXPERIENCES</h3>
                         <p>
                             A series of dining experiences hosted by some of
                             Australia's most loved chefs with specially crafted
@@ -31,9 +25,29 @@ const SecretSuppers = () => {
                             combinations.
                         </p>
                     </div>
-                    <ButtonPrimary linkTo="/secret-suppers">
-                        Primary CTA Button
-                    </ButtonPrimary>
+                </div>
+            </div>
+            <div className="container black-background">
+                <div className="content">
+                    <div className="image-holder content-cover">
+                        <img
+                            src={secretSuppersHero}
+                            alt="Red Rock Deli, Secret Suppers"
+                        />
+                    </div>
+
+                    <div className="copy">
+                        <h2>Secret suppers 2020 is coming soon!</h2>
+                        <p>
+                            Are you interested in being part of our next edition
+                            of Secret Suppers? We will keep you in the loop
+                            about the new date, exclusive chefs and ticket
+                            releases. Drop your email below to stay in the loop
+                            about what’s coming up.
+                        </p>
+
+                        <EmailRegistration />
+                    </div>
                 </div>
             </div>
         </section>

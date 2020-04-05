@@ -1,6 +1,5 @@
 import React from "react";
 import ProductsData from "../data/productData.json";
-// import HomePageParticles from "./HomePageParticles";
 
 const DiscoverTheRange = (props) => {
     const HomePageParticles = React.lazy(() => import("./HomePageParticles"));

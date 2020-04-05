@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 import OurRangeIcons from "./components/OurRangeIcons";
 import { TweenMax, Power3 } from "gsap";
 
-const OurRange = (props) => {
+const OurRange = () => {
     const data = ProductsData[0];
     const baseUrl = "/our-range/";
     const [modalShowing, setModalShowing] = useState(false);
@@ -64,18 +64,13 @@ const OurRange = (props) => {
         // define current product
         obj.product = data.product[obj.group][obj.index];
 
-        // // check if direction is defined
-        // if (urlArray[4]) obj.productAnimationDirection = parseInt(urlArray[4]);
-
-        console.log(obj.productAnimationDirection);
-
         return obj;
     };
 
+    //
+
     // Show Modal
     const showModal = (modalType) => {
-        console.log("SHOW MODAL");
-
         const smoothScroll = { y: window.scrollY };
         TweenMax.to(smoothScroll, 0.25, {
             y: 0,
@@ -86,8 +81,6 @@ const OurRange = (props) => {
         });
 
         setModalShowing(true);
-        // blurContainer.current.classList.add("blurred");
-        // modal.current.classList.add("isActive");
         switchModal(modalType);
     };
     const switchModal = (modalType) => {
@@ -108,26 +101,23 @@ const OurRange = (props) => {
         }
     };
     const closeModal = () => {
-        console.log("HIDE MODAL");
         setModalShowing(false);
-        // blurContainer.current.classList.remove("blurred");
-        // modal.current.classList.remove("isActive");
     };
 
-    const [pageLoading, setPageLoading] = useState(true);
-    useEffect(() => {
-        setPageLoading(false);
-    });
+    //
+
+    //
 
     //
     // Extract current product from URL.
+    const [pageLoading, setPageLoading] = useState(true);
     useEffect(() => {
-        console.log("--> Getting current product");
+        setPageLoading(false);
         setCurrent({ ...getCurrentProduct() });
     }, [pathname]);
 
     const navigateTo = (url, direction = "") => {
-        console.log("navigating to", url);
+        // console.log("navigating to", url);
         localStorage.setItem("direction", direction);
         history.push(baseUrl + url + "/");
         setPathname(window.location.pathname);
@@ -266,11 +256,11 @@ const OurRange = (props) => {
         </ScrollReveal>
     );
 };
-
 export default OurRange;
 
+//
+
 const NavItem = (props) => {
-    // console.log("NAV ITEM: ", props);
     let isActive = "";
     props.pathname && props.pathname.split("/")[2] === props.baseUrl
         ? (isActive = "isActive")

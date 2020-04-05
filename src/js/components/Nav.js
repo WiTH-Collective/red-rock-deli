@@ -35,14 +35,14 @@ function Nav() {
                         <li>
                             <div className="divider"></div>
                         </li>
-                        <li>
+                        {/* <li>
                             <Link to="/secret-suppers/" onClick={hideHamburger}>
                                 SECRET SUPPERS
                             </Link>
-                        </li>
+                        </li> 
                         <li>
                             <div className="divider"></div>
-                        </li>
+                        </li> */}
                         <li>
                             <div className="a" onClick={showContact}>
                                 CONTACT

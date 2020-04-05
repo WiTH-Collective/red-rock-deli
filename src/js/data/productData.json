@@ -54,7 +54,7 @@
                         "copy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
                     },
                     "nutritionalInfo": {
-                        "image": "products/nutritional-info/potato-chip-HoneySoyChicken-Info@2x.png"
+                        "image": "/products/nutritional-info/potato-chip-HoneySoyChicken-Info@2x.png"
                     },
                     "particles": {
                         "index": 3,
@@ -75,7 +75,7 @@
                         "copy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
                     },
                     "nutritionalInfo": {
-                        "image": "products/nutritional-info/potato-chip-LimeCrackedPepper-Info@2x.png"
+                        "image": "/products/nutritional-info/potato-chip-LimeCrackedPepper-Info@2x.png"
                     },
                     "particles": {
                         "index": 1,
@@ -96,7 +96,7 @@
                         "copy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
                     },
                     "nutritionalInfo": {
-                        "image": "products/nutritional-info/potato-chip-SeaSaltBalsamic-Info@2x.png"
+                        "image": "/products/nutritional-info/potato-chip-SeaSaltBalsamic-Info@2x.png"
                     },
                     "particles": {
                         "index": 0,
@@ -117,7 +117,7 @@
                         "copy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
                     },
                     "nutritionalInfo": {
-                        "image": "products/nutritional-info/potato-chip-SeaSalt-Info@2x.png"
+                        "image": "/products/nutritional-info/potato-chip-SeaSalt-Info@2x.png"
                     },
                     "particles": {
                         "index": 0,
@@ -138,7 +138,7 @@
                         "copy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
                     },
                     "nutritionalInfo": {
-                        "image": "products/nutritional-info/potato-chip-SweetChilliSourCream-Info@2x.png"
+                        "image": "/products/nutritional-info/potato-chip-SweetChilliSourCream-Info@2x.png"
                     },
                     "particles": {
                         "index": 2,
@@ -161,7 +161,7 @@
                         "copy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
                     },
                     "nutritionalInfo": {
-                        "image": "products/nutritional-info/tortilla-chips-FetaAvoLime-Info@2x.png"
+                        "image": "/products/nutritional-info/tortilla-chips-FetaAvoLime-Info@2x.png"
                     },
                     "particles": {
                         "index": 0,
@@ -182,7 +182,7 @@
                         "copy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
                     },
                     "nutritionalInfo": {
-                        "image": "products/nutritional-info/tortilla-chips-TangyTomatoRelish-Info@2x.png"
+                        "image": "/products/nutritional-info/tortilla-chips-TangyTomatoRelish-Info@2x.png"
                     },
                     "particles": {
                         "index": 2,
@@ -203,7 +203,7 @@
                         "copy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
                     },
                     "nutritionalInfo": {
-                        "image": "products/nutritional-info/tortilla-chips-ParmesanCaramelisedOnion-Info@2x.png"
+                        "image": "/products/nutritional-info/tortilla-chips-ParmesanCaramelisedOnion-Info@2x.png"
                     },
                     "particles": {
                         "index": 1,
@@ -226,7 +226,7 @@
                         "copy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
                     },
                     "nutritionalInfo": {
-                        "image": "products/nutritional-info/deluxe-crisps-ChilliRoastGarlic-Info@2x.png"
+                        "image": "/products/nutritional-info/deluxe-crisps-ChilliRoastGarlic-Info@2x.png"
                     },
                     "particles": {
                         "index": 0,
@@ -247,7 +247,7 @@
                         "copy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
                     },
                     "nutritionalInfo": {
-                        "image": "products/nutritional-info/deluxe-crisps-ParmesanBlackTruffle-Info@2x.png"
+                        "image": "/products/nutritional-info/deluxe-crisps-ParmesanBlackTruffle-Info@2x.png"
                     },
                     "particles": {
                         "index": 1,
@@ -268,7 +268,7 @@
                         "copy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
                     },
                     "nutritionalInfo": {
-                        "image": "products/nutritional-info/deluxe-crisps-VintageCheddar-Info@2x.png"
+                        "image": "/products/nutritional-info/deluxe-crisps-VintageCheddar-Info@2x.png"
                     },
                     "particles": {
                         "index": 2,
@@ -441,7 +441,7 @@
                         "copy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
                     },
                     "nutritionalInfo": {
-                        "image": "products/nutritional-info/limited-edition-MapleGlazedBaconCheddar-Info.png"
+                        "image": "/products/nutritional-info/limited-edition-MapleGlazedBaconCheddar-Info.png"
                     },
                     "particles": {
                         "index": 0,
@@ -462,7 +462,7 @@
                         "copy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
                     },
                     "nutritionalInfo": {
-                        "image": "products/nutritional-info/limited-edition-MorrocanChickenLemon-Info.png"
+                        "image": "/products/nutritional-info/limited-edition-MorrocanChickenLemon-Info.png"
                     },
                     "particles": {
                         "index": 1,
@@ -485,7 +485,7 @@
                         "copy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
                     },
                     "nutritionalInfo": {
-                        "image": "products/nutritional-info/nuts-AppleCinnamonCrumble-Info@2x.png"
+                        "image": "/products/nutritional-info/nuts-AppleCinnamonCrumble-Info@2x.png"
                     },
                     "particles": {
                         "index": 3,
@@ -506,7 +506,7 @@
                         "copy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
                     },
                     "nutritionalInfo": {
-                        "image": "products/nutritional-info/nuts-VanillaCranberryHoney-Info@2x.png"
+                        "image": "/products/nutritional-info/nuts-VanillaCranberryHoney-Info@2x.png"
                     },
                     "particles": {
                         "index": 4,
@@ -527,7 +527,7 @@
                         "copy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
                     },
                     "nutritionalInfo": {
-                        "image": "products/nutritional-info/nuts-BalsamicVinegar&Chilli-Info@2x.png"
+                        "image": "/products/nutritional-info/nuts-BalsamicVinegar&Chilli-Info@2x.png"
                     },
                     "particles": {
                         "index": 1,
@@ -548,7 +548,7 @@
                         "copy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
                     },
                     "nutritionalInfo": {
-                        "image": "products/nutritional-info/nuts-CaramelisedGarlicLemon-Info@2x.png"
+                        "image": "/products/nutritional-info/nuts-CaramelisedGarlicLemon-Info@2x.png"
                     },
                     "particles": {
                         "index": 0,
@@ -569,7 +569,7 @@
                         "copy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
                     },
                     "nutritionalInfo": {
-                        "image": "products/nutritional-info/nuts-SweetHoneySeaSalt-Info@2x.png"
+                        "image": "/products/nutritional-info/nuts-SweetHoneySeaSalt-Info@2x.png"
                     },
                     "particles": {
                         "index": 2,
