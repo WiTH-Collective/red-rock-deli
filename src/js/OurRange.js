@@ -64,6 +64,8 @@ const OurRange = () => {
         // define current product
         obj.product = data.product[obj.group][obj.index];
 
+        console.log(">> current product: ".obj);
+
         return obj;
     };
 
@@ -113,6 +115,7 @@ const OurRange = () => {
     const [pageLoading, setPageLoading] = useState(true);
     useEffect(() => {
         setPageLoading(false);
+        console.log(">> Our Range Page Loaded");
         setCurrent({ ...getCurrentProduct() });
     }, [pathname]);
 
