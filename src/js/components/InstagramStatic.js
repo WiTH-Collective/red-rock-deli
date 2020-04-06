@@ -41,20 +41,15 @@ const Instagram = (props) => {
                             itemUrl="https://www.instagram.com/p/B1VPhH7AxnW/"
                             imageUrl="https://scontent-syd2-1.cdninstagram.com/v/t51.2885-15/sh0.08/e35/s640x640/67940028_484449465620959_8739000662221063558_n.jpg?_nc_ht=scontent-syd2-1.cdninstagram.com&_nc_cat=107&_nc_ohc=P2wSSfa4EIcAX-i1RaU&oh=ba3f0a3effa018cffb30cab474eec01f&oe=5EB4C9B7"
                         />
-                        {isLargeScreen ? (
-                            <React.Fragment>
-                                <FeedItem
-                                    itemUrl="https://www.instagram.com/p/B1NzCi3ArjL/"
-                                    imageUrl="https://scontent-syd2-1.cdninstagram.com/v/t51.2885-15/sh0.08/e35/s640x640/69394742_138188957426128_4950214119624120438_n.jpg?_nc_ht=scontent-syd2-1.cdninstagram.com&_nc_cat=104&_nc_ohc=g_fMFWt8tWIAX-n8e_R&oh=12c244b5000256bcf4d104cc4cc22697&oe=5EB22106"
-                                />
-                                <FeedItem
-                                    itemUrl="https://www.instagram.com/p/Bzb408kAWty/"
-                                    imageUrl="https://scontent-syd2-1.cdninstagram.com/v/t51.2885-15/sh0.08/e35/s640x640/64817242_1127543994121855_5626788281314801686_n.jpg?_nc_ht=scontent-syd2-1.cdninstagram.com&_nc_cat=107&_nc_ohc=FRguNdpmL0cAX990haE&oh=ebdf6ea8adeffe23615f0fcbf2dff6cf&oe=5EB53EFE"
-                                />
-                            </React.Fragment>
-                        ) : (
-                            ""
-                        )}
+
+                        <FeedItem
+                            itemUrl="https://www.instagram.com/p/B1NzCi3ArjL/"
+                            imageUrl="https://scontent-syd2-1.cdninstagram.com/v/t51.2885-15/sh0.08/e35/s640x640/69394742_138188957426128_4950214119624120438_n.jpg?_nc_ht=scontent-syd2-1.cdninstagram.com&_nc_cat=104&_nc_ohc=g_fMFWt8tWIAX-n8e_R&oh=12c244b5000256bcf4d104cc4cc22697&oe=5EB22106"
+                        />
+                        <FeedItem
+                            itemUrl="https://www.instagram.com/p/Bzb408kAWty/"
+                            imageUrl="https://scontent-syd2-1.cdninstagram.com/v/t51.2885-15/sh0.08/e35/s640x640/64817242_1127543994121855_5626788281314801686_n.jpg?_nc_ht=scontent-syd2-1.cdninstagram.com&_nc_cat=107&_nc_ohc=FRguNdpmL0cAX990haE&oh=ebdf6ea8adeffe23615f0fcbf2dff6cf&oe=5EB53EFE"
+                        />
                     </div>
                 </div>
             </div>

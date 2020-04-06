@@ -180,6 +180,8 @@
             height: 100%;
             width: auto;
             transform: translateY(0);
+            user-select: none;
+            overflow: visible;
 
             ul {
                 display: flex;
@@ -218,6 +220,60 @@
                             padding: 8px 10px;
                             background: rgba(255, 255, 255, 0.2);
                         }
+                    }
+                }
+            }
+        }
+        ul {
+            li.our-range-dropdown {
+                position: relative;
+
+                .dropdown {
+                    position: absolute;
+                    transition: all 0.2s ease-out;
+                    overflow: hidden;
+                    padding-top: 10px;
+                    height: 0;
+                    width: 220px;
+                    background: $black;
+
+                    a {
+                        position: relative;
+                        display: block !important;
+                        color: white;
+                        padding: 8px 50px;
+                        width: 100% !important;
+
+                        &.label {
+                            text-align: center;
+                            border-bottom: 2px solid white;
+                        }
+
+                        &:not(.label) {
+                            background: rgba(0, 0, 0, 0.75);
+                            user-select: none;
+                            border-bottom: 1px solid $halfWhite;
+                            position: relative;
+                            background-image: url("../../img/ui/chevron-white.svg");
+                            background-repeat: no-repeat;
+                            background-size: 15px 15px;
+                            background-position: 30px center;
+                            padding: 10px 20px 10px 70px;
+
+                            transition: all 0.2s ease-out;
+
+                            &:hover {
+                                border-color: $white;
+                                background-position: 34px center;
+                            }
+                        }
+                    }
+                }
+
+                &:hover {
+                    .dropdown {
+                        height: auto;
+                        transition: height 0.2s ease-out;
                     }
                 }
             }

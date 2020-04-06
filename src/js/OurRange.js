@@ -109,6 +109,11 @@ const OurRange = () => {
     //
 
     //
+    const onKeydown = (e) => {
+        if (e.key === "Escape") {
+            closeModal();
+        }
+    };
 
     //
     // Extract current product from URL.
@@ -117,6 +122,11 @@ const OurRange = () => {
         setPageLoading(false);
         console.log(">> Our Range Page Loaded");
         setCurrent({ ...getCurrentProduct() });
+
+        window.addEventListener("keydown", onKeydown);
+        return () => {
+            window.removeEventListener("keydown", onKeydown);
+        };
     }, [pathname]);
 
     const navigateTo = (url, direction = "") => {

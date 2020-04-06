@@ -31,22 +31,7 @@ function Nav() {
                             <Link to="/our-range/" onClick={hideHamburger}>
                                 OUR RANGE
                             </Link>
-                            {/* <div className="dropdown our-range-nav">
-                                <Link to="/our-range/potato-chips/">
-                                    Potato Chips
-                                </Link>
-                                <Link to="/our-range/tortilla-chips/">
-                                    Tortilla Chips
-                                </Link>
-                                <Link to="/our-range/deluxe-crisps/">
-                                    Deluxe Crisps
-                                </Link>
-                                <Link to="/our-range/dips/">Dips</Link>
-                                <Link to="/our-range/limited-edition/">
-                                    Limited Edition
-                                </Link>
-                                <Link to="/our-range/nuts/">Nuts</Link>
-                            </div> */}
+                            {/* <Dropdown /> */}
                         </li>
                         <li>
                             <div className="divider"></div>
@@ -76,3 +61,28 @@ function Nav() {
 }
 
 export default Nav;
+
+const Dropdown = () => {
+    return (
+        <div className="dropdown our-range-nav">
+            <Link className="item" to="/our-range/potato-chips/">
+                Potato Chips
+            </Link>
+            <Link className="item" to="/our-range/tortilla-chips/">
+                Tortilla Chips
+            </Link>
+            <Link className="item" to="/our-range/deluxe-crisps/">
+                Deluxe Crisps
+            </Link>
+            <Link className="item" to="/our-range/dips/">
+                Dips
+            </Link>
+            <Link className="item" to="/our-range/limited-edition/">
+                Limited Edition
+            </Link>
+            <Link className="item" to="/our-range/nuts/">
+                Nuts
+            </Link>
+        </div>
+    );
+};

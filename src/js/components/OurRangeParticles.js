@@ -22,7 +22,11 @@ const OurRangeParticles = (props) => {
         }
     };
 
-    // props.data
+    function keyPress(e) {
+        if (e.key === "Escape") {
+            // write your logic here.
+        }
+    }
 
     const imagesTotal = 2;
     let imagesLoaded = 0;
@@ -156,12 +160,19 @@ const OurRangeParticles = (props) => {
         return image.el;
     };
 
+    const onLocationChange = () => {
+        console.log("window: ", window.location);
+    };
+
     useEffect(() => {
         updateSpriteImages();
+
+        window.addEventListener("popstate", onLocationChange);
 
         return () => {
             // clean-up on dismount.
             window.removeEventListener("resize", onResize);
+            window.removeEventListener("popstate", onLocationChange);
         };
     }, [props.current]);
 
@@ -180,18 +191,20 @@ const OurRangeParticles = (props) => {
 
     const onResize = () => {
         // console.log(e.target.innerWidth, e.target.innerHeight);
-        const can = canvasRef.current;
-        const canBox = can.getBoundingClientRect();
-        can.width = can.offsetWidth;
-        can.height = can.offsetHeight;
-        origin.x = Math.round(can.width * 0.5);
-        origin.y = Math.round(can.height * 0.5);
-        origin.width = canBox.width;
-        origin.height = canBox.height;
+        if (canvasRef.current) {
+            const can = canvasRef.current;
+            const canBox = can.getBoundingClientRect();
+            can.width = can.offsetWidth;
+            can.height = can.offsetHeight;
+            origin.x = Math.round(can.width * 0.5);
+            origin.y = Math.round(can.height * 0.5);
+            origin.width = canBox.width;
+            origin.height = canBox.height;
 
-        if (hasInit) {
-            updateProduct();
-            updateCanvas();
+            if (hasInit) {
+                updateProduct();
+                updateCanvas();
+            }
         }
     };
 
