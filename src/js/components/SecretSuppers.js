@@ -1,10 +1,18 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import secretSuppersHero from "../../img/backgrounds/backgorund-secret-suppers.jpg";
 import secretSuppersLockup from "../../img/lockups/secret-suppers-lockup--white.png";
 import EmailRegistration from "./EmailRegistrationForm";
 import Instagram from "./InstagramStatic";
+import ReactPlayer from "react-player";
 
 const SecretSuppers = () => {
+    const videoPlayer = useRef();
+    const [isPlaying, setPlaying] = useState(false);
+    const videoUrl =
+        window.innerWidth < 768
+            ? "/videos/secret-suppers-teaser-video-sml.mp4"
+            : "/videos/secret-suppers-teaser-video-lrg.mp4";
+
     return (
         <section className="SecretSuppers sr-item">
             <div className="scroll-prompt scroll-prompt-top" />
@@ -29,10 +37,24 @@ const SecretSuppers = () => {
             </div>
             <div className="container black-background">
                 <div className="content">
-                    <div className="image-holder content-cover">
-                        <img
-                            src={secretSuppersHero}
-                            alt="Red Rock Deli, Secret Suppers"
+                    <div
+                        className={
+                            isPlaying
+                                ? "image-holder is-playing"
+                                : "image-holder is-not-playing"
+                        }
+                        onClick={() => {
+                            setPlaying(true);
+                        }}
+                    >
+                        <ReactPlayer
+                            ref={videoPlayer}
+                            poster="/videos/secret-suppers-teaser-video.jpg"
+                            className="ss-video"
+                            width="100%"
+                            height="100%"
+                            url={videoUrl}
+                            controls={isPlaying}
                         />
                     </div>
 

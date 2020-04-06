@@ -59,10 +59,10 @@ const ScrollReveal = (props) => {
             }
         }, 500);
 
-        // timer.timeout = setTimeout(() => {
-        //     console.log("cleared timeout");
-        //     window.clearInterval(timer.interval);
-        // }, 60000 * 5);
+        timer.timeout = setTimeout(() => {
+            console.log("cleared timeout");
+            window.clearInterval(timer.interval);
+        }, 60000 * 5);
 
         return () => {
             window.clearTimeout(timer.timeout);

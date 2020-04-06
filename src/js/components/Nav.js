@@ -27,10 +27,26 @@ function Nav() {
             <div className="container">
                 <nav>
                     <ul>
-                        <li>
+                        <li className="our-range-dropdown">
                             <Link to="/our-range/" onClick={hideHamburger}>
                                 OUR RANGE
                             </Link>
+                            {/* <div className="dropdown our-range-nav">
+                                <Link to="/our-range/potato-chips/">
+                                    Potato Chips
+                                </Link>
+                                <Link to="/our-range/tortilla-chips/">
+                                    Tortilla Chips
+                                </Link>
+                                <Link to="/our-range/deluxe-crisps/">
+                                    Deluxe Crisps
+                                </Link>
+                                <Link to="/our-range/dips/">Dips</Link>
+                                <Link to="/our-range/limited-edition/">
+                                    Limited Edition
+                                </Link>
+                                <Link to="/our-range/nuts/">Nuts</Link>
+                            </div> */}
                         </li>
                         <li>
                             <div className="divider"></div>
