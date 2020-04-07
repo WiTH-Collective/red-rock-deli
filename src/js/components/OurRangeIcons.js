@@ -1,6 +1,6 @@
 import React from "react";
 
-const OurRangeIcons = props => {
+const OurRangeIcons = (props) => {
     return (
         <div className={"icons"}>
             <div
@@ -16,6 +16,10 @@ const OurRangeIcons = props => {
                 </div>
                 <div className="label">View nutritional information</div>
             </div>
+            {/* 
+            // =============================================
+            // DISABLING FLAVOUR PAIRINGS BUTTON
+            // =============================================
             <div
                 className="item flavour-pairings"
                 onClick={() => {
@@ -28,7 +32,7 @@ const OurRangeIcons = props => {
                     </svg>
                 </div>
                 <div className="label">Flavour pairings</div>
-            </div>
+            </div> */}
         </div>
     );
 };

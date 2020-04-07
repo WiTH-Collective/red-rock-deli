@@ -262,7 +262,6 @@ const OurRange = () => {
                                 ""
                             )}
                         </div>
-                        <OurRangeIcons onClickFunction={switchModal} />
                     </div>
                 </div>
             </div>

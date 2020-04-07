@@ -44,6 +44,7 @@ function Hero() {
                     loop
                     playsinline
                     playing
+                    pip={false}
                 />
             </div>
 
