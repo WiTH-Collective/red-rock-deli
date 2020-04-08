@@ -37,7 +37,7 @@
             {
                 "imageUrl": "/products/nuts/Glazed-Nuts-Apple-Cinnamon-Crumble.png",
                 "label": "Nuts",
-                "baseUrl": "mixed-nuts"
+                "baseUrl": "nuts"
             }
         ],
         "product": {
@@ -428,7 +428,7 @@
                     }
                 }
             ],
-            "limited-edition": [
+            "limited-edition-chips": [
                 {
                     "title": "Maple Glazed Bacon & Cheddar",
                     "url": "maple-glazed-bacon-cheddar-chips",

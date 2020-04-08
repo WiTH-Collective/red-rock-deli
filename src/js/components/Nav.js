@@ -80,7 +80,7 @@ const Dropdown = () => {
             <Link className="item" to="/our-range/limited-edition-chips/">
                 Limited Edition
             </Link>
-            <Link className="item" to="/our-range/mixed-nuts/">
+            <Link className="item" to="/our-range/nuts/">
                 Nuts
             </Link>
         </div>
