@@ -1,8 +1,7 @@
 import React, { useRef, useState } from "react";
-import secretSuppersHero from "../../img/backgrounds/backgorund-secret-suppers.jpg";
 import secretSuppersLockup from "../../img/lockups/secret-suppers-lockup--white.png";
 import EmailRegistration from "./EmailRegistrationForm";
-import Instagram from "./InstagramStatic";
+import InstagramFeed from "./InstagramFeed";
 import ReactPlayer from "react-player";
 
 const SecretSuppers = () => {
@@ -72,7 +71,7 @@ const SecretSuppers = () => {
                     </div>
                 </div>
             </div>
-            <Instagram />
+            <InstagramFeed />
         </section>
     );
 };

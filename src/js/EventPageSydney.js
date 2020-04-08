@@ -4,7 +4,7 @@ import { HeroStatic } from "./components/Hero";
 import ScrollReveal from "./utils/ScrollReveal";
 import WideFooterImage from "./components/WideFooterImage";
 import FeatureVideoItem from "./components/FeatureVideoItem";
-import InstaFeed from "./components/InstaFeed";
+import InstagramFeed from "./components/InstagramFeed";
 import ButtonPrimary from "./components/ButtonPrimary";
 import Locations from "./components/Locations";
 import EventInfo from "./components/EventIntro";
@@ -118,7 +118,7 @@ const EventPageSydney = () => {
                         <Locations imageUrl="/images/meet-the-chefs/secret-locations2.jpg" />
                     </div>
 
-                    <InstaFeed noBackground />
+                    <InstagramFeed />
                 </section>
 
                 {/* <MeetTheChefs onSecretSuppersPage /> */}

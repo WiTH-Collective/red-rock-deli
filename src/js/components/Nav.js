@@ -77,10 +77,10 @@ const Dropdown = () => {
             <Link className="item" to="/our-range/dips/">
                 Dips
             </Link>
-            <Link className="item" to="/our-range/limited-edition/">
+            <Link className="item" to="/our-range/limited-edition-chips/">
                 Limited Edition
             </Link>
-            <Link className="item" to="/our-range/nuts/">
+            <Link className="item" to="/our-range/mixed-nuts/">
                 Nuts
             </Link>
         </div>

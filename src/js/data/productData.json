@@ -32,12 +32,12 @@
             {
                 "imageUrl": "/products/limited-edition/Maple-Glazed-Bacon-And-Cheddar.png",
                 "label": "Limited Edition",
-                "baseUrl": "limited-edition"
+                "baseUrl": "limited-edition-chips"
             },
             {
                 "imageUrl": "/products/nuts/Glazed-Nuts-Apple-Cinnamon-Crumble.png",
                 "label": "Nuts",
-                "baseUrl": "nuts"
+                "baseUrl": "mixed-nuts"
             }
         ],
         "product": {
@@ -431,7 +431,7 @@
             "limited-edition": [
                 {
                     "title": "Maple Glazed Bacon & Cheddar",
-                    "url": "maple-glazed-bacon-cheddar-limited-edition",
+                    "url": "maple-glazed-bacon-cheddar-chips",
                     "copy": "Our Maple Glazed Bacon & Cheddar potato chips combine the rich, sweet smokiness of maple bacon with the subtle creaminess of cheddar.",
                     "subCopy": "We begin with the finest potatoes harvested from Australian farms, roughly cut and slow-cooked in Sunflower Oil, for the most delectable crunch. And with surprising twists,  grinds and blends of carefully selected flavours, there’s an enticing taste journey waiting to be discovered in every bite.",
                     "packImageUrl": "/products/limited-edition/Maple-Glazed-Bacon-And-Cheddar.png",
@@ -452,7 +452,7 @@
                 },
                 {
                     "title": "Morrocan Spiced Chicken",
-                    "url": "morrocan-spiced-chicken-limited-edition",
+                    "url": "moroccan-spiced-chicken-chips",
                     "copy": "Our Moroccan Spiced Chicken & Lemon potato chips blend the exotic flavour of Moroccan spices and succulent chicken with the freshness of zesty lemon.",
                     "subCopy": "We begin with the finest potatoes harvested from Australian farms, roughly cut and slow-cooked in Sunflower Oil, for the most delectable crunch. And with surprising twists,  grinds and blends of carefully selected flavours, there’s an enticing taste journey waiting to be discovered in every bite.",
                     "packImageUrl": "/products/limited-edition/Moroccan-Spiced-Chicken-And-Lemon.png",

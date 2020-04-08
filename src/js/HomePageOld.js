@@ -19,7 +19,7 @@ const HomePage = () => {
     );
     const MeetTheChefs = React.lazy(() => import("./components/MeetTheChefs"));
     const WhereToBuy = React.lazy(() => import("./components/WhereToBuy"));
-    const InstaFeed = React.lazy(() => import("./components/InstaFeed"));
+    // const InstaFeed = React.lazy(() => import("./components/InstaFeed"));
 
     return (
         <ScrollReveal>

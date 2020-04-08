@@ -20,18 +20,15 @@ function LoadImage(source, callBackFunction) {
 
     if (image.el.complete) {
         // if image was already loaded, use image.
-        // console.log(" ### using cached image");
         config.loaded++;
         if (config.loaded === config.total) {
             setTimeout(callBackFunction, 150);
         }
     } else {
         // otherwise, load image, and store it once loaded.
-        // console.log(" ### new image");
         window.imageCache.push(image);
         image.el.onload = () => {
             // window.imageCache.push(image);
-            // console.log("window.imageCache", window.imageCache);
             config.loaded++;
             if (config.loaded === config.total) callBackFunction();
         };
