@@ -14,14 +14,6 @@ const OurRangeParticles = props => {
     const [isHidden, setIsHidden] = useState(" hidden");
     const [canUpdate, setCanUpdate] = useState(false);
 
-    const metaDescription = () => {
-        if (props.current.product.copy.length > 100) {
-            return props.current.product.copy.slice(0, 100) + "...";
-        } else {
-            return props.current.product.copy;
-        }
-    };
-
     function keyPress(e) {
         if (e.key === "Escape") {
             // write your logic here.
