@@ -33,10 +33,12 @@ const HomePage = () => {
                 </Suspense>
 
                 <Helmet>
-                    <title>{"Red Rock Deli®"}</title>
+                    <title>{"Red Rock Deli© | Homepage"}</title>
                     <meta
                         name="description"
-                        content={"Red Rock Deli® - Feed Your Curiosity™"}
+                        content={
+                            "Red Rock Deli® offers gourmet, Deli-inspired potato crisps, dips, mixed nuts & tortilla chips. That's your snacking sorted. Find our products in store today."
+                        }
                     />
                     <meta
                         name="keywords"
@@ -45,10 +47,15 @@ const HomePage = () => {
                         }
                     />
                     <meta property="og:site_name" content={"Red Rock Deli®"} />
-                    <meta name="og:title" content={"Red Rock Deli®"} />
+                    <meta
+                        name="og:title"
+                        content={"Red Rock Deli© | Homepage"}
+                    />
                     <meta
                         name="og:description"
-                        content={"Red Rock Deli® - Feed Your Curiosity™"}
+                        content={
+                            "Red Rock Deli® offers gourmet, Deli-inspired potato crisps, dips, mixed nuts & tortilla chips. That's your snacking sorted. Find our products in store today."
+                        }
                     />
                     <meta
                         property="og:image"
