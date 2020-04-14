@@ -18,9 +18,7 @@
         "react-external-link": "^1.1.1",
         "react-google-tag-manager": "^2.2.1",
         "react-gsap": "^1.2.0",
-        "react-helmet": "^5.2.1",
-        "react-instafeed": "^1.0.0",
-        "react-items-carousel": "^2.8.0",
+        "react-helmet": "^6.0.0",
         "react-juicer-feed": "0.0.2-alpha-4",
         "react-player": "^1.15.3",
         "react-router-dom": "^5.1.2",
@@ -31,7 +29,7 @@
         "yup": "^0.28.3"
     },
     "reactSnap": {
-        "fixWebpackChunksIssue": false
+        "fixWebpackChunksIssue": true
     },
     "scripts": {
         "start": "react-scripts start",
