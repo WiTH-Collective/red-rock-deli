@@ -4,6 +4,7 @@ import ScrollReveal from "./utils/ScrollReveal";
 import OurRangeParticles from "./components/OurRangeParticles";
 import history from "./history";
 import { Link } from "react-router-dom";
+import OurRangeIcons from "./components/OurRangeIcons";
 import { TweenMax, Power3 } from "gsap";
 
 const OurRange = () => {

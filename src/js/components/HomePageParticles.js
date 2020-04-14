@@ -341,7 +341,7 @@ const HomePageParticles = (props) => {
 
             // Adjust spacing for small packaging.
             let multiplier = 1;
-            _product.product.packImageUrl.indexOf("/nuts/") > -1
+            _product.product.packImageUrl.indexOf("/mixed-nuts/") > -1
                 ? (multiplier = 0.66)
                 : (multiplier = 1);
 

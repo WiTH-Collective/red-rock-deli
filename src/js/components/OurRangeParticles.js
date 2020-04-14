@@ -296,7 +296,7 @@ const OurRangeParticles = props => {
 
             // asdfasdf
             let nutMultiplier = 1;
-            props.current.product.packImageUrl.indexOf("/nuts/") > -1
+            props.current.product.packImageUrl.indexOf("/mixed-nuts/") > -1
                 ? (nutMultiplier = 0.66)
                 : (nutMultiplier = 1);
 

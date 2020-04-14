@@ -62,27 +62,27 @@ function Nav() {
 
 export default Nav;
 
-// const Dropdown = () => {
-//     return (
-//         <div className="dropdown our-range-nav">
-//             <Link className="item" to="/our-range/potato-chips/">
-//                 Potato Chips
-//             </Link>
-//             <Link className="item" to="/our-range/tortilla-chips/">
-//                 Tortilla Chips
-//             </Link>
-//             <Link className="item" to="/our-range/deluxe-crisps/">
-//                 Deluxe Crisps
-//             </Link>
-//             <Link className="item" to="/our-range/dips/">
-//                 Dips
-//             </Link>
-//             <Link className="item" to="/our-range/limited-edition-chips/">
-//                 Limited Edition
-//             </Link>
-//             <Link className="item" to="/our-range/nuts/">
-//                 Nuts
-//             </Link>
-//         </div>
-//     );
-// };
+const Dropdown = () => {
+    return (
+        <div className="dropdown our-range-nav">
+            <Link className="item" to="/our-range/potato-chips/">
+                Potato Chips
+            </Link>
+            <Link className="item" to="/our-range/tortilla-chips/">
+                Tortilla Chips
+            </Link>
+            <Link className="item" to="/our-range/deluxe-crisps/">
+                Deluxe Crisps
+            </Link>
+            <Link className="item" to="/our-range/dips/">
+                Dips
+            </Link>
+            <Link className="item" to="/our-range/limited-edition-chips/">
+                Limited Edition
+            </Link>
+            <Link className="item" to="/our-range/mixed-nuts/">
+                Nuts
+            </Link>
+        </div>
+    );
+};
