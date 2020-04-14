@@ -123,13 +123,13 @@ const EventPageSydney = () => {
 
                 {/* <MeetTheChefs onSecretSuppersPage /> */}
                 <WideFooterImage imageUrl="/images/secret-suppers/ss-event1-footer-wide.jpg" />
-                <Helmet>
+                {/* <Helmet>
                     <title>Events | Sydney | Red Rock Deli©</title>
                     <meta
                         name="description"
                         content="Find all upcoming Red Rock Deli® events in Sydney and join in on the fun. Click for all event details and to sign up for a unique tasting adventure."
                     />
-                    {/* <meta
+                    <meta
                         name="keywords"
                         content="Red, Rock, Deli, Chips, Nuts, Feed your curiosity, curious chips and nuts"
                     />
@@ -145,8 +145,8 @@ const EventPageSydney = () => {
                     <meta
                         property="og:image"
                         content="https://red-rock-deli-2020.netlify.com/images/backgorund-secret-suppers.jpg"
-                    /> */}
-                </Helmet>
+                    />
+                </Helmet> */}
             </div>
         </ScrollReveal>
     );

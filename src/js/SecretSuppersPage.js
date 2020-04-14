@@ -22,13 +22,13 @@ const SecretSuppersPage = () => {
 
                 <MeetTheChefs onSecretSuppersPage />
                 <WideFooterImage imageUrl="/images/secret-suppers/rrd-ss-footer-wide.jpg" />
-                <Helmet>
+                {/* <Helmet>
                     <title>Secret Suppers | Red Rock Deli©</title>
                     <meta
                         name="description"
                         content="An exclusive pop-up dining experience presented by Red Rock Deli. Take a seat at the table of some of the most inventive chefs for a unique experience. Read more."
                     />
-                    {/* <meta
+                    <meta
                         name="keywords"
                         content="Red, Rock, Deli, Chips, Nuts, Feed your curiosity, curious chips and nuts"
                     />
@@ -44,8 +44,8 @@ const SecretSuppersPage = () => {
                     <meta
                         property="og:image"
                         content="https://red-rock-deli-2020.netlify.com/images/backgorund-secret-suppers.jpg"
-                    /> */}
-                </Helmet>
+                    />
+                </Helmet> */}
             </div>
         </ScrollReveal>
     );

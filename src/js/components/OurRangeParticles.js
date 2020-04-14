@@ -649,7 +649,7 @@ const OurRangeParticles = props => {
                     <IconNext />
                 </button>
             </div>
-            <Helmet>
+            {/* <Helmet>
                 <title>{props.current.product.meta.title}</title>
                 <meta
                     name="description"
@@ -675,7 +675,7 @@ const OurRangeParticles = props => {
                         props.current.product.packImageUrl
                     }
                 />
-            </Helmet>
+            </Helmet> */}
         </div>
     );
 };
