@@ -10,7 +10,7 @@ const OurRangeParticles = props => {
     // console.log("--> Start of OurRangeParticles Component");
     // console.log(">> RANGE >> props.pageIsLoading", props.pageIsLoading);
     const productSpacing = props.data.config.productSpacing;
-    const [current, setCurrent] = useState(props.current.index);
+    // const [current, setCurrent] = useState(props.current.index);
     const [isHidden, setIsHidden] = useState(" hidden");
     const [canUpdate, setCanUpdate] = useState(false);
 

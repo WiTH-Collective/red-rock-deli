@@ -97,7 +97,7 @@ const ChefPage01 = () => {
                         name="description"
                         content="Red Rock Deli® has summoned heavyweight chefs to the kitchen to create unique Deli-inspired recipes. Find all the inspo to spruce up your kitchen game."
                     />
-                    <meta
+                    {/* <meta
                         name="keywords"
                         content="Red, Rock, Deli, Chips, Nuts, Feed your curiosity, curious chips and nuts"
                     />
@@ -113,7 +113,7 @@ const ChefPage01 = () => {
                     <meta
                         property="og:image"
                         content="https://red-rock-deli-2020.netlify.com/images/backgorund-secret-suppers.jpg"
-                    />
+                    /> */}
                 </Helmet>
             </div>
         </ScrollReveal>

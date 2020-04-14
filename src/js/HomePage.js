@@ -2,10 +2,6 @@ import React, { Suspense } from "react";
 import { Helmet } from "react-helmet";
 
 import Hero from "./components/Hero";
-// import SecretSuppers from "./components/SecretSuppers";
-// import MeetTheChefs from "./components/MeetTheChefs";
-// import DiscoverTheRange from "./components/DiscoverTheRange";
-// import WhereToBuy from "./components/WhereToBuy";
 import ScrollReveal from "./utils/ScrollReveal";
 import LoadingAnimation from "./utils/LoaderAnimation";
 
@@ -38,7 +34,7 @@ const HomePage = () => {
                         name="description"
                         content="Red Rock Deli® offers gourmet, Deli-inspired potato crisps, dips, mixed nuts & tortilla chips. That's your snacking sorted. Find our products in store today."
                     />
-                    <meta
+                    {/* <meta
                         name="keywords"
                         content="Red, Rock, Deli, Chips, Nuts, Feed your curiosity, curious chips and nuts"
                     />
@@ -51,7 +47,7 @@ const HomePage = () => {
                     <meta
                         property="og:image"
                         content="https://red-rock-deli-2020.netlify.com/images/backgorund-secret-suppers.jpg"
-                    />
+                    /> */}
                 </Helmet>
             </div>
         </ScrollReveal>

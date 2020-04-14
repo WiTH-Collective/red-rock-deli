@@ -58,7 +58,7 @@ const FAQs = () => {
                     name="description"
                     content="Have a question about Red Rock Deli or our products? Whether it's about nutrition or safety, we've answered your questions here. Read all FAQs."
                 />
-                <meta
+                {/* <meta
                     name="keywords"
                     content="Red, Rock, Deli, Chips, Nuts, Feed your curiosity, curious chips and nuts"
                 />
@@ -71,7 +71,7 @@ const FAQs = () => {
                 <meta
                     property="og:image"
                     content="https://red-rock-deli-2020.netlify.com/images/backgorund-secret-suppers.jpg"
-                />
+                /> */}
             </Helmet>
         </div>
     );
