@@ -58,7 +58,7 @@ const ImageSlider = props => {
         return () => {
             window.removeEventListener("resize", onResize);
         };
-    }, []);
+    });
 
     return (
         <div className="ImageSlider">

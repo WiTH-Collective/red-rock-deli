@@ -124,35 +124,27 @@ const EventPageSydney = () => {
                 {/* <MeetTheChefs onSecretSuppersPage /> */}
                 <WideFooterImage imageUrl="/images/secret-suppers/ss-event1-footer-wide.jpg" />
                 <Helmet>
-                    <title>{"Events | Sydney | Red Rock Deli©"}</title>
+                    <title>Events | Sydney | Red Rock Deli©</title>
                     <meta
                         name="description"
-                        content={
-                            "Find all upcoming Red Rock Deli® events in Sydney and join in on the fun. Click for all event details and to sign up for a unique tasting adventure."
-                        }
+                        content="Find all upcoming Red Rock Deli® events in Sydney and join in on the fun. Click for all event details and to sign up for a unique tasting adventure."
                     />
                     <meta
                         name="keywords"
-                        content={
-                            "Red, Rock, Deli, Chips, Nuts, Feed your curiosity, curious chips and nuts"
-                        }
+                        content="Red, Rock, Deli, Chips, Nuts, Feed your curiosity, curious chips and nuts"
                     />
-                    <meta property="og:site_name" content={"Red Rock Deli®"} />
+                    <meta property="og:site_name" content="Red Rock Deli®" />
                     <meta
                         name="og:title"
-                        content={"Events | Sydney | Red Rock Deli©"}
+                        content="Events | Sydney | Red Rock Deli©"
                     />
                     <meta
                         name="og:description"
-                        content={
-                            "Find all upcoming Red Rock Deli® events in Sydney and join in on the fun. Click for all event details and to sign up for a unique tasting adventure."
-                        }
+                        content="Find all upcoming Red Rock Deli® events in Sydney and join in on the fun. Click for all event details and to sign up for a unique tasting adventure."
                     />
                     <meta
                         property="og:image"
-                        content={
-                            "https://red-rock-deli-2020.netlify.com/images/backgorund-secret-suppers.jpg"
-                        }
+                        content="https://red-rock-deli-2020.netlify.com/images/backgorund-secret-suppers.jpg"
                     />
                 </Helmet>
             </div>

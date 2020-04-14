@@ -92,18 +92,14 @@ const ChefPage01 = () => {
 
                 <WideFooterImage imageUrl="/images/secret-suppers/ss-chef1-hero-wide.jpg" />
                 <Helmet>
-                    <title>{"Meet The Chefs | Red Rock Deli©"}</title>
+                    <title>Meet The Chefs | Red Rock Deli©</title>
                     <meta
                         name="description"
-                        content={
-                            "Red Rock Deli® has summoned heavyweight chefs to the kitchen to create unique Deli-inspired recipes. Find all the inspo to spruce up your kitchen game."
-                        }
+                        content="Red Rock Deli® has summoned heavyweight chefs to the kitchen to create unique Deli-inspired recipes. Find all the inspo to spruce up your kitchen game."
                     />
                     <meta
                         name="keywords"
-                        content={
-                            "Red, Rock, Deli, Chips, Nuts, Feed your curiosity, curious chips and nuts"
-                        }
+                        content="Red, Rock, Deli, Chips, Nuts, Feed your curiosity, curious chips and nuts"
                     />
                     <meta property="og:site_name" content={"Red Rock Deli®"} />
                     <meta
@@ -112,15 +108,11 @@ const ChefPage01 = () => {
                     />
                     <meta
                         name="og:description"
-                        content={
-                            "Red Rock Deli® has summoned heavyweight chefs to the kitchen to create unique Deli-inspired recipes. Find all the inspo to spruce up your kitchen game."
-                        }
+                        content="Red Rock Deli® has summoned heavyweight chefs to the kitchen to create unique Deli-inspired recipes. Find all the inspo to spruce up your kitchen game."
                     />
                     <meta
                         property="og:image"
-                        content={
-                            "https://red-rock-deli-2020.netlify.com/images/secret-suppers/colin-fassnidge-hero.jpg"
-                        }
+                        content="https://red-rock-deli-2020.netlify.com/images/backgorund-secret-suppers.jpg"
                     />
                 </Helmet>
             </div>

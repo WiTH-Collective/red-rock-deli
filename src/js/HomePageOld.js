@@ -40,32 +40,6 @@ const HomePage = () => {
                 <Suspense fallback={<LoadingAnimation />}>
                     {/* <InstaFeed /> */}
                 </Suspense>
-
-                <Helmet>
-                    <title>{"Red Rock Deli®"}</title>
-                    <meta
-                        name="description"
-                        content={"Red Rock Deli® - Feed Your Curiosity™"}
-                    />
-                    <meta
-                        name="keywords"
-                        content={
-                            "Red, Rock, Deli, Chips, Nuts, Feed your curiosity, curious chips and nuts"
-                        }
-                    />
-                    <meta property="og:site_name" content={"Red Rock Deli®"} />
-                    <meta name="og:title" content={"Red Rock Deli®"} />
-                    <meta
-                        name="og:description"
-                        content={"Red Rock Deli® - Feed Your Curiosity™"}
-                    />
-                    <meta
-                        property="og:image"
-                        content={
-                            "https://red-rock-deli-2020.netlify.com/images/backgorund-secret-suppers.jpg"
-                        }
-                    />
-                </Helmet>
             </div>
         </ScrollReveal>
     );

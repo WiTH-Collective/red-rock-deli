@@ -53,32 +53,24 @@ const FAQs = () => {
             </ScrollReveal>
 
             <Helmet>
-                <title>{"FAQs | Red Rock Deli©"}</title>
+                <title>FAQs | Red Rock Deli©</title>
                 <meta
                     name="description"
-                    content={
-                        "Have a question about Red Rock Deli or our products? Whether it's about nutrition or safety, we've answered your questions here. Read all FAQs."
-                    }
+                    content="Have a question about Red Rock Deli or our products? Whether it's about nutrition or safety, we've answered your questions here. Read all FAQs."
                 />
                 <meta
                     name="keywords"
-                    content={
-                        "Red, Rock, Deli, Chips, Nuts, Feed your curiosity, curious chips and nuts"
-                    }
+                    content="Red, Rock, Deli, Chips, Nuts, Feed your curiosity, curious chips and nuts"
                 />
-                <meta property="og:site_name" content={"Red Rock Deli®"} />
-                <meta name="og:title" content={"FAQs | Red Rock Deli©"} />
+                <meta property="og:site_name" content="Red Rock Deli®" />
+                <meta name="og:title" content="FAQs | Red Rock Deli©" />
                 <meta
                     name="og:description"
-                    content={
-                        "Have a question about Red Rock Deli or our products? Whether it's about nutrition or safety, we've answered your questions here. Read all FAQs."
-                    }
+                    content="Have a question about Red Rock Deli or our products? Whether it's about nutrition or safety, we've answered your questions here. Read all FAQs."
                 />
                 <meta
                     property="og:image"
-                    content={
-                        "https://red-rock-deli-2020.netlify.com/images/backgorund-secret-suppers.jpg"
-                    }
+                    content="https://red-rock-deli-2020.netlify.com/images/backgorund-secret-suppers.jpg"
                 />
             </Helmet>
         </div>
