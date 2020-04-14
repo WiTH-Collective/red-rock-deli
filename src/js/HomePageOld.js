@@ -38,7 +38,7 @@ const HomePage = () => {
                     <WhereToBuy />
                 </Suspense>
                 <Suspense fallback={<LoadingAnimation />}>
-                    <InstaFeed />
+                    {/* <InstaFeed /> */}
                 </Suspense>
 
                 <Helmet>

@@ -2,21 +2,21 @@ import React, { useEffect, useState, useRef } from "react";
 import { ExternalLink } from "react-external-link";
 import Juicer from "./Juicer";
 
-const InstagramFeed = (props) => {
+const InstagramFeed = props => {
     const feedHolder = useRef();
-    const [isLargeScreen, setIsLargeScreen] = useState(false);
-    const onResizeIG = () => {
-        setIsLargeScreen(window.innerWidth >= 768);
-    };
     const [feedCount, setFeedCount] = useState(3);
+    // const [isLargeScreen, setIsLargeScreen] = useState(false);
+    // const onResizeIG = () => {
+    //     setIsLargeScreen(window.innerWidth >= 768);
+    // };
 
-    useEffect(() => {
-        window.addEventListener("resize", onResizeIG);
-        onResizeIG();
-        return () => {
-            window.removeEventListener("resize", onResizeIG);
-        };
-    }, []);
+    // useEffect(() => {
+    //     window.addEventListener("resize", onResizeIG);
+    //     onResizeIG();
+    //     return () => {
+    //         window.removeEventListener("resize", onResizeIG);
+    //     };
+    // }, []);
 
     return (
         <div className={"Instagram"}>
@@ -47,7 +47,7 @@ const InstagramFeed = (props) => {
 
 export default InstagramFeed;
 
-const MoreButton = (props) => {
+const MoreButton = props => {
     return (
         <React.Fragment>
             {props.count < 9 ? (
@@ -58,7 +58,7 @@ const MoreButton = (props) => {
                             props.feedHolder.current.scrollTo({
                                 top: 0,
                                 left: props.count * window.innerWidth * 0.7,
-                                behavior: "smooth",
+                                behavior: "smooth"
                             });
                         }, 50);
                     }}
