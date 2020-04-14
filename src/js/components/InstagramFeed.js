@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useState, useRef } from "react";
 import { ExternalLink } from "react-external-link";
 import Juicer from "./Juicer";
 
@@ -46,6 +46,8 @@ const InstagramFeed = props => {
 };
 
 export default InstagramFeed;
+
+//
 
 const MoreButton = props => {
     return (
