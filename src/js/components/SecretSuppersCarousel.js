@@ -27,7 +27,7 @@ const SecretSuppersCarousel = () => {
                         "/images/secret-suppers/image-slider/placeholder-1.jpg",
                         "/images/secret-suppers/image-slider/placeholder-2.jpg",
                         "/images/secret-suppers/image-slider/placeholder-3.jpg",
-                        "/images/secret-suppers/image-slider/placeholder-4.jpg",
+                        "/images/secret-suppers/image-slider/placeholder-4.jpg"
                     ]}
                 />
                 <div className="looking-for-a-ticket">

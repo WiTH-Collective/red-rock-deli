@@ -76,7 +76,7 @@ function Footer() {
 
 export default Footer;
 
-const ContactItem = (props) => {
+const ContactItem = props => {
     return (
         <React.Fragment>
             {props.link ? (
@@ -87,7 +87,7 @@ const ContactItem = (props) => {
                     <div className="description">
                         <p
                             dangerouslySetInnerHTML={{
-                                __html: props.description,
+                                __html: props.description
                             }}
                         />
                     </div>
@@ -100,7 +100,7 @@ const ContactItem = (props) => {
                     <div className="description">
                         <p
                             dangerouslySetInnerHTML={{
-                                __html: props.description,
+                                __html: props.description
                             }}
                         />
                     </div>

@@ -5,7 +5,7 @@ import logo3 from "../../img/logos/logo-coles-white.png";
 
 import { Link } from "react-router-dom";
 
-const WhereToBuy = (props) => {
+const WhereToBuy = props => {
     return (
         <section className="WhereToBuy">
             <div className="container">
@@ -29,7 +29,7 @@ const WhereToBuy = (props) => {
 
 export default WhereToBuy;
 
-const Store = (props) => {
+const Store = props => {
     let url = props.storeUrl;
     if (!url) url = "/404";
     return (

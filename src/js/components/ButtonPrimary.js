@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { ExternalLink } from "react-external-link";
 
-const ButtonPrimary = (props) => {
+const ButtonPrimary = props => {
     let classes = "button-primary";
     if (props.isBlack) classes += " button-black";
     return (
@@ -29,7 +29,7 @@ const ButtonPrimary = (props) => {
     );
 };
 
-export const ButtonSubmit = (props) => {
+export const ButtonSubmit = props => {
     return (
         <div className="button-primary">
             <button type="submit">

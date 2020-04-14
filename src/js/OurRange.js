@@ -14,7 +14,7 @@ const OurRange = () => {
         type: "info",
         heading: "Nutritional Info",
         image: "",
-        copy: null
+        copy: null,
     });
     const [navToggle, setNavToggle] = useState(false);
     const [pathname, setPathname] = useState(window.location.pathname);
@@ -24,7 +24,7 @@ const OurRange = () => {
         product: null,
         products: null,
         next: null,
-        previous: null
+        previous: null,
     });
 
     const getCurrentProduct = () => {
@@ -39,12 +39,12 @@ const OurRange = () => {
             previous: "",
             productAnimationDirection: parseInt(
                 localStorage.getItem("direction")
-            )
+            ),
         };
 
         // if product group is not found in list of products, set to default value
         const group = Object.keys(data.product).find(
-            key => key === urlArray[2]
+            (key) => key === urlArray[2]
         );
         group
             ? (obj.group = group)
@@ -54,7 +54,7 @@ const OurRange = () => {
 
         // find product in list of products.
         const currentIndex = data.product[obj.group].findIndex(
-            product => product.url === decodeURI(urlArray[3])
+            (product) => product.url === decodeURI(urlArray[3])
         );
 
         // if index not found, use default index
@@ -71,33 +71,33 @@ const OurRange = () => {
     //
 
     // Show Modal
-    const showModal = modalType => {
+    const showModal = (modalType) => {
         const smoothScroll = { y: window.scrollY };
         TweenMax.to(smoothScroll, 0.25, {
             y: 0,
             onUpdate: () => {
                 window.scrollTo(0, smoothScroll.y);
             },
-            ease: Power3.easeOut
+            ease: Power3.easeOut,
         });
 
         setModalShowing(true);
         switchModal(modalType);
     };
-    const switchModal = modalType => {
+    const switchModal = (modalType) => {
         if (modalType === "info") {
             setModalInfo({
                 type: "info",
                 heading: "Nutritional Info",
                 image: current.product.nutritionalInfo.image,
-                copy: null
+                copy: null,
             });
         } else {
             setModalInfo({
                 type: "pairings",
                 heading: "Flavour Pairings",
                 image: current.product.flavourPairing.image,
-                copy: current.product.flavourPairing.copy
+                copy: current.product.flavourPairing.copy,
             });
         }
     };
@@ -108,7 +108,7 @@ const OurRange = () => {
     //
 
     //
-    const onKeydown = e => {
+    const onKeydown = (e) => {
         if (e.key === "Escape") {
             closeModal();
         }
@@ -254,7 +254,7 @@ const OurRange = () => {
                                     }}
                                     className="copy"
                                     dangerouslySetInnerHTML={{
-                                        __html: modalInfo.copy
+                                        __html: modalInfo.copy,
                                     }}
                                 />
                             ) : (
@@ -271,7 +271,7 @@ export default OurRange;
 
 //
 
-const NavItem = props => {
+const NavItem = (props) => {
     let isActive = "";
     props.pathname && props.pathname.split("/")[2] === props.baseUrl
         ? (isActive = "isActive")

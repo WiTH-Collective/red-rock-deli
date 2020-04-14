@@ -1,6 +1,6 @@
 import React from "react";
 
-const OurRangeIcons = (props) => {
+const OurRangeIcons = props => {
     return (
         <div className={"icons"}>
             <div

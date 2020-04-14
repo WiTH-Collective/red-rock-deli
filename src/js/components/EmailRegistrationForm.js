@@ -7,7 +7,7 @@ const validationSchema = yup.object({
     email: yup
         .string()
         .required()
-        .email(),
+        .email()
 
     // consentToReply: yup.boolean().isValid(true)
 });
@@ -17,7 +17,7 @@ function SubscribeForm(props) {
         <div className={"enquiryForm"}>
             <Formik
                 initialValues={{
-                    email: "",
+                    email: ""
                 }}
                 validationSchema={validationSchema}
                 onSubmit={(data, { setSubmitting }) => {
@@ -35,7 +35,7 @@ function SubscribeForm(props) {
                     isSubmitting,
                     handleChange,
                     handleBlur,
-                    handleSubmit,
+                    handleSubmit
                 }) => (
                     <form onSubmit={handleSubmit}>
                         <div className="form-group">
