@@ -48,8 +48,8 @@ function App() {
                     <ScrollToTop pageIsLoading={pageLoading}>
                         <Switch>
                             <Route path="/" exact component={HomePage} />
-                            <Route path="/our-range/" component={OurRange} />
                             <Route path="/faq/" exact component={FAQs} />
+                            <Route path="/our-range/" component={OurRange} />
                             <Route
                                 path="/secret-suppers/"
                                 exact

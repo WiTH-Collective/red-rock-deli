@@ -4,7 +4,6 @@ import ScrollReveal from "./utils/ScrollReveal";
 import OurRangeParticles from "./components/OurRangeParticles";
 import history from "./history";
 import { Link } from "react-router-dom";
-import OurRangeIcons from "./components/OurRangeIcons";
 import { TweenMax, Power3 } from "gsap";
 
 const OurRange = () => {
@@ -137,127 +136,135 @@ const OurRange = () => {
     };
     //props.current.product.title
     return (
-        <div className="page-wrappers our-range">
-            <div className={`blur-container ${modalShowing ? "blurred" : ""}`}>
-                {ProductsData && current.group ? (
-                    <React.Fragment>
-                        <section className="DiscoverTheRange">
-                            <OurRangeParticles
-                                data={ProductsData[0]}
-                                current={current}
-                                onClickFunction={navigateTo}
-                                showModal={showModal}
-                                pageIsLoading={pageLoading}
-                            />
-                            {current ? (
-                                <div
-                                    className={
-                                        navToggle
-                                            ? "our-range-nav-dropdown"
-                                            : "our-range-nav-dropdown collapsed"
-                                    }
-                                    onClick={() => {
-                                        setNavToggle(!navToggle);
-                                    }}
-                                >
-                                    <div className="nav-item label">
-                                        <h3>{current.group}</h3>
+        <ScrollReveal>
+            <div className="page-wrappers our-range">
+                <div
+                    className={`blur-container ${
+                        modalShowing ? "blurred" : ""
+                    }`}
+                >
+                    {ProductsData && current.group ? (
+                        <React.Fragment>
+                            <section className="DiscoverTheRange">
+                                <OurRangeParticles
+                                    data={ProductsData[0]}
+                                    current={current}
+                                    onClickFunction={navigateTo}
+                                    showModal={showModal}
+                                    pageIsLoading={pageLoading}
+                                />
+                                {current ? (
+                                    <div
+                                        className={
+                                            navToggle
+                                                ? "our-range-nav-dropdown"
+                                                : "our-range-nav-dropdown collapsed"
+                                        }
+                                        onClick={() => {
+                                            setNavToggle(!navToggle);
+                                        }}
+                                    >
+                                        <div className="nav-item label">
+                                            <h3>{current.group}</h3>
+                                        </div>
+                                        <div className={"dropdown"}>
+                                            {data.nav.map((item, i) => {
+                                                return (
+                                                    <NavItem
+                                                        hideImage
+                                                        {...item}
+                                                        rangeUrl={baseUrl}
+                                                        onClickFunction={
+                                                            navigateTo
+                                                        }
+                                                        pathname={pathname}
+                                                        key={3000 + i}
+                                                    />
+                                                );
+                                            })}
+                                        </div>
                                     </div>
-                                    <div className={"dropdown"}>
-                                        {data.nav.map((item, i) => {
-                                            return (
-                                                <NavItem
-                                                    hideImage
-                                                    {...item}
-                                                    rangeUrl={baseUrl}
-                                                    onClickFunction={navigateTo}
-                                                    pathname={pathname}
-                                                    key={3000 + i}
-                                                />
-                                            );
-                                        })}
-                                    </div>
+                                ) : (
+                                    ""
+                                )}
+                            </section>
+
+                            <section className="range-nav">
+                                <div className="container">
+                                    {data.nav.map((item, i) => {
+                                        return (
+                                            <NavItem
+                                                {...item}
+                                                rangeUrl={baseUrl}
+                                                onClickFunction={navigateTo}
+                                                pathname={pathname}
+                                                key={3000 + i}
+                                            />
+                                        );
+                                    })}
                                 </div>
-                            ) : (
-                                ""
-                            )}
-                        </section>
-
-                        <section className="range-nav">
-                            <div className="container">
-                                {data.nav.map((item, i) => {
-                                    return (
-                                        <NavItem
-                                            {...item}
-                                            rangeUrl={baseUrl}
-                                            onClickFunction={navigateTo}
-                                            pathname={pathname}
-                                            key={3000 + i}
-                                        />
-                                    );
-                                })}
+                            </section>
+                            <div className="hidden">
+                                {current.products
+                                    ? current.products.map((p, i) => {
+                                          return (
+                                              <Link
+                                                  to={
+                                                      baseUrl +
+                                                      current.group +
+                                                      "/" +
+                                                      encodeURI(p.url)
+                                                  }
+                                                  key={9000 + i}
+                                              />
+                                          );
+                                      })
+                                    : ""}
                             </div>
-                        </section>
-                        <div className="hidden">
-                            {current.products
-                                ? current.products.map((p, i) => {
-                                      return (
-                                          <Link
-                                              to={
-                                                  baseUrl +
-                                                  current.group +
-                                                  "/" +
-                                                  encodeURI(p.url)
-                                              }
-                                              key={9000 + i}
-                                          />
-                                      );
-                                  })
-                                : ""}
-                        </div>
-                    </React.Fragment>
-                ) : null}
-            </div>
+                        </React.Fragment>
+                    ) : null}
+                </div>
 
-            <div
-                className={`modal ${modalInfo.type} ${
-                    modalShowing ? "isActive" : ""
-                }`}
-            >
-                <div className="info">
-                    <div className="black-box">
-                        <div
-                            className="header"
-                            onClick={() => {
-                                closeModal();
-                            }}
-                        >
-                            <h3>{modalInfo.heading}</h3>
-                        </div>
-                        <img
-                            src={modalInfo.image}
-                            alt={modalInfo.heading}
-                            onClick={() => {
-                                closeModal();
-                            }}
-                        />
-                        {modalInfo.copy ? (
+                <div
+                    className={`modal ${modalInfo.type} ${
+                        modalShowing ? "isActive" : ""
+                    }`}
+                >
+                    <div className="info">
+                        <div className="black-box">
                             <div
+                                className="header"
                                 onClick={() => {
                                     closeModal();
                                 }}
-                                className="copy"
-                                dangerouslySetInnerHTML={{
-                                    __html: modalInfo.copy
+                            >
+                                <h3>{modalInfo.heading}</h3>
+                            </div>
+                            <img
+                                src={modalInfo.image}
+                                alt={modalInfo.heading}
+                                onClick={() => {
+                                    closeModal();
                                 }}
                             />
-                        ) : (
-                            ""
-                        )}
+                            {modalInfo.copy ? (
+                                <div
+                                    onClick={() => {
+                                        closeModal();
+                                    }}
+                                    className="copy"
+                                    dangerouslySetInnerHTML={{
+                                        __html: modalInfo.copy
+                                    }}
+                                />
+                            ) : (
+                                ""
+                            )}
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </ScrollReveal>
     );
 };
 export default OurRange;

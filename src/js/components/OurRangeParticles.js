@@ -10,9 +10,17 @@ const OurRangeParticles = props => {
     // console.log("--> Start of OurRangeParticles Component");
     // console.log(">> RANGE >> props.pageIsLoading", props.pageIsLoading);
     const productSpacing = props.data.config.productSpacing;
-    // const [current, setCurrent] = useState(props.current.index);
+    const [current, setCurrent] = useState(props.current.index);
     const [isHidden, setIsHidden] = useState(" hidden");
     const [canUpdate, setCanUpdate] = useState(false);
+
+    const metaDescription = () => {
+        if (props.current.product.copy.length > 100) {
+            return props.current.product.copy.slice(0, 100) + "...";
+        } else {
+            return props.current.product.copy;
+        }
+    };
 
     function keyPress(e) {
         if (e.key === "Escape") {
@@ -296,7 +304,7 @@ const OurRangeParticles = props => {
 
             // asdfasdf
             let nutMultiplier = 1;
-            props.current.product.packImageUrl.indexOf("/mixed-nuts/") > -1
+            props.current.product.packImageUrl.indexOf("/nuts/") > -1
                 ? (nutMultiplier = 0.66)
                 : (nutMultiplier = 1);
 
@@ -649,24 +657,20 @@ const OurRangeParticles = props => {
                     <IconNext />
                 </button>
             </div>
-            {/* <Helmet>
-                <title>{props.current.product.meta.title}</title>
-                <meta
-                    name="description"
-                    content={props.current.product.meta.description}
-                />
+            <Helmet>
+                <title>{"Red Rock Deli®"}</title>
+                <meta name="description" content={props.current.product.copy} />
                 <meta
                     name="keywords"
-                    content={props.current.product.meta.keywords}
+                    content={
+                        "Red, Rock, Deli, Chips, Nuts, Feed your curiosity, curious chips and nuts"
+                    }
                 />
                 <meta property="og:site_name" content={"Red Rock Deli®"} />
-                <meta
-                    name="og:title"
-                    content={props.current.product.meta.title}
-                />
+                <meta name="og:title" content={"Red Rock Deli®"} />
                 <meta
                     name="og:description"
-                    content={props.current.product.meta.description}
+                    content={props.current.product.copy}
                 />
                 <meta
                     property="og:image"
@@ -675,7 +679,7 @@ const OurRangeParticles = props => {
                         props.current.product.packImageUrl
                     }
                 />
-            </Helmet> */}
+            </Helmet>
         </div>
     );
 };

@@ -37,7 +37,7 @@
             {
                 "imageUrl": "/products/nuts/Glazed-Nuts-Apple-Cinnamon-Crumble.png",
                 "label": "Nuts",
-                "baseUrl": "mixed-nuts"
+                "baseUrl": "nuts"
             }
         ],
         "product": {
@@ -275,7 +275,7 @@
                         "randomSeed": 341
                     },
                     "meta": {
-                        "description": "Try our Chilli Roast Garlic Lemon Oil Deluxe Crisps for a fancy take on the 'classic' chip. Find your next Red Rock Deli® snack in store now.",
+                        "description": "Try our Chilli Roast Garlic Lemon Oil Deluxe Crisps for a fancy take on the classic chip. Find your next Red Rock Deli® snack in store now.",
                         "keywords": "Red, Rock, Deli, Chips, Nuts, Feed your curiosity, curious chips and nuts",
                         "title": "Chilli Roast Garlic Lemon Oil | Deluxe Crisps | Red Rock Deli©"
                     }
@@ -301,7 +301,7 @@
                         "randomSeed": 1086
                     },
                     "meta": {
-                        "description": "Try our Parmesan & Black Truffle Oil Deluxe Crisps for a fancy take on the 'classic' chip. Find your next Red Rock Deli® snack in store now.",
+                        "description": "Try our Parmesan & Black Truffle Oil Deluxe Crisps for a fancy take on the classic chip. Find your next Red Rock Deli® snack in store now.",
                         "keywords": "Red, Rock, Deli, Chips, Nuts, Feed your curiosity, curious chips and nuts",
                         "title": "Parmesan Black Truffle Oil | Deluxe Crisps | Red Rock Deli©"
                     }
@@ -327,7 +327,7 @@
                         "randomSeed": 290
                     },
                     "meta": {
-                        "description": "Try our Vintage Cheddar Onion Rosemary Deluxe Crips for a fancy take on the 'classic' chip. Find your next Red Rock Deli® snack in store now.",
+                        "description": "Try our Vintage Cheddar Onion Rosemary Deluxe Crips for a fancy take on the classic chip. Find your next Red Rock Deli® snack in store now.",
                         "keywords": "Red, Rock, Deli, Chips, Nuts, Feed your curiosity, curious chips and nuts",
                         "title": "Vintage Cheddar Onion Rosemary | Deluxe Crisps | Red Rock Deli©"
                     }
@@ -518,7 +518,7 @@
                     }
                 }
             ],
-            "limited-edition": [
+            "limited-edition-chips": [
                 {
                     "title": "Maple Glazed Bacon & Cheddar Limited Edition Chips",
                     "url": "maple-glazed-bacon-cheddar-chips",
