@@ -14,7 +14,7 @@ const OurRange = () => {
         type: "info",
         heading: "Nutritional Info",
         image: "",
-        copy: null,
+        copy: null
     });
     const [navToggle, setNavToggle] = useState(false);
     const [pathname, setPathname] = useState(window.location.pathname);
@@ -24,7 +24,7 @@ const OurRange = () => {
         product: null,
         products: null,
         next: null,
-        previous: null,
+        previous: null
     });
 
     const getCurrentProduct = () => {
@@ -39,12 +39,12 @@ const OurRange = () => {
             previous: "",
             productAnimationDirection: parseInt(
                 localStorage.getItem("direction")
-            ),
+            )
         };
 
         // if product group is not found in list of products, set to default value
         const group = Object.keys(data.product).find(
-            (key) => key === urlArray[2]
+            key => key === urlArray[2]
         );
         group
             ? (obj.group = group)
@@ -54,7 +54,7 @@ const OurRange = () => {
 
         // find product in list of products.
         const currentIndex = data.product[obj.group].findIndex(
-            (product) => product.url === decodeURI(urlArray[3])
+            product => product.url === decodeURI(urlArray[3])
         );
 
         // if index not found, use default index
@@ -71,33 +71,33 @@ const OurRange = () => {
     //
 
     // Show Modal
-    const showModal = (modalType) => {
+    const showModal = modalType => {
         const smoothScroll = { y: window.scrollY };
         TweenMax.to(smoothScroll, 0.25, {
             y: 0,
             onUpdate: () => {
                 window.scrollTo(0, smoothScroll.y);
             },
-            ease: Power3.easeOut,
+            ease: Power3.easeOut
         });
 
         setModalShowing(true);
         switchModal(modalType);
     };
-    const switchModal = (modalType) => {
+    const switchModal = modalType => {
         if (modalType === "info") {
             setModalInfo({
                 type: "info",
                 heading: "Nutritional Info",
                 image: current.product.nutritionalInfo.image,
-                copy: null,
+                copy: null
             });
         } else {
             setModalInfo({
                 type: "pairings",
                 heading: "Flavour Pairings",
                 image: current.product.flavourPairing.image,
-                copy: current.product.flavourPairing.copy,
+                copy: current.product.flavourPairing.copy
             });
         }
     };
@@ -108,7 +108,7 @@ const OurRange = () => {
     //
 
     //
-    const onKeydown = (e) => {
+    const onKeydown = e => {
         if (e.key === "Escape") {
             closeModal();
         }
@@ -136,142 +136,134 @@ const OurRange = () => {
     };
     //props.current.product.title
     return (
-        <ScrollReveal>
-            <div className="page-wrappers our-range">
-                <div
-                    className={`blur-container ${
-                        modalShowing ? "blurred" : ""
-                    }`}
-                >
-                    {ProductsData && current.group ? (
-                        <React.Fragment>
-                            <section className="DiscoverTheRange">
-                                <OurRangeParticles
-                                    data={ProductsData[0]}
-                                    current={current}
-                                    onClickFunction={navigateTo}
-                                    showModal={showModal}
-                                    pageIsLoading={pageLoading}
-                                />
-                                {current ? (
-                                    <div
-                                        className={
-                                            navToggle
-                                                ? "our-range-nav-dropdown"
-                                                : "our-range-nav-dropdown collapsed"
-                                        }
-                                        onClick={() => {
-                                            setNavToggle(!navToggle);
-                                        }}
-                                    >
-                                        <div className="nav-item label">
-                                            <h3>{current.group}</h3>
-                                        </div>
-                                        <div className={"dropdown"}>
-                                            {data.nav.map((item, i) => {
-                                                return (
-                                                    <NavItem
-                                                        hideImage
-                                                        {...item}
-                                                        rangeUrl={baseUrl}
-                                                        onClickFunction={
-                                                            navigateTo
-                                                        }
-                                                        pathname={pathname}
-                                                        key={3000 + i}
-                                                    />
-                                                );
-                                            })}
-                                        </div>
-                                    </div>
-                                ) : (
-                                    ""
-                                )}
-                            </section>
-
-                            <section className="range-nav">
-                                <div className="container">
-                                    {data.nav.map((item, i) => {
-                                        return (
-                                            <NavItem
-                                                {...item}
-                                                rangeUrl={baseUrl}
-                                                onClickFunction={navigateTo}
-                                                pathname={pathname}
-                                                key={3000 + i}
-                                            />
-                                        );
-                                    })}
-                                </div>
-                            </section>
-                            <div className="hidden">
-                                {current.products
-                                    ? current.products.map((p, i) => {
-                                          return (
-                                              <Link
-                                                  to={
-                                                      baseUrl +
-                                                      current.group +
-                                                      "/" +
-                                                      encodeURI(p.url)
-                                                  }
-                                                  key={9000 + i}
-                                              />
-                                          );
-                                      })
-                                    : ""}
-                            </div>
-                        </React.Fragment>
-                    ) : null}
-                </div>
-
-                <div
-                    className={`modal ${modalInfo.type} ${
-                        modalShowing ? "isActive" : ""
-                    }`}
-                >
-                    <div className="info">
-                        <div className="black-box">
-                            <div
-                                className="header"
-                                onClick={() => {
-                                    closeModal();
-                                }}
-                            >
-                                <h3>{modalInfo.heading}</h3>
-                            </div>
-                            <img
-                                src={modalInfo.image}
-                                alt={modalInfo.heading}
-                                onClick={() => {
-                                    closeModal();
-                                }}
+        <div className="page-wrappers our-range">
+            <div className={`blur-container ${modalShowing ? "blurred" : ""}`}>
+                {ProductsData && current.group ? (
+                    <React.Fragment>
+                        <section className="DiscoverTheRange">
+                            <OurRangeParticles
+                                data={ProductsData[0]}
+                                current={current}
+                                onClickFunction={navigateTo}
+                                showModal={showModal}
+                                pageIsLoading={pageLoading}
                             />
-                            {modalInfo.copy ? (
+                            {current ? (
                                 <div
+                                    className={
+                                        navToggle
+                                            ? "our-range-nav-dropdown"
+                                            : "our-range-nav-dropdown collapsed"
+                                    }
                                     onClick={() => {
-                                        closeModal();
+                                        setNavToggle(!navToggle);
                                     }}
-                                    className="copy"
-                                    dangerouslySetInnerHTML={{
-                                        __html: modalInfo.copy,
-                                    }}
-                                />
+                                >
+                                    <div className="nav-item label">
+                                        <h3>{current.group}</h3>
+                                    </div>
+                                    <div className={"dropdown"}>
+                                        {data.nav.map((item, i) => {
+                                            return (
+                                                <NavItem
+                                                    hideImage
+                                                    {...item}
+                                                    rangeUrl={baseUrl}
+                                                    onClickFunction={navigateTo}
+                                                    pathname={pathname}
+                                                    key={3000 + i}
+                                                />
+                                            );
+                                        })}
+                                    </div>
+                                </div>
                             ) : (
                                 ""
                             )}
+                        </section>
+
+                        <section className="range-nav">
+                            <div className="container">
+                                {data.nav.map((item, i) => {
+                                    return (
+                                        <NavItem
+                                            {...item}
+                                            rangeUrl={baseUrl}
+                                            onClickFunction={navigateTo}
+                                            pathname={pathname}
+                                            key={3000 + i}
+                                        />
+                                    );
+                                })}
+                            </div>
+                        </section>
+                        <div className="hidden">
+                            {current.products
+                                ? current.products.map((p, i) => {
+                                      return (
+                                          <Link
+                                              to={
+                                                  baseUrl +
+                                                  current.group +
+                                                  "/" +
+                                                  encodeURI(p.url)
+                                              }
+                                              key={9000 + i}
+                                          />
+                                      );
+                                  })
+                                : ""}
                         </div>
+                    </React.Fragment>
+                ) : null}
+            </div>
+
+            <div
+                className={`modal ${modalInfo.type} ${
+                    modalShowing ? "isActive" : ""
+                }`}
+            >
+                <div className="info">
+                    <div className="black-box">
+                        <div
+                            className="header"
+                            onClick={() => {
+                                closeModal();
+                            }}
+                        >
+                            <h3>{modalInfo.heading}</h3>
+                        </div>
+                        <img
+                            src={modalInfo.image}
+                            alt={modalInfo.heading}
+                            onClick={() => {
+                                closeModal();
+                            }}
+                        />
+                        {modalInfo.copy ? (
+                            <div
+                                onClick={() => {
+                                    closeModal();
+                                }}
+                                className="copy"
+                                dangerouslySetInnerHTML={{
+                                    __html: modalInfo.copy
+                                }}
+                            />
+                        ) : (
+                            ""
+                        )}
                     </div>
                 </div>
             </div>
-        </ScrollReveal>
+        </div>
     );
 };
 export default OurRange;
 
 //
 
-const NavItem = (props) => {
+const NavItem = props => {
     let isActive = "";
     props.pathname && props.pathname.split("/")[2] === props.baseUrl
         ? (isActive = "isActive")
