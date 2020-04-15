@@ -5,7 +5,7 @@ import { TimelineMax, Power4, Power3, Sine } from "gsap";
 import { IconLast, IconNext } from "./SVGIcons";
 import history from "../history";
 
-const HomePageParticles = (props) => {
+const HomePageParticles = props => {
     // console.log("--> Start of HomePageParticles Component");
 
     // Main OBJECT for Slider.
@@ -25,7 +25,7 @@ const HomePageParticles = (props) => {
         particleDistribution: 1,
         linkTo: "/our-range/",
         next: 1,
-        previous: 5,
+        previous: 5
     };
 
     // Set canvas Origin.
@@ -33,7 +33,7 @@ const HomePageParticles = (props) => {
         x: null,
         y: null,
         width: null,
-        height: null,
+        height: null
     };
 
     // Images pre-loaded ==========================================================
@@ -55,13 +55,13 @@ const HomePageParticles = (props) => {
                 img: {
                     x: 0,
                     y: 0,
-                    size: 600,
-                },
+                    size: 600
+                }
             },
             particles: [],
             index: i,
             productImage: null,
-            particleImage: null,
+            particleImage: null
         };
         Slider.Products.push(p);
 
@@ -70,7 +70,7 @@ const HomePageParticles = (props) => {
 
     // console.log("PRODUCTS", Slider.Products);
 
-    Slider.Products.map((p) => {
+    Slider.Products.map(p => {
         ImageURLArray.push(p.product.packImageUrl);
         ImageURLArray.push(p.product.particleUrl);
         return "";
@@ -112,13 +112,15 @@ const HomePageParticles = (props) => {
     // Canvas Resize ==========================================================
     const onResize = () => {
         const can = Slider.canvas.current;
-        const canBox = can.getBoundingClientRect();
-        can.width = can.offsetWidth;
-        can.height = can.offsetHeight;
-        origin.x = Math.round(can.width * 0.5);
-        origin.y = Math.round(can.height * 0.5);
-        origin.width = canBox.width;
-        origin.height = canBox.height;
+        if (can) {
+            const canBox = can.getBoundingClientRect();
+            can.width = can.offsetWidth;
+            can.height = can.offsetHeight;
+            origin.x = Math.round(can.width * 0.5);
+            origin.y = Math.round(can.height * 0.5);
+            origin.width = canBox.width;
+            origin.height = canBox.height;
+        }
 
         if (Slider.hasInit) {
             updateCanvas();
@@ -128,7 +130,7 @@ const HomePageParticles = (props) => {
     //
 
     //
-    const nextProduct = (increment) => {
+    const nextProduct = increment => {
         if (Slider.isUpdatable) {
             Slider.isUpdatable = false;
 
@@ -147,8 +149,8 @@ const HomePageParticles = (props) => {
 
     // Images pre-loaded =========================================================
 
-    const initProducts = (_Slider) => {
-        _Slider.Products.map((product) => {
+    const initProducts = _Slider => {
+        _Slider.Products.map(product => {
             // define images.
             product.productImage = _Slider.ImageArray[product.index * 2];
             product.particleImage = _Slider.ImageArray[product.index * 2 + 1];
@@ -237,7 +239,7 @@ const HomePageParticles = (props) => {
             x: "+=" + spread * -dir,
             scale: 0.4,
             rotation: Math.PI * 0.02,
-            ease: Power3.easeOut,
+            ease: Power3.easeOut
         };
 
         // current / center
@@ -278,7 +280,7 @@ const HomePageParticles = (props) => {
         Slider.isUpdatable = true;
     };
 
-    const initParticles = (_product) => {
+    const initParticles = _product => {
         const can = Slider.canvas.current;
         const config = props.data.config;
         const data = _product.product.particles;
@@ -300,7 +302,7 @@ const HomePageParticles = (props) => {
         // distributed randomly along a diagonal line, extending
         // from the center of the canvas.
         // using data pulled from carouselData.json.
-        const newParticle = (isSmall) => {
+        const newParticle = isSmall => {
             // random position on line:
             const randomLinePosition = CosRandom() * 0.5;
             const randomRange = 60;
@@ -323,18 +325,18 @@ const HomePageParticles = (props) => {
                 img: {
                     x: Math.floor(FauxRandom() * count) * size,
                     y: imgY,
-                    size: size,
+                    size: size
                 },
                 wiggle: {
                     x: 0,
                     y: 0,
-                    rotation: 0,
+                    rotation: 0
                 },
                 x: randomLinePosition * lineWidth + CosRandom() * randomRange,
                 y: randomLinePosition * -lineHeight + CosRandom() * randomRange,
                 alpha: 1,
                 rotation: FauxRandom() * Math.PI * 2,
-                scale: FauxRandom() * 0.15 + 0.45,
+                scale: FauxRandom() * 0.15 + 0.45
             };
 
             //
@@ -457,16 +459,16 @@ const HomePageParticles = (props) => {
     };
 
     // animates particles.
-    const createParticleAnimation = (_product) => {
+    const createParticleAnimation = _product => {
         if (_product.TL) _product.TL.kill();
         _product.TL = new TimelineMax({
             paused: true,
             onUpdate: () => {
                 updateCanvas();
-            },
+            }
         });
 
-        _product.particles.map((p) => {
+        _product.particles.map(p => {
             const pDelay = 0.3; //FauxRandom();
             _product.TL.from(
                 p,
@@ -475,7 +477,7 @@ const HomePageParticles = (props) => {
                     x: p.x * 0.5,
                     y: p.y * 0.5,
                     rotation: p.rotation + CosRandom() * Math.PI * 0.25,
-                    ease: Power4.easeOut,
+                    ease: Power4.easeOut
                 },
                 pDelay
             );
@@ -483,7 +485,7 @@ const HomePageParticles = (props) => {
                 p,
                 0.2,
                 {
-                    alpha: 0,
+                    alpha: 0
                 },
                 pDelay
             );
@@ -494,7 +496,7 @@ const HomePageParticles = (props) => {
                     x: `+=${p.x * 0.1}`,
                     y: `+=${p.y * 0.1}`,
                     rotation: `+=${CosRandom() * Math.PI * 0.1}`,
-                    ease: Sine.easeOut,
+                    ease: Sine.easeOut
                 },
                 0
             );
@@ -552,13 +554,13 @@ const HomePageParticles = (props) => {
                     <IconNext />
                 </button>
             </div>
-            <div className="button-holder">
-                <div
-                    onClick={() => {
-                        history.push(Slider.linkTo);
-                    }}
-                    className={"button-primary"}
-                >
+            <div
+                className="button-holder"
+                onClick={() => {
+                    history.push(Slider.linkTo);
+                }}
+            >
+                <div className={"button-primary"}>
                     <button>
                         Explore our range
                         <span />

@@ -63,7 +63,7 @@ const SecretSuppers = () => {
                             Are you interested in being part of our next edition
                             of Secret Suppers? We will keep you in the loop
                             about the new date, exclusive chefs and ticket
-                            releases. Drop your email below to stay in the loop
+                            releases. Drop your email below to stay up to date
                             about what’s coming up.
                         </p>
 

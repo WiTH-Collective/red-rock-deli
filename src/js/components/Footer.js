@@ -33,13 +33,6 @@ function Footer() {
                         <h3>WANT TO GET IN CONTACT?</h3>
                         <div>
                             <ContactItem
-                                iconClass="location"
-                                description={`The Red Rock Deli Chip Company<br />
-                    553-567 South Road,<br />
-                    Regency Park, SA, 5010, Australia`}
-                                link="https://goo.gl/maps/iMNEpNASEv6uh7aB8"
-                            />
-                            <ContactItem
                                 iconClass="phone"
                                 description="1800 500 502"
                                 link="tel:+611800500502"
@@ -48,6 +41,13 @@ function Footer() {
                                 iconClass="email"
                                 description="info@redrockdeli.com"
                                 link="mailto:info@redrockdeli.com"
+                            />
+                            <ContactItem
+                                iconClass="location"
+                                description={`The Red Rock Deli Chip Company<br />
+                    553-567 South Road,<br />
+                    Regency Park, SA, 5010, Australia`}
+                                link="https://goo.gl/maps/iMNEpNASEv6uh7aB8"
                             />
                         </div>
                     </div>

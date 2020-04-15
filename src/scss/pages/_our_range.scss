@@ -390,6 +390,15 @@
             width: 100%;
             bottom: 80px;
             @include flexCenter;
+
+            &::after {
+                position: absolute;
+                content: " ";
+                width: 500px;
+                height: 800px;
+                bottom: 60px;
+                // background-color: rgba(255, 0, 0, 0.2);
+            }
         }
 
         h2 {
