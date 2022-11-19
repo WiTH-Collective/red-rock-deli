@@ -22,7 +22,7 @@
         "react-juicer-feed": "0.0.2-alpha-4",
         "react-player": "^1.15.3",
         "react-router-dom": "^5.1.2",
-        "react-scripts": "3.3.1",
+        "react-scripts": "5.0.1",
         "react-slideshow-image": "^1.4.0",
         "redux": "^4.0.5",
         "video-react": "^0.14.1",
